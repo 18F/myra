@@ -3,7 +3,9 @@ U.S. Department of the Treasury myRA Program
 
 ##What
 
-Individual and employer landing pages for the U.S. Department of the Treasury’s new retirement savings program, myRA (“My Retirement Account”).
+Individual and employer landing pages for the U.S. Department of the Treasury’s new retirement savings program, myRA (“My Retirement Account”). 
+
+We plan to use this repository as a place to share our work and direction, but please do not consider anything you see here to be final or production-ready. This is still very much in beta.
 
 
 ##Why
