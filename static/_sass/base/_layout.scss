@@ -1,0 +1,37 @@
+// Styles for general page layout
+
+.container {
+  @include outer-container();
+}
+
+// Create classes for different spans
+
+@for $i from 1 through $grid-columns {
+  .span-columns-#{$i} {
+    @include span-columns($i);
+  }
+}
+
+.omega {
+  @include omega();
+}
+
+// Header
+.usa {
+  width: 100%;
+  border-bottom: 1px solid $light-gray;
+
+  p {
+    color: $dark-gray;
+  }
+}
+
+.site-header {
+  padding: em(20) 0;
+  background: #c1c1c1;
+}
+
+// Navigation
+nav {
+  @extend %access;
+}

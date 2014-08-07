@@ -1,0 +1,57 @@
+/* Site header */
+
+.site-title,
+.site-title:hover,
+.site-title:visited {
+  display: block;
+  color: #333;
+  font-size: 26px;
+  letter-spacing: -1px;
+  line-height: 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.site-nav {
+  float: right;
+  line-height: 56px;
+}
+
+.site-nav .menu-icon { display: none; }
+
+.site-nav .page-link {
+  margin-left: 20px;
+  color: #727272;
+  letter-spacing: -.5px;
+}
+
+
+/* Features */
+
+.feature {
+  @include span-columns(4);
+  height: 250px;
+  position: relative;
+
+  .feature-front {
+    width: 100%;
+    height: 100%;
+    padding: em(20);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: #c1c1c1;
+    text-align: center;
+  }
+
+  .feature-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover > .feature-front {
+    display: none;
+  }
+}
