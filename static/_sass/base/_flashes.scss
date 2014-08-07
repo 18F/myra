@@ -1,0 +1,33 @@
+%flash-alert {
+  @include flash($alert-color);
+}
+
+%flash-error {
+  @include flash($error-color);
+}
+
+%flash-notice {
+  @include flash($notice-color);
+}
+
+%flash-success {
+  @include flash($success-color);
+}
+
+.flash {
+  &-alert {
+    @extend %flash-alert;
+  }
+
+  &-error {
+    @extend %flash-error;
+  }
+
+  &-notice {
+    @extend %flash-notice;
+  }
+
+  &-success {
+    @extend %flash-success;
+  }
+}
