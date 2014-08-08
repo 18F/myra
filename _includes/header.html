@@ -16,11 +16,11 @@
             c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
         </svg>
       </a>
-      <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.title %}<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
-        {% endfor %}
-      </div>
+      <ul>
+        <li><a class="page-link" href="{{ site.baseurl }}/about">About myRA</a></li>
+        <li><a class="page-link" href="{{ site.baseurl }}/employers">For Employers</a></li>
+        <li><a class="page-link" href="{{ site.baseurl }}/employees">For Employees</a></li>
+      </ul>
     </nav>
 
   </div>
