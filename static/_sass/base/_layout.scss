@@ -4,6 +4,10 @@
   @include outer-container();
 }
 
+.row {
+  @include row();
+}
+
 // Create classes for different spans
 
 @for $i from 1 through $grid-columns {
