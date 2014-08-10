@@ -1,37 +1,35 @@
-/* Site header */
+/* Hero */
 
-.site-title,
-.site-title:hover,
-.site-title:visited {
-  display: block;
-  color: #333;
-  font-size: 26px;
-  letter-spacing: -1px;
-  line-height: 56px;
-  position: relative;
-  z-index: 1;
+#hero {
+  padding: em(100) 0;
+
+  p {
+    font-size: $base-font-size * 2;
+  }
+
 }
-
-.site-nav {
-  float: right;
-  line-height: 56px;
-}
-
-.site-nav .menu-icon { display: none; }
-
-.site-nav .page-link {
-  margin-left: 20px;
-  color: #727272;
-  letter-spacing: -.5px;
-}
-
 
 /* Features */
 
+$feature-bg: #c1c1c1;
+$feature-height: em(250);
+
+#features {
+  padding: 0;
+  background: $feature-bg;
+
+  .row {
+    @include row(table);
+  }
+}
+
 .feature {
   @include span-columns(4);
-  height: 250px;
+  @include pad();
+  height: $feature-height;
   position: relative;
+  overflow: hidden;
+  border: 1px solid $light-gray;
 
   .feature-front {
     width: 100%;
@@ -41,17 +39,91 @@
     top: 0;
     left: 0;
     z-index: 10;
-    background: #c1c1c1;
+    background: $feature-bg;
     text-align: center;
+    cursor: pointer;
+    @include transition(.2s ease-in);
+    color: #fff;
+
+    h3 {
+      position: relative;
+      top: 50%;
+    }
   }
 
   .feature-back {
     position: absolute;
     top: 0;
     left: 0;
+    padding: em(20);
+    background: #f1f1f1;
+    height: 100%;
   }
 
   &:hover > .feature-front {
-    display: none;
+    top: -100%;
+    @include transition(.2s ease-in);
   }
+}
+
+
+// Reseting the display after setting it to display: table
+@include reset-display();
+
+/* Call to Action section */
+
+#call-to-action {
+  background: $light-gray;
+
+  .input-group {
+    @include span-columns(6);
+    @include shift(3);
+
+    input[type="email"] {
+      @include span-columns(6 of 6);
+      padding: .75em 1em;
+      margin-bottom: $base-line-height * .5;
+    }
+
+    input[type="submit"] {
+      @include span-columns(6 of 6);
+      margin-bottom: $base-line-height;
+
+    }
+  }
+}
+
+/* myRA Story */
+
+#myra-story {
+  height: 600px;
+}
+
+/* Calculator */
+.calculator-input-group {
+  padding: $base-line-height 0;
+}
+
+.calculator-label {
+  padding-bottom: $base-line-height;
+}
+
+.slider-value {
+  color: $blue;
+}
+
+/* Step by Step */
+
+.steps {
+  @include span-columns(4);
+
+  li {
+    padding: em(10);
+    margin: $base-line-height * .5 0;
+    background: #f1f1f1;
+  }
+}
+
+.step-content {
+  @include span-columns(8);
 }
