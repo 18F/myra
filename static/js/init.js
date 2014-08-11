@@ -53,6 +53,16 @@ $(document).ready(function(){
     value1 = $('#input-1').val();
     value2 = $('#input-2').val();
     setValues();
+  });
+
+
+  // Tabs
+  $('.tab').click(function(e){
+    e.preventDefault();
+    tabId = $(this).attr('href');
+    $('.active').removeClass('active');
+    $(this).addClass('active');
+    $(tabId).addClass('active');
   })
 
 })

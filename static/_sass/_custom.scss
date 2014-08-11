@@ -114,16 +114,30 @@ $feature-height: em(250);
 
 /* Step by Step */
 
-.steps {
+.tabs {
   @include span-columns(4);
 
-  li {
+  a {
+    display: block;
     padding: em(10);
     margin: $base-line-height * .5 0;
     background: #f1f1f1;
+
+    &.active {
+      background: #999;
+      color: #fff;
+    }
   }
 }
 
-.step-content {
+.tab-content {
   @include span-columns(8);
+
+  article {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
 }
