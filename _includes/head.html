@@ -4,10 +4,22 @@
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="{{ site.description }}">
+    <!-- meta robots -->
+    {% if page.noindex %}
+        <meta name="robots" content="noindex" />
+    {% endif %}
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <link rel="stylesheet" href="{{ "/static/css/normalize.css" | prepend: site.baseurl }}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/static/css/style.css" | prepend: site.baseurl }}">
+    <!-- jQuery noUI Slider style -->
+    <link rel="stylesheet" href="{{ "/static/css/jquery.nouislider.css" | prepend: site.baseurl }}">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.nouislider.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/static/js/init.js"></script>
+
 
 </head>
