@@ -12,15 +12,6 @@ $(".nav-toggle").click(function() {
 });
 
 
-//// Toggline feature info
-$('.feature-title h3').click(function(e){
-  e.stopPropagation();
-  alert('click');
-  var info = $(this).next('.feature-info');
-  $('.active').removeClass('.active');
-  $(info).addClass('active');
-})
-
 //// jQuery noUISlider implementation
 //// Documentation: http://refreshless.com/nouislider/
 $(document).ready(function(){
@@ -69,8 +60,12 @@ $(document).ready(function(){
   // Tabs
   $('.tab').click(function(e){
     e.preventDefault();
+    var parent, tabID;
+    // Get the parent so that it only affects tabs in this section
+    parent = $(this).parents('section');
     tabId = $(this).attr('href');
-    $('.active').removeClass('active');
+    console.log(tabId);
+    parent.find('.active').removeClass('active');
     $(this).addClass('active');
     $(tabId).addClass('active');
   })
