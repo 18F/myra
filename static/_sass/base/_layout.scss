@@ -31,20 +31,27 @@
 }
 
 .site-header {
-  padding: em(20) 0;
-  background: #c1c1c1;
+
+  hgroup {
+    float: left;
+  }
+
 }
 
-.site-title,
-.site-title:hover,
-.site-title:visited {
-  float: left;
-  color: #333;
-  font-size: 26px;
+
+.site-title{
   letter-spacing: -1px;
-  line-height: 56px;
   position: relative;
   z-index: 1;
+  margin-bottom: 0;
+  a {
+    color: #fff;
+  }
+}
+
+.site-subtitle {
+  font-size: $base-font-size * 1.25;
+  color: #fff;
 }
 
 .site-nav {
@@ -69,11 +76,11 @@ nav {
 
       a {
         display: block;
-        padding: em(5) em(10);
+        padding: em(14) em(10);
 
         &:hover {
           color: #fff;
-          background: $base-accent-color;
+          background: darken($header-bg, 10%);
         }
       }
     }
@@ -95,5 +102,16 @@ nav {
 
 section {
   padding: em(40);
-  border-bottom: 1px solid $light-gray;
+}
+
+
+// Footer
+footer {
+  background: #333;
+  color: #fff;
+  padding: $base-line-height 0;
+
+  .left {
+    @include span-columns(6);
+  }
 }

@@ -11,6 +11,16 @@ $(".nav-toggle").click(function() {
   $(".site-title").toggle();
 });
 
+
+//// Toggline feature info
+$('.feature-title h3').click(function(e){
+  e.stopPropagation();
+  alert('click');
+  var info = $(this).next('.feature-info');
+  $('.active').removeClass('.active');
+  $(info).addClass('active');
+})
+
 //// jQuery noUISlider implementation
 //// Documentation: http://refreshless.com/nouislider/
 $(document).ready(function(){

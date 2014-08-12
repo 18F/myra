@@ -20,12 +20,22 @@ $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
 
+// myRA Colors
+$myra-green: #49B577;
+$myra-dark-blue: #005568;
+$myra-light-blue: #1297B5;
+
 // Background Color
 $base-background-color: white;
 
+// Layout Colors
+$header-bg: $myra-green;
+$footer-bg: $dark-gray;
+$feature-bg: #f1f1f1;
+
 // Font Colors
 $base-font-color: $dark-gray;
-$base-accent-color: $blue;
+$base-accent-color: $myra-light-blue;
 
 // Link Colors
 $base-link-color: $base-accent-color;
