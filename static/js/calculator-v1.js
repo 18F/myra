@@ -1,28 +1,6 @@
-// Quick and Easy Javascript Detection
-$("html").removeClass( "no-js" );
-
-// Navigation
-//// Add the mobile nav option
-$(".site-header").prepend('<button type="button" class="nav-toggle btn btn-default"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="sr-only">Toggle Navigation</span></button>');
-
-//// Activate nav on mobile nav toggle click
-$(".nav-toggle").click(function() {
-  $(".main-nav").toggleClass("active");
-  $(".site-title").toggle();
-});
-
-
-//// Toggline feature info
-$('.feature-title h3').click(function(e){
-  e.stopPropagation();
-  alert('click');
-  var info = $(this).next('.feature-info');
-  $('.active').removeClass('.active');
-  $(info).addClass('active');
-})
-
 //// jQuery noUISlider implementation
 //// Documentation: http://refreshless.com/nouislider/
+//// Calculator v1
 $(document).ready(function(){
   // First slider
   $('#input-1').noUiSlider({
@@ -34,7 +12,7 @@ $(document).ready(function(){
     }
   });
 
-  // Second slider
+  Second slider
   $('#input-2').noUiSlider({
     start: 10,
     step: 1,
@@ -69,10 +47,20 @@ $(document).ready(function(){
   // Tabs
   $('.tab').click(function(e){
     e.preventDefault();
+    var parent, tabID;
+    // Get the parent so that it only affects tabs in this section
+    parent = $(this).parents('section');
     tabId = $(this).attr('href');
-    $('.active').removeClass('active');
+    console.log(tabId);
+    parent.find('.active').removeClass('active');
     $(this).addClass('active');
     $(tabId).addClass('active');
+  });
+
+  $('#features .tab').click(function(){
+    $('.tab-content-container').animate({
+      top: 0,
+    })
   })
 
 })
