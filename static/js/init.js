@@ -15,7 +15,6 @@ $(".nav-toggle").click(function() {
 
 $(document).ready(function(){
 
-
   // Tabs
   $('.tab').click(function(e){
     e.preventDefault();
@@ -31,8 +30,15 @@ $(document).ready(function(){
 
   $('#features .tab').click(function(){
     $('.tab-content-container').animate({
-      top: 0,
+      marginTop: 0,
     })
   })
+
+  // Slideshow
+  $('.bxslider').bxSlider({
+    mode: 'horizontal',
+    infiniteLoop: false,
+
+  });
 
 })

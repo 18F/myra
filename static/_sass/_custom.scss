@@ -105,7 +105,7 @@ $feature-color: #555;
     background: $feature-bg;
     padding: em(20) 0;
     position: relative;
-    top: -140px;
+    margin-top: -140px;
     z-index:-1;
 
     .tab-content {
@@ -152,12 +152,23 @@ $feature-color: #555;
 /* myRA Story */
 
 #myra-story {
-  height: 600px;
+  padding: 0;
+
+  .bx-wrapper .bx-viewport {
+    box-shadow: none;
+  }
 }
 
-.slides {
+
+.bxslider {
+
   .slide {
-    padding-top: 15%;
+
+    .container {
+      padding-top: 15%;
+      text-align: center;
+      height: em(600);
+    }
   }
 }
 
