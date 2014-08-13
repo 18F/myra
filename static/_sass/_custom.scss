@@ -7,9 +7,31 @@
   }
 
   .site-nav {
+    li {
+      position: relative;
+
+      &:hover {
+        .subnav {
+          display: block;
+        }
+
+      }
+    }
+
     a {
       color: #fff;
     }
+  }
+}
+
+.subnav {
+  display: none;
+  position: absolute;
+  background: $myra-green;
+
+  li {
+    width: 100%;
+
   }
 }
 
@@ -120,7 +142,19 @@ $feature-color: #555;
   }
 }
 
+// Value proposition
 
+#value-proposition {
+  padding: $base-line-height * 4 0;
+  background: #d0eaf0;
+  .h3 {
+    margin-bottom: $base-line-height;
+  }
+
+  ul {
+    @extend %default-ul;
+  }
+}
 
 // Reseting the display after setting it to display: table
 @include reset-display();
