@@ -178,8 +178,12 @@ $feature-color: #555;
 .calculator-label {
   padding-bottom: $base-line-height *.5;
   font-size: $base-font-size * 1.25;
-  font-weight: bold;
   @include span-columns(4);
+}
+
+.result-label {
+  font-size: $base-font-size * 1.25;
+  @include span-columns(6);
 }
 
 .calculator-input,
