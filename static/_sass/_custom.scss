@@ -48,77 +48,78 @@
 
 /* Features */
 
-$feature-height: em(120);
 $feature-color: #555;
 
 #features {
-  padding: em(10);
-  background: $feature-bg;
-
-
-  .row {
-    @include row(table);
-    // border-top: 1px solid #f1f1f1;
-    // border-bottom: 1px solid #f1f1f1;
-  }
-}
-
-.feature {
-  @include span-columns(2);
-  @include pad();
-  height: $feature-height;
+  padding: 0;
   position: relative;
-  overflow: hidden;
 
-  .feature-title {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    text-align: center;
-    cursor: pointer;
-    @include transition(.5s $ease-out-quad);
+  .tab-container {
+    background: darken($feature-bg, 5%);
 
-    h3 {
-      position: relative;
-      font-size: $base-font-size;
-      color: $feature-color;
-      @include transition(color .2s);
-    }
+    .feature {
+      @include span-columns(2);
+      @include pad(0);
 
-    .svg-icon {
-      width: 30%;
+      .tab {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        display: block;
+        padding: em(20) 0;
+        height: em(140);
 
-      path {
-        fill: $feature-color;
-        @include transition(fill .2s);
+        h3 {
+          font-size: $base-font-size;
+          color: $feature-color;
+          @include transition(color .2s);
+        }
+
+        .svg-icon {
+          width: 28%;
+
+          path {
+            fill: $feature-color;
+            @include transition(fill .2s);
+          }
+        }
+
+        &.active {
+          background: $feature-bg;
+        }
+
+        &:hover {
+          h3 {
+            color: $base-accent-color;
+          }
+
+          .svg-icon path {
+            fill: $base-accent-color;
+          }
+        }
       }
     }
   }
 
-  &:hover {
-    h3 {
-      color: $base-accent-color;
-    }
+  .tab-content-container {
+    background: $feature-bg;
+    padding: em(20) 0;
+    position: relative;
+    top: -140px;
+    z-index:-1;
 
-    .svg-icon path {
-      fill: $base-accent-color;
-    }
-  }
-  .feature-info {
-    display: none;
-    top: -100%;
-    left: 0;
-    padding: em(20);
-    background: #fff;
-    color: $feature-bg;
+    .tab-content {
+      article {
+        display: none;
 
-    &.active {
-      top: 100%;
+        &.active {
+          display: block;
+        }
+      }
     }
   }
 }
+
 
 
 // Reseting the display after setting it to display: table
@@ -170,13 +171,20 @@ $feature-color: #555;
 }
 
 .calculator-input-group {
-  padding: $base-line-height 0;
+  @include row();
+  padding: $base-line-height 0 ($base-line-height * 2) 0;
 }
 
 .calculator-label {
   padding-bottom: $base-line-height *.5;
   font-size: $base-font-size * 1.25;
   font-weight: bold;
+  @include span-columns(4);
+}
+
+.calculator-input,
+input.calculator-input {
+  @include span-columns(8);
 }
 
 .slider-value {
@@ -191,42 +199,61 @@ $feature-color: #555;
   background: #fff;
 }
 
-/* Step by Step */
+// v2 Interactions
+#calculator-2,
+#calculator-results {
+  display: none;
+}
 
-.tabs {
-  @include span-columns(4);
+#calculator-results {
+  padding: em(20);
+  margin-bottom: em(60);
+  background: #f1f1f1;
 
-  a {
-    display: block;
-    padding: em(10);
-    margin: $base-line-height * .5 0;
-    background: #f1f1f1;
-
-    &.active {
-      background: $base-accent-color;
-      color: #fff;
-      position: relative;
-
-      &:after {
-        position: absolute;
-        content: '';
-        top: 0;
-        right: em(10) * -1;
-        @include triangle(em(40), $base-accent-color, right);
-      }
-    }
+  .calculator-result {
+    font-size: $base-font-size * 1.25;
+    font-weight: bold;
+    color: $myra-green;
   }
 }
 
-.tab-content {
-  @include span-columns(8);
-  padding: em(10) 0;
-  article {
-    display: none;
-    padding: em(20);
-    background: #f9f9f9;
-    &.active {
+/* Step by Step */
+#step-by-step {
+  .tabs {
+    @include span-columns(4);
+
+    a {
       display: block;
+      padding: em(10);
+      margin: $base-line-height * .5 0;
+      background: #f1f1f1;
+
+      &.active {
+        background: $base-accent-color;
+        color: #fff;
+        position: relative;
+
+        &:after {
+          position: absolute;
+          content: '';
+          top: 0;
+          right: em(10) * -1;
+          @include triangle(em(40), $base-accent-color, right);
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    @include span-columns(8);
+    padding: em(10) 0;
+    article {
+      display: none;
+      padding: em(20);
+      background: #f9f9f9;
+      &.active {
+        display: block;
+      }
     }
   }
 }
