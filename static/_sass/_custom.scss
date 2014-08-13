@@ -7,31 +7,10 @@
   }
 
   .site-nav {
-    li {
-      position: relative;
-
-      &:hover {
-        .subnav {
-          display: block;
-        }
-
-      }
-    }
 
     a {
       color: #fff;
     }
-  }
-}
-
-.subnav {
-  display: none;
-  position: absolute;
-  background: $myra-green;
-
-  li {
-    width: 100%;
-
   }
 }
 

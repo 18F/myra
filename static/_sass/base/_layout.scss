@@ -90,6 +90,7 @@ nav {
     position: absolute;
     display: none;
     li {
+      width: 100%;
       a {
         background: $menu-color;
       }
@@ -107,7 +108,7 @@ section {
 
 // Footer
 footer {
-  background: #333;
+  background: $myra-dark-blue;
   color: #fff;
   padding: $base-line-height 0;
 
