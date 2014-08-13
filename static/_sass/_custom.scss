@@ -51,69 +51,75 @@
 $feature-color: #555;
 
 #features {
-  background: $feature-bg;
   padding: 0;
+  position: relative;
 
   .tab-container {
     background: darken($feature-bg, 5%);
+
+    .feature {
+      @include span-columns(2);
+      @include pad(0);
+
+      .tab {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        display: block;
+        padding: em(20) 0;
+        height: em(140);
+
+        h3 {
+          font-size: $base-font-size;
+          color: $feature-color;
+          @include transition(color .2s);
+        }
+
+        .svg-icon {
+          width: 28%;
+
+          path {
+            fill: $feature-color;
+            @include transition(fill .2s);
+          }
+        }
+
+        &.active {
+          background: $feature-bg;
+        }
+
+        &:hover {
+          h3 {
+            color: $base-accent-color;
+          }
+
+          .svg-icon path {
+            fill: $base-accent-color;
+          }
+        }
+      }
+    }
   }
 
   .tab-content-container {
+    background: $feature-bg;
     padding: em(20) 0;
-  }
-  .tab-content {
-    article {
-      display: none;
+    position: relative;
+    top: -140px;
+    z-index:-1;
 
-      &.active {
-        display: block;
+    .tab-content {
+      article {
+        display: none;
+
+        &.active {
+          display: block;
+        }
       }
     }
   }
 }
 
-.feature {
-  @include span-columns(2);
-  @include pad(0);
-
-  .tab {
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-    display: block;
-    padding: em(20) 0;
-    height: em(140);
-    h3 {
-      font-size: $base-font-size;
-      color: $feature-color;
-      @include transition(color .2s);
-    }
-
-    .svg-icon {
-      width: 30%;
-
-      path {
-        fill: $feature-color;
-        @include transition(fill .2s);
-      }
-    }
-
-    &.active {
-      background: $feature-bg;
-    }
-
-    &:hover {
-      h3 {
-        color: $base-accent-color;
-      }
-
-      .svg-icon path {
-        fill: $base-accent-color;
-      }
-    }
-  }
-
-}
 
 
 // Reseting the display after setting it to display: table
@@ -165,13 +171,20 @@ $feature-color: #555;
 }
 
 .calculator-input-group {
-  padding: $base-line-height 0;
+  @include row();
+  padding: $base-line-height 0 ($base-line-height * 2) 0;
 }
 
 .calculator-label {
   padding-bottom: $base-line-height *.5;
   font-size: $base-font-size * 1.25;
   font-weight: bold;
+  @include span-columns(4);
+}
+
+.calculator-input,
+input.calculator-input {
+  @include span-columns(8);
 }
 
 .slider-value {
@@ -184,6 +197,24 @@ $feature-color: #555;
 
 .noUi-origin {
   background: #fff;
+}
+
+// v2 Interactions
+#calculator-2,
+#calculator-results {
+  display: none;
+}
+
+#calculator-results {
+  padding: em(20);
+  margin-bottom: em(60);
+  background: #f1f1f1;
+
+  .calculator-result {
+    font-size: $base-font-size * 1.25;
+    font-weight: bold;
+    color: $myra-green;
+  }
 }
 
 /* Step by Step */
