@@ -28,7 +28,7 @@ $(document).ready(function(){
     $(tabId).addClass('active');
   });
 
-  $('#features .tab').click(function(){
+  $('.features .tab').click(function(){
     $('.tab-content-container').animate({
       marginTop: 0,
     })
