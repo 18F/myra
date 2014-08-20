@@ -2,12 +2,22 @@
 .site-header {
   background: $myra-green;
 
+  hgroup {
+    padding-top: em(20);
+  }
   .site-title {
     color: #fff;
   }
 
-  .site-nav {
+  .coming-soon {
+    color: #fff;
+    float: right;
+    margin: em(10) 0 0 0;
+  }
 
+  .site-nav {
+    float: right;
+    clear: right;
     a {
       color: #fff;
     }
@@ -16,7 +26,7 @@
 
 /* Hero */
 
-#hero {
+.hero {
   padding: em(100) 0;
 
   p {
@@ -51,7 +61,7 @@
 
 $feature-color: #555;
 
-#features {
+.features {
   padding: 0;
   position: relative;
 
@@ -123,7 +133,7 @@ $feature-color: #555;
 
 // Value proposition
 
-#value-proposition {
+.value-proposition {
   padding: $base-line-height * 4 0;
   background: #d0eaf0;
   .h3 {
@@ -140,15 +150,22 @@ $feature-color: #555;
 
 /* Call to Action section */
 
-#call-to-action {
+.call-to-action {
   $cta-bg: #D6F5E3;
   background: $cta-bg;
 
   .input-group {
     @include span-columns(6);
     @include shift(3);
+    background: none;
+    border: none;
 
-    input[type="email"] {
+    label {
+      text-align: left;
+    }
+
+    input[type="email"],
+    input[type="text"] {
       @include span-columns(6 of 6);
       padding: .75em 1em;
       margin-bottom: $base-line-height * .5;
@@ -164,7 +181,7 @@ $feature-color: #555;
 
 /* myRA Story */
 
-#myra-story {
+.myra-story {
   padding: 0;
 
   .bx-wrapper .bx-viewport {
@@ -186,7 +203,7 @@ $feature-color: #555;
 }
 
 /* Calculator */
-#calculator {
+.calculator {
   padding-bottom: 0;
 
   .container {
@@ -270,7 +287,7 @@ $feature-color: #555;
 }
 
 /* Step by Step */
-#step-by-step {
+.step-by-step {
   .tabs {
     @include span-columns(4);
 
@@ -312,11 +329,11 @@ $feature-color: #555;
 
 // v3
 // Benefits
-#who {
+.who {
   background: #f1f1f1;
 }
 
-#benefits {
+.benefits {
   aside {
     padding: em(20) 0;
     margin-bottom: $base-line-height;
@@ -331,7 +348,7 @@ $feature-color: #555;
 }
 
 // Stacked steps
-#step-by-step.stacked-steps {
+.step-by-step.stacked-steps {
   .tabs {
     display: none;
   }
