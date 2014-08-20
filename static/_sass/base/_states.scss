@@ -1,6 +1,5 @@
 // Presentational states
 
-// Hidding visually but keeping for screen readers
 .hidden {
-  text-indent: -99999px;
+  display: none !important;
 }
