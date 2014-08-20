@@ -196,27 +196,32 @@ $feature-color: #555;
 
 .calculator-input-group {
   @include row();
-  padding: $base-line-height 0 ($base-line-height * 2) 0;
+  padding: $base-line-height 0 ($base-line-height * .5) 0;
+
+  &#calculator-3 {
+    padding-bottom: $base-line-height * 2;
+  }
+}
+
+.calculator-instructions {
+  font-size: $base-font-size * 1.25;
+  @include span-columns(12);
+  font-weight: bold;
 }
 
 .calculator-label {
-  padding-bottom: $base-line-height *.5;
-  font-size: $base-font-size * 1.25;
+  @include span-columns(12);
+  font-weight: normal;
+}
+
+.calculator-input {
   @include span-columns(4);
 }
 
-.result-label {
-  font-size: $base-font-size * 1.25;
-  @include span-columns(6);
-}
-
-.calculator-input,
-input.calculator-input {
+.calculator-slider {
   @include span-columns(8);
-}
-
-.slider-value {
-  color: $blue;
+  @include omega();
+  margin-top: em(8);
 }
 
 .noUi-base {
@@ -227,10 +232,16 @@ input.calculator-input {
   background: #fff;
 }
 
+.result-label {
+  font-size: $base-font-size * 1.25;
+  padding-bottom: $base-line-height;
+  @include span-columns(12);
+}
+
 // v2 Interactions
-#calculator-2,
+// #calculator-2,
 #calculator-results {
-  display: none;
+  // display: none;
 }
 
 #calculator-results {
@@ -238,10 +249,23 @@ input.calculator-input {
   margin-bottom: em(60);
   background: #f1f1f1;
 
-  .calculator-result {
-    font-size: $base-font-size * 1.25;
+  .calculator-result,
+  .savings-rate {
     font-weight: bold;
-    color: $myra-green;
+  }
+
+  .base-goal {
+    .calculator-result,
+    .savings-rate {
+      color: $myra-light-blue;
+    }
+  }
+
+  .reach-goal {
+    .calculator-result,
+    .savings-rate {
+      color: $myra-green;
+    }
   }
 }
 
@@ -282,6 +306,44 @@ input.calculator-input {
       &.active {
         display: block;
       }
+    }
+  }
+}
+
+// v3
+// Benefits
+#who {
+  background: #f1f1f1;
+}
+
+#benefits {
+  aside {
+    padding: em(20) 0;
+    margin-bottom: $base-line-height;
+    &:nth-child(odd) {
+      @include omega();
+    }
+
+    ul {
+      @extend %default-ul;
+    }
+  }
+}
+
+// Stacked steps
+#step-by-step.stacked-steps {
+  .tabs {
+    display: none;
+  }
+
+  .tab-content {
+    @include span-columns(12);
+
+    article {
+      padding: em(20) 0;
+      display: block;
+      background: none;
+      border-bottom: 1px solid #f9f9f9;
     }
   }
 }
