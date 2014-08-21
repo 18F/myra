@@ -105,10 +105,20 @@ section {
   padding: em(40);
 }
 
+.inverse {
+  background: $myra-dark-blue;
+  color: #fff;
+}
+
+.gray {
+  background: #f9f9f9;
+}
+
+
 
 // Footer
 footer {
-  background: $myra-dark-blue;
+  background: #333;
   color: #fff;
   padding: $base-line-height 0;
 
