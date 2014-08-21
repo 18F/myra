@@ -364,3 +364,12 @@ $feature-color: #555;
     }
   }
 }
+
+// Employer Page
+.employer {
+  .benefits {
+    article {
+        margin-bottom: $base-line-height * 2;
+    }
+  }  
+}
