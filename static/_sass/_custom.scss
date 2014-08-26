@@ -67,6 +67,7 @@ $feature-color: #555;
 
   .tab-container {
     background: darken($feature-bg, 5%);
+    @include clearfix();
 
     .feature {
       @include span-columns(2);
@@ -116,7 +117,6 @@ $feature-color: #555;
     background: $feature-bg;
     padding: em(20) 0;
     position: relative;
-    margin-top: -140px;
     z-index:-1;
 
     .tab-content {
@@ -371,5 +371,5 @@ $feature-color: #555;
     article {
         margin-bottom: $base-line-height * 2;
     }
-  }  
+  }
 }
