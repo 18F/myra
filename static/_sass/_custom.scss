@@ -372,4 +372,17 @@ $feature-color: #555;
         margin-bottom: $base-line-height * 2;
     }
   }
+
+  .call-to-action {
+    input,
+    label,
+    button {
+      @include span-columns(6 of 8);
+    }
+
+    img {
+      border: 1px solid $myra-green;
+      @include span-columns(3 of 4);
+    }
+  }
 }

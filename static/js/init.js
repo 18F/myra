@@ -41,4 +41,10 @@ $(document).ready(function(){
 
   });
 
+  // Reveal employer forms
+  $('#submit').click(function(){
+    $('#download-form').addClass('hidden');
+    $('#download-button').removeClass('hidden');
+  })
+
 })

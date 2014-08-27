@@ -7,8 +7,34 @@ bodyclass: employer
   <div class="container">
     <p class="headline">myRA is a brand new way to help your employees save for retirement.</p>
     <p>It’s simple, safe and affordable—for your employees and you.</p>
-    <p><button>Download materials about myRA</button></p>
     <p><a href="#learn-more">Learn more.</a></p>
+  </div>
+</section>
+
+<section class="lead-capture call-to-action">
+  <div class="container">
+    <div class="span-columns-8">
+      <div id="download-form">
+        <h2>Introduce your employees to myRA</h2>
+        <p>To download materials to share with your employees, please tell us about yourself.</p>
+        <form>
+          <label for="email">Your Email Address</label>
+          <input id="email" type="email">
+          <label for="company">Company Name</label>
+          <input id="company" type="text">
+          <label for="size" type="text">Number of employees</label>
+          <input id="size" type="text">
+        </form>
+        <button id="submit">Submit</button>
+      </div>
+      <div id="download-button" class="hidden align-center">
+        <h4>Thank you</h4>
+        <p><button>Download materials about myRA</button></p>
+      </div>
+    </div>
+    <div class="span-columns-4">
+      <img src="{{ site.baseurl }}/static/img/employee-info-thumb.jpg" alt="myRA information for employees">
+    </div>
   </div>
 </section>
 
