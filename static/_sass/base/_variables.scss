@@ -1,6 +1,8 @@
 // Typography
-$sans-serif: $helvetica;
-$serif: $georgia;
+$garamond: 'adobe-garamond-pro';
+$pn: 'proxima-nova';
+$sans-serif: $pn, 'helvetica', 'arial', sans-serif;
+$serif: $garamond, 'georgia', serif;
 $base-font-family: $sans-serif;
 $header-font-family: $base-font-family;
 
