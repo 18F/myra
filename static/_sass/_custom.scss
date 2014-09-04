@@ -9,7 +9,7 @@
 }
 
 .site-header {
-  background: $myra-green;
+  background: $myra-blue2;
 
   hgroup {
     padding-top: em(20);
@@ -74,7 +74,7 @@ nav {
 
         &:hover {
           color: #fff;
-          background: darken($header-bg, 10%);
+          background: darken($myra-blue1, 10%);
         }
       }
     }
@@ -135,7 +135,7 @@ $feature-color: #555;
   position: relative;
 
   .tab-container {
-    background: darken($feature-bg, 5%);
+    background: darken($myra-blue1, 5%);
     @include clearfix();
 
     .feature {
@@ -166,7 +166,7 @@ $feature-color: #555;
         }
 
         &.active {
-          background: $feature-bg;
+          background: $myra-blue1;
         }
 
         &:hover {
@@ -183,7 +183,7 @@ $feature-color: #555;
   }
 
   .tab-content-container {
-    background: $feature-bg;
+    background: $myra-blue1;
     padding: em(20) 0;
     position: relative;
     z-index:-1;
@@ -343,7 +343,7 @@ $feature-color: #555;
   .base-goal {
     .calculator-result,
     .savings-rate {
-      color: $myra-light-blue;
+      color: #000;;
     }
   }
 
