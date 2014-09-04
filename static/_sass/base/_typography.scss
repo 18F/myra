@@ -99,10 +99,18 @@ cite {
   }
 }
 
-// Typographic style helpers
+.display {
+  display: block;
+  font-family: $serif;
+  font-size: $base-font-size * 3;
+  line-height: 1.25;
+  margin-bottom: 0;
+}
 
-.center-align {
-  text-align: center;
+.sub-headline {
+  display: block;
+  font-family: $serif;
+  font-size: $base-font-size * 1.75;
 }
 
 .lead-text {
@@ -113,8 +121,10 @@ cite {
   font-size: $base-font-size * .75;
 }
 
-.headline {
-  font-size: $base-font-size * 2;
-  margin-bottom: 0;
-  font-weight: bold;
+.bold {
+  font-weight: 700;
+}
+
+.light {
+  font-weight: 300;
 }

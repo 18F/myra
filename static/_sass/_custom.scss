@@ -9,28 +9,18 @@
 }
 
 .site-header {
-  background: $myra-blue2;
+  background: #fff;
+  border-bottom: 4px solid $myra-blue1;
 
   hgroup {
     padding-top: em(20);
     float: left;
   }
-  .site-title {
-    color: #fff;
-  }
 
   .coming-soon {
-    color: #fff;
+    color: #000;
     float: right;
-    margin: em(10) 0 0 0;
-  }
-
-  .site-nav {
-    float: right;
-    clear: right;
-    a {
-      color: #fff;
-    }
+    margin: em(20) 0 0 0;
   }
 }
 
@@ -40,55 +30,34 @@
   z-index: 1;
   margin-bottom: 0;
   a {
-    color: #fff;
+    color: #000;
   }
 }
 
 .site-subtitle {
   font-size: $base-font-size * 1.25;
-  color: #fff;
+  color: #000;
 }
 
 .site-nav {
   float: right;
-  line-height: 56px;
-}
+  clear: right;
+  padding-top: em(16);
 
-.site-nav .menu-icon { display: none; }
-
-// Navigation
-nav {
-  float: right;
-  ul {
-    li {
-      display: inline-block;
-      position: relative;
-
-      &:hover > .submenu {
-        display: block;
-      }
-
-      a {
-        display: block;
-        padding: em(14) em(10);
-
-        &:hover {
-          color: #fff;
-          background: darken($myra-blue1, 10%);
-        }
-      }
-    }
+  li {
+    display: inline-block;
+    position: relative;
   }
 
-  .submenu {
-    position: absolute;
+  a {
+    font-size: $base-font-size * 1.25;
+    display: block;
+    padding: 0 em(10);
+
+  }
+
+  .menu-icon {
     display: none;
-    li {
-      width: 100%;
-      a {
-        background: $menu-color;
-      }
-    }
   }
 }
 
@@ -97,34 +66,53 @@ nav {
 
 .hero {
   padding: em(100) 0;
+  background: $light-gray;
 
-  p {
-    font-size: $base-font-size * 1.5;
+  .display,
+  .sub-headline {
+    text-align: center;
+    @include span-columns(8);
+    @include shift(2);
   }
 
-  .hero-signup {
-    padding-top: $base-line-height;
-    @include span-columns(6);
-    @include shift(3);
+}
 
-    p {
-      font-size: $base-font-size;
-    }
+.hero-signup {
+  padding-top: $base-line-height;
+  @include span-columns(6);
+  @include shift(3);
 
-    label {
-      text-align: left;
-      margin-left: 10%;
-    }
-
-    input {
-      display: block;
-      width: 80%;
-      margin-left: 10%;
-    }
+  .flash-success {
+    margin-top: em(10);
+    clear: both;
   }
 }
 
+/* Page nav */
 
+.page-nav {
+  background: $light-gray;
+  text-align: center;
+  border-top: 1px solid $base-border-color;
+  border-bottom: 1px solid $base-border-color;
+
+  li {
+    display: inline-block;
+    padding: em(20) 0;
+
+    &:last-child {
+      a {
+        border-right: none;
+      }
+    }
+    
+    a {
+      display: block;
+      padding: 0 em(20);
+      border-right: 1px solid $base-border-color;
+    }
+  }
+}
 
 /* Features */
 
