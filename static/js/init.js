@@ -14,6 +14,11 @@ $(".nav-toggle").click(function() {
 
 
 $(document).ready(function(){
+  // Email signup
+  $("#email-capture button").click(function(e){
+    e.preventDefault();
+    $('#email-capture').append('<p class="flash-success">Congratulations on thinking about your future. We will email you when myRA is open for business.</p>');
+  })
 
   // Tabs
   $('.tab').click(function(e){
