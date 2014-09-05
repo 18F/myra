@@ -3,3 +3,34 @@
 .hidden {
   display: none !important;
 }
+
+
+// Animations
+
+.appear {
+  @include transition(all .5s ease-in);
+  &.fade-in {
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+
+  &.slide-in {
+    position: relative;
+    left: -200%;
+
+    &.visible {
+      left: 0;
+    }
+  }
+
+  &-slide-up {
+    position: relative;
+    top: -200%;
+    &.visible {
+      top: 0;
+    }
+  }
+}

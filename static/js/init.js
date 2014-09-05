@@ -12,14 +12,41 @@ $(".nav-toggle").click(function() {
 });
 
 
-
 $(document).ready(function(){
+
+  $('.benefit-block').addClass('appear fade-in');
+  $('.step').addClass('appear slide-in');
+  
+  // Page animation behavior
+  var windowHeight, scrollPos;
+  windowHeight = $(window).height();
+  scrollPos = $(window).scrollTop();
+
+  // This handles all of the transitions
+  // We'll get the position of anything with the appear class
+  // And then if that element is in the viewport, we add visible
+  // The animation tranistinos are handled in the sass
+  function makeVisible(element) {
+    var selfTop = element.offset().top;
+    if ( scrollPos > (selfTop - windowHeight + 200)) {
+      element.addClass('visible');
+    }
+  }
+
+  $('.appear').each(function(){
+    var self = $(this);
+    makeVisible(self);
+    $(window).scroll(function(){
+      scrollPos = $(window).scrollTop();
+      makeVisible(self);
+    })
+  })
 
   // Sticking page nav
   // First we get the offset and height of the page nav
   // Then when the scroll position goes beyond we set it to fixed position
   // And add padding to the top of body to keep everything smooth
-  var navTop, navHeight, scrollPos;
+  var navTop, navHeight;
   navTop = $('.page-nav').offset().top;
   navHeight = $('.page-nav').height();
   $(document).scroll(function(){
