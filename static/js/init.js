@@ -19,9 +19,8 @@ $(document).ready(function(){
   windowHeight = $(window).height();
   scrollPos = $(window).scrollTop();
   // We'll just add the appear classes in here so it doesn't mess up non-js browsers
-  $('.headline').addClass('appear fade-in');
   $('.benefit-block').addClass('appear fade-in');
-  $('.step').addClass('appear slide-in');
+  $('.stacked-steps .step').addClass('appear slide-in');
 
   // This handles all of the transitions
   // We'll get the position of anything with the appear class
@@ -50,47 +49,50 @@ $(document).ready(function(){
   // Then when the scroll position goes beyond we set it to fixed position
   // And add padding to the top of body to keep everything smooth
   var navTop, navHeight, sections;
-  navTop = $('.page-nav').offset().top;
-  navHeight = $('.page-nav').height();
+  if ( $('.page-nav').length > 0 ) {
+    navTop = $('.page-nav').offset().top;
+    navHeight = $('.page-nav').height();
 
-  // Build an array of all of the section ids
-  sections = []
-  $('.page-nav a').each(function(){
-    var id = $(this).attr('href');
-    sections.push(id);
-  });
-
-  $(document).scroll(function(){
-    scrollPos = $(window).scrollTop();
-    if (scrollPos >= navTop) {
-      $('.page-nav').addClass('fixed');
-      $('body').css('padding-top', navHeight);
-    } else {
-      $('.page-nav').removeClass('fixed');
-      $('body').css('padding-top', 0);
-    }
-
-    // See if the section associated with each link is visible
+    // Build an array of all of the section ids
+    sections = []
     $('.page-nav a').each(function(){
+      var id = $(this).attr('href');
+      sections.push(id);
+    });
+
+    $(document).scroll(function(){
+      scrollPos = $(window).scrollTop();
+      if (scrollPos >= navTop) {
+        $('.page-nav').addClass('fixed');
+        $('body').css('padding-top', navHeight);
+      } else {
+        $('.page-nav').removeClass('fixed');
+        $('body').css('padding-top', 0);
+      }
+
+      // See if the section associated with each link is visible
+      $('.page-nav a').each(function(){
+        var sectionId = $(this).attr('href');
+        var sectionTop = $(sectionId).offset().top;
+        if ( scrollPos > (sectionTop - 200)) {
+          $('.current-section').removeClass('current-section');
+          $(this).addClass('current-section');
+        } else {
+          $(this).removeClass('current-section');
+        }
+      })
+    })
+
+    // Scroll down to sections in page nav {
+    $('.page-nav a').click(function(){
       var sectionId = $(this).attr('href');
       var sectionTop = $(sectionId).offset().top;
-      if ( scrollPos > (sectionTop - 200)) {
-        $('.current-section').removeClass('current-section');
-        $(this).addClass('current-section');
-      } else {
-        $(this).removeClass('current-section');
-      }
+      $('html, body').animate({
+        scrollTop: sectionTop - navHeight
+      })
     })
-  })
+  }
 
-  // Scroll down to sections in page nav {
-  $('.page-nav a').click(function(){
-    var sectionId = $(this).attr('href');
-    var sectionTop = $(sectionId).offset().top;
-    $('html, body').animate({
-      scrollTop: sectionTop - navHeight
-    })
-  })
 
   // Email signup
   $("#email-capture button").click(function(e){
@@ -105,7 +107,6 @@ $(document).ready(function(){
     // Get the parent so that it only affects tabs in this section
     parent = $(this).parents('section');
     tabId = $(this).attr('href');
-    console.log(tabId);
     parent.find('.active').removeClass('active');
     $(this).addClass('active');
     $(tabId).addClass('active');

@@ -109,6 +109,7 @@ footer {
 /**************************/
 
 .hero {
+  height: 75vh;
   padding: em(50) 0;
   background: $light-gray;
 
@@ -191,7 +192,7 @@ footer {
 /* Features */
 /**************************/
 
-$feature-color: #555;
+$feature-color: #fff;
 
 .features {
   padding: 0;
@@ -206,6 +207,7 @@ $feature-color: #555;
       @include pad(0);
 
       .tab {
+        @include transition(background .2s);
         width: 100%;
         text-align: center;
         cursor: pointer;
@@ -228,18 +230,9 @@ $feature-color: #555;
           }
         }
 
-        &.active {
-          background: $myra-blue1;
-        }
-
+        &.active,
         &:hover {
-          h3 {
-            color: $base-accent-color;
-          }
-
-          .svg-icon path {
-            fill: $base-accent-color;
-          }
+          background: $myra-blue1;
         }
       }
     }
@@ -253,6 +246,9 @@ $feature-color: #555;
 
     .tab-content {
       article {
+        @include span-columns(8);
+        @include shift(2);
+        color: #fff;
         display: none;
 
         &.active {
@@ -268,8 +264,8 @@ $feature-color: #555;
 /**************************/
 
 .value-proposition {
+  @extend %inverse;
   padding: $base-line-height * 4 0;
-  background: #d0eaf0;
   .h3 {
     margin-bottom: $base-line-height;
   }
@@ -414,31 +410,83 @@ $feature-color: #555;
 /**************************/
 /* Step by Step */
 /**************************/
+.step-intro {
+  @include span-columns(9);
+  margin-bottom: $base-line-height;
+}
 
 .step-by-step {
   .tabs {
-    @include span-columns(4);
-
+    @include span-columns(12);
+    background: $light-gray;
+    li {
+      float: left;
+      width: 25%;
+      text-align: center;
+    }
     a {
+      @include transition(background .2s);
       display: block;
       padding: em(10);
-      margin: $base-line-height * .5 0;
-      background: #f1f1f1;
-
+      background: $light-gray;
+      border: darken($myra-green, 5);
+      color: $myra-blue1;
       &.active {
-        background: $base-accent-color;
-        color: #fff;
+        background: $medium-gray;
         position: relative;
-
-        &:after {
-          position: absolute;
-          content: '';
-          top: 0;
-          right: em(10) * -1;
-          @include triangle(em(40), $base-accent-color, right);
-        }
+        font-weight: 700;
+        color: $dark-gray;
       }
     }
+  }
+
+  .tab-body {
+    @include span-columns(12);
+    background: $medium-gray;
+    padding: em(20);
+  }
+
+  .step-content {
+    @include span-columns(8);
+  }
+
+  .step {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .numbered-heading {
+    display: none;
+  }
+}
+
+.stacked-steps {
+  border-top: 1px solid $base-border-color;
+  background: $light-gray;
+
+  .tabs {
+    display: none;
+  }
+
+  .numbered-heading {
+    margin-bottom: $base-font-size * 2;
+    .numbered-heading-number {
+      @include span-columns(1 of 9);
+      text-align: right;
+    }
+    .numbered-heading-title {
+      @include span-columns(8 of 9);
+    }
+  }
+
+  .tab-body {
+    @include span-columns(12);
+    background: none;
+    padding: 0;
+    color: $base-font-color;
   }
 
   .tab-content {
@@ -453,27 +501,6 @@ $feature-color: #555;
       }
     }
   }
-}
-
-.numbered-heading {
-  margin-bottom: $base-font-size * 2;
-  .numbered-heading-number {
-    @include span-columns(1 of 9);
-    text-align: right;
-  }
-  .numbered-heading-title {
-    @include span-columns(8 of 9);
-  }
-}
-
-.step-intro {
-  @include span-columns(9);
-  margin-bottom: $base-line-height;
-}
-
-.step-by-step {
-  border-top: 1px solid $base-border-color;
-  background: $light-gray;
 
   .step {
     @include span-columns(12);
@@ -500,6 +527,7 @@ $feature-color: #555;
     @include span-columns(3);
   }
 }
+
 /**************************/
 /* Who & Benefits
 /**************************/

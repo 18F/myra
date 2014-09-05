@@ -2,18 +2,20 @@
 layout: splash
 noindex: true
 ---
-<section class="hero center-align">
+<section class="hero">
   <div class="container">
-    <p class="headline">Introducing myRA:</p>
-    <p class="headline">A simple, safe, affordable account to kickstart saving for your future.</p>
-    <p>Brought to you be the United States Treasury</p>
+    <div class="headline appear fade-in">
+      <span class="display bold">Introducing myRA</span>
+      <span class="display">A simple, safe, affordable account to kickstart saving for your future.</span>
+      <span class="sub-headline">Brought to you be the United States Treasury</span>
+    </div>
     <div class="hero-signup">
-      <p>Enter your email address to be the first to know when myRA is available</p>
-      <form>
+      <h5>Sign up to be the first to know when myRA is available.</h5>
+      <form id="email-capture">
         <label for="email-address">Email address</label>
-        <div class="input-group">
+        <div class="button-group">
           <input type="email" id="email-address">
-          <input type="submit" value="Sign Up">
+          <button class="submit" value="Sign Up">Sign Up</button>
         </div>
       </form>
     </div>
@@ -22,7 +24,7 @@ noindex: true
 
 {% include individual-features.html %}
 
-{% include calculator-v2.html %}
+{% include calculator-v3.html %}
 
 {% include individual-signup.html %}
 

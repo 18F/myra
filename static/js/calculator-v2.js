@@ -40,7 +40,6 @@ $(document).ready(function(){
 
   //Set Interest Compound Periods
   var ip = 12;
-
   function setValues(){
     value1 = Number($('#input-1').val());
     value2 = Number($('#input-2').val().replace('$',''));
@@ -58,11 +57,11 @@ $(document).ready(function(){
     // Set savings rates in summary stats
     $('.summary .rate.base').html('$' + value2);
     $('.summary .rate.reach').html('$' + value3.formatMoney(0,'.',','));
-  }
+  };
 
   // Set the values and generate the graph every time you set input-2 value
   $('#calculator-2').change(function(){
-    $('#calculator-results').removeClass('hidden');
+    // $('#calculator-results').removeClass('hidden');
     setValues();
     graphIt();
   });
@@ -71,14 +70,15 @@ $(document).ready(function(){
   var apr = .035;
 
   // Set the values and generate graph every time you set input-3 value
-  $('#calculator-3 button').click(function(){
-      $('#calculator-3 .selected').removeClass('selected');
-      $(this).addClass('selected');
-      apr = $(this).data('apr');
-      setValues();
-      graphIt();
-  })
-
+  // $('#calculator-3 button').click(function(){
+  //     $('#calculator-3 .selected').removeClass('selected');
+  //     $(this).addClass('selected');
+  //     apr = $(this).data('apr');
+  //     setValues();
+  //     graphIt();
+  // })
+  setValues();
+  graphIt();
 
   // Chart.js implementation
   // http://www.chartjs.org/docs/#line-chart

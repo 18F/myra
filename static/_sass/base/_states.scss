@@ -26,11 +26,10 @@
     }
   }
 
-  &-slide-up {
+  &.slide-up {
     position: relative;
-    top: -200%;
+    
     &.visible {
-      top: 0;
     }
   }
 }
