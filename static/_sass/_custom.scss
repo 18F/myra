@@ -68,10 +68,17 @@
     display: block;
     padding: 4.5em em(10) .5em;
 
-    &:hover {
+    &.current-page {
+      background: darken($light-gray, 8);
+    }
+
+    &:hover,
+    &.current-page:hover {
       background: $myra-green;
       color: #fff;
     }
+
+
   }
 
   .menu-icon {

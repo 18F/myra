@@ -29,9 +29,9 @@
         </svg>
       </a>
       <ul>
-        <li><a class="page-link" href="{{ site.baseurl }}/individuals/v3">For Individuals</a></li>
-        <li><a class="page-link" href="{{ site.baseurl }}/employers">For Employers</a></li>
-        <li><a class="page-link" href="{{ site.baseurl }}/about">About myRA</a></li>
+        <li><a class="page-link {% if page.title == 'Individuals' %}current-page {% endif %}" href="{{ site.baseurl }}/individuals/v3">For Individuals</a></li>
+        <li><a class="page-link {% if page.title == 'Employers' %}current-page {% endif %}" href="{{ site.baseurl }}/employers">For Employers</a></li>
+        <li><a class="page-link {% if page.title == 'About' %}current-page {% endif %}" href="{{ site.baseurl }}/about">About myRA</a></li>
       </ul>
     </nav>
 

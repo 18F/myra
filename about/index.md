@@ -1,6 +1,7 @@
 ---
 layout: default
 noindex: true
+title: About
 ---
 
 # About myRA
