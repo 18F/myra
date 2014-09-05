@@ -150,9 +150,14 @@ footer {
   border-top: 1px solid $base-border-color;
   border-bottom: 1px solid $base-border-color;
   width: 100%;
-  li {
+
+  ul {
     display: inline-block;
-    padding: em(20) 0;
+  }
+
+  li {
+    float: left;
+    padding: em(10) 0;
 
     &:last-child {
       a {
@@ -162,8 +167,13 @@ footer {
 
     a {
       display: block;
-      padding: 0 em(20);
+      padding: em(10) em(20);
       border-right: 1px solid $base-border-color;
+    }
+
+    .current-section {
+      background: $myra-green;
+      color: #fff;
     }
   }
 

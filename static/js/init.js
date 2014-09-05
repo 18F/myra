@@ -14,13 +14,14 @@ $(".nav-toggle").click(function() {
 
 $(document).ready(function(){
 
-  $('.benefit-block').addClass('appear fade-in');
-  $('.step').addClass('appear slide-in');
-  
   // Page animation behavior
   var windowHeight, scrollPos;
   windowHeight = $(window).height();
   scrollPos = $(window).scrollTop();
+  // We'll just add the appear classes in here so it doesn't mess up non-js browsers
+  $('.headline').addClass('appear fade-in');
+  $('.benefit-block').addClass('appear fade-in');
+  $('.step').addClass('appear slide-in');
 
   // This handles all of the transitions
   // We'll get the position of anything with the appear class
@@ -42,13 +43,23 @@ $(document).ready(function(){
     })
   })
 
+
+
   // Sticking page nav
   // First we get the offset and height of the page nav
   // Then when the scroll position goes beyond we set it to fixed position
   // And add padding to the top of body to keep everything smooth
-  var navTop, navHeight;
+  var navTop, navHeight, sections;
   navTop = $('.page-nav').offset().top;
   navHeight = $('.page-nav').height();
+
+  // Build an array of all of the section ids
+  sections = []
+  $('.page-nav a').each(function(){
+    var id = $(this).attr('href');
+    sections.push(id);
+  });
+
   $(document).scroll(function(){
     scrollPos = $(window).scrollTop();
     if (scrollPos >= navTop) {
@@ -58,6 +69,19 @@ $(document).ready(function(){
       $('.page-nav').removeClass('fixed');
       $('body').css('padding-top', 0);
     }
+
+    // See if the section associated with each link is visible
+    $('.page-nav a').each(function(){
+      var sectionId = $(this).attr('href');
+      var sectionTop = $(sectionId).offset().top;
+      console.log(sectionId + ' ' + sectionTop);
+      if ( scrollPos > (sectionTop - 200)) {
+        $('.current-section').removeClass('current-section');
+        $(this).addClass('current-section');
+      } else {
+        $(this).removeClass('current-section');
+      }
+    })
   })
 
   // Email signup
