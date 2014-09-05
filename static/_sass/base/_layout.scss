@@ -1,5 +1,9 @@
 // Styles for general page layout
 
+body {
+  min-width: 960px;
+}
+
 .container {
   @include outer-container();
 }
@@ -38,17 +42,4 @@ section {
 
 .gray {
   background: #f9f9f9;
-}
-
-
-
-// Footer
-footer {
-  background: #333;
-  color: #fff;
-  padding: $base-line-height 0;
-
-  .left {
-    @include span-columns(6);
-  }
 }

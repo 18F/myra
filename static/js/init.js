@@ -17,7 +17,7 @@ $(document).ready(function(){
   // Email signup
   $("#email-capture button").click(function(e){
     e.preventDefault();
-    $('#email-capture').append('<p class="flash-success">Congratulations on thinking about your future. We will email you when myRA is open for business.</p>');
+    $('#email-capture').append('<div class="flash-success"><p>Congratulations on thinking about your future.</p><p>We will email you when myRA is open for business.</p></div>');
   })
 
   // Tabs

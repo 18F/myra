@@ -17,20 +17,24 @@ h1, h2, h3, h4, h5, h6,
 
 h1,
 .h1 {
-  font-size: $base-font-size * 2.25; // 16 * 2.25 = 36px
+  font-size: $base-font-size * 3; // 16 * 3 = 48px;
   font-weight: bold;
 }
 
 h2,
 .h2 {
-  font-size: $base-font-size * 2; // 16 * 2 = 32px
+  font-size: $base-font-size * 2.125; // 16 * 2.125 = 34px
   font-weight: bold;
+  color: #000;
 }
 
 h3,
 .h3 {
-  font-size: $base-font-size * 1.75; // 16 * 1.75 = 28px
-  font-weight: bold;
+  font-size: $base-font-size * 1.625; // 16 * 1.625 = 26px
+  color: $myra-blue2;
+  font-weight: 400;
+  // font-size: $base-font-size * 1.75; // 16 * 1.75 = 28px
+  // font-weight: bold;
 }
 
 h4,
@@ -43,6 +47,7 @@ h5,
 .h5 {
   font-size: $base-font-size * 1.25; // 16 * 1.25 = 20px
   font-weight: bold;
+  border-bottom: 1px solid #000;
 }
 
 h6,
