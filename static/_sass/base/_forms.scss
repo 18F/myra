@@ -14,7 +14,6 @@ select {
 }
 
 label {
-  font-weight: bold;
   margin-bottom: $base-line-height / 4;
 
   &.required:after {
@@ -46,6 +45,7 @@ select[multiple=multiple] {
 
   &:focus {
     border-color: $form-border-color-focus;
+    border-width: 1px;
     box-shadow: $form-box-shadow-focus;
     outline: none;
   }
@@ -74,4 +74,23 @@ select {
   width: auto;
   max-width: 100%;
   margin-bottom: $base-line-height;
+}
+
+.button-group {
+  @include span-columns(6 of 6);
+
+  input[type="text"],
+  input[type="email"] {
+    display: block;
+    @include span-columns(4 of 6, block-collapse);
+    border-radius: $base-border-radius 0 0 $base-border-radius;
+    height: em(40);
+  }
+
+  input[type="submit"],
+  button {
+    @include span-columns(2 of 6);
+    border-radius: 0 $base-border-radius $base-border-radius 0;
+    height: em(40);
+  }
 }

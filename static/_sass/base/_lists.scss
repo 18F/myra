@@ -18,6 +18,13 @@ ul, ol {
   }
 }
 
+.horizontal-list {
+  li {
+    display: inline-block;
+    padding: 0 em(10);
+  }
+}
+
 dl {
   margin-bottom: $base-line-height / 2;
 

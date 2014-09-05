@@ -1,19 +1,30 @@
 ---
-layout: default
+layout: splash
 noindex: true
+title: home
+bodyclass: home
 ---
 
-<div class="home">
+<section class="hero">
+  <div class="container">
+    <div class="headline">
+      <span class="display">Finally, a retirement account for the millions of Americans who need one.</span>
+      <span class="sub-headline">myRA—my retirement account—is a simple, safe, affordable retirement account brought to you be the United States Treasury.</span>
+    </div>
+  </div>
+</section>
 
-  <h1>Posts</h1>
-
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-</div>
+<section class="audience">
+  <div class="container">
+    <aside>
+      <h2>For Individuals</h2>
+      <p>Anyone can begin safely saving for their retirement, regardless of job or income.</p>
+      <a href="{{ site.baseurl }}/individuals/">Learn more &raquo;</a>
+    </aside>
+    <aside>
+      <h2>For Employers</h2>
+      <p>Stay competitive by offering a retirement savings plan to your employees. At no cost to you.</p>
+      <a href="{{ site.baseurl }}/individuals/">Learn more &raquo;</a>
+    </aside>
+  </div>
+</section>

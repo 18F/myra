@@ -1,6 +1,8 @@
 // Typography
-$sans-serif: $helvetica;
-$serif: $georgia;
+$garamond: 'adobe-garamond-pro';
+$pn: 'proxima-nova';
+$sans-serif: $pn, 'helvetica', 'arial', sans-serif;
+$serif: $garamond, 'georgia', serif;
 $base-font-family: $sans-serif;
 $header-font-family: $base-font-family;
 
@@ -14,28 +16,25 @@ $base-border-radius: em(3);
 // Colors
 $blue: #477DCA;
 $dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #DDD;
+$medium-gray: #D3D3D3;
+$light-gray: #F9F9F9;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
-$light-green: #E6EFC2;
+$light-green: #dcf5ed;
 
 // myRA Colors
-$myra-green: #49B577;
-$myra-dark-blue: #005568;
-$myra-light-blue: #1297B5;
+$myra-green: #2FA380;
+$myra-blue1: #04688D;
+$myra-blue2: #0C88A8;
+$myra-blue3: #15A9C4;
+$myra-blue4: #5FC5D8;
 
 // Background Color
 $base-background-color: white;
 
-// Layout Colors
-$header-bg: $myra-green;
-$footer-bg: $dark-gray;
-$feature-bg: #f1f1f1;
-
 // Font Colors
 $base-font-color: $dark-gray;
-$base-accent-color: $myra-light-blue;
+$base-accent-color: $myra-green;
 
 // Link Colors
 $base-link-color: $base-accent-color;
@@ -44,13 +43,13 @@ $base-button-color: $base-link-color;
 $hover-button-color: $hover-link-color;
 
 // Border color
-$base-border-color: $light-gray;
+$base-border-color: $medium-gray;
 
 // Flash Colors
 $alert-color: $light-yellow;
 $error-color: $light-red;
 $notice-color: $light-yellow;
-$success-color: $light-green;
+$success-color: $myra-green;
 
 // Forms
 $form-border-color: $base-border-color;
@@ -58,7 +57,7 @@ $form-border-color-hover: darken($base-border-color, 10);
 $form-border-color-focus: $base-accent-color;
 $form-border-radius: $base-border-radius;
 $form-box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-box-shadow-focus: none;
 $form-font-size: $base-font-size;
 $form-font-family: $base-font-family;
 

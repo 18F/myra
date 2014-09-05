@@ -1,5 +1,9 @@
 // Styles for general page layout
 
+body {
+  min-width: 960px;
+}
+
 .container {
   @include outer-container();
 }
@@ -24,85 +28,13 @@
   @include omega();
 }
 
-
-// Header
-.usa {
-  width: 100%;
-  border-bottom: 1px solid $light-gray;
-
-  p {
-    color: $dark-gray;
-  }
+.left {
+  float: left;
 }
 
-.site-header {
-
-  hgroup {
-    float: left;
-  }
-
-}
-
-
-.site-title{
-  letter-spacing: -1px;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 0;
-  a {
-    color: #fff;
-  }
-}
-
-.site-subtitle {
-  font-size: $base-font-size * 1.25;
-  color: #fff;
-}
-
-.site-nav {
+.right {
   float: right;
-  line-height: 56px;
 }
-
-.site-nav .menu-icon { display: none; }
-
-
-// Navigation
-nav {
-  float: right;
-  ul {
-    li {
-      display: inline-block;
-      position: relative;
-
-      &:hover > .submenu {
-        display: block;
-      }
-
-      a {
-        display: block;
-        padding: em(14) em(10);
-
-        &:hover {
-          color: #fff;
-          background: darken($header-bg, 10%);
-        }
-      }
-    }
-  }
-
-  .submenu {
-    position: absolute;
-    display: none;
-    li {
-      width: 100%;
-      a {
-        background: $menu-color;
-      }
-    }
-  }
-}
-
 
 // Sections
 
@@ -111,23 +43,10 @@ section {
 }
 
 .inverse {
-  background: $myra-dark-blue;
+  background: $myra-blue1;
   color: #fff;
 }
 
 .gray {
   background: #f9f9f9;
-}
-
-
-
-// Footer
-footer {
-  background: #333;
-  color: #fff;
-  padding: $base-line-height 0;
-
-  .left {
-    @include span-columns(6);
-  }
 }

@@ -1,63 +1,183 @@
+/**************************/
 /* Header */
+/**************************/
+
+.usa {
+  width: 100%;
+  border-bottom: 1px solid $light-gray;
+
+  p {
+    color: $dark-gray;
+  }
+}
+
 .site-header {
-  background: $myra-green;
+  background: #fff;
+  border-bottom: 4px solid $myra-blue1;
 
   hgroup {
     padding-top: em(20);
-  }
-  .site-title {
-    color: #fff;
+    float: left;
   }
 
   .coming-soon {
-    color: #fff;
+    color: #000;
     float: right;
-    margin: em(10) 0 0 0;
-  }
-
-  .site-nav {
-    float: right;
-    clear: right;
-    a {
-      color: #fff;
-    }
+    margin: em(20) 0 0 0;
   }
 }
 
+.site-title{
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+  a {
+    color: #000;
+  }
+}
+
+.site-subtitle {
+  font-size: $base-font-size * 1.25;
+  color: #000;
+}
+
+.site-nav {
+  float: right;
+  clear: right;
+  padding-top: em(16);
+
+  li {
+    display: inline-block;
+    position: relative;
+  }
+
+  a {
+    font-size: $base-font-size * 1.25;
+    display: block;
+    padding: 0 em(10);
+
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}
+
+/**********************/
+/* Footer
+/**********************/
+
+footer {
+  border-top: 4px solid $myra-blue1;
+  margin-top: $base-line-height * 2;
+  background: $light-gray;
+
+  .left {
+    @include span-columns(6);
+  }
+
+  h4 {
+    color: #4F4F4F;
+  }
+
+  .seal {
+    float: right;
+    margin-top: em(40);
+  }
+
+}
+
+.main-footer {
+  padding: em(30) 0;
+}
+
+.sub-footer {
+  background: $myra-blue1;
+  color: #fff;
+  padding: em(10);
+
+  span,
+  li {
+    font-size: $base-font-size * .75;
+  }
+}
+
+/**************************/
 /* Hero */
+/**************************/
 
 .hero {
-  padding: em(100) 0;
+  padding: em(50) 0;
+  background: $light-gray;
 
-  p {
-    font-size: $base-font-size * 1.5;
+  .display,
+  .sub-headline {
+    text-align: center;
+    @include span-columns(8);
+    @include shift(2);
   }
 
-  .hero-signup {
-    padding-top: $base-line-height;
-    @include span-columns(6);
-    @include shift(3);
+}
 
-    p {
-      font-size: $base-font-size;
-    }
+.headline {
+  @include row();
+  padding: em(30);
+  border-top: 1px solid $myra-green;
+  border-bottom: 1px solid $myra-green;
 
-    label {
-      text-align: left;
-      margin-left: 10%;
-    }
+}
 
-    input {
-      display: block;
-      width: 80%;
-      margin-left: 10%;
-    }
+.hero-signup {
+  margin-top: em(30);
+  padding-top: $base-line-height;
+  @include span-columns(6);
+  @include shift(3);
+
+  .flash-success {
+    margin-top: em(10);
+    clear: both;
   }
 }
 
+/**************************/
+/* Page nav */
+/**************************/
 
+.page-nav {
+  background: $light-gray;
+  text-align: center;
+  border-top: 1px solid $base-border-color;
+  border-bottom: 1px solid $base-border-color;
+  width: 100%;
+  li {
+    display: inline-block;
+    padding: em(20) 0;
 
+    &:last-child {
+      a {
+        border-right: none;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 0 em(20);
+      border-right: 1px solid $base-border-color;
+    }
+  }
+
+  &.fixed {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
+  }
+}
+
+/**************************/
 /* Features */
+/**************************/
 
 $feature-color: #555;
 
@@ -66,7 +186,7 @@ $feature-color: #555;
   position: relative;
 
   .tab-container {
-    background: darken($feature-bg, 5%);
+    background: darken($myra-blue1, 5%);
     @include clearfix();
 
     .feature {
@@ -97,7 +217,7 @@ $feature-color: #555;
         }
 
         &.active {
-          background: $feature-bg;
+          background: $myra-blue1;
         }
 
         &:hover {
@@ -114,7 +234,7 @@ $feature-color: #555;
   }
 
   .tab-content-container {
-    background: $feature-bg;
+    background: $myra-blue1;
     padding: em(20) 0;
     position: relative;
     z-index:-1;
@@ -131,7 +251,9 @@ $feature-color: #555;
   }
 }
 
-// Value proposition
+/**************************/
+/* Value proposition */
+/**************************/
 
 .value-proposition {
   padding: $base-line-height * 4 0;
@@ -148,34 +270,26 @@ $feature-color: #555;
 // Reseting the display after setting it to display: table
 @include reset-display();
 
+/**************************/
 /* Call to Action section */
+/**************************/
 
 .call-to-action {
-  $cta-bg: #D6F5E3;
-  background: $cta-bg;
+  @include linear-gradient(45deg, $myra-blue3, $myra-blue2);
+  border-top: 2px solid $myra-blue2;
+  border-bottom: 2px solid $myra-blue2;
 
-  .input-group {
+  p,
+  span,
+  label,
+  h2 {
+    color: #fff;
+  }
+
+  .button-group {
     @include span-columns(6);
-    @include shift(3);
     background: none;
     border: none;
-
-    label {
-      text-align: left;
-    }
-
-    input[type="email"],
-    input[type="text"] {
-      @include span-columns(6 of 6);
-      padding: .75em 1em;
-      margin-bottom: $base-line-height * .5;
-    }
-
-    input[type="submit"] {
-      @include span-columns(6 of 6);
-      margin-bottom: $base-line-height;
-
-    }
   }
 }
 
@@ -202,41 +316,61 @@ $feature-color: #555;
   }
 }
 
+/**************************/
 /* Calculator */
-.calculator {
-  padding-bottom: 0;
+/**************************/
 
-  .container {
-    border-bottom: 1px solid #c1c1c1;
+.calculator {
+  @include clearfix;
+  background: $light-gray;
+  border-radius: 5px;
+  padding: em(20);
+  border: 1px solid $base-border-color;
+
+  h4,
+  h5 {
+    padding-bottom: em(5);
+    border-bottom: 1px solid #000;
+  }
+
+  .toggle-buttons {
+    @include span-columns(6);
+  }
+
+  .graph,
+  .summary {
+    @include span-columns(6);
+  }
+
+  .base {
+    color: $myra-blue2;
+  }
+
+  .reach {
+    color: $myra-green;
   }
 }
 
 .calculator-input-group {
   @include row();
-  padding: $base-line-height 0 ($base-line-height * .5) 0;
+  padding: $base-line-height 0 0 0;
 
   &#calculator-3 {
     padding-bottom: $base-line-height * 2;
   }
 }
 
-.calculator-instructions {
-  font-size: $base-font-size * 1.25;
-  @include span-columns(12);
-  font-weight: bold;
-}
-
 .calculator-label {
-  @include span-columns(12);
+  @include span-columns(5);
   font-weight: normal;
 }
 
 .calculator-input {
-  @include span-columns(4);
+  @include span-columns(1);
 }
 
 .calculator-slider {
-  @include span-columns(8);
+  @include span-columns(6);
   @include omega();
   margin-top: em(8);
 }
@@ -249,44 +383,26 @@ $feature-color: #555;
   background: #fff;
 }
 
-.result-label {
-  font-size: $base-font-size * 1.25;
-  padding-bottom: $base-line-height;
-  @include span-columns(12);
-}
-
-// v2 Interactions
-// #calculator-2,
-#calculator-results {
-  // display: none;
-}
-
-#calculator-results {
-  padding: em(20);
-  margin-bottom: em(60);
-  background: #f1f1f1;
-
-  .calculator-result,
-  .savings-rate {
-    font-weight: bold;
-  }
-
-  .base-goal {
-    .calculator-result,
-    .savings-rate {
-      color: $myra-light-blue;
-    }
-  }
-
-  .reach-goal {
-    .calculator-result,
-    .savings-rate {
-      color: $myra-green;
-    }
+.summary {
+  .row {
+    margin-bottom: $base-line-height;
   }
 }
 
+.result {
+  @include span-columns (3 of 6);
+
+  .big-number {
+    font-size: $base-font-size * 3;
+    line-height: 1;
+    display: block;
+  }
+}
+
+/**************************/
 /* Step by Step */
+/**************************/
+
 .step-by-step {
   .tabs {
     @include span-columns(4);
@@ -327,45 +443,102 @@ $feature-color: #555;
   }
 }
 
-// v3
-// Benefits
-.who {
-  background: #f1f1f1;
-}
-
-.benefits {
-  aside {
-    padding: em(20) 0;
-    margin-bottom: $base-line-height;
-    &:nth-child(odd) {
-      @include omega();
-    }
-
-    ul {
-      @extend %default-ul;
-    }
+.numbered-heading {
+  margin-bottom: $base-font-size * 2;
+  .numbered-heading-number {
+    @include span-columns(1 of 9);
+    text-align: right;
+  }
+  .numbered-heading-title {
+    @include span-columns(8 of 9);
   }
 }
 
-// Stacked steps
-.step-by-step.stacked-steps {
-  .tabs {
-    display: none;
-  }
+.step-intro {
+  @include span-columns(9);
+  margin-bottom: $base-line-height;
+}
 
-  .tab-content {
+.step-by-step {
+
+  .step {
     @include span-columns(12);
+    margin-bottom: $base-line-height * 1.5;
 
-    article {
+    p {
+      @include span-columns(8 of 9);
+      @include shift(1 of 9);
+    }
+
+    div {
       padding: em(20) 0;
       display: block;
       background: none;
       border-bottom: 1px solid #f9f9f9;
     }
   }
+
+  .step-content {
+    @include span-columns(9);
+  }
+
+  .step-image {
+    @include span-columns(3);
+  }
+}
+/**************************/
+/* Who & Benefits
+/**************************/
+
+.who {
+  padding-bottom: 0;
+  .container {
+    padding-bottom: 2.5em;
+    border-bottom: 1px solid $base-border-color;
+  }
+
+  li {
+    @include span-columns(5);
+    position: relative;
+    display: block;
+    padding: em(20) 0;
+    clear: left;
+
+    &:before {
+      content: "\f14a";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      position: absolute;
+      left: -20px;
+    }
+
+    &:nth-child(even) {
+      @include shift(1);
+      clear: none;
+    }
+  }
+
 }
 
-// Employer Page
+.benefit-block {
+  @include span-columns(6);
+  padding: em(20) 0;
+  margin-bottom: $base-line-height;
+  &:nth-child(odd) {
+    @include omega();
+  }
+
+  ul {
+    @extend %default-ul;
+  }
+}
+
+
+
+/**************************/
+/* Employer Page
+/**************************/
+
 .employer {
   .benefits {
     article {
@@ -383,6 +556,45 @@ $feature-color: #555;
     img {
       border: 1px solid $myra-green;
       @include span-columns(3 of 4);
+    }
+  }
+}
+
+/**************************/
+/* Home Page
+/**************************/
+
+.home {
+  .hero {
+    background: #fff;
+  }
+
+  .display,
+  .sub-headline {
+    @include span-columns(10);
+    @include shift(0);
+    text-align: left;
+  }
+}
+
+.audience {
+  padding-top: 0;
+
+  aside {
+    @include span-columns(6);
+    padding: em(30) em(30);
+    background: $light-gray;
+    border: 1px solid $base-border-color;
+
+    p {
+      font-size: $base-font-size * 1.5;
+      font-family: $serif;
+    }
+
+    a {
+      font-size: $base-font-size * 1.5;
+      font-weight: bold;
+      text-align: center;
     }
   }
 }

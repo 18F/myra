@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="viewport" content="width=device-width">
+    <!-- <meta name="viewport" content="width=device-width"> -->
     <meta name="description" content="{{ site.description }}">
     <!-- meta robots -->
     {% if page.noindex %}
@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="{{ "/static/css/normalize.css" | prepend: site.baseurl }}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/static/css/style.css" | prepend: site.baseurl }}">
+
+    <!-- FontAwesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- jQuery noUI Slider style -->
     <link rel="stylesheet" href="{{ "/static/css/jquery.nouislider.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/static/css/jquery.bxslider.css" | prepend: site.baseurl }}">
@@ -24,5 +28,9 @@
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.nouislider.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/init.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/calculator-v2.js"></script>
+
+    <!-- Typekit code -->
+    <script type="text/javascript" src="//use.typekit.net/ssa5dyz.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 </head>

@@ -1,10 +1,40 @@
 button,
-input[type="submit"] {
+input[type="submit"],
+.button {
   @extend %button;
+  @include linear-gradient(lighten($myra-green, 5), $myra-green);
   @include appearance(none);
-  border: none;
+  border: 1px solid darken($myra-green, 5);
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+}
+
+.toggle-buttons {
+  button {
+    @include linear-gradient(lighten($medium-gray, 5), $medium-gray);
+    border: 1px solid darken($medium-gray, 20);
+    display: block;
+    float: left;
+    width: 33%;
+    margin: 0;
+    border-radius: 0;
+    color: $dark-gray;
+
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+    }
+
+    &.selected {
+      @include linear-gradient(lighten($myra-green, 5), $myra-green);
+      color: #fff;
+      // background: $myra-green;
+      border: 1px solid darken($myra-green, 10);
+    }
+  }
 }
