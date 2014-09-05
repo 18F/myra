@@ -74,7 +74,7 @@ $(document).ready(function(){
       $('.page-nav a').each(function(){
         var sectionId = $(this).attr('href');
         var sectionTop = $(sectionId).offset().top;
-        if ( scrollPos > (sectionTop - 200)) {
+        if ( scrollPos > (sectionTop - 46)) {
           $('.current-section').removeClass('current-section');
           $(this).addClass('current-section');
         } else {

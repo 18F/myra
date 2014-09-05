@@ -12,16 +12,26 @@
 }
 
 .site-header {
-  @include linear-gradient(45deg, $myra-blue2, $myra-blue1);
+  // @include linear-gradient(45deg, $myra-blue2, $myra-blue1);
   border-bottom: 4px solid $myra-blue1;
+  background: $light-gray;
+
+  .container {
+    position: relative;
+  }
 
   hgroup {
-    padding-top: em(20);
+    padding: 1em 0;
     float: left;
   }
 
+  .logo {
+    height: 4em;
+  }
+
   .coming-soon {
-    color: #fff;
+    display: none;
+    color: #3B3B3B;
     float: right;
     margin: em(20) 0 0 0;
   }
@@ -43,21 +53,25 @@
 }
 
 .site-nav {
-  float: right;
-  clear: right;
-  padding-top: em(16);
+  position: absolute;
+  right: 0;
+  bottom: 0;
 
   li {
-    display: inline-block;
-    position: relative;
+    float: left;
   }
 
   a {
-    color: #fff;
+    @include transition(background .2s);
+    color: $myra-green;
     font-size: $base-font-size * 1.25;
     display: block;
-    padding: 0 em(10);
+    padding: 4.5em em(10) .5em;
 
+    &:hover {
+      background: $myra-green;
+      color: #fff;
+    }
   }
 
   .menu-icon {
@@ -70,16 +84,11 @@
 /**********************/
 
 footer {
+  @extend %inverse;
   border-top: 4px solid $myra-blue1;
-  margin-top: $base-line-height * 2;
-  background: $light-gray;
 
   .left {
     @include span-columns(6);
-  }
-
-  h4 {
-    color: #4F4F4F;
   }
 
   .seal {
@@ -109,12 +118,13 @@ footer {
 /**************************/
 
 .hero {
-  height: 75vh;
   padding: em(50) 0;
-  background: $light-gray;
+  background: url('../img/hero_bg.jpg');
+  background-size: cover;
 
   .display,
   .sub-headline {
+    color: $myra-blue1;
     text-align: center;
     @include span-columns(8);
     @include shift(2);
@@ -146,19 +156,18 @@ footer {
 /**************************/
 
 .page-nav {
-  background: $light-gray;
+  background: $myra-blue1;
   text-align: center;
   border-top: 1px solid $base-border-color;
   border-bottom: 1px solid $base-border-color;
   width: 100%;
-
+  height: 46px; // Hack. Please change.
   ul {
     display: inline-block;
   }
 
   li {
     float: left;
-    padding: em(10) 0;
 
     &:last-child {
       a {
@@ -168,6 +177,7 @@ footer {
 
     a {
       @include transition(background .1s, color .1s);
+      color: #fff;
       display: block;
       padding: em(10) em(20);
       border-right: 1px solid $base-border-color;
@@ -264,10 +274,12 @@ $feature-color: #fff;
 /**************************/
 
 .value-proposition {
-  @extend %inverse;
-  padding: $base-line-height * 4 0;
   .h3 {
+    @include span-columns(8);
+    @include shift(2);
     margin-bottom: $base-line-height;
+    text-align: center;
+
   }
 
   ul {
@@ -283,15 +295,17 @@ $feature-color: #fff;
 /**************************/
 
 .call-to-action {
-  @include linear-gradient(45deg, $myra-blue3, $myra-blue2);
-  border-top: 2px solid $myra-blue2;
-  border-bottom: 2px solid $myra-blue2;
+  // @include linear-gradient(45deg, $myra-blue3, $myra-blue2);
+  background: url('../img/cta_bg.jpg');
+  background-size: cover;
+  border-top: 2px solid $myra-green;
+  border-bottom: 2px solid $myra-green;
 
   p,
   span,
   label,
   h2 {
-    color: #fff;
+    color: $myra-blue1;
   }
 
   .button-group {
@@ -472,6 +486,7 @@ $feature-color: #fff;
   }
 
   .numbered-heading {
+    display: block;
     margin-bottom: $base-font-size * 2;
     .numbered-heading-number {
       @include span-columns(1 of 9);
@@ -533,18 +548,20 @@ $feature-color: #fff;
 /**************************/
 
 .who {
-  padding-bottom: 0;
-  .container {
-    padding-bottom: 2.5em;
-    border-bottom: 1px solid $base-border-color;
+  @extend %inverse;
+
+  .image {
+    @include span-columns(6);
+  }
+  ul {
+    @include span-columns(6);
   }
 
   li {
-    @include span-columns(5);
+    @include span-columns(3 of 6);
     position: relative;
     display: block;
-    padding: em(20) 0;
-    clear: left;
+    padding: 0 0 em(20) 0;
 
     &:before {
       content: "\f14a";
@@ -552,12 +569,13 @@ $feature-color: #fff;
       font: normal normal normal 14px/1 FontAwesome;
       position: absolute;
       left: -20px;
+      top: 5px;
     }
 
     &:nth-child(even) {
-      @include shift(1);
-      clear: none;
+      @include omega();
     }
+
   }
 
 }
@@ -582,10 +600,16 @@ $feature-color: #fff;
 /**************************/
 
 .employer {
-  .benefits {
-    article {
-        margin-bottom: $base-line-height * 2;
+  .hero {
+    .display,
+    .sub-headline {
+      @include span-columns(10);
+      @include shift(0);
+      text-align: left;
     }
+  }
+  .benefit-block {
+    @include span-columns(4);
   }
 
   .call-to-action {
