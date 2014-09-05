@@ -74,13 +74,21 @@ $(document).ready(function(){
     $('.page-nav a').each(function(){
       var sectionId = $(this).attr('href');
       var sectionTop = $(sectionId).offset().top;
-      console.log(sectionId + ' ' + sectionTop);
       if ( scrollPos > (sectionTop - 200)) {
         $('.current-section').removeClass('current-section');
         $(this).addClass('current-section');
       } else {
         $(this).removeClass('current-section');
       }
+    })
+  })
+
+  // Scroll down to sections in page nav {
+  $('.page-nav a').click(function(){
+    var sectionId = $(this).attr('href');
+    var sectionTop = $(sectionId).offset().top;
+    $('html, body').animate({
+      scrollTop: sectionTop - navHeight
     })
   })
 
