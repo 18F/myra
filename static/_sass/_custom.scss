@@ -461,6 +461,8 @@ $feature-color: #555;
 }
 
 .step-by-step {
+  border-top: 1px solid $base-border-color;
+  background: $light-gray;
 
   .step {
     @include span-columns(12);
