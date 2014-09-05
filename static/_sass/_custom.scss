@@ -166,12 +166,13 @@ footer {
     }
 
     a {
-      @include transition(background .2s, color .2s);
+      @include transition(background .1s, color .1s);
       display: block;
       padding: em(10) em(20);
       border-right: 1px solid $base-border-color;
     }
 
+    a:hover,
     .current-section {
       background: $myra-green;
       color: #fff;
