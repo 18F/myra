@@ -72,20 +72,43 @@ footer {
   border-top: 4px solid $myra-blue1;
   margin-top: $base-line-height * 2;
   background: $light-gray;
-  padding: $base-line-height 0;
 
   .left {
     @include span-columns(6);
   }
+
+  h4 {
+    color: #4F4F4F;
+  }
+
+  .seal {
+    float: right;
+    margin-top: em(40);
+  }
+
 }
 
+.main-footer {
+  padding: em(30) 0;
+}
+
+.sub-footer {
+  background: $myra-blue1;
+  color: #fff;
+  padding: em(10);
+
+  span,
+  li {
+    font-size: $base-font-size * .75;
+  }
+}
 
 /**************************/
 /* Hero */
 /**************************/
 
 .hero {
-  padding: em(100) 0;
+  padding: em(50) 0;
   background: $light-gray;
 
   .display,
@@ -97,7 +120,16 @@ footer {
 
 }
 
+.headline {
+  @include row();
+  padding: em(30);
+  border-top: 1px solid $myra-green;
+  border-bottom: 1px solid $myra-green;
+
+}
+
 .hero-signup {
+  margin-top: em(30);
   padding-top: $base-line-height;
   @include span-columns(6);
   @include shift(3);
@@ -117,7 +149,7 @@ footer {
   text-align: center;
   border-top: 1px solid $base-border-color;
   border-bottom: 1px solid $base-border-color;
-
+  width: 100%;
   li {
     display: inline-block;
     padding: em(20) 0;
@@ -133,6 +165,13 @@ footer {
       padding: 0 em(20);
       border-right: 1px solid $base-border-color;
     }
+  }
+
+  &.fixed {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
   }
 }
 
@@ -236,9 +275,16 @@ $feature-color: #555;
 /**************************/
 
 .call-to-action {
-  background: $light-gray;
-  border-top: 2px solid $myra-green;
-  border-bottom: 2px solid $myra-green;
+  @include linear-gradient(45deg, $myra-blue3, $myra-blue2);
+  border-top: 2px solid $myra-blue2;
+  border-bottom: 2px solid $myra-blue2;
+
+  p,
+  span,
+  label,
+  h2 {
+    color: #fff;
+  }
 
   .button-group {
     @include span-columns(6);
@@ -280,6 +326,12 @@ $feature-color: #555;
   border-radius: 5px;
   padding: em(20);
   border: 1px solid $base-border-color;
+
+  h4,
+  h5 {
+    padding-bottom: em(5);
+    border-bottom: 1px solid #000;
+  }
 
   .toggle-buttons {
     @include span-columns(6);
@@ -347,42 +399,6 @@ $feature-color: #555;
   }
 }
 
-
-
-/**************************/
-// v2 Interactions
-/**************************/
-
-// #calculator-2,
-#calculator-results {
-  // display: none;
-}
-
-#calculator-results {
-  padding: em(20);
-  margin-bottom: em(60);
-  background: #f1f1f1;
-
-  .calculator-result,
-  .savings-rate {
-    font-weight: bold;
-  }
-
-  .base-goal {
-    .calculator-result,
-    .savings-rate {
-      color: #000;;
-    }
-  }
-
-  .reach-goal {
-    .calculator-result,
-    .savings-rate {
-      color: $myra-green;
-    }
-  }
-}
-
 /**************************/
 /* Step by Step */
 /**************************/
@@ -428,12 +444,13 @@ $feature-color: #555;
 }
 
 .numbered-heading {
+  margin-bottom: $base-font-size * 2;
   .numbered-heading-number {
-    @include span-columns(1);
+    @include span-columns(1 of 9);
     text-align: right;
   }
   .numbered-heading-title {
-    @include span-columns(8);
+    @include span-columns(8 of 9);
   }
 }
 
@@ -443,13 +460,14 @@ $feature-color: #555;
 }
 
 .step-by-step {
-  .step-content {
+
+  .step {
     @include span-columns(12);
-    margin-bottom: $base-line-height * 2;
+    margin-bottom: $base-line-height * 1.5;
 
     p {
-      @include span-columns(8);
-      @include shift(1);
+      @include span-columns(8 of 9);
+      @include shift(1 of 9);
     }
 
     div {
@@ -459,17 +477,40 @@ $feature-color: #555;
       border-bottom: 1px solid #f9f9f9;
     }
   }
+
+  .step-content {
+    @include span-columns(9);
+  }
+
+  .step-image {
+    @include span-columns(3);
+  }
 }
 /**************************/
 /* Who & Benefits
 /**************************/
 
 .who {
+  padding-bottom: 0;
+  .container {
+    padding-bottom: 2.5em;
+    border-bottom: 1px solid $base-border-color;
+  }
+
   li {
+    @include span-columns(5);
+    position: relative;
     display: block;
     padding: em(20) 0;
-    @include span-columns(5);
     clear: left;
+
+    &:before {
+      content: "\f14a";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      position: absolute;
+      left: -20px;
+    }
 
     &:nth-child(even) {
       @include shift(1);
@@ -515,6 +556,45 @@ $feature-color: #555;
     img {
       border: 1px solid $myra-green;
       @include span-columns(3 of 4);
+    }
+  }
+}
+
+/**************************/
+/* Home Page
+/**************************/
+
+.home {
+  .hero {
+    background: #fff;
+  }
+
+  .display,
+  .sub-headline {
+    @include span-columns(10);
+    @include shift(0);
+    text-align: left;
+  }
+}
+
+.audience {
+  padding-top: 0;
+
+  aside {
+    @include span-columns(6);
+    padding: em(30) em(30);
+    background: $light-gray;
+    border: 1px solid $base-border-color;
+
+    p {
+      font-size: $base-font-size * 1.5;
+      font-family: $serif;
+    }
+
+    a {
+      font-size: $base-font-size * 1.5;
+      font-weight: bold;
+      text-align: center;
     }
   }
 }

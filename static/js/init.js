@@ -14,6 +14,25 @@ $(".nav-toggle").click(function() {
 
 
 $(document).ready(function(){
+
+  // Sticking page nav
+  // First we get the offset and height of the page nav
+  // Then when the scroll position goes beyond we set it to fixed position
+  // And add padding to the top of body to keep everything smooth
+  var navTop, navHeight, scrollPos;
+  navTop = $('.page-nav').offset().top;
+  navHeight = $('.page-nav').height();
+  $(document).scroll(function(){
+    scrollPos = $(window).scrollTop();
+    if (scrollPos >= navTop) {
+      $('.page-nav').addClass('fixed');
+      $('body').css('padding-top', navHeight);
+    } else {
+      $('.page-nav').removeClass('fixed');
+      $('body').css('padding-top', 0);
+    }
+  })
+
   // Email signup
   $("#email-capture button").click(function(e){
     e.preventDefault();

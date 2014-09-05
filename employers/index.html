@@ -3,15 +3,25 @@ layout: splash
 noindex: true
 bodyclass: employer
 ---
-<section class="hero center-align">
+<section class="hero">
   <div class="container">
-    <p class="headline">myRA is a brand new way to help your employees save for retirement.</p>
-    <p>It’s simple, safe and affordable—for your employees and you.</p>
-    <p><a href="#learn-more">Learn more.</a></p>
+    <span class="display">myRA is a brand new way to help your employees save for retirement.</span>
+    <span class="sub-headline">It’s simple, safe and affordable—for your employees and you.</span>
   </div>
 </section>
 
-<section class="lead-capture call-to-action">
+<nav class="page-nav">
+  <div class="container">
+    <ul>
+      <li><a href="#materials">Download materials</a></li>
+      <li><a href="#about">About myRA</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="materials" class="lead-capture call-to-action">
   <div class="container">
     <div class="span-columns-8">
       <div id="download-form">
@@ -38,7 +48,7 @@ bodyclass: employer
   </div>
 </section>
 
-<section id="learn-more" class="benefits gray">
+<section id="about" class="benefits">
   <div class="container">
     <h2>About myRA</h2>
     <article>
@@ -56,15 +66,15 @@ bodyclass: employer
     <article>
       <h3>Employees love it</h3>
       <p>If you have employees who aren’t eligible for your employer-sponsored retirement plan, or if you don’t offer a retirement plan, myRA is a way to help your employees build healthy financial habits and save for their future.</p>
-      <p><a href="{{ base.url }}/employees/">Learn more about what it's like for savers &raquo;</a></p>
+      <p><a href="{{ base.url }}/individuals/">Learn more about what it's like for individuals &raquo;</a></p>
     </article>
   </div>
 </section>
 
-<section class="step-by-step">
+<section id="how" class="step-by-step">
   <div class="container">
     <h2>How it works</h2>
-    <h3>Simple for savers, even simpler for employers</h3>
+    <p>Simple for savers, even simpler for employers</p>
     <article class="active" id="step-1">
       <h3>1. Talk to your employees</h3>
       <p>Share information about myRA with eligible employees. Information can be downloaded here.</p>
@@ -80,7 +90,7 @@ bodyclass: employer
   </div>
 </section>
 
-<section class="contact inverse">
+<section id="contact" class="contact">
   <div class="container">
     <h2>Contact us</h2>
     <p>For more information, call (800) 553-2663</p>

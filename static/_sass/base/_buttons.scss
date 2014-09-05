@@ -1,5 +1,6 @@
 button,
-input[type="submit"] {
+input[type="submit"],
+.button {
   @extend %button;
   @include linear-gradient(lighten($myra-green, 5), $myra-green);
   @include appearance(none);

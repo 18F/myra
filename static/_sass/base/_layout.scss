@@ -28,6 +28,13 @@ body {
   @include omega();
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
 
 // Sections
 

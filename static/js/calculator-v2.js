@@ -56,10 +56,8 @@ $(document).ready(function(){
     $('.summary-savings .reach .big-number').html('$' + savingsReach);
 
     // Set savings rates in summary stats
-    $('.summary-savings .base .rate').html('$' + value2);
-    $('.summary-savings .reach .rate').html('$' + value3.formatMoney(0,'.',','));
-    $('.reach-goal-explanation .rate.base').html('$' + value2);
-    $('.reach-goal-explanation .rate.reach').html('$' + value3.formatMoney(0,'.',','));
+    $('.summary .rate.base').html('$' + value2);
+    $('.summary .rate.reach').html('$' + value3.formatMoney(0,'.',','));
   }
 
   // Set the values and generate the graph every time you set input-2 value
@@ -136,6 +134,7 @@ $(document).ready(function(){
       // scaleStepWidth: 100000,
       // scaleStartValue: 0,
       // scaleSteps: 5
+      // barStrokeWidth: 0
     };
 
     var data = {
@@ -150,11 +149,12 @@ $(document).ready(function(){
               label: "Base goal",
               fillColor: "#1297B5",
               data: baseGoal,
+              barStrokeWidth: 0
           },
 
         ]
     };
-    var projection = new Chart(ctx).Bar(data, options);
+    var projection = new Chart(ctx).Line(data, options);
   }
 
 
