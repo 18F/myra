@@ -530,6 +530,7 @@ $feature-color: #fff;
   .tab-body {
     @include span-columns(12);
     background: none;
+    border: none;
     padding: 0;
     color: $base-font-color;
   }
