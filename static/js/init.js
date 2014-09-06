@@ -19,7 +19,9 @@ $(document).ready(function(){
   windowHeight = $(window).height();
   scrollPos = $(window).scrollTop();
   // We'll just add the appear classes in here so it doesn't mess up non-js browsers
-  $('.benefit-block').addClass('appear fade-in');
+  $('.individuals .benefit-block:nth-child(even)').addClass('appear slide-in-left fade-in');
+  $('.individuals .benefit-block:nth-child(odd)').addClass('appear slide-in-right fade-in');
+  $('.employer .benefit-block').addClass('appear fade-in');
   $('.stacked-steps .step').addClass('appear slide-in');
 
   // This handles all of the transitions

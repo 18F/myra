@@ -70,6 +70,7 @@
 
     &.current-page {
       background: darken($light-gray, 8);
+      color: #000;
     }
 
     &:hover,
@@ -127,6 +128,7 @@ footer {
 .hero {
   padding: em(50) 0;
   background: url('../img/hero_bg.jpg');
+  background-attachment: fixed;
   background-size: cover;
 
   .display,
@@ -192,7 +194,7 @@ footer {
 
     a:hover,
     .current-section {
-      background: $myra-green;
+      background: darken($myra-blue1, 10);
       color: #fff;
     }
   }
@@ -305,15 +307,16 @@ $feature-color: #fff;
   // @include linear-gradient(45deg, $myra-blue3, $myra-blue2);
   background: url('../img/cta_bg.jpg');
   background-size: cover;
+  background-attachment: fixed;
   border-top: 2px solid $myra-green;
   border-bottom: 2px solid $myra-green;
 
-  p,
-  span,
-  label,
-  h2 {
-    color: $myra-blue1;
-  }
+  // p,
+  // span,
+  // label,
+  // h2 {
+  //   color: $myra-blue1;
+  // }
 
   .button-group {
     @include span-columns(6);
@@ -439,32 +442,52 @@ $feature-color: #fff;
 .step-by-step {
   .tabs {
     @include span-columns(12);
-    background: $light-gray;
+    background: #fff;;
     li {
       float: left;
       width: 25%;
       text-align: center;
+
+      &:last-child {
+        a:after {
+          content: '\f11e';
+        }
+      }
     }
     a {
       @include transition(background .2s);
       display: block;
       padding: em(10);
-      background: $light-gray;
       border: darken($myra-green, 5);
       color: $myra-blue1;
+      border-color: $base-border-color;
+      border-style: solid;
+      border-width: 0px 0px 1px 0px;
+      position: relative;
+
       &.active {
-        background: $medium-gray;
+        background: $light-gray;
         position: relative;
-        font-weight: 700;
         color: $dark-gray;
+        border-width: 1px 1px 0 1px;
+      }
+
+      &:after {
+        content: '\f061';
+        font: normal normal normal 14px/1 FontAwesome;
+        display: inline-block;
+        margin-left: em(10);
       }
     }
   }
 
   .tab-body {
     @include span-columns(12);
-    background: $medium-gray;
-    padding: em(20);
+    background: $light-gray;
+    border-color: $base-border-color;
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    padding: em(40);
   }
 
   .step-content {
@@ -557,8 +580,15 @@ $feature-color: #fff;
 .who {
   @extend %inverse;
 
-  .image {
+  .images {
     @include span-columns(6);
+    padding-top: em(30);
+  }
+
+  .face {
+    width: 100px;
+    margin-right: 40px;
+    border-radius: 300px;
   }
   ul {
     @include span-columns(6);
@@ -587,10 +617,19 @@ $feature-color: #fff;
 
 }
 
+.benefits {
+  border-bottom: 1px solid $base-border-color;
+}
+
 .benefit-block {
   @include span-columns(6);
-  padding: em(20) 0;
+  padding: em(30);
+  height: em(320);
+  border: 1px solid $myra-blue3;
+  border-radius: 3px;
+  background: $light-gray;
   margin-bottom: $base-line-height;
+
   &:nth-child(odd) {
     @include omega();
   }
@@ -615,8 +654,15 @@ $feature-color: #fff;
       text-align: left;
     }
   }
+
+  .benefits {
+    border-bottom: 1px solid $base-border-color;
+  }
+
   .benefit-block {
     @include span-columns(4);
+    background: none;
+    border: none;
   }
 
   .call-to-action {
@@ -630,6 +676,33 @@ $feature-color: #fff;
       border: 1px solid $myra-green;
       @include span-columns(3 of 4);
     }
+  }
+
+  .step-by-step {
+    @extend %inverse;
+
+      .step {
+        @include span-columns(4);
+        padding-right: em(40);
+        position: relative;
+
+        &:last-child {
+          padding-right: 0;
+          &:after {
+            display: none;
+          }
+        }
+
+        &:after {
+          content: '\f0a9';
+          font: normal normal normal 28px/1 FontAwesome;
+          color: #fff;
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          top: 50%;
+        }
+      }
   }
 }
 
@@ -669,5 +742,18 @@ $feature-color: #fff;
       font-weight: bold;
       text-align: center;
     }
+  }
+}
+
+
+/**************************/
+/* Call to Action section */
+/**************************/
+
+.about {
+  .page-content {
+    @include span-columns(8);
+    @include shift(2);
+    float: none;
   }
 }

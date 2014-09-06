@@ -17,7 +17,7 @@
     }
   }
 
-  &.slide-in {
+  &.slide-in-left {
     position: relative;
     left: -200%;
 
@@ -26,10 +26,13 @@
     }
   }
 
-  &.slide-up {
+
+  &.slide-in-right {
     position: relative;
-    
+    right: -200%;
+
     &.visible {
+      right: 0;
     }
   }
 }
