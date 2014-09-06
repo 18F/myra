@@ -55,6 +55,15 @@ section {
   h5 {
     color: #fff;
   }
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+
+    &:hover {
+      color: #f1f1f1;
+    }
+  }
 }
 
 .gray {

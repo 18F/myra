@@ -89,13 +89,34 @@ $(document).ready(function(){
     // Scroll down to sections in page nav {
     $('.page-nav a').click(function(){
       var sectionId = $(this).attr('href');
-      var sectionTop = $(sectionId).offset().top;
-      $('html, body').animate({
-        scrollTop: sectionTop - navHeight
-      })
+      scrollDown(sectionId);
     })
   }
 
+  // Function to scroll down on anchor links
+  // id = the element we're scrolling to
+  function scrollDown(id) {
+    // Get the target's position
+    var sectionTop = $(id).offset().top;
+
+    // Offset the top nav if it is there
+    var offset;
+    if ( $('.page-nav').length > 0 ) {
+      offset = $('.page-nav').height();
+    } else {
+      offset = 0;
+    }
+
+    // Now scroll the body down to the element
+    $('html, body').animate({
+      scrollTop: sectionTop - offset
+    })
+  }
+
+  $('.scroll-down').click(function(){
+    var sectionId = $(this).attr('href');
+    scrollDown(sectionId);
+  })
 
   // Email signup
   $("#email-capture button").click(function(e){

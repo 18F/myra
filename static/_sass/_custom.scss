@@ -646,6 +646,20 @@ $feature-color: #fff;
 /* Employer Page
 /**************************/
 
+.scroll-down {
+  @extend .h3;
+  display: block;
+  color: $myra-green;
+  text-align: center;
+  padding: em(20) 0;
+
+  &:after {
+    @extend .fa;
+    content: '\f13a';
+    display: block;
+    margin-top: em(10);
+  }
+}
 .employer {
   .hero {
     .display,
@@ -684,7 +698,7 @@ $feature-color: #fff;
 
       .step {
         @include span-columns(4);
-        padding-right: em(40);
+        // padding-right: em(40);
         position: relative;
 
         &:last-child {
@@ -694,16 +708,36 @@ $feature-color: #fff;
           }
         }
 
-        &:after {
-          content: '\f0a9';
-          font: normal normal normal 28px/1 FontAwesome;
-          color: #fff;
-          display: inline-block;
-          position: absolute;
-          right: 0;
-          top: 50%;
-        }
+        // &:after {
+        //   content: '\f0a9';
+        //   font: normal normal normal 28px/1 FontAwesome;
+        //   color: #fff;
+        //   display: inline-block;
+        //   position: absolute;
+        //   right: 0;
+        //   top: 50%;
+        // }
       }
+  }
+}
+
+
+.payroll-instructions {
+  @include row();
+  border-top: 1px solid #fff;
+  margin-top: em(20);
+  padding-top: em(20);
+}
+
+.payroll-logos {
+  padding-top: em(20);
+  li {
+    @include span-columns(3);
+    text-align: center;
+
+    img {
+      vertical-align: middle;
+    }
   }
 }
 
