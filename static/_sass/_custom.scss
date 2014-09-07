@@ -311,6 +311,7 @@ $feature-color: #fff;
   background-attachment: fixed;
   border-top: 2px solid $myra-green;
   border-bottom: 2px solid $myra-green;
+  text-align: center;
 
   // p,
   // span,
@@ -318,14 +319,22 @@ $feature-color: #fff;
   // h2 {
   //   color: $myra-blue1;
   // }
+}
+
+#email-capture {
+  @include span-columns(6);
+  @include shift(3);
+
+  label {
+    text-align: left;
+  }
 
   .button-group {
-    @include span-columns(6);
+    @include span-columns(6 of 6);
     background: none;
     border: none;
   }
 }
-
 /* myRA Story */
 
 .myra-story {
@@ -583,7 +592,7 @@ $feature-color: #fff;
   @extend %inverse;
 
   .images {
-    @include span-columns(6);
+    @include span-columns(5);
     padding-top: em(30);
   }
 
@@ -594,6 +603,7 @@ $feature-color: #fff;
   }
   ul {
     @include span-columns(6);
+    @include shift(1);
   }
 
   li {
@@ -765,7 +775,7 @@ $feature-color: #fff;
 
 .audience {
   border-top: 1px solid $base-border-color;
-  
+
   aside {
     @include span-columns(6);
     padding: em(30) em(30);

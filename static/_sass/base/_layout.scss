@@ -6,6 +6,7 @@ body {
 
 .container {
   @include outer-container();
+  overflow-x: hidden;
 }
 
 .row {

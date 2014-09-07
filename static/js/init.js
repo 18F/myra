@@ -24,6 +24,7 @@ $(document).ready(function(){
   $('.employer .benefit-block').addClass('appear fade-in');
   $('.stacked-steps .step:nth-child(even)').addClass('appear slide-in-left');
   $('.stacked-steps .step:nth-child(odd)').addClass('appear slide-in-right');
+  $('.face').addClass('appear fade-in');
 
   // This handles all of the transitions
   // We'll get the position of anything with the appear class
