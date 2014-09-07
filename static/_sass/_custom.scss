@@ -29,12 +29,6 @@
     height: 4em;
   }
 
-  .coming-soon {
-    display: none;
-    color: #3B3B3B;
-    float: right;
-    margin: em(20) 0 0 0;
-  }
 }
 
 .site-title{
@@ -137,6 +131,13 @@ footer {
     text-align: center;
     @include span-columns(8);
     @include shift(2);
+  }
+
+  .coming-soon {
+    display: inline-block;
+    font-weight: 700;
+    color: $myra-blue2;
+    margin-bottom: 1em;
   }
 
 }
@@ -747,8 +748,12 @@ $feature-color: #fff;
 
 .home {
   .hero {
-    background: #fff;
+    .lead-text {
+      @include span-columns(10);
+    }
+
   }
+
 
   .display,
   .sub-headline {
@@ -759,8 +764,8 @@ $feature-color: #fff;
 }
 
 .audience {
-  padding-top: 0;
-
+  border-top: 1px solid $base-border-color;
+  
   aside {
     @include span-columns(6);
     padding: em(30) em(30);
