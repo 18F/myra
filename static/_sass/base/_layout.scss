@@ -40,11 +40,11 @@ body {
 // Sections
 
 section {
-  padding: em(40);
+  padding: em(60);
 }
 
 %inverse {
-  background: $myra-blue1;
+  background: darken($myra-blue1, 10);
 
   p,
   span,

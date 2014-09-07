@@ -25,7 +25,8 @@ h2,
 .h2 {
   font-size: $base-font-size * 2.125; // 16 * 2.125 = 34px
   font-weight: bold;
-  color: #000;
+  color: $base-font-color;
+  text-align: center;
 }
 
 h3,
@@ -106,15 +107,15 @@ cite {
 .display {
   display: block;
   font-family: $serif;
-  font-size: $base-font-size * 3;
-  line-height: 1.25;
+  font-size: 4em;
+  line-height: 1;
   margin-bottom: 0;
 }
 
 .sub-headline {
   display: block;
   font-family: $serif;
-  font-size: $base-font-size * 1.75;
+  font-size: $base-font-size * 1.5;
 }
 
 .lead-text {

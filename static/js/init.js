@@ -22,8 +22,7 @@ $(document).ready(function(){
   $('.individuals .benefit-block:nth-child(even)').addClass('appear slide-in-left fade-in');
   $('.individuals .benefit-block:nth-child(odd)').addClass('appear slide-in-right fade-in');
   $('.employer .benefit-block').addClass('appear fade-in');
-  $('.stacked-steps .step:nth-child(even)').addClass('appear slide-in-left');
-  $('.stacked-steps .step:nth-child(odd)').addClass('appear slide-in-right');
+  $('.stacked-steps .step').addClass('appear slide-in-left');
   $('.face').addClass('appear fade-in');
 
   // This handles all of the transitions

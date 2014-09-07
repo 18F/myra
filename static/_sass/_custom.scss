@@ -13,7 +13,7 @@
 
 .site-header {
   border-bottom: 4px solid $myra-blue1;
-  background: $light-gray;
+  background: #f1f1f1;
 
   .container {
     position: relative;
@@ -128,8 +128,12 @@ footer {
   .sub-headline {
     color: $myra-blue1;
     text-align: center;
-    @include span-columns(8);
-    @include shift(2);
+    @include span-columns(10);
+    @include shift(1);
+  }
+
+  .sub-headline {
+    padding-top: 1em;
   }
 
   .coming-soon {
@@ -143,7 +147,7 @@ footer {
 
 .headline {
   @include row();
-  padding: em(30);
+  padding: em(20);
 }
 
 .hero-signup {
@@ -168,14 +172,14 @@ footer {
   border-top: 1px solid $base-border-color;
   border-bottom: 1px solid $base-border-color;
   width: 100%;
-  height: 46px; // Hack. Please change.
+  height: 45px;
+
   ul {
     display: inline-block;
   }
 
   li {
     float: left;
-
     &:last-child {
       a {
         border-right: none;
@@ -187,6 +191,7 @@ footer {
       color: #fff;
       display: block;
       padding: em(10) em(20);
+
       border-right: 1px solid $base-border-color;
     }
 
@@ -303,7 +308,8 @@ $feature-color: #fff;
 
 .call-to-action {
   // @include linear-gradient(45deg, $myra-blue3, $myra-blue2);
-  background: url('../img/cta_bg.jpg');
+  // background: url('../img/cta_bg.jpg');
+  background: #D2E0E2;
   background-size: cover;
   background-attachment: fixed;
   border-top: 2px solid $myra-green;
@@ -319,7 +325,6 @@ $feature-color: #fff;
 
   #email-capture {
     @include span-columns(6);
-    @include shift(3);
 
     label {
       text-align: left;
@@ -330,6 +335,12 @@ $feature-color: #fff;
       background: none;
       border: none;
     }
+  }
+
+  .cta-intro {
+    @include span-columns(5);
+    @include shift(1);
+    text-align: left;
   }
 }
 
@@ -362,7 +373,8 @@ $feature-color: #fff;
 /**************************/
 
 .calculator {
-  @include clearfix;
+  @include clearfix();
+  clear: both;
   background: $light-gray;
   border-radius: 5px;
   padding: em(20);
@@ -443,8 +455,10 @@ $feature-color: #fff;
 /**************************/
 /* Step by Step */
 /**************************/
-.step-intro {
-  @include span-columns(9);
+.section-intro {
+  @include span-columns(8);
+  @include shift(2);
+  @include row();
   margin-bottom: $base-line-height;
 }
 
@@ -559,7 +573,7 @@ $feature-color: #fff;
 
   .step {
     @include span-columns(12);
-    margin-bottom: $base-line-height * 1.5;
+    margin-bottom: $base-line-height;
 
     p {
       @include span-columns(8 of 9);
@@ -576,10 +590,12 @@ $feature-color: #fff;
 
   .step-content {
     @include span-columns(9);
+    @include shift(1);
   }
 
   .step-image {
-    @include span-columns(3);
+    // @include span-columns(3);
+    display: none !important;
   }
 }
 
@@ -589,7 +605,6 @@ $feature-color: #fff;
 
 .who {
   @extend %inverse;
-
   .images {
     @include span-columns(5);
     padding-top: em(30);
@@ -603,10 +618,11 @@ $feature-color: #fff;
   ul {
     @include span-columns(6);
     @include shift(1);
+    padding-top: em(20);
   }
 
   li {
-    @include span-columns(3 of 6);
+    @include span-columns(6 of 6);
     position: relative;
     display: block;
     padding: 0 0 em(20) 0;
@@ -670,6 +686,7 @@ $feature-color: #fff;
     margin-top: em(10);
   }
 }
+
 .employer {
 
   .benefits {
@@ -684,7 +701,9 @@ $feature-color: #fff;
 
   .call-to-action {
     text-align: left;
-    
+    h2 {
+      text-align: left;
+    }
     input,
     label,
     button {
@@ -722,6 +741,10 @@ $feature-color: #fff;
         //   top: 50%;
         // }
       }
+  }
+
+  .contact {
+    text-align: center;
   }
 }
 
@@ -798,5 +821,9 @@ $feature-color: #fff;
     @include span-columns(8);
     @include shift(2);
     float: none;
+  }
+
+  h2 {
+    text-align: left;
   }
 }
