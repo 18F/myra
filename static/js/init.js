@@ -32,7 +32,7 @@ $(document).ready(function(){
   // The animation tranistinos are handled in the sass
   function makeVisible(element) {
     var selfTop = element.offset().top;
-    if ( scrollPos > (selfTop - windowHeight + 200)) {
+    if ( scrollPos > (selfTop - windowHeight + 100)) {
       element.addClass('visible');
     }
   }

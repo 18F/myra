@@ -12,7 +12,6 @@
 }
 
 .site-header {
-  // @include linear-gradient(45deg, $myra-blue2, $myra-blue1);
   border-bottom: 4px solid $myra-blue1;
   background: $light-gray;
 
@@ -145,8 +144,6 @@ footer {
 .headline {
   @include row();
   padding: em(30);
-  border-top: 1px solid $myra-green;
-  border-bottom: 1px solid $myra-green;
 }
 
 .hero-signup {
@@ -674,14 +671,6 @@ $feature-color: #fff;
   }
 }
 .employer {
-  .hero {
-    .display,
-    .sub-headline {
-      @include span-columns(10);
-      @include shift(0);
-      text-align: left;
-    }
-  }
 
   .benefits {
     border-bottom: 1px solid $base-border-color;
@@ -694,6 +683,8 @@ $feature-color: #fff;
   }
 
   .call-to-action {
+    text-align: left;
+    
     input,
     label,
     button {
