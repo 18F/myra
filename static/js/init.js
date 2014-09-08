@@ -13,6 +13,12 @@ $(".nav-toggle").click(function() {
 
 
 $(document).ready(function(){
+  // Tooltips
+  $('.tooltip').tooltipster({
+    theme: 'tooltipster-light',
+    maxWidth: 300,
+    position: 'bottom'
+  });
 
   // Page animation behavior
   var windowHeight, scrollPos;

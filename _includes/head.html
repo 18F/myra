@@ -16,17 +16,24 @@
 
     <!-- FontAwesome -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- <link href="{{ site.baseurl }}/static/css/font-awesome.min.css" rel="stylesheet"> -->
+
     <!-- jQuery noUI Slider style -->
     <link rel="stylesheet" href="{{ "/static/css/jquery.nouislider.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/static/css/jquery.bxslider.css" | prepend: site.baseurl }}">
+
+    <!-- Tooltipster styles -->
+    <link rel="stylesheet" href="{{ "/static/css/tooltipster.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/static/css/tooltipster-light.css" | prepend: site.baseurl }}">
+
     <!-- Scripts -->
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/html5shiv.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/chart.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.bxslider.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.nouislider.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.tooltipster.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/init.js"></script>
+
     {% if page.title == 'Individuals' or page.title == 'Individuals - v1' %}
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/calculator-v2.js"></script>
     {% endif %}

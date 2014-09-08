@@ -137,10 +137,11 @@ footer {
   }
 
   .coming-soon {
-    display: inline-block;
+    @include span-columns(12);
     font-weight: 700;
     color: $myra-blue2;
     margin-bottom: 1em;
+    text-align: center;
   }
 
 }
@@ -316,15 +317,14 @@ $feature-color: #fff;
   border-bottom: 2px solid $myra-green;
   text-align: center;
 
-  // p,
-  // span,
-  // label,
-  // h2 {
-  //   color: $myra-blue1;
-  // }
+  h2 {
+    margin-bottom: 1.5em;
+  }
 
   #email-capture {
-    @include span-columns(6);
+
+    @include span-columns(5);
+    @include shift(1);
 
     label {
       text-align: left;
@@ -436,6 +436,11 @@ $feature-color: #fff;
   background: #fff;
 }
 
+#calculator-results {
+  @include clearfix;
+  padding-top: 3em;
+}
+
 .summary {
   .row {
     margin-bottom: $base-line-height;
@@ -443,12 +448,33 @@ $feature-color: #fff;
 }
 
 .result {
-  @include span-columns (3 of 6);
+  @include span-columns(3 of 6);
 
   .big-number {
     font-size: $base-font-size * 3;
     line-height: 1;
     display: block;
+  }
+}
+
+.calculator-legend {
+  @include span-columns(2 of 3);
+  margin-left: 50px;
+}
+
+.swatch {
+  display: inline-block;
+  width: .75em;
+  height: .75em;
+  border-radius: 1em;
+  margin-right: .5em;
+
+  &.base {
+    background-color: $myra-blue2;
+  }
+
+  &.reach {
+    background-color: $myra-green;
   }
 }
 
@@ -605,6 +631,9 @@ $feature-color: #fff;
 
 .who {
   @extend %inverse;
+  background-image: url('../img/people.png');
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
   .images {
     @include span-columns(5);
     padding-top: em(30);
@@ -671,9 +700,26 @@ $feature-color: #fff;
 /**************************/
 /* Employer Page
 /**************************/
+@include keyframes(bounce) {
+  0% {
+    @include transform(translateY(0));
+  }
+  50% {
+    @include transform(translateY(10px));
+  }
+
+  75% {
+    @include transform(translateY(10px));
+  }
+
+  100% {
+    @include transform(translateY(0));
+  }
+}
 
 .scroll-down {
   @extend .h3;
+  @include animation(bounce .5s 2);
   display: block;
   color: $myra-green;
   text-align: center;
@@ -721,25 +767,7 @@ $feature-color: #fff;
 
       .step {
         @include span-columns(4);
-        // padding-right: em(40);
-        position: relative;
 
-        &:last-child {
-          padding-right: 0;
-          &:after {
-            display: none;
-          }
-        }
-
-        // &:after {
-        //   content: '\f0a9';
-        //   font: normal normal normal 28px/1 FontAwesome;
-        //   color: #fff;
-        //   display: inline-block;
-        //   position: absolute;
-        //   right: 0;
-        //   top: 50%;
-        // }
       }
   }
 
@@ -776,16 +804,12 @@ $feature-color: #fff;
   .hero {
     .lead-text {
       @include span-columns(10);
+      @include shift(1);
+      margin-top: 2em;
+      text-align: center;
     }
 
-  }
 
-
-  .display,
-  .sub-headline {
-    @include span-columns(10);
-    @include shift(0);
-    text-align: left;
   }
 }
 
@@ -826,4 +850,12 @@ $feature-color: #fff;
   h2 {
     text-align: left;
   }
+}
+
+
+/**************************/
+/* Tooltips */
+/**************************/
+.tooltip {
+  border-bottom: 1px dotted $myra-green;
 }

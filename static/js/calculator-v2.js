@@ -55,8 +55,8 @@ $(document).ready(function(){
     $('.summary-savings .reach .big-number').html('$' + savingsReach);
 
     // Set savings rates in summary stats
-    $('.summary .rate.base').html('$' + value2);
-    $('.summary .rate.reach').html('$' + value3.formatMoney(0,'.',','));
+    $('.rate.base').html('$' + value2);
+    $('.rate.reach').html('$' + value3.formatMoney(0,'.',','));
   };
 
   // Set the values and generate the graph every time you set input-2 value
