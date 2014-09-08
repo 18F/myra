@@ -767,6 +767,7 @@ $feature-color: #fff;
     img {
       border: 1px solid $myra-green;
       @include span-columns(3 of 4);
+      margin-top: 6em;
     }
   }
 
