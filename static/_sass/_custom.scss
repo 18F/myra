@@ -12,7 +12,7 @@
 }
 
 .site-header {
-  border-bottom: 4px solid $myra-blue1;
+  border-bottom: 1px solid $myra-blue1;
   background: #f1f1f1;
 
   .container {
@@ -208,6 +208,16 @@ footer {
     position: fixed;
     top: 0;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
+  }
+}
+
+/**************************/
+/* Universal elements */
+/**************************/
+h2 {
+  .fa {
+    display: block;
+    margin: .5em auto .5em;
   }
 }
 

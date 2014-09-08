@@ -28,6 +28,7 @@ $(document).ready(function(){
   $('.individuals .benefit-block:nth-child(even)').addClass('appear slide-in-left fade-in');
   $('.individuals .benefit-block:nth-child(odd)').addClass('appear slide-in-right fade-in');
   $('.employer .benefit-block').addClass('appear fade-in');
+  $('.payroll-logos li').addClass('appear fade-in');
   $('.stacked-steps .step').addClass('appear slide-in-left');
   $('.face').addClass('appear fade-in');
 
