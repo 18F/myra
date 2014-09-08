@@ -641,19 +641,17 @@ $feature-color: #fff;
 
 .who {
   @extend %inverse;
-  background-image: url('../img/people.png');
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
+  @include radial-gradient($myra-blue1,  darken($myra-blue1, 10));
+  position: relative;
+  overflow: hidden;
   .images {
     @include span-columns(5);
     padding-top: em(30);
+    position: absolute;
+    bottom: -5px;
+    right: 0;
   }
 
-  .face {
-    width: 100px;
-    margin-right: 40px;
-    border-radius: 300px;
-  }
   ul {
     @include span-columns(6);
     @include shift(1);

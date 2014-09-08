@@ -35,4 +35,12 @@
       right: 0;
     }
   }
+
+  &.slide-up {
+    @include transform(translateY(300px));
+
+    &.visible {
+      @include transform(translateY(0));
+    }
+  }
 }

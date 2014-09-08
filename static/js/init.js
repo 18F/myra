@@ -29,7 +29,7 @@ $(document).ready(function(){
   $('.individuals .benefit-block:nth-child(odd)').addClass('appear slide-in-right fade-in');
   $('.employer .benefit-block').addClass('appear fade-in');
   $('.payroll-logos li').addClass('appear fade-in');
-  $('.stacked-steps .step').addClass('appear slide-in-left');
+  $('.stacked-steps .step').addClass('appear fade-in');
   $('.face').addClass('appear fade-in');
 
   // This handles all of the transitions
