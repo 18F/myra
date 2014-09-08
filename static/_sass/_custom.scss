@@ -727,7 +727,7 @@ $feature-color: #fff;
 
 .scroll-down {
   @extend .h3;
-  @include animation(bounce .5s 2);
+  // @include animation(bounce .5s 2);
   display: block;
   color: $myra-green;
   text-align: center;
@@ -742,6 +742,9 @@ $feature-color: #fff;
 }
 
 .employer {
+  .hero {
+    overflow: hidden;
+  }
 
   .benefits {
     border-bottom: 1px solid $base-border-color;
