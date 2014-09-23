@@ -153,7 +153,6 @@ $(document).ready(function(){
   $('.bxslider').bxSlider({
     mode: 'horizontal',
     infiniteLoop: false,
-
   });
 
   // Reveal employer forms

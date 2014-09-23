@@ -12,10 +12,11 @@
 }
 
 .alpha {
-  background: $myra-blue1;
-  color: #fff;
+  background: #fff;
+  color: #333;
   text-align: center;
   padding: .5em 0;
+  border-bottom: 1px solid #d6d6d6;
 }
 
 .site-header {
@@ -152,6 +153,15 @@ footer {
     text-align: center;
   }
 
+  &.gradient-bg {
+    @include background-image( radial-gradient(#ffffff, #d3f0e3) );
+    background-attachment: relative;
+
+    .display {
+      color: #333;
+      font-weight: 700;
+    }
+  }
 }
 
 .headline {
@@ -170,6 +180,85 @@ footer {
     clear: both;
   }
 }
+
+
+.quote {
+  @include span-columns(8);
+  @include shift(2);
+  font-size: 2.25em;
+  text-align: center;
+  display: block;
+  position: relative;
+  color: $myra-blue1;
+  margin-top: em(10);
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+  }
+
+  &:before {
+    background: url('../img/left-quote.png');
+    left: -80px;
+  }
+
+  &:after {
+    background: url('../img/right-quote.png');
+    right: -80px;
+  }
+}
+
+.display {
+  .active {
+    color: $myra-green;
+  }
+}
+
+.citation {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  clear: both;
+}
+
+.controls {
+  text-align: center;
+  padding-top: em(30);
+  li {
+    display: inline-block;
+    margin-right: em(20);
+    opacity: .5;
+  }
+
+  .active {
+    opacity: 1;
+  }
+}
+
+/**************************/
+/* v4 Sub-Hero */
+/**************************/
+
+.sub-hero {
+  background: $myra-blue2;
+  text-align: center;
+  color: #fff;
+  padding: 3em 0;
+
+  p {
+    @include span-columns(6);
+    @include shift(3);
+    @extend .h3;
+    font-weight: 400;
+    color: #fff;
+  }
+}
+
 
 /**************************/
 /* Page nav */
@@ -353,9 +442,9 @@ $feature-color: #fff;
   }
 
   .cta-intro {
-    @include span-columns(6);
-    @include shift(3);
-    text-align: center;
+    @include span-columns(8);
+    @include shift(2);
+    text-align: left;
   }
 }
 
@@ -820,6 +909,17 @@ input[type="text"].calculator-input,
 
   }
 
+}
+
+.who-simple {
+  ul {
+    @include span-columns(8);
+    @include shift(2);
+
+    li {
+      font-size: 1.25em;
+    }
+  }
 }
 
 .benefits {
