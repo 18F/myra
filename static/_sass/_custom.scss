@@ -1056,8 +1056,8 @@ input[type="text"].calculator-input,
 .home {
   .hero {
     .lead-text {
-      @include span-columns(10);
-      @include shift(1);
+      @include span-columns(8);
+      @include shift(2);
       margin-top: 2em;
       text-align: center;
     }
@@ -1074,8 +1074,7 @@ input[type="text"].calculator-input,
     border: 1px solid $base-border-color;
 
     p {
-      font-size: $base-font-size * 1.5;
-      font-family: $serif;
+      font-size: $base-font-size * 1.25;
     }
 
     a {
