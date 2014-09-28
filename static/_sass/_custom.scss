@@ -872,7 +872,6 @@ input[type="text"].calculator-input,
 
 .who {
   @extend %inverse;
-  @include radial-gradient($myra-blue1,  darken($myra-blue1, 10));
   position: relative;
   overflow: hidden;
   .images {
@@ -883,11 +882,12 @@ input[type="text"].calculator-input,
     right: 0;
   }
 
-  ul {
-    @include span-columns(6);
-    @include shift(1);
-    padding-top: em(20);
-  }
+}
+
+.who-bullets {
+  @include span-columns(6);
+  @include shift(1);
+  padding-top: em(20);
 
   li {
     @include span-columns(6 of 6);
@@ -920,6 +920,109 @@ input[type="text"].calculator-input,
     li {
       font-size: 1.25em;
     }
+  }
+}
+
+.who-people {
+  padding: 0;
+  position: relative;
+
+  .section-heading {
+    position: absolute;
+    padding-top: 4em;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+
+    h2 {
+      color: #fff;
+    }
+  }
+
+  .who-bullets {
+    @include span-columns(6);
+    @include shift(3);
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 5em;
+  }
+
+  .bx-wrapper {
+    margin-bottom: 0;
+    .bx-viewport {
+      box-shadow: none;
+      border: 0;
+      left: 0;
+    }
+
+    .bx-pager.bx-default-pager {
+      position: absolute;
+      bottom: 2em;
+
+      a {
+        background: rgba(255,255,255,.5);
+
+        &.active {
+          background: #fff;
+        }
+      }
+    }
+
+    .bx-next,
+    .bx-next:hover {
+      background: url('../img/next.png') no-repeat;
+      width: 50px;
+      height: 144px;
+      right: em(20);
+    }
+
+    .bx-prev,
+    .bx-prev:hover {
+      background: url('../img/prev.png') no-repeat;
+      width: 50px;
+      height: 144px;
+      left: em(20);
+    }
+  }
+
+  .bxslider {
+    position: absolute;
+    top: 2em;
+    left: 0;
+  }
+
+  .slide {
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2em;
+  }
+
+  .who-slide-1 {
+    background-image: url('../img/who_1_bg.jpg');
+    height: 550px;
+  }
+
+  .who-slide-2 {
+    background-image: url('../img/who_2_bg.jpg');
+    height: 700px;
+  }
+
+  .quote-container {
+    padding-left: 80px;
+  }
+
+  .quote,
+  .citation {
+    color: #fff;
+    text-align: left;
+  }
+
+  .quote {
+    @include span-columns(6);
+    @include shift(0);
+    line-height: 1.2;
   }
 }
 
