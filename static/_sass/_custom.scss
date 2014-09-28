@@ -488,17 +488,41 @@ $feature-color: #fff;
   padding-bottom: em(40);
   margin-bottom: em(40);
 
-  .left {
+  h3 {
     @include span-columns(8);
     @include shift(2);
   }
 
-  .right {
-    @include span-columns(8);
+  .intro {
+    @include span-columns(4);
     @include shift(2);
-    text-align: center;
+  }
+
+  .chart {
+    @include span-columns(4);
+    margin-top: 0;
+
+    figcaption {
+      border-top: 1px solid $light-gray;
+      padding-top: .5em;
+
+      span,
+      strong {
+        display: block;
+        font-size: .875em;
+        color: #5C5C5C;
+      }
+    }
+
+    img {
+      width: 170px;
+      margin: 0 auto 10px;
+      display: block;
+    }
   }
 }
+
+
 .calculator-intro {
   @include span-columns(8);
   @include shift(2);
@@ -534,14 +558,25 @@ input[type="text"].calculator-input,
 
 .calculator-helper {
   @include span-columns(2 of 8);
+  position: relative;
+  background: $myra-blue1;
+  border-radius: 5px;
   display: none;
-  border-left: 4px solid #696969;
   padding: 1em;
   font-size: .875em;
 
+  &:before {
+    content: '';
+    display: block;
+    @include triangle(20px, $myra-blue1, left);
+    position: absolute;
+    left: -10px;
+    top: 40px;
+  }
+
   p {
     margin-bottom: 0;
-    color: #696969;
+    color: #fff;
     font-style: italic;
   }
 }
@@ -909,7 +944,6 @@ input[type="text"].calculator-input,
     }
 
   }
-
 }
 
 .who-simple {
