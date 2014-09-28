@@ -152,7 +152,7 @@ $(document).ready(function(){
   // Slideshow
   $('.bxslider').bxSlider({
     mode: 'horizontal',
-    infiniteLoop: false,
+    adaptiveHeight: true,
   });
 
   // Reveal employer forms
