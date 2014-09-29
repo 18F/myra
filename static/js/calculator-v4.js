@@ -66,21 +66,40 @@ $(document).ready(function(){
     value1 = Number($('#input-1').val().replace('$',''));
     value2 = Number($('#input-2').val());
     total = compoundInterest(0, apr, ip, value2, value1);
-    principal = value1 * value2 * 12;
-    interest = total - principal;
+    console.log(total);
+    // What happens as long as the total is under 15k
+    if ( total < 15000 ) {
+      principal = value1 * value2 * 12;
+      interest = total - principal;
+      // Now let's set the widths of each meter section
+      var pWidth = (principal / 15000) * 100;
+      var iWidth = (interest / 15000) * 100;
+      $('.meter-p').width(pWidth + '%');
+      $('.meter-i').width(iWidth + '%');
 
-    // Now let's set the widths of each meter section
-    var pWidth = (principal / 15000) * 100;
-    var iWidth = (interest / 15000) * 100;
-    $('.meter-p').width(pWidth + '%');
-    $('.meter-i').width(iWidth + '%');
+      // And set the values displayed
+      $('.total-saved').html('$' + total.formatMoney(0,'.',','));
+      $('.principal-saved').html('$' + principal.formatMoney(0,'.',','));
+      $('.interest-earned').html('$' + interest.formatMoney(0,'.',','));
+      $('.monthly-rate').html('$' + value1);
+      $('.daily-rate').html('$' + (value1/30).formatMoney(2,'.',','));
+    }
 
-    // And set the values displayed
-    $('.total-saved').html('$' + total.formatMoney(0,'.',','));
-    $('.principal-saved').html('$' + principal.formatMoney(0,'.',','));
-    $('.interest-earned').html('$' + interest.formatMoney(0,'.',','));
-    $('.monthly-rate').html('$' + value1);
-    $('.daily-rate').html('$' + (value1/30).formatMoney(2,'.',','));
+    // Once we hit 15k
+    else {
+        total = 15000;
+        principal = value1 * value2 * 12;
+        interest = total - principal;
+        $('.years-to-goal').html(value2);
+        $('.calculator-helper').fadeIn();
+
+        var pWidth = (principal / 15000) * 100;
+        var iWidth = 100 - pWidth;
+        $('.meter-p').width(pWidth + '%');
+        $('.meter-i').width(iWidth + '%');
+
+    }
+
   }
 
   function compoundInterest(p,r,n,t,D){
@@ -105,8 +124,7 @@ $(document).ready(function(){
 
   $('#calculator-2').change(function(){
     setValues();
-    $(this).next('.calculator-helper').fadeIn();
-    $('.results, .results .calculator-helper').fadeIn();
+    $('.results').fadeIn();
   })
 
   setValues();
