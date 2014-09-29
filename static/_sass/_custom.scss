@@ -95,7 +95,6 @@
 
 footer {
   @extend %inverse;
-  border-top: 4px solid $myra-blue1;
 
   .left {
     @include span-columns(6);
@@ -113,7 +112,7 @@ footer {
 }
 
 .sub-footer {
-  background: $myra-blue1;
+  background: #333;
   color: #fff;
   padding: em(10);
 
