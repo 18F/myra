@@ -13,6 +13,12 @@ $(".nav-toggle").click(function() {
 
 
 $(document).ready(function(){
+
+  // Find and replace to italicize myRA
+  $('.myra').each(function(){
+    $(this).html('<em>my</em>RA');
+  });
+
   // Tooltips
   $('.tooltip').tooltipster({
     theme: 'tooltipster-light',
