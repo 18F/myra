@@ -1018,6 +1018,11 @@ input[type="text"].calculator-input,
       a {
         background: rgba(255,255,255,.5);
 
+        &:active,
+        &:focus {
+          background: $myra-green;
+        }
+
         &.active {
           background: #fff;
         }
@@ -1038,6 +1043,13 @@ input[type="text"].calculator-input,
       width: 50px;
       height: 144px;
       left: em(20);
+    }
+
+    .bx-prev,
+    .bx-next {
+      &:focus {
+        outline: 1px dotted #fff;
+      }
     }
   }
 
