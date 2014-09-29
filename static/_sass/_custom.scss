@@ -600,7 +600,7 @@ input[type="text"].calculator-input,
 
 /* Thermometer */
 .meter {
-  @include span-columns (8 of 9);
+  @include span-columns (9 of 9);
   position: relative;
   height: 70px;
   background: $light-gray;
@@ -626,14 +626,6 @@ input[type="text"].calculator-input,
   background: $myra-blue3;
 }
 
-.meter-label-number {
-  font-weight: 700;
-}
-
-.meter-label {
-  display: block;
-}
-
 .tic-marks {
   position: absolute;
   top: 0;
@@ -650,6 +642,34 @@ input[type="text"].calculator-input,
     border-right: 1px solid rgba(255,255,255,.3);
   }
 }
+
+.meter-label-container {
+  @include span-columns (9 of 9);
+  padding-top: 1em;
+}
+
+.principal-label,
+.interest-label {
+  @include span-columns(2 of 9);
+}
+
+.meter-label-number {
+  font-weight: 700;
+
+  &.principal-saved {
+    color: $myra-blue1;
+  }
+
+  &.interest-earned {
+    color: $myra-blue2;
+  }
+}
+
+.meter-label {
+  display: block;
+}
+
+
 //
 // .calculator {
 //   @include clearfix();
