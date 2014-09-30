@@ -483,23 +483,23 @@ $feature-color: #fff;
 
 .education {
   @include clearfix();
+  @include span-columns(8);
+  @include shift(2);
   border-bottom: 1px solid $light-gray;
   padding-bottom: em(40);
   margin-bottom: em(40);
 
   h3 {
-    @include span-columns(8);
-    @include shift(2);
+    @include span-columns(8 of 8);
   }
 
   .intro {
-    @include span-columns(4);
-    @include shift(2);
+    @include span-columns(4 of 8);
   }
 
   .chart {
-    @include span-columns(4);
-    margin-top: 0;
+    @include span-columns(4 of 8);
+    margin: 0;
 
     figcaption {
       border-top: 1px solid $light-gray;
@@ -581,7 +581,7 @@ input[type="text"].calculator-input,
 }
 
 .calculator-row.results {
-  display: none;
+  // display: none;
 }
 
 /* Sliders */
