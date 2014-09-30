@@ -15,12 +15,12 @@ var n = this,
 $(document).ready(function(){
   // First slider
   $('#input-1-slider').noUiSlider({
-    start: 10,
+    start: 20,
     step: 1,
     range: {
-      'min': 1,
+      'min': 0,
       'max':100
-      
+
     },
     serialization: {
       lower: [
@@ -38,10 +38,10 @@ $(document).ready(function(){
 
   // Second slider
   $('#input-2-slider').noUiSlider({
-    start: 1,
+    start: 0,
     step: 1,
     range: {
-      'min': 1,
+      'min': 0,
       'max': 30
     },
     serialization: {
@@ -79,15 +79,9 @@ $(document).ready(function(){
       $('.meter-i').width(iWidth + '%');
 
       $('.calculator-helper:not(:first)').fadeOut();
+      setLabels(value1, value2);
 
-      // And set the values displayed
-      $('.total-saved').html('$' + total.formatMoney(0,'.',','));
-      $('.principal-saved').html('$' + principal.formatMoney(0,'.',','));
-      $('.interest-earned').html('$' + interest.formatMoney(0,'.',','));
-      $('.monthly-rate').html('$' + value1);
-      $('.daily-rate').html('$' + (value1/30).formatMoney(2,'.',','));
     }
-
     // Once we hit 15k
     else {
         total = 15000;
@@ -95,53 +89,57 @@ $(document).ready(function(){
         interest = total - principal;
         $('.years-to-goal').html(value2);
         $('.calculator-helper').fadeIn();
-
         var pWidth = (principal / 15000) * 100;
         var iWidth = 100 - pWidth;
         $('.meter-p').width(pWidth + '%');
         $('.meter-i').width(iWidth + '%');
-
-        // And set the values displayed
-        $('.total-saved').html('$' + total.formatMoney(0,'.',','));
-        $('.principal-saved').html('$' + principal.formatMoney(0,'.',','));
-        $('.interest-earned').html('$' + interest.formatMoney(0,'.',','));
-        $('.monthly-rate').html('$' + value1);
-        $('.daily-rate').html('$' + (value1/30).formatMoney(2,'.',','));
-
+        setLabels(value1, value2);
     }
 
   }
+
+  function setLabels(value1, value2) {
+    $('.total-saved').html('$' + total.formatMoney(0,'.',','));
+    $('.principal-saved').html('$' + principal.formatMoney(0,'.',','));
+    $('.interest-earned').html('$' + interest.formatMoney(0,'.',','));
+    $('.monthly-rate').html('$' + value1);
+    $('.daily-rate').html('$' + (value1/30).formatMoney(2,'.',','));
+  }
+
   function updateSlide2(){
     var value1=Number($('#input-1-slider').val().replace('$',''));
     var value2=Number($('#input-2-slider').val());
-    var total=compoundInterest(0, apr, ip, value2, value1); 
+    var total=compoundInterest(0, apr, ip, value2, value1);
     if (total > 15000)
     {
       $('#input-2-slider').val(value2-1);
       var value1=Number($('#input-1-slider').val().replace('$',''));
       var value2=Number($('#input-2-slider').val());
       var total=compoundInterest(0, apr, ip, value2, value1);
-      if(total < 15000) 
+      $('#input-2-slider .noUi-origin').css('background-color', '#2FA380');
+      if(total < 15000) {
         $('#input-2-slider').val(value2+1);
-      else
+        $('#input-2-slider .noUi-origin').css('background-color', '#fff');
+      } else {
         updateSlide2();
+      }
     }
     setValues();
   }
   function updateSlide1(){
     var value1=Number($('#input-1-slider').val().replace('$',''));
     var value2=Number($('#input-2-slider').val());
-    var total=compoundInterest(0, apr, ip, value2, value1); 
+    var total=compoundInterest(0, apr, ip, value2, value1);
     if (total > 15000)
     {
-      $('#input-1-slider').val(value1-1);
+      $('#input-2-slider').val(value2-1);
       var value1=Number($('#input-1-slider').val().replace('$',''));
       var value2=Number($('#input-2-slider').val());
       var total=compoundInterest(0, apr, ip, value2, value1);
-      if (total < 15000) 
-        $('#input-1-slider').val(value1+1);
+      if (total < 15000)
+        $('#input-2-slider').val(value2+1);
       else
-        updateSlide1();
+        updateSlide2();
     }
     setValues();
   }
