@@ -45,10 +45,10 @@ body {
 // Sections
 
 section {
-  padding: em(60) 0;
+  padding: 3em 0;
 
   @include media($medium-up) {
-    padding: em(20) 0;
+    padding: 2em 0;
   }
 }
 

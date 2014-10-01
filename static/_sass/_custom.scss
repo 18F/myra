@@ -48,21 +48,6 @@ body {
 
 }
 
-.site-title{
-  letter-spacing: -1px;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 0;
-  a {
-    color: #000;
-  }
-}
-
-.site-subtitle {
-  font-size: $base-font-size * 1.25;
-  color: #000;
-}
-
 .site-nav {
   @include span-columns(12);
   text-align: center;
@@ -102,8 +87,8 @@ body {
     }
 
     a {
-      padding: 4.5em em(10) .5em;
-      font-size: $base-font-size * 1.25;
+      padding: 3em em(10) .5em;
+      font-size: $base-font-size * 1.333;
     }
   }
 
@@ -115,6 +100,9 @@ body {
 
 footer {
   @extend %inverse;
+  p {
+    font-size: $base-font-size;
+  }
 
   .left {
 
@@ -150,21 +138,19 @@ footer {
 /**************************/
 
 .hero {
-  padding: em(50) 0;
+  padding: 3em 0;
   background: url('../img/hero_bg.jpg');
-  background-attachment: fixed;
   background-size: cover;
 
   .display,
   .sub-headline {
     @include span-columns(12);
     @include shift(0);
-    color: $myra-blue1;
     text-align: center;
 
 
     @include media($large-up) {
-      @include span-columns(10);
+      @include span-columns(10 of 12);
       @include shift(1);
     }
   }
@@ -173,13 +159,16 @@ footer {
     padding-top: 1em;
   }
 
-  .coming-soon {
+  .lead-text {
     @include span-columns(12);
-    @extend h2;
-    font-weight: 700;
-    color: $myra-blue2;
-    margin-bottom: 0;
+    @include shift(0);
+    margin-top: 2em;
     text-align: center;
+
+    @include media($large-up) {
+      @include span-columns(8);
+      @include shift(2);
+    }
   }
 
   &.gradient-bg {
@@ -193,17 +182,36 @@ footer {
   }
 }
 
+.coming-soon {
+  @include span-columns(12);
+  @extend h2;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+
 .headline {
-  @include row();
+  @include span-columns(12);
+  padding: 2em;
+  background: rgba($myra-blue1,.8);
+  box-shadow: 0px 1px 2px 0 rgba(0,0,0,.2);
+  color: #fff;
+
+  .display,
+  .sub-headline {
+    color: #fff;
+  }
 
   @include media($large-up) {
-    padding: em(20);
+    padding: 2em;
   }
 }
 
 .hero-signup {
-  margin-top: em(30);
-  padding-top: $base-line-height;
+  @include span-columns(12);
+  margin-top: 2em;
+  background: rgba(#fff, .7);
+  padding: 2em;
 
   .flash-success {
     margin-top: em(10);
@@ -211,16 +219,15 @@ footer {
   }
 
   @include media($medium-up) {
-    @include span-columns(6);
-    @include shift(3);
+    @include span-columns(8);
+    @include shift(2);
   }
 }
 
 
 .quote {
-  @include span-columns(8);
-  @include shift(2);
-  font-size: 2.25em;
+  @extend .h2;
+  font-weight: 400;
   text-align: center;
   display: block;
   position: relative;
@@ -312,6 +319,7 @@ footer {
 
   li {
     width: 100%;
+    font-size: $base-font-size;
 
     &:last-child {
       a {
@@ -449,9 +457,9 @@ $feature-color: #fff;
 /**************************/
 
 .value-proposition {
-  .h3 {
-    margin-bottom: $base-line-height;
-    text-align: center;
+  .call-out {
+    @include span-columns(10);
+    @include shift(1);
   }
 
   aside {
@@ -469,17 +477,20 @@ $feature-color: #fff;
 
 
   @include media($medium-up) {
-    h3 {
+    .call-out {
       @include span-columns(8);
       @include shift(2);
     }
 
     aside {
       @include span-columns(4);
+      @include shift(0);
 
       h3 {
-        text-align: left;
+        @include fill-parent();
+        text-align: center;
       }
+
     }
   }
 }
@@ -500,6 +511,7 @@ $feature-color: #fff;
   border-top: 2px solid $myra-green;
   border-bottom: 2px solid $myra-green;
   text-align: center;
+  padding: 3em 0;
 
   #email-capture {
     input {
@@ -561,6 +573,19 @@ $feature-color: #fff;
 /**************************/
 /* Calculator */
 /**************************/
+
+#calculator {
+  @include media($medium-up) {
+    background: #f3f3f3;
+    padding: 1em;
+
+    .container {
+      background: #fff;
+      border: 1px solid #f1f1f1;
+      padding: 3em 2em;
+    }
+  }
+}
 
 .calculator {
   @include clearfix();
@@ -632,7 +657,7 @@ $feature-color: #fff;
   }
 
   .calculator-input-group {
-    @include span-columns(6 of 8);
+    @include span-columns(8 of 8);
   }
 
   .calculator-label {
@@ -655,22 +680,13 @@ input[type="text"].calculator-input,
 }
 
 .calculator-helper {
-  @include span-columns(2 of 8);
+  @include span-columns(8 of 8);
+  margin-top: 1em;
   position: relative;
   background: $myra-blue1;
-  border-radius: 5px;
   display: none;
   padding: 1em;
   font-size: .875em;
-
-  &:before {
-    content: '';
-    display: block;
-    @include triangle(20px, $myra-blue1, left);
-    position: absolute;
-    left: -10px;
-    top: 40px;
-  }
 
   p {
     margin-bottom: 0;
@@ -873,8 +889,9 @@ input[type="text"].calculator-input,
 /**************************/
 .section-intro {
   margin-bottom: $base-line-height;
+
   p {
-    font-size: 1.25em;
+    @extend .lead-text;
   }
 
   @include media($large-up) {
@@ -953,7 +970,7 @@ input[type="text"].calculator-input,
 
 .stacked-steps {
   border-top: 1px solid $base-border-color;
-  background: $light-gray;
+  background: #f3f3f3;
 
   .tabs {
     display: none;
@@ -1087,8 +1104,7 @@ input[type="text"].calculator-input,
 
   .section-heading {
     position: absolute;
-    padding-top: 4em;
-    top: 0;
+    top: 2em;
     left: 0;
     z-index: 10;
     text-align: center;
@@ -1102,8 +1118,9 @@ input[type="text"].calculator-input,
   .who-bullets {
     @include span-columns(10);
     @include shift(1);
+    @extend .h3;
+    font-weight: 400;
     color: #fff;
-    font-size: 1.5em;
     margin-top: 5em;
 
     @include media($large-up) {
@@ -1156,22 +1173,32 @@ input[type="text"].calculator-input,
 
     .bx-prev,
     .bx-next {
+      display: none;
       &:focus {
         outline: 1px dotted #fff;
+      }
+
+      @include media($medium-up) {
+        display: block;
       }
     }
   }
 
   .bxslider {
     position: absolute;
-    top: 2em;
     left: 0;
   }
 
   .slide {
-    background-size: cover;
+    background-size: contain;
+    background-position: 0 100%;
+    background-color: #333;
     background-repeat: no-repeat;
     padding: 2em;
+
+    @include media($medium-up) {
+      background-size: cover;
+    }
   }
 
   .who-slide-1 {
@@ -1185,7 +1212,12 @@ input[type="text"].calculator-input,
   }
 
   .quote-container {
-    padding-left: 80px;
+    margin-top: 4em;
+
+    @include media($medium-up) {
+      margin-top: 0;
+      padding-left: 80px;
+    }
   }
 
   .quote,
@@ -1195,9 +1227,13 @@ input[type="text"].calculator-input,
   }
 
   .quote {
-    @include span-columns(6);
-    @include shift(0);
+    @include span-columns(12);
     line-height: 1.2;
+
+    @include media($medium-up) {
+      @include span-columns(6);
+      @include shift(0);
+    }
   }
 }
 
@@ -1332,22 +1368,6 @@ input[type="text"].calculator-input,
 /* Home Page
 /**************************/
 
-.home {
-  .hero {
-    .lead-text {
-      @include span-columns(12);
-      @include shift(0);
-      margin-top: 2em;
-      text-align: center;
-
-      @include media($large-up) {
-        @include span-columns(8);
-        @include shift(2);
-      }
-    }
-  }
-}
-
 .audience {
   border-top: 1px solid $base-border-color;
 
@@ -1358,12 +1378,8 @@ input[type="text"].calculator-input,
     background: $light-gray;
     border: 1px solid $base-border-color;
 
-    p {
-      font-size: $base-font-size * 1.25;
-    }
-
     a {
-      font-size: $base-font-size * 1.5;
+      font-size: $base-font-size * 1.333;
       font-weight: bold;
       text-align: center;
     }
