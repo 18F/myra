@@ -104,9 +104,13 @@ cite {
 
 .display {
   display: block;
-  font-size: 3em;
+  font-size: 2.5em;
   line-height: 1;
   margin-bottom: 0;
+
+  @include media($medium-up) {
+    font-size: 3em;
+  }
 }
 
 .sub-headline {
