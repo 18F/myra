@@ -746,7 +746,18 @@ $feature-color: #fff;
 
 .calculator-row {
   @include span-columns(12);
-  margin-bottom: em(40);
+  background: #f3f3f3;
+  border-bottom: 1px solid #cdcdcd;
+  border-left: 1px solid #cdcdcd;
+  border-right: 1px solid #cdcdcd;
+  margin-bottom: 0;
+  padding: 1em;
+
+  &:nth-child(2) {
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 .calculator-label {
@@ -760,11 +771,20 @@ $feature-color: #fff;
   padding: 0.5em 0.5em .5em 1em;
 }
 
+.total-saved {
+  @extend .h4;
+}
+
 @include media($large-up) {
-  .calculator-intro,
+  .calculator-intro {
+    @include span-columns(8);
+    @include shift(2);
+  }
+
   .calculator-row {
     @include span-columns(8);
     @include shift(2);
+    padding: 1.5em 2em 2em 2em;
   }
 
   .calculator-input-group {
@@ -792,16 +812,15 @@ $feature-color: #fff;
 }
 
 
-input[type="text"].calculator-input,
-.total-saved {
+input[type="text"].calculator-input {
   // @include span-columns(1 of 8);
   width: em(50);
   display: inline-block;
   @extend .h4;
-  padding: .5em 0 0 0;
+  padding: .5em;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid $medium-gray;
+  border: 1px solid $medium-gray;
   box-shadow: none;
   text-align: center;
   color: $myra-green;
@@ -813,10 +832,15 @@ input[type="text"].calculator-input,
 }
 
 .results {
+  .after-input {
+    float: right;
+  }
   .calculator-helper {
+    display: none;
     margin-top: 1em;
     border: 2px solid $myra-blue2;
     padding: 1em;
+    background: #fff;
 
     p {
       margin-bottom: .5em;
@@ -885,19 +909,18 @@ input[type="text"].calculator-input,
 
 .meter-label-container {
   @include span-columns (9 of 9);
-  padding-top: 1em;
   position: relative;
 }
 
 .principal-label,
 .interest-label {
-  @include span-columns(2 of 9);
-  left: 100px;
+  display: inline-block;
 }
 
 .interest-label {
   @include transition(left, .2s);
   position: absolute;
+  left: 20%;
 
 }
 
@@ -912,11 +935,6 @@ input[type="text"].calculator-input,
     color: $myra-blue2;
   }
 }
-
-.meter-label {
-  display: block;
-}
-
 
 //
 // .calculator {

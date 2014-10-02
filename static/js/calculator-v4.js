@@ -74,7 +74,6 @@ $(document).ready(function(){
   // Set the displayed values
   var value1, value2, principal, interest, total;
   function setValues(){
-
     value1 = Number($('#input-1').val().replace('$',''));
     value2 = Number($('#input-2').val());
     total = compoundInterest(0, apr, ip, value2, value1);
@@ -89,18 +88,9 @@ $(document).ready(function(){
       var iWidth = (interest / goal) * 100;
       $('.meter-p').width(pWidth + '%');
       $('.meter-i').width(iWidth + '%');
-
-      // Set the position of the interest label
-      var pWidthPixels = $('.meter-p').width();
-      console.log(pWidthPixels);
-      if (pWidthPixels > 100) {
-        var iPosition = pWidthPixels;
-        $('.interest-label').css('left', iPosition);
-      }
-
-      $('.calculator-helper:not(:first)').fadeOut();
+      $('.results .calculator-helper:not(:first)').fadeOut();
+      moveInterestLabel(pWidth);
       setLabels(goal, value1, value2);
-
     }
     // Once we hit 15k
     else {
@@ -108,21 +98,24 @@ $(document).ready(function(){
         principal = value1 * value2 * 12;
         interest = total - principal;
         $('.years-to-goal').html(value2);
-        $('.calculator-helper').fadeIn();
+        $('.results .calculator-helper').fadeIn();
         var pWidth = (principal / goal) * 100;
         var iWidth = 100 - pWidth;
         $('.meter-p').width(pWidth + '%');
         $('.meter-i').width(iWidth + '%');
         setLabels(goal, value1, value2);
-
-        // Set the position of the interest label
-        var pWidthPixels = $('.meter-p').width();
-        if (pWidthPixels > 100) {
-          var iPosition = pWidthPixels;
-          $('.interest-label').css('left', iPosition);
-        }
+        moveInterestLabel(pWidth);
     }
+  }
 
+  function moveInterestLabel(pWidth){
+    if (20 < pWidth && pWidth < 80 ) {
+      $('.interest-label').css('left', pWidth + '%');
+    } else if ( pWidth > 80 ) {
+      $('.interest-label').css('left', '80%');
+    } else if ( pWidth < 20 ) {
+      $('.interest-label').css('left', '20%');
+    }
   }
 
   function setLabels(value0, value1, value2) {
