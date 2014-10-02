@@ -31,6 +31,7 @@ $(document).ready(function(){
   windowHeight = $(window).height();
   scrollPos = $(window).scrollTop();
   // We'll just add the appear classes in here so it doesn't mess up non-js browsers
+  $('.headline, .hero-signup').addClass('appear fade-in');
   $('.individuals .benefit-block:nth-child(even)').addClass('appear slide-in-left fade-in');
   $('.individuals .benefit-block:nth-child(odd)').addClass('appear slide-in-right fade-in');
   $('.employer .benefit-block').addClass('appear fade-in');
@@ -67,7 +68,6 @@ $(document).ready(function(){
   var navTop, navHeight, sections;
   if ( $('.page-nav').length > 0 ) {
     navTop = $('.page-nav').offset().top;
-    navHeight = $('.page-nav').height();
 
     // Build an array of all of the section ids
     sections = []
@@ -79,6 +79,7 @@ $(document).ready(function(){
     $(document).scroll(function(){
       scrollPos = $(window).scrollTop();
       if (scrollPos >= navTop) {
+        navHeight = $('.page-nav').height();
         $('.page-nav').addClass('fixed');
         $('body').css('padding-top', navHeight);
       } else {
