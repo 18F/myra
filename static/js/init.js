@@ -92,9 +92,9 @@ $(document).ready(function(){
         var sectionTop = $(sectionId).offset().top;
         if ( scrollPos > (sectionTop - 46)) {
           $('.current-section').removeClass('current-section');
-          $(this).addClass('current-section');
+          $(this).parent('li').addClass('current-section');
         } else {
-          $(this).removeClass('current-section');
+          $(this).parent('li').removeClass('current-section');
         }
       })
     })

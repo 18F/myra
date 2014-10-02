@@ -68,15 +68,25 @@ $(document).ready(function(){
     value1 = Number($('#input-1').val().replace('$',''));
     value2 = Number($('#input-2').val());
     total = compoundInterest(0, apr, ip, value2, value1);
+
     // What happens as long as the total is under 15k
     if ( total < 15000 ) {
       principal = value1 * value2 * 12;
       interest = total - principal;
+
       // Now let's set the widths of each meter section
       var pWidth = (principal / 15000) * 100;
       var iWidth = (interest / 15000) * 100;
       $('.meter-p').width(pWidth + '%');
       $('.meter-i').width(iWidth + '%');
+
+      // Set the position of the interest label
+      var pWidthPixels = $('.meter-p').width();
+      console.log(pWidthPixels);
+      if (pWidthPixels > 100) {
+        var iPosition = pWidthPixels;
+        $('.interest-label').css('left', iPosition);
+      }
 
       $('.calculator-helper:not(:first)').fadeOut();
       setLabels(value1, value2);
@@ -94,6 +104,13 @@ $(document).ready(function(){
         $('.meter-p').width(pWidth + '%');
         $('.meter-i').width(iWidth + '%');
         setLabels(value1, value2);
+
+        // Set the position of the interest label
+        var pWidthPixels = $('.meter-p').width();
+        if (pWidthPixels > 100) {
+          var iPosition = pWidthPixels;
+          $('.interest-label').css('left', iPosition);
+        }
     }
 
   }

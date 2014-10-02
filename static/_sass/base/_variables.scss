@@ -1,15 +1,14 @@
 // Typography
-$garamond: 'adobe-garamond-pro';
 $pn: 'proxima-nova';
 $sans-serif: $pn, 'helvetica', 'arial', sans-serif;
-$serif: $garamond, 'georgia', serif;
+$serif: 'georgia', serif;
 $base-font-family: $sans-serif;
 $header-font-family: $base-font-family;
 
 // Sizes
 $base-font-size: 1em;
 $base-line-height: $base-font-size * 1.5;
-$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
+$unitless-line-height: 1.45;
 $header-line-height: $base-font-size * 1.25;
 $base-border-radius: em(3);
 
@@ -26,7 +25,8 @@ $light-green: #dcf5ed;
 // $myra-green: #2FA380;
 $myra-green: #00875F;
 $myra-blue1: #04688D;
-$myra-blue2: #0C88A8;
+// $myra-blue2: #0C88A8;
+$myra-blue2: #0a7089;
 $myra-blue3: #15A9C4;
 $myra-blue4: #5FC5D8;
 

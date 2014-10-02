@@ -1,12 +1,17 @@
 // Styles for general page layout
 
 body {
-  min-width: 960px;
+  // min-width: 960px;
 }
 
 .container {
   @include outer-container();
   overflow-x: hidden;
+  padding: 0 em(20);
+
+  @include media($largest-up) {
+    padding: 0;
+  }
 }
 
 .row {
@@ -40,7 +45,11 @@ body {
 // Sections
 
 section {
-  padding: em(60);
+  padding: 3em 0;
+
+  @include media($medium-up) {
+    padding: 2em 0;
+  }
 }
 
 %inverse {
