@@ -185,14 +185,22 @@ footer {
 .coming-soon {
   @include span-columns(12);
   @extend h2;
+  background: rgba($myra-blue1,.8);
+  color: #fff;
+  border-bottom: 1px solid #fff;
   margin-bottom: 0;
   text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .5em 0;
 }
 
 
 .headline {
   @include span-columns(12);
-  padding: 2em;
+  padding: 6em 2em 2em 2em;
+  position: relative;
   background: rgba($myra-blue1,.8);
   box-shadow: 0px 1px 2px 0 rgba(0,0,0,.2);
   color: #fff;
@@ -201,16 +209,12 @@ footer {
   .sub-headline {
     color: #fff;
   }
-
-  @include media($large-up) {
-    padding: 2em;
-  }
 }
 
 .hero-signup {
   @include span-columns(12);
   margin-top: 2em;
-  background: rgba(#fff, .7);
+  background: rgba(#fff, .9);
   padding: 2em;
 
   .flash-success {
@@ -334,22 +338,12 @@ footer {
       padding: em(10) em(20);
       border-right: 1px solid $base-border-color;
       border-bottom: 1px solid $base-border-color;
-
     }
 
-    a:hover,
-    .current-section {
+    &.current-section a,
+    a:hover {
       background: darken($myra-blue1, 10);
       color: #fff;
-    }
-  }
-
-  &.fixed {
-    @include media($medium-up) {
-      z-index: 10000;
-      position: fixed;
-      top: 0;
-      box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
     }
   }
 
@@ -367,6 +361,69 @@ footer {
       }
     }
   }
+}
+
+.page-nav.fixed {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
+
+  li {
+    @include span-columns(2, block-collapse);
+  }
+
+  .current-section {
+    @include span-columns(6, block-collapse);
+
+    .nav-label {
+      display: inline-block;
+    }
+
+    .fa {
+      display: none;
+    }
+
+    a {
+      padding: em(10);
+    }
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  @include media($small-up) {
+    li,
+    li:last-child,
+    .current-section {
+      width: 50%;
+      float: left;
+    }
+    .nav-label {
+      display: inline-block;
+    }
+
+    .fa {
+      display: inline-block;
+    }
+  }
+
+  @include media($large-up) {
+    li,
+    li:last-child,
+    .current-section {
+      @include span-columns(3, block-collapse);
+      a {
+        border-bottom: none;
+      }
+      
+      .fa {
+        display: inline-block;
+      }
+    }
+  }
+
 }
 
 
@@ -680,18 +737,19 @@ input[type="text"].calculator-input,
 }
 
 .calculator-helper {
-  @include span-columns(8 of 8);
+  @include span-columns(6 of 8);
   margin-top: 1em;
   position: relative;
-  background: $myra-blue1;
+  background: #eaeaea;
+  border-left: 10px solid $myra-blue2;
   display: none;
   padding: 1em;
   font-size: .875em;
+  border-radius: 0 5px 5px 0;
 
   p {
     margin-bottom: 0;
-    color: #fff;
-    font-style: italic;
+    color: #333;
   }
 }
 
@@ -720,6 +778,7 @@ input[type="text"].calculator-input,
   background: $light-gray;
   border-radius: 5px;
   overflow: hidden;
+  box-shadow: inset 0 0 2px 2px rgba(0,0,0,.1);
 }
 
 .meter-inner {
@@ -733,11 +792,11 @@ input[type="text"].calculator-input,
 }
 
 .meter-p {
-  background: $myra-blue1;
+  @include linear-gradient(90deg, $myra-blue1, lighten($myra-blue1, 10));
 }
 
 .meter-i {
-  background: $myra-blue3;
+  @include linear-gradient(90deg, $myra-blue3, lighten($myra-blue3, 10));
 }
 
 .tic-marks {
