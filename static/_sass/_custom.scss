@@ -1338,6 +1338,13 @@ input[type="text"].calculator-input,
   }
 }
 
+/* No-JS Fallback */
+
+.no-js {
+    .bxslider {
+      position: relative;
+    }
+}
 .benefits {
   border-bottom: 1px solid $base-border-color;
 }
