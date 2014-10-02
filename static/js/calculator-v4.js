@@ -60,6 +60,16 @@ $(document).ready(function(){
   // Set the APR in decimal form
   var ip = 12;
   var apr = .035;
+  var goal = 5000;
+
+  // Get the savings goal
+  $('.toggle-buttons .button').click(function(){
+    $('.button.selected').removeClass('selected');
+    $(this).addClass('selected');
+    goal = Number($(this).val().replace('$','').replace(',',''));
+    updateSlide1();
+    updateSlide2();
+  })
 
   // Set the displayed values
   var value1, value2, principal, interest, total;
@@ -70,13 +80,13 @@ $(document).ready(function(){
     total = compoundInterest(0, apr, ip, value2, value1);
 
     // What happens as long as the total is under 15k
-    if ( total < 15000 ) {
+    if ( total < goal ) {
       principal = value1 * value2 * 12;
       interest = total - principal;
 
       // Now let's set the widths of each meter section
-      var pWidth = (principal / 15000) * 100;
-      var iWidth = (interest / 15000) * 100;
+      var pWidth = (principal / goal) * 100;
+      var iWidth = (interest / goal) * 100;
       $('.meter-p').width(pWidth + '%');
       $('.meter-i').width(iWidth + '%');
 
@@ -89,21 +99,21 @@ $(document).ready(function(){
       }
 
       $('.calculator-helper:not(:first)').fadeOut();
-      setLabels(value1, value2);
+      setLabels(goal, value1, value2);
 
     }
     // Once we hit 15k
     else {
-        total = 15000;
+        // total = goal;
         principal = value1 * value2 * 12;
         interest = total - principal;
         $('.years-to-goal').html(value2);
         $('.calculator-helper').fadeIn();
-        var pWidth = (principal / 15000) * 100;
+        var pWidth = (principal / goal) * 100;
         var iWidth = 100 - pWidth;
         $('.meter-p').width(pWidth + '%');
         $('.meter-i').width(iWidth + '%');
-        setLabels(value1, value2);
+        setLabels(goal, value1, value2);
 
         // Set the position of the interest label
         var pWidthPixels = $('.meter-p').width();
@@ -115,10 +125,11 @@ $(document).ready(function(){
 
   }
 
-  function setLabels(value1, value2) {
+  function setLabels(value0, value1, value2) {
     $('.total-saved').html('$' + total.formatMoney(0,'.',','));
     $('.principal-saved').html('$' + principal.formatMoney(0,'.',','));
     $('.interest-earned').html('$' + interest.formatMoney(0,'.',','));
+    $('.savings-goal').html('$' + value0.formatMoney(0,'.',','));
     $('.monthly-rate').html('$' + value1);
     $('.daily-rate').html('$' + (value1/30).formatMoney(2,'.',','));
   }
@@ -127,14 +138,14 @@ $(document).ready(function(){
     var value1=Number($('#input-1-slider').val().replace('$',''));
     var value2=Number($('#input-2-slider').val());
     var total=compoundInterest(0, apr, ip, value2, value1);
-    if (total > 15000)
+    if (total > goal)
     {
       $('#input-2-slider').val(value2-1);
       var value1=Number($('#input-1-slider').val().replace('$',''));
       var value2=Number($('#input-2-slider').val());
       var total=compoundInterest(0, apr, ip, value2, value1);
       $('#input-2-slider .noUi-origin').css('background-color', '#2FA380');
-      if(total < 15000) {
+      if(total < goal) {
         $('#input-2-slider').val(value2+1);
         $('#input-2-slider .noUi-origin').css('background-color', '#fff');
       } else {
@@ -147,13 +158,13 @@ $(document).ready(function(){
     var value1=Number($('#input-1-slider').val().replace('$',''));
     var value2=Number($('#input-2-slider').val());
     var total=compoundInterest(0, apr, ip, value2, value1);
-    if (total > 15000)
+    if (total > goal)
     {
       $('#input-2-slider').val(value2-1);
       var value1=Number($('#input-1-slider').val().replace('$',''));
       var value2=Number($('#input-2-slider').val());
       var total=compoundInterest(0, apr, ip, value2, value1);
-      if (total < 15000)
+      if (total < goal)
         $('#input-2-slider').val(value2+1);
       else
         updateSlide2();
@@ -180,14 +191,11 @@ $(document).ready(function(){
   $('#calculator-1').change(function(){
     setValues();
     updateSlide1();
-    $(this).next('.calculator-helper').fadeIn();
-
   })
 
   $('#calculator-2').change(function(){
     setValues();
     updateSlide2();
-    $('.results').fadeIn();
   })
 
 

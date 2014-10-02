@@ -17,35 +17,41 @@
     </div>
     <div class="calculator">
       <div class="calculator-intro">
-        <h3>See how you can reach $15,000 in your <span class="myra">myRA</span></h3>
+        <h3>See how you can reach your savings goals</h3>
         <p><span class="myra">myRA</span> is a perfect way to kickstart your retirement savings, helping you get your first $15,000 saved that you can then roll over to a private Roth IRA.</p>
       </div>
       <div class="calculator-row">
-        <div class="calculator-input-group" id="calculator-1">
-          <label class="calculator-label" for="input-1">1. Monthly savings:</label>
-          <input class="calculator-input" id="input-1" type="text">
-          <div class="calculator-slider" id="input-1-slider"></div>
+        <div class="calculator-input-group" id="calculator-0">
+          <label class="calculator-label" for="input-0">First, set a savings goal. You can save up to $15,000 in your myRA.</label>
+          <div class="toggle-buttons">
+            <input class="button" value="$500"><input class="button" value="$1,000"><input class="button selected" value="$5,000"><input class="button" value="$10,000"><input class="button" value="$15,000">
+          </div>
         </div>
-        <div class="calculator-helper">
-          <p>How easy is it to save <span class="monthly-rate">$50</span> a month?</p>
-          <p>That's just <span class="daily-rate">$1.66</span> a day.</p>
+      </div>
+      <div class="calculator-row">
+        <div class="calculator-input-group" id="calculator-1">
+          <label class="calculator-label" for="input-1">How much can you save each month?</label>
+          <input class="calculator-input" id="input-1" type="text">
+          <span class="after-input">each month.</span>
+          <div class="calculator-helper">
+            <p>How easy is it to save <span class="monthly-rate">$50</span> a month? That's just <span class="daily-rate">$1.66</span> a day.</p>
+          </div>
+          <div class="calculator-slider" id="input-1-slider"></div>
         </div>
       </div>
       <div class="calculator-row">
         <div class="calculator-input-group" id="calculator-2">
-          <label class="calculator-label" for="input-2">2. Years saved:</label>
+          <label class="calculator-label" for="input-2">Let's see how your savings add up over</label>
           <input class="calculator-input" id="input-2" type="text">
+          <span class="after-input">years.</span>
           <div class="calculator-slider" id="input-2-slider"></div>
-        </div>
-        <div class="calculator-helper">
-          <p>Great! You can reach the max of $15,000 in your <span class="myra">myRA</span> in just <span class="years-to-goal"></span> years.</p>
-          <p><strong>Increase your monthly contribution to reach your goal faster.</strong></p>
         </div>
       </div>
       <div class="calculator-row results">
         <div class="calculator-input-group" >
-          <h4 class="calculator-label">Total <span class="myra">myRA</span> Savings:</h4>
+          <h4 class="calculator-label">Savings:</h4>
           <span class="total-saved">$15,000</span>
+          <span class="after-input">of <span class="savings-goal"></span>.</span>
           <div class="meter">
             <div class="tic-marks">
               <span class="tic"></span>
@@ -73,7 +79,10 @@
           </div>
         </div>
         <div class="calculator-helper">
-          <p>That’s <span class="interest-earned">$4,200</span> in free money you get just for saving!</p>
+          <h3>Good job!</h3>
+          <p>You can reach your goal of <span class="savings-goal"></span> in your <span class="myra">myRA</span> in just <span class="years-to-goal"></span> years.</p>
+          <p>And with <span class="interest-earned">$4,200</span> in interest, that's money you get just for saving!</p>
+          <p><strong>Feeling ambitious?</strong> Increase your monthly contribution to reach your goal faster.</strong></p>
         </div>
       </div>
     <div> <!-- .calculator -->

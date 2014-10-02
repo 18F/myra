@@ -12,12 +12,13 @@ input[type="submit"],
 }
 
 .toggle-buttons {
-  button {
+  clear: both;
+  text-align: center;
+
+  .button {
     @include linear-gradient(lighten($medium-gray, 5), $medium-gray);
     border: 1px solid darken($medium-gray, 20);
-    display: block;
-    float: left;
-    width: 33%;
+    text-align: center;
     margin: 0;
     border-radius: 0;
     color: $dark-gray;
