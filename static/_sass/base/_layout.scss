@@ -9,7 +9,7 @@ body {
   overflow-x: hidden;
   padding: 0 em(20);
 
-  @include media($large-up) {
+  @include media($largest-up) {
     padding: 0;
   }
 }
