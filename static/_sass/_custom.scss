@@ -355,7 +355,7 @@ footer {
 /**************************/
 
 .page-nav {
-  background: $myra-green;
+  background: #03435b;
   text-align: center;
   border-top: 1px solid $base-border-color;
   border-bottom: 1px solid $base-border-color;
@@ -386,7 +386,7 @@ footer {
 
     &.current-section a,
     a:hover {
-      background: darken($myra-green, 10);
+      background: darken(#03435b, 10);
       color: #fff;
     }
   }
