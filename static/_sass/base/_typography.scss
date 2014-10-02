@@ -47,6 +47,34 @@ h4,
   margin-top: 0;
 }
 
+// For phones
+@include media($tiny-down) {
+  h1,
+  .display {
+    font-size: $base-font-size * 1.602;
+  }
+
+  h2,
+  .call-out,
+  .sub-headline {
+    font-size: $base-font-size * 1.424;
+  }
+
+  h3 {
+    font-size: $base-font-size * 1.266;
+  }
+
+  h4 {
+    font-size: $base-font-size * 1.125;
+  }
+
+  p,
+  li {
+    font-size: $base-font-size;
+  }
+}
+
+
 p {
   margin: 0 0 ($base-line-height * .75);
 }
@@ -101,6 +129,10 @@ cite {
   font-weight: 400;
   margin: 0 0 $base-line-height 0;
   text-align: center;
+
+  @include media($tiny-down) {
+    font-size: $base-font-size & 1.424;
+  }
 }
 
 .display {
@@ -108,10 +140,6 @@ cite {
   display: block;
   line-height: 1;
   margin-bottom: 0;
-
-  @include media($medium-up) {
-    font-size: 2.7em;
-  }
 }
 
 .sub-headline {

@@ -32,13 +32,17 @@ body {
 
   .container {
     position: relative;
+
+    @include media($tiny-down) {
+      padding: 0;
+    }
   }
 
   hgroup {
     padding: 1em 0;
 
     @include media($medium-up) {
-      float: left;
+      @include span-columns(3);
     }
   }
 
@@ -51,12 +55,10 @@ body {
 .site-nav {
   @include span-columns(12);
   text-align: center;
-
-  ul {
-    display: inline-block;
-  }
+  border-top: 1px solid #c1c1c1;
 
   li {
+    @include span-columns(4, block-collapse);
     float: left;
   }
 
@@ -65,6 +67,10 @@ body {
     color: $myra-green;
     display: block;
     padding: em(10);
+
+    @include media($tiny-down) {
+      font-size: .875em;
+    }
 
     &.current-page {
       background: darken($light-gray, 8);
@@ -78,17 +84,27 @@ body {
     }
   }
 
-  @include media($medium-up) {
-    @include span-columns(8);
-    float: right;
 
-    ul {
-      float: right;
+  @include media($medium-up) {
+    @include span-columns(9);
+    border-top: none;
+
+    li {
+      @include span-columns(3 of 9, block-collapse);
     }
 
     a {
       padding: 3em em(10) .5em;
       font-size: $base-font-size * 1.333;
+    }
+  }
+
+  @include media($large-up) {
+    @include span-columns(6);
+    @include shift(3);
+
+    li {
+      @include span-columns(2 of 6, block-collapse);
     }
   }
 
@@ -143,6 +159,15 @@ footer {
   background-size: cover;
   min-height: 500px;
 
+  @include media($tiny-down) {
+    padding: 0;
+    min-height: 0;
+
+    .container {
+      padding: 0;
+    }
+  }
+
   .display,
   .sub-headline {
     @include span-columns(12);
@@ -163,8 +188,8 @@ footer {
   .lead-text {
     @include span-columns(12);
     @include shift(0);
-    margin-top: 2em;
     text-align: center;
+    margin-top: 2em;
 
     @include media($large-up) {
       @include span-columns(8);
@@ -194,7 +219,7 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  padding: .5em 0;
+  padding: .5em;
 }
 
 
@@ -210,6 +235,10 @@ footer {
   .sub-headline {
     color: #fff;
   }
+
+  @include media($tiny-down) {
+    padding: 4em .5em 1em .5em;
+  }
 }
 
 .hero-signup {
@@ -217,6 +246,10 @@ footer {
   margin-top: 2em;
   background: rgba(#fff, .9);
   padding: 2em;
+
+  @include media($tiny-down) {
+    margin-top: 0;
+  }
 
   .flash-success {
     margin-top: em(10);
