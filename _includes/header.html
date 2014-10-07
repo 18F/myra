@@ -1,32 +1,34 @@
-<!--[if lt IE 8]>
-<div>
-  <div class="container">
-    <p>Sorry, but this site is not supported on Internet Explorer 8 and older. Please use another browser, or upgrade to a more recent version of Internet Explorer.</p>
-    <p>For more information on the browsers available to you, go to: <a href="http://whatbrowser.org">http://whatbrowser.org</a>.</p>
-  </div>
-</div>
-<![endif]-->
+<body class="{{ page.bodyclass }}" itemscope itemtype="http://schema.org/WebPage">
 
-<header class="site-header">
-  <div class="alpha">
+  <!--[if lt IE 8]>
+  <div>
     <div class="container">
-      <span>This site is in alpha. The content contained is not final and is not reflective of the ultimate policy.</span>
+      <p>Sorry, but this site is not supported on Internet Explorer 8 and older. Please use another browser, or upgrade to a more recent version of Internet Explorer.</p>
+      <p>For more information on the browsers available to you, go to: <a href="http://whatbrowser.org">http://whatbrowser.org</a>.</p>
     </div>
   </div>
-  <div class="container">
+  <![endif]-->
 
-    <hgroup>
-      <a href="{{ site.baseurl }}/" title="Home"><h1 class="site-title">myRA: My Retirement Account</h1></a>
-    </hgroup>
+  <header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="alpha">
+      <div class="container">
+        <span>This site is in alpha. The content contained is not final and is not reflective of the ultimate policy.</span>
+      </div>
+    </div>
+    <div class="container">
 
-    <nav class="site-nav">
-      <ul role="menubar">
-        <li role="menuitem"><a class="page-link {% if page.title == 'Individuals' %}current-page {% endif %}" href="{{ site.baseurl }}/individuals/v3">For Individuals</a></li>
-        <li role="menuitem"><a class="page-link {% if page.title == 'Employers' %}current-page {% endif %}" href="{{ site.baseurl }}/employers">For Employers</a></li>
-        <li role="menuitem"><a class="page-link {% if page.title == 'About' %}current-page {% endif %}" href="{{ site.baseurl }}/about">About <span class="myra">myRA</span></a></li>
-      </ul>
-    </nav>
+      <hgroup>
+        <a href="{{ site.baseurl }}/" title="Home"><h1 class="site-title" itemprop="name">myRA: My Retirement Account</h1></a>
+      </hgroup>
 
-  </div>
+      <nav class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <ul role="menubar">
+          <li role="menuitem"><a class="page-link {% if page.title == 'Individuals' %}current-page {% endif %}" href="{{ site.baseurl }}/individuals/v3">For Individuals</a></li>
+          <li role="menuitem"><a class="page-link {% if page.title == 'Employers' %}current-page {% endif %}" href="{{ site.baseurl }}/employers">For Employers</a></li>
+          <li role="menuitem"><a class="page-link {% if page.title == 'About' %}current-page {% endif %}" href="{{ site.baseurl }}/about">About <span class="myra">myRA</span></a></li>
+        </ul>
+      </nav>
 
-</header>
+    </div>
+
+  </header>

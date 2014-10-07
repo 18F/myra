@@ -3,19 +3,16 @@
 
   {% include head.html %}
 
-    <body class="{{ page.bodyclass }}">
-
     {% include header.html %}
 
-    <div class="page-content">
+    <main class="page-content" role="main" itemprop="mainContentofPage" itemscope itemtype="http://schema.org/WebPageElement">
       <section>
         <div class="container">
           {{ content }}
         </div>
       </section>
-    </div>
+    </main>
 
     {% include footer.html %}
 
-    </body>
 </html>
