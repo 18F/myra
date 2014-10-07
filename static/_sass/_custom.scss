@@ -619,29 +619,6 @@ $feature-color: #fff;
   text-align: center;
   padding: 3em 0;
 
-  #email-capture {
-    input {
-      width: 100%;
-    }
-
-    @include media($medium-up) {
-      @include span-columns(6);
-      @include shift(3);
-      padding-top: 1em;
-
-      label {
-        text-align: left;
-      }
-
-      input {
-        @include span-columns(6 of 6);
-      }
-      .submit {
-        @include span-columns(6 of 6);
-      }
-    }
-  }
-
   .cta-intro {
     text-align: left;
 
@@ -652,6 +629,29 @@ $feature-color: #fff;
   }
 }
 
+.email-capture {
+  input {
+    width: 100%;
+  }
+
+  @include media($medium-up) {
+    @include span-columns(6);
+    @include shift(3);
+    padding-top: 1em;
+
+    label {
+      text-align: left;
+    }
+
+    input {
+      @include span-columns(6 of 6);
+    }
+
+    input[type="submit"] {
+      @include span-columns(6 of 6);
+    }
+  }
+}
 
 /* myRA Story */
 
