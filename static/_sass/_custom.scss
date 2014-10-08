@@ -583,7 +583,7 @@ $feature-color: #fff;
     @include shift(1);
   }
 
-  aside {
+  .block {
     @include span-columns(10);
     @include shift(1);
 
@@ -603,7 +603,7 @@ $feature-color: #fff;
       @include shift(2);
     }
 
-    aside {
+    .block {
       @include span-columns(4);
       @include shift(0);
 
@@ -707,6 +707,7 @@ $feature-color: #fff;
     }
   }
 }
+
 
 .calculator {
   @include clearfix();
@@ -825,7 +826,7 @@ $feature-color: #fff;
 }
 
 
-input[type="text"].calculator-input {
+input.calculator-input {
   // @include span-columns(1 of 8);
   width: em(50);
   display: inline-block;
@@ -861,6 +862,22 @@ input[type="text"].calculator-input {
   }
 }
 
+// No JS Fallback
+.no-js {
+  .no-js-warning {
+    display: block;
+  }
+
+  .calculator {
+    display: none;
+  }
+}
+
+
+.no-js-warning {
+  display: none;
+}
+
 /* Sliders */
 .calculator-slider {
   @include span-columns(8 of 8);
@@ -872,6 +889,11 @@ input[type="text"].calculator-input {
 
 .noUi-origin {
   background: #fff;
+}
+
+.noUi-handle,
+.noUi-active {
+  box-shadow: none !important;
 }
 
 /* Thermometer */
@@ -1571,7 +1593,7 @@ input[type="text"].calculator-input {
 .audience {
   border-top: 1px solid $base-border-color;
 
-  aside {
+  .block {
     @include span-columns(12);
     padding: em(30) em(30);
     margin-bottom: em(20);
@@ -1626,5 +1648,34 @@ input[type="text"].calculator-input {
 .styleguide {
   .hero {
     background: none;
+  }
+}
+
+/**************************/
+/* December 15 Styles */
+/**************************/
+
+.live {
+  .hero-signup {
+    text-align: center;
+
+    .button {
+      @include span-columns(4 of 8);
+      @include shift(2);
+      text-align: center;
+    }
+
+    .signup {
+      @include clearfix();
+      padding-bottom: 1em;
+    }
+
+    .account-signin {
+      clear: both;
+      width: 100%;
+      padding-top: 1em;
+      margin-top: 1em;
+      border-top: 1px solid $myra-blue1;
+    }
   }
 }
