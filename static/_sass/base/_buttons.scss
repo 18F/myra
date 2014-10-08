@@ -31,7 +31,7 @@ input[type="submit"],
       border-radius: 0 3px 3px 0;
     }
 
-    &.selected {
+    &[aria-pressed="true"] {
       @include linear-gradient(lighten($myra-green, 5), $myra-green);
       color: #fff;
       // background: $myra-green;

@@ -1,4 +1,4 @@
-<body class="{{ page.bodyclass }}" itemscope itemtype="http://schema.org/WebPage">
+<body class="{{ page.bodyclass }}" role="document" itemscope itemtype="http://schema.org/WebPage">
 
   <!--[if lt IE 8]>
   <div>
@@ -9,7 +9,8 @@
   </div>
   <![endif]-->
 
-  <header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+  <header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+    <a class="skip-nav" href="#main">Skip to main content</a>
     <div class="alpha">
       <div class="container">
         <span>This site is in alpha. The content contained is not final and is not reflective of the ultimate policy.</span>
@@ -21,7 +22,7 @@
         <a href="{{ site.baseurl }}/" title="Home"><h1 class="site-title" itemprop="name">myRA: My Retirement Account</h1></a>
       </hgroup>
 
-      <nav class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <nav class="site-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <ul role="menubar">
           <li role="menuitem"><a class="page-link {% if page.title == 'Individuals' %}current-page {% endif %}" href="{{ site.baseurl }}/individuals/v3">For Individuals</a></li>
           <li role="menuitem"><a class="page-link {% if page.title == 'Employers' %}current-page {% endif %}" href="{{ site.baseurl }}/employers">For Employers</a></li>

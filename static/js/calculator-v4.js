@@ -64,8 +64,8 @@ $(document).ready(function(){
 
   // Get the savings goal
   $('.toggle-buttons .button').click(function(){
-    $('.button.selected').removeClass('selected');
-    $(this).addClass('selected');
+    $('.button[aria-pressed="true"]').attr('aria-pressed', 'false');
+    $(this).attr('aria-pressed', 'true');
     goal = Number($(this).val().replace('$','').replace(',',''));
     updateSlide1();
     updateSlide2();

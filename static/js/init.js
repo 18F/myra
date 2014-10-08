@@ -145,9 +145,10 @@ $(document).ready(function(){
     // Get the parent so that it only affects tabs in this section
     parent = $(this).parents('section');
     tabId = $(this).attr('href');
-    parent.find('.active').removeClass('active');
-    $(this).addClass('active');
-    $(tabId).addClass('active');
+    parent.find('[aria-selected="true"]').attr('aria-selected','false');
+    parent.find('[aria-hidden="false"]').attr('aria-hidden','true');
+    $(this).attr('aria-selected', 'true');
+    $(tabId).attr('aria-hidden','false');
   });
 
   $('.features .tab').click(function(){

@@ -1,19 +1,19 @@
-<section id="how" class="step-by-step {% if page.title == "Individuals" %} stacked-steps {% endif %}">
+<section id="how" class="step-by-step {% if page.title == "Individuals" %} stacked-steps {% endif %}" role="region" aria-labelledby="how-heading">
   <div class="container">
     <div class="section-intro">
-      <h2><i class="fa fa-gears"></i> How does it work?</h2>
+      <h2 id="how-heading"><i class="fa fa-gears"></i> How does it work?</h2>
       <p>Some employers have already signed up—that is, they have agreed to help their employees contribute to <span class="myra">myRA</span> accounts by setting up automatic payroll direct deposit. You can participate whether or not your employer is making <span class="myra">myRA</span> available, and in either case the steps are the same.</p>
       <p>To find out if your employer is a <span class="myra">myRA</span>  partner, ask your human resources office or payroll provider.</p>
       <p>Interested individuals will be able to sign up for <span class="myra">myRA</span> starting December 15, 2014. Once enrollment is open, here is how it will work.</p>
     </div>
-    <ul class="tabs">
-      <li><a href="#step-1" class="tab active">1. Create an account</a></li>
-      <li><a href="#step-2" class="tab">2. Set up regular savings</a></li>
-      <li><a href="#step-3" class="tab">3. Watch your investment grow</a></li>
-      <li><a href="#step-4" class="tab">4. Take the next step</a></li>
+    <ul class="tabs" role="tablist">
+      <li><a href="#step-1" id="tab-1" class="tab" role="tab" aria-controls="step-1" aria-selected="true">1. Create an account</a></li>
+      <li><a href="#step-2" id="tab-2" class="tab" role="tab" aria-controls="step-2" aria-selected="false">2. Set up regular savings</a></li>
+      <li><a href="#step-3" id="tab-3" class="tab" role="tab" aria-controls="step-3" aria-selected="false">3. Watch your investment grow</a></li>
+      <li><a href="#step-4" id="tab-4" class="tab" role="tab" aria-controls="step-4" aria-selected="false">4. Take the next step</a></li>
     </ul>
     <div class="tab-body">
-      <div class="active step" id="step-1">
+      <div class="active step" id="step-1" aria-labelledby="tab-1" aria-hidden="false">
         <div class="step-content">
           <h4 class="numbered-heading"><span class="numbered-heading-number">1.</span><span class="numbered-heading-title">Create an account</span></h4>
           <p>Whether or not your employer participates in <span class="myra">myRA</span>, your first step is to create an account. Creating an account is easy—it takes just 5-10 minutes.</p>
@@ -22,7 +22,7 @@
         <div class="step-image">
         </div>
       </div>
-      <div class="step" id="step-2">
+      <div class="step" id="step-2" aria-labelledby="tab-2" aria-hidden="true">
         <div class="step-content">
           <h4 class="numbered-heading"><span class="numbered-heading-number">2.</span><span class="numbered-heading-title">Set up regular savings</span></h4>
           <p>With your account set up, it’s time to start saving money.</p>
@@ -33,7 +33,7 @@
         <div class="step-image">
         </div>
       </div>
-      <div  class="step" id="step-3">
+      <div  class="step" id="step-3" aria-labelledby="tab-3" aria-hidden="true">
         <div class="step-content">
           <h4 class="numbered-heading"><span class="numbered-heading-number">3.</span><span class="numbered-heading-title">Sit back, relax, and stay in control</span></h4>
           <p>Because your <span class="myra">myRA</span> is receiving automatic contributions, all you have to do is watch your money grow. <span class="myra">myRA</span> accounts earn the same variable rate as the low-risk Treasury investment option offered to federal government employees.</p>
@@ -42,7 +42,7 @@
         <div class="step-image">
         </div>
       </div>
-      <div  class="step" id="step-4">
+      <div  class="step" id="step-4" aria-labelledby="tab-4" aria-hidden="true">
         <div class="step-content">
           <h4 class="numbered-heading"><span class="numbered-heading-number">4.</span><span class="numbered-heading-title">Take the next step</span></h4>
           <p>You can keep saving money in your <span class="myra">myRA</span> for 30 years or until you’ve saved $15,000. Once you reach that milestone, you will move the money into a private Roth IRA and manage it from there.</p>

@@ -6,6 +6,21 @@ body {
 /* Header */
 /**************************/
 
+.skip-nav {
+  @include transition(top, .2s);
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  display: block;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.4);
+
+  &:focus {
+    top: 0;
+  }
+}
+
 .usa {
   width: 100%;
   border-bottom: 1px solid $light-gray;
@@ -1076,7 +1091,7 @@ input[type="text"].calculator-input {
       border-width: 0px 0px 1px 0px;
       position: relative;
 
-      &.active {
+      &[aria-selected="true"] {
         background: $light-gray;
         position: relative;
         color: $dark-gray;
@@ -1108,7 +1123,7 @@ input[type="text"].calculator-input {
   .step {
     display: none;
 
-    &.active {
+    &[aria-hidden="false"] {
       display: block;
     }
   }
