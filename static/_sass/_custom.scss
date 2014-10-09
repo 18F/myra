@@ -31,7 +31,7 @@ body {
 }
 
 .alpha {
-  display: none;
+  display: block;
   background: $myra-orange;
   color: #fff;
   font-weight: bold;
@@ -225,7 +225,8 @@ footer {
   display: block;
   width: 100%;
   margin-bottom: 2px;
-  background: rgba($myra-blue1,.9);
+  background-color: $myra-blue1;
+  background-color: rgba($myra-blue1,.9);
   color: #fff;
   margin-bottom: 2px;
   text-align: center;
@@ -236,6 +237,7 @@ footer {
 .headline {
   padding: 3em 2em;
   position: relative;
+  background-color: $myra-blue1;
   background-color: rgba($myra-blue1,.8);
   box-shadow: 0px 1px 2px 0 rgba(0,0,0,.2);
   color: #fff;
@@ -253,7 +255,8 @@ footer {
 
 .hero-signup {
   @include clearfix();
-  background: rgba(#fff, .9);
+  background-color: #fff;
+  background-color: rgba(#fff, .9);
   padding: 2em;
   text-align: center;
 
@@ -1314,7 +1317,8 @@ input.calculator-input {
       bottom: 2em;
 
       a {
-        background: rgba(255,255,255,.5);
+        background-color: #fff;
+        background-color: rgba(255,255,255,.5);
 
         &:active,
         &:focus {
@@ -1442,38 +1446,6 @@ input.calculator-input {
 /**************************/
 /* Employer Page
 /**************************/
-@include keyframes(bounce) {
-  0% {
-    @include transform(translateY(0));
-  }
-  50% {
-    @include transform(translateY(10px));
-  }
-
-  75% {
-    @include transform(translateY(10px));
-  }
-
-  100% {
-    @include transform(translateY(0));
-  }
-}
-
-.scroll-down {
-  @extend .h3;
-  // @include animation(bounce .5s 2);
-  display: block;
-  color: $myra-green;
-  text-align: center;
-  padding: em(20) 0;
-
-  &:after {
-    @extend .fa;
-    content: '\f13a';
-    display: block;
-    margin-top: em(10);
-  }
-}
 
 .employer {
   .hero {
@@ -1544,7 +1516,7 @@ input.calculator-input {
 }
 
 .payroll-logos {
-  padding-top: em(20);
+  padding: 2em 0;
   li {
     @include span-columns(3);
     text-align: center;
