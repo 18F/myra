@@ -1,7 +1,7 @@
-// Quick and Easy Javascript Detection
-$("html").removeClass( "no-js" );
-
 $(document).ready(function(){
+
+  // Quick and Easy Javascript Detection
+  $("html").removeClass( "no-js" );
 
   // Find and replace to italicize myRA
   $('.myra').each(function(){
@@ -45,8 +45,8 @@ $(document).ready(function(){
     $(window).scroll(function(){
       scrollPos = $(window).scrollTop();
       makeVisible(self);
-    })
-  })
+    });
+  });
 
 
 
@@ -59,7 +59,7 @@ $(document).ready(function(){
     navTop = $('.page-nav').offset().top;
 
     // Build an array of all of the section ids
-    sections = []
+    sections = [];
     $('.page-nav a').each(function(){
       var id = $(this).attr('href');
       sections.push(id);
@@ -86,14 +86,14 @@ $(document).ready(function(){
         } else {
           $(this).parent('li').removeClass('current-section');
         }
-      })
-    })
+      });
+    });
 
     // Scroll down to sections in page nav {
     $('.page-nav a').click(function(){
       var sectionId = $(this).attr('href');
       scrollDown(sectionId);
-    })
+    });
   }
 
   // Function to scroll down on anchor links
@@ -113,24 +113,24 @@ $(document).ready(function(){
     // Now scroll the body down to the element
     $('html, body').animate({
       scrollTop: sectionTop - offset
-    })
+    });
   }
 
   $('.scroll-down').click(function(){
     var sectionId = $(this).attr('href');
     scrollDown(sectionId);
-  })
+  });
 
   // Email signup
   $("#email-capture button").click(function(e){
     e.preventDefault();
     $('#email-capture').append('<div class="flash-success"><p>Congratulations on thinking about your future.</p><p>We will email you when myRA is open for business.</p></div>');
-  })
+  });
 
   // Tabs
   $('.tab').click(function(e){
     e.preventDefault();
-    var parent, tabID;
+    var parent, tabId;
     // Get the parent so that it only affects tabs in this section
     parent = $(this).parents('section');
     tabId = $(this).attr('href');
@@ -143,8 +143,8 @@ $(document).ready(function(){
   $('.features .tab').click(function(){
     $('.tab-content-container').animate({
       marginTop: 0,
-    })
-  })
+    });
+  });
 
   // Slideshow
   $('.bxslider').bxSlider({
@@ -152,10 +152,4 @@ $(document).ready(function(){
     adaptiveHeight: true,
   });
 
-  // Reveal employer forms
-  $('#submit').click(function(){
-    $('#download-form').addClass('hidden');
-    $('#download-button').removeClass('hidden');
-  })
-
-})
+});

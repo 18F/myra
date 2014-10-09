@@ -4,8 +4,8 @@
 Number.prototype.formatMoney = function(c, d, t){
 var n = this,
     c = isNaN(c = Math.abs(c)) ? 2 : c,
-    d = d == undefined ? "." : d,
-    t = t == undefined ? "," : t,
+    d = d === undefined ? "." : d,
+    t = t === undefined ? "," : t,
     s = n < 0 ? "-" : "",
     i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
     j = (j = i.length) > 3 ? j % 3 : 0;
@@ -59,7 +59,7 @@ $(document).ready(function(){
   //Set Interest Compound Periods
   // Set the APR in decimal form
   var ip = 12;
-  var apr = .02;
+  var apr = 0.02;
   var goal = 5000;
 
   // Get the savings goal
@@ -69,10 +69,10 @@ $(document).ready(function(){
     goal = Number($(this).val().replace('$','').replace(',',''));
     updateSlide1();
     updateSlide2();
-  })
+  });
 
   // Set the displayed values
-  var value1, value2, principal, interest, total;
+  var value1, value2, principal, interest, total, pWidth, iWidth;
   function setValues(){
     value1 = Number($('#input-1').val().replace('$',''));
     value2 = Number($('#input-2').val());
@@ -84,8 +84,8 @@ $(document).ready(function(){
       interest = total - principal;
 
       // Now let's set the widths of each meter section
-      var pWidth = (principal / goal) * 100;
-      var iWidth = (interest / goal) * 100;
+      pWidth = (principal / goal) * 100;
+      iWidth = (interest / goal) * 100;
       $('.meter-p').width(pWidth + '%');
       $('.meter-i').width(iWidth + '%');
       $('.results .calculator-helper:not(:first)').fadeOut();
@@ -99,8 +99,8 @@ $(document).ready(function(){
         interest = total - principal;
         $('.years-to-goal').html(value2);
         $('.results .calculator-helper').fadeIn();
-        var pWidth = (principal / goal) * 100;
-        var iWidth = 100 - pWidth;
+        pWidth = (principal / goal) * 100;
+        iWidth = 100 - pWidth;
         $('.meter-p').width(pWidth + '%');
         $('.meter-i').width(iWidth + '%');
         setLabels(goal, value1, value2);
@@ -134,9 +134,9 @@ $(document).ready(function(){
     if (total > goal)
     {
       $('#input-2-slider').val(value2-1);
-      var value1=Number($('#input-1-slider').val().replace('$',''));
-      var value2=Number($('#input-2-slider').val());
-      var total=compoundInterest(0, apr, ip, value2, value1);
+      value1=Number($('#input-1-slider').val().replace('$',''));
+      value2=Number($('#input-2-slider').val());
+      total=compoundInterest(0, apr, ip, value2, value1);
       $('#input-2-slider .noUi-origin').css('background-color', '#2FA380');
       if(total < goal) {
         $('#input-2-slider').val(value2+1);
@@ -148,15 +148,15 @@ $(document).ready(function(){
     setValues();
   }
   function updateSlide1(){
-    var value1=Number($('#input-1-slider').val().replace('$',''));
-    var value2=Number($('#input-2-slider').val());
-    var total=compoundInterest(0, apr, ip, value2, value1);
+    value1=Number($('#input-1-slider').val().replace('$',''));
+    value2=Number($('#input-2-slider').val());
+    total=compoundInterest(0, apr, ip, value2, value1);
     if (total > goal)
     {
       $('#input-2-slider').val(value2-1);
-      var value1=Number($('#input-1-slider').val().replace('$',''));
-      var value2=Number($('#input-2-slider').val());
-      var total=compoundInterest(0, apr, ip, value2, value1);
+      value1=Number($('#input-1-slider').val().replace('$',''));
+      value2=Number($('#input-2-slider').val());
+      total=compoundInterest(0, apr, ip, value2, value1);
       if (total < goal)
         $('#input-2-slider').val(value2+1);
       else
@@ -184,14 +184,14 @@ $(document).ready(function(){
   $('#calculator-1').change(function(){
     setValues();
     updateSlide1();
-  })
+  });
 
   $('#calculator-2').change(function(){
     setValues();
     updateSlide2();
-  })
+  });
 
 
 
   setValues();
-})
+});
