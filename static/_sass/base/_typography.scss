@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6,
 h1,
 .h1 {
   font-size: $base-font-size * 2.074;
-  font-weight: 700;
+  font-weight: 400;
   margin-top: 0;
   color: $myra-blue1;
 }
@@ -36,7 +36,7 @@ h2,
 h3,
 .h3 {
   font-size: $base-font-size * 1.44;
-  color: $myra-blue2;
+  color: $myra-blue1;
   font-weight: 700;
 }
 

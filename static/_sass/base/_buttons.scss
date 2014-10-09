@@ -2,10 +2,7 @@ button,
 input[type="submit"],
 .button {
   @extend %button;
-  // @include linear-gradient(lighten($myra-green, 5), $myra-green);
   @include appearance(none);
-  background-color: $myra-green;
-  border: 1px solid darken($myra-green, 5);
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
