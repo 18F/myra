@@ -1,6 +1,7 @@
 // Typography
 $pn: 'proxima-nova';
-$sans-serif: $pn, 'helvetica', 'arial', sans-serif;
+$source-sans: 'source sans pro';
+$sans-serif: $source-sans, 'helvetica', 'arial', sans-serif;
 $serif: 'georgia', serif;
 $base-font-family: $sans-serif;
 $header-font-family: $base-font-family;
