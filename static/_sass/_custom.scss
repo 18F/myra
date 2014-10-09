@@ -1631,6 +1631,28 @@ input.calculator-input {
   }
 }
 
+.card-column {
+  @include span-columns(12);
+
+  @include media($medium-up) {
+    @include span-columns(6);
+  }
+}
+
+.card {
+  padding: 2em;
+  background: $light-gray;
+  margin-bottom: 2em;
+
+  &:nth-child(even) {
+    background: darken($light-gray, 5%);
+  }
+
+}
+
+.downloads-list {
+  @extend %default-ol;
+}
 
 /**************************/
 /* Tooltips */
