@@ -53,17 +53,14 @@ body {
     }
   }
 
-  hgroup {
+  .logo {
+    display: block;
     padding: 1em 0;
     height: 100px;
 
     @include media($medium-up) {
       @include span-columns(3);
     }
-  }
-
-  .logo {
-    height: 4em;
   }
 
 }
@@ -271,6 +268,7 @@ footer {
   margin-top: 2em;
   background: rgba(#fff, .9);
   padding: 2em;
+  text-align: center;
 
   @include media($tiny-down) {
     margin-top: 0;
@@ -1615,10 +1613,10 @@ input.calculator-input {
 
 
 /**************************/
-/* Call to Action section */
+/* Default */
 /**************************/
 
-.about {
+.default {
   .page-content {
     @include media($large-up) {
       @include span-columns(8);

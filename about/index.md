@@ -2,8 +2,9 @@
 layout: default
 noindex: true
 title: About
-bodyclass: about
+bodyclass: default
 ---
+
 # About myRA
 
 The U.S. Department of the Treasury is offering the myRA (“My Retirement Account”) program, a new retirement savings account for individuals looking for a simple, safe, and affordable way to start saving. Individuals will be able to open accounts with no start-up cost and contribute to them every payday. myRA balances will never go down and there will be no fees. Initially, myRA will be made available through employers and the investment held in the account will be backed by the U.S. Treasury.

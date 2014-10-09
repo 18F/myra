@@ -10,7 +10,7 @@
   <![endif]-->
 
   <header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-    <a class="skip-nav" href="#main">Skip to main content</a>
+    <a class="skip-nav" tabindex="1" href="#main">Skip to main content</a>
     <div class="alpha">
       <div class="container">
         <span>This site is in alpha. The content contained is not final and is not reflective of the ultimate policy.</span>
@@ -18,13 +18,11 @@
     </div>
     <div class="container">
 
-      <hgroup>
-        <a href="{{ site.baseurl }}/" title="Home"><h1 class="site-title" itemprop="name">myRA: My Retirement Account</h1></a>
-      </hgroup>
+      <a class="logo" href="{{ site.baseurl }}/" title="Home"><h1 class="site-title" itemprop="name">myRA: My Retirement Account</h1></a>
 
       <nav class="site-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <ul role="menubar">
-          <li role="menuitem"><a class="page-link {% if page.title == 'Individuals' %}current-page {% endif %}" href="{{ site.baseurl }}/individuals/v3">For Individuals</a></li>
+          <li role="menuitem"><a class="page-link {% if page.title == 'Individuals' %}current-page {% endif %}" href="{{ site.baseurl }}/individuals/">For Individuals</a></li>
           <li role="menuitem"><a class="page-link {% if page.title == 'Employers' %}current-page {% endif %}" href="{{ site.baseurl }}/employers">For Employers</a></li>
           <li role="menuitem"><a class="page-link {% if page.title == 'About' %}current-page {% endif %}" href="{{ site.baseurl }}/about">About <span class="myra">myRA</span></a></li>
         </ul>

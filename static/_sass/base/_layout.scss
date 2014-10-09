@@ -18,18 +18,6 @@ body {
   @include row();
 }
 
-// Create classes for different spans
-// And also for different shifts
-@for $i from 1 through $grid-columns {
-  .span-columns-#{$i} {
-    @include span-columns($i);
-  }
-
-  .shift-#{$i} {
-    @include shift($i);
-  }
-}
-
 .omega {
   @include omega();
 }
