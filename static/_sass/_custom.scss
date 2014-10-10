@@ -32,12 +32,11 @@ body {
 
 .alpha {
   display: block;
-  background: $myra-orange;
+  background: $myra-green;
   color: #fff;
   font-weight: bold;
   text-align: center;
   padding: .5em 0;
-  border-bottom: 1px solid #d6d6d6;
 }
 
 .site-header {
@@ -637,10 +636,15 @@ $feature-color: #fff;
 .call-to-action {
   background: #fff;
   background-attachment: fixed;
-  border-top: 10px solid $myra-orange;
-  margin-bottom: 2em;
   text-align: center;
   padding: 3em 0;
+
+  .container {
+    padding: 2em 0;
+    border-width: 1px 0 1px 0;
+    border-color: $myra-orange;
+    border-style: solid;
+  }
 
   .cta-intro {
     text-align: left;
@@ -1169,6 +1173,7 @@ input.calculator-input {
 
 .stacked-steps {
   border-top: 1px solid $base-border-color;
+  border-bottom: 1px solid $base-border-color;
   background: #f3f3f3;
 
   .tabs {
@@ -1179,11 +1184,11 @@ input.calculator-input {
     display: block;
     margin-bottom: $base-font-size * 2;
     .numbered-heading-number {
-      @include span-columns(1 of 9);
+      @include span-columns(1 of 10);
       text-align: right;
     }
     .numbered-heading-title {
-      @include span-columns(8 of 9);
+      @include span-columns(9 of 10);
     }
   }
 
@@ -1212,25 +1217,26 @@ input.calculator-input {
     @include span-columns(12);
     margin-bottom: $base-line-height;
 
-    div {
-      padding: em(20) 0;
-      display: block;
-      background: none;
-      border-bottom: 1px solid #f9f9f9;
+    &:last-child div {
+      border-bottom: none;
     }
   }
 
   .step-content {
     @include span-columns(10);
     @include shift(1);
+    padding: em(20) 0;
+    display: block;
+    background: none;
+    border-bottom: 1px solid $myra-blue1;
 
     @include media($medium-up) {
-      @include span-columns(9);
+      @include span-columns(10);
       @include shift(1);
 
       p {
-        @include span-columns(8 of 9);
-        @include shift(1 of 9);
+        @include span-columns(8 of 10);
+        @include shift(1);
       }
     }
   }
