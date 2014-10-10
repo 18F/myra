@@ -68,7 +68,9 @@ body {
 .site-title {
   margin-bottom: 0;
   text-indent: -99999px;
-  background: url('../img/myra_logo.svg') no-repeat;
+  background-image: url('../img/myra_logo.png');
+  background-image: url('../img/myra_logo.svg');
+  background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
   height: 100%;
