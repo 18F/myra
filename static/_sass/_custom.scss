@@ -41,8 +41,8 @@ body {
 }
 
 .site-header {
-  border-bottom: 1px solid $myra-blue1;
-  background: #f1f1f1;
+  // border-bottom: 1px solid $myra-blue1;
+  background: #fff;
   text-align: center;
 
   .container {
@@ -148,17 +148,24 @@ footer {
   }
 
   .left {
-
     @include media($small-up) {
       @include span-columns(6);
     }
   }
 
-  .seal {
-    float: right;
-    margin-top: em(40);
+  .right {
+    @include media($small-up) {
+      @include span-columns(6);
+    }
   }
+}
 
+.contact-info {
+  @include span-columns(4 of 6);
+}
+
+.seal {
+  @include span-columns(2 of 6);
 }
 
 .main-footer {
@@ -166,7 +173,7 @@ footer {
 }
 
 .sub-footer {
-  background: #333;
+  background: $myra-darkblue;
   color: #fff;
   padding: em(10);
 
@@ -1486,28 +1493,6 @@ input.calculator-input {
 
   }
 
-  .call-to-action {
-    text-align: left;
-    h2 {
-      text-align: left;
-    }
-    input,
-    label,
-    button {
-      width: 100%;
-
-      @include media($medium-up) {
-        @include span-columns(6 of 8);
-      }
-    }
-
-    img {
-      border: 1px solid $myra-green;
-      @include span-columns(3 of 4);
-      margin-top: 6em;
-    }
-  }
-
   .step-by-step {
     @extend %inverse;
 
@@ -1546,18 +1531,20 @@ input.calculator-input {
 
 .lead-capture {
   @include media($medium-up) {
-    @include span-columns(8);
+    @include span-columns(6);
+    @include shift(3);
   }
 }
 
-.materials-preview {
-  display: none;
-
-  @include media($medium-up) {
-    display: block;
-    @include span-columns(4);
-  }
-}
+//
+// .materials-preview {
+//   display: none;
+//
+//   @include media($medium-up) {
+//     display: block;
+//     @include span-columns(4);
+//   }
+// }
 
 /**************************/
 /* Home Page
