@@ -86,24 +86,28 @@ body {
   }
 
   a {
-    @include transition(background .2s);
-    color: $myra-green;
+    @include transition(all .2s);
+    color: #000;
     display: block;
     padding: em(10);
+    border-bottom: 4px solid;
+    border-bottom-color: transparent;
 
     @include media($tiny-down) {
       font-size: .875em;
     }
 
     &.current-page {
-      background: darken($light-gray, 8);
-      color: #000;
+      color: $myra-green;
+      border-bottom-color: $myra-green;
     }
 
     &:hover,
     &.current-page:hover {
       background: $myra-green;
       color: #fff;
+      border-bottom-color: $myra-green;
+
     }
   }
 
@@ -370,6 +374,7 @@ footer {
 
   li {
     width: 100%;
+    text-align: left;
 
     &:last-child {
       a {
@@ -382,7 +387,6 @@ footer {
       font-size: $base-font-size * .875;
       color: #fff;
       display: block;
-      padding: em(10) em(20);
       border-right: 1px solid $base-border-color;
       border-bottom: 1px solid $base-border-color;
     }
@@ -415,6 +419,17 @@ footer {
   }
 }
 
+.icon-box {
+  padding: em(10) em(20);
+  display: inline-block;
+  background-color: rgba(255,255,255,.1);
+  width: 60px;
+}
+
+.nav-label {
+  padding: em(10) em(20);
+}
+
 .page-nav.fixed {
   z-index: 10000;
   position: fixed;
@@ -432,12 +447,12 @@ footer {
       display: inline-block;
     }
 
-    .fa {
+    .icon-box {
       display: none;
     }
 
-    a {
-      padding: em(10);
+    .nav-label {
+      padding: em(10) em(20);
     }
   }
 
@@ -452,11 +467,12 @@ footer {
       width: 50%;
       float: left;
     }
+
     .nav-label {
       display: inline-block;
     }
 
-    .fa {
+    .icon-box {
       display: inline-block;
     }
   }
@@ -470,7 +486,7 @@ footer {
         border-bottom: none;
       }
 
-      .fa {
+      .icon-box {
         display: inline-block;
       }
     }

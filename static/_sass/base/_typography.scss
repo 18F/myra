@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6,
 h1,
 .h1 {
   font-size: $base-font-size * 2.074;
-  font-weight: 400;
+  font-weight: 700;
   margin-top: 0;
   color: $myra-blue1;
 }
@@ -137,6 +137,7 @@ cite {
 
 .display {
   @extend .h1;
+  font-weight: 400;
   display: block;
   line-height: 1;
   margin-bottom: 0;
@@ -147,7 +148,6 @@ cite {
   display: block;
   margin: 0;
   color: $myra-blue1;
-  font-weight: bold;
 }
 
 

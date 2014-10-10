@@ -1,7 +1,7 @@
 ---
 layout: default
 noindex: true
-title: About
+title: About myRA
 bodyclass: default
 ---
 
