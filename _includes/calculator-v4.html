@@ -2,13 +2,13 @@
   <div class="container">
     <div class="section-intro">
       <h2 id="calculator-heading"><i class="fa fa-line-chart"></i> Understanding Retirement Savings</h2>
-      <p>Saving for retirement can be complicated. But <span class="myra">myRA</span> helps make it easy. The most important thing is that you start saving now, and that you try to reach $15,000 in your <span class="myra">myRA</span> as soon as possible.</p>
+      <p>Saving for retirement might seem complicated, but <span class="myra">myRA</span> makes it easy. You set your savings goal and decide how much you want to save – a little or a lot (up to $5,500 per year).</p>
     </div>
     <div class="education">
       <h3>Start saving for retirement now</h3>
       <div class="intro">
-        <p>Experts agree that the most valuable thing you can do for your retirement savings is to start saving early.</p>
-        <p>The sooner you start saving, the more time your money can earn interest and the more money you can retire with.</p>
+        <p><span class="myra">myRA</span> is a new way to kick start your savings by helping you set aside a few dollars per month. The more you can save the better. And the sooner you start saving, the more time there will be for your savings to grow, giving you more money in retirement.</p>
+
       </div>
       <figure class="chart">
         <img src="{{ site.baseurl }}/static/img/chart.png" alt="Savings by retirement at $100 a month">
@@ -26,62 +26,60 @@
     <div class="calculator">
       <div class="calculator-intro">
         <h3>See how you can reach your savings goals</h3>
-        <p><span class="myra">myRA</span> is a perfect way to kickstart your retirement savings, helping you get your first $15,000 saved that you can then roll over to a private Roth IRA.</p>
+        <p>Use the calculator below to play around with the numbers and see how a little change can go a long way.</p>
       </div>
       <div class="calculator-row">
         <div class="calculator-input-group" id="calculator-0">
-          <h4 id="label-0" class="calculator-label">First, set a savings goal. You can save up to $15,000 in your myRA.</h4>
+          <h4 id="label-0" class="calculator-label-heading">First, set a savings goal. You can save up to $15,000 in your myRA.</h4>
           <div class="toggle-buttons" aria-labelledby="label-0">
             <input  type="button" class="button" value="$500"><input type="button" class="button" value="$1,000"><input aria-pressed="true" type="button" class="button" value="$5,000"><input type="button" class="button" value="$10,000"><input type="button" class="button" value="$15,000">
           </div>
         </div>
       </div>
-      <div class="calculator-row">
-        <div class="calculator-input-group" id="calculator-1">
-          <label id="label-1" class="calculator-label" for="input-1">How much can you save each month?</label>
+      <div class="calculator-row" id="calculator-1">
+        <h4 class="calculator-label-heading">How much can you save each month?</h4>
+        <div class="calculator-input-group">
+          <label class="calculator-label" id="label-1" for="input-1">Monthly savings:</label>
           <input class="calculator-input" id="input-1" type="text" aria-labelledby="label-1">
-          <span class="after-input">each month.</span>
-          <div class="calculator-helper">
-            <p>That's just <span class="daily-rate">$1.66</span> a day.</p>
-          </div>
-          <div class="calculator-slider" id="input-1-slider"></div>
         </div>
+        <div class="calculator-helper">
+          <p>That's just <span class="daily-rate">$1.66</span> a day.</p>
+        </div>
+        <div class="calculator-slider" id="input-1-slider"></div>
       </div>
-      <div class="calculator-row">
-        <div class="calculator-input-group" id="calculator-2">
-          <label id="label-2" class="calculator-label" for="input-2">Let's see how your <span class="myra">myRA</span> savings add up over</label>
+      <div class="calculator-row" id="calculator-2">
+        <h4 class="calculator-label-heading">Let's see how your <span class="myra">myRA</span> savings add up over time.</h4>
+        <div class="calculator-input-group">
+          <label class="calculator-label" id="label-2" for="input-2">Years:</label>
           <input class="calculator-input" id="input-2" type="text" aria-labelledby="label-2">
-          <span class="after-input">years.</span>
-          <div class="calculator-slider" id="input-2-slider"></div>
         </div>
+        <div class="calculator-slider" id="input-2-slider"></div>
       </div>
       <div class="calculator-row results">
-        <div class="calculator-input-group" >
-          <h4 class="calculator-label">Savings:</h4>
-          <span class="total-saved">$15,000</span>
-          <span class="after-input">Goal: <span class="savings-goal"></span></span>
-          <div class="meter">
-            <div class="tic-marks">
-              <span class="tic"></span>
-              <span class="tic"></span>
-              <span class="tic"></span>
-              <span class="tic"></span>
-              <span class="tic"></span>
-              <span class="tic"></span>
-              <span class="tic"></span>
-              <span class="tic"></span>
-              <span class="tic"></span>
-            </div>
-            <div class="meter-p meter-inner"></div>
-            <div class="meter-i meter-inner"></div>
+        <h4 class="calculator-label-heading">Savings:</h4>
+        <span class="total-saved">$15,000</span>
+        <span class="calculator-label">Goal: <span class="savings-goal"></span></span>
+        <div class="meter">
+          <div class="tic-marks">
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
           </div>
-          <div class="meter-label-container">
-            <div class="principal-label">
-              <span class="meter-label">Principal:</span> <span class="meter-label-number principal-saved">$10,000</span>
-            </div>
-            <div class="interest-label">
-              <span class="meter-label">Interest:</span> <span class="meter-label-number interest-earned">$4,200</span>
-            </div>
+          <div class="meter-p meter-inner"></div>
+          <div class="meter-i meter-inner"></div>
+        </div>
+        <div class="meter-label-container">
+          <div class="principal-label">
+            <span class="meter-label">Principal:</span> <span class="meter-label-number principal-saved">$10,000</span>
+          </div>
+          <div class="interest-label">
+            <span class="meter-label">Interest:</span> <span class="meter-label-number interest-earned">$4,200</span>
           </div>
         </div>
         <div class="calculator-helper">

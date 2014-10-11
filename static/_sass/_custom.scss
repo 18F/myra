@@ -1,7 +1,7 @@
-body {
-
+*:focus {
+  box-shadow: inset 0 0 0 1px $myra-orange;
+  outline: none;
 }
-
 /**************************/
 /* Header */
 /**************************/
@@ -15,6 +15,7 @@ body {
   background: #fff;
   padding: 10px;
   box-shadow: 0 1px 1px 0 rgba(0,0,0,.4);
+  z-index: 999;
 
   &:focus {
     top: 0;
@@ -31,16 +32,18 @@ body {
 }
 
 .alpha {
+  @include span-columns(12);
+  // @include shift(2);
   display: block;
-  background: $myra-green;
-  color: #fff;
-  font-weight: bold;
+  background: #f3f3f3;
+  color: #333;
+  border: 1px solid #d9d9d9;
+  border-top: none;
   text-align: center;
   padding: .5em 0;
 }
 
 .site-header {
-  // border-bottom: 1px solid $myra-blue1;
   background: #fff;
   text-align: center;
 
@@ -188,7 +191,7 @@ footer {
 
 .hero {
   padding: 3em 0;
-  background: url('../img/hero_bg.jpg');
+  background: url('../img/person-bg.jpg');
   background-size: cover;
   min-height: 500px;
 
@@ -216,52 +219,76 @@ footer {
     }
   }
 
-  .display,
-  .sub-headline {
+  .display {
     text-align: center;
+    margin-bottom: 1em;
   }
 
   .sub-headline {
-    padding-top: 1em;
+    text-align: center;
   }
 
   .lead-text {
-    text-align: center;
-    margin-top: 2em;
+    font-size: $base-font-size * 1.44;
+    text-align: left;
   }
 }
 
-.coming-soon {
-  @extend h2;
-  display: block;
+.tagline-banner {
   width: 100%;
   margin-bottom: 2px;
   background-color: $myra-blue1;
   background-color: rgba($myra-blue1,.9);
   color: #fff;
-  margin-bottom: 2px;
   text-align: center;
-  padding: .5em;
+  padding: 1em;
+}
+
+.coming-soon {
+  @extend h3;
+  display: block;
+  color: #fff;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.tagline {
+  font-size: $base-font-size * 1.2;
+  font-weight: 400;
+  display: block;
 }
 
 
 .headline {
+  @include clearfix();
   padding: 3em 2em;
   position: relative;
   background-color: $myra-blue1;
-  background-color: rgba($myra-blue1,.8);
+  background-color: rgba($myra-blue1,.9);
   box-shadow: 0px 1px 2px 0 rgba(0,0,0,.2);
   color: #fff;
   margin-bottom: 2px;
 
-  .display,
   .sub-headline {
     color: #fff;
+  }
+
+  .display {
+    color: #fff;
+    text-align: center;
   }
 
   @include media($tiny-down) {
     padding: 1em .5em 1em .5em;
   }
+
+  @include media($medium-up) {
+    .inner-headline {
+      @include span-columns(8 of 10);
+      @include shift(1);
+    }
+  }
+
 }
 
 .hero-signup {
@@ -269,7 +296,16 @@ footer {
   background-color: #fff;
   background-color: rgba(#fff, .9);
   padding: 2em;
-  text-align: center;
+
+  h2 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .lead-text {
+    margin-top: 1em;
+    text-align: left;
+  }
 
   @include media($tiny-down) {
     margin-top: 0;
@@ -343,6 +379,9 @@ footer {
   }
 }
 
+#main {
+  background-color: #fff;
+}
 /**************************/
 /* v4 Sub-Hero */
 /**************************/
@@ -368,30 +407,31 @@ footer {
 /**************************/
 
 .page-nav {
-  background: $myra-blue1;
+  background: #fff;
   text-align: center;
-  border-top: 1px solid $base-border-color;
-  border-bottom: 1px solid $base-border-color;
   width: 100%;
+  border-bottom: 1px solid $base-border-color;
+  border-top: 1px solid $base-border-color;
 
   .container {
     padding: 0;
+    position: relative;
   }
 
   li {
     width: 100%;
     text-align: left;
 
-    &:last-child {
+    &:first-child {
       a {
-        border-right: none;
+        border-left: 1px solid $base-border-color;
       }
     }
 
     a {
       @include transition(background .1s, color .1s);
       font-size: $base-font-size * .875;
-      color: #fff;
+      color: $myra-green;
       display: block;
       border-right: 1px solid $base-border-color;
       border-bottom: 1px solid $base-border-color;
@@ -399,8 +439,8 @@ footer {
 
     &.current-section a,
     a:hover {
-      background: $myra-darkblue;
-      color: #fff;
+      background: #fff;
+      color: $myra-green;
     }
   }
 
@@ -426,14 +466,14 @@ footer {
 }
 
 .icon-box {
-  padding: em(10) em(20);
+  padding: em(10) em(10);
   display: inline-block;
-  background-color: rgba(255,255,255,.1);
-  width: 60px;
+  text-align: center;
+  min-width: 60px;
 }
 
 .nav-label {
-  padding: em(10) em(20);
+  padding: em(10) em(10);
 }
 
 .page-nav.fixed {
@@ -444,6 +484,11 @@ footer {
 
   li {
     @include span-columns(2, block-collapse);
+  }
+
+  .icon-box {
+    width: 100%;
+    padding: em(10) em(10);
   }
 
   .current-section {
@@ -458,12 +503,16 @@ footer {
     }
 
     .nav-label {
-      padding: em(10) em(20);
+      padding: em(10) em(10);
     }
   }
 
   .nav-label {
     display: none;
+  }
+
+  .progress {
+    display: block;
   }
 
   @include media($small-up) {
@@ -472,6 +521,14 @@ footer {
     .current-section {
       width: 50%;
       float: left;
+
+      .icon-box {
+        display: inline-block;
+      }
+    }
+
+    .current-section a {
+      border-bottom: 1px solid $myra-green;
     }
 
     .nav-label {
@@ -480,6 +537,11 @@ footer {
 
     .icon-box {
       display: inline-block;
+      max-width: 60px;
+    }
+
+    .progress {
+      display: none;
     }
   }
 
@@ -488,6 +550,8 @@ footer {
     li:last-child,
     .current-section {
       @include span-columns(3, block-collapse);
+      border-bottom: none;
+
       a {
         border-bottom: none;
       }
@@ -496,10 +560,25 @@ footer {
         display: inline-block;
       }
     }
+
+    .progress {
+      display: block;
+    }
   }
 
 }
 
+// Progress indicator for page nav
+
+.progress {
+  @include transition(left, .1s);
+  position: absolute;
+  // display: none;
+  left: -500px;
+  bottom: 0;
+  height: 4px;
+  background: $myra-green;
+}
 
 
 /**************************/
@@ -588,6 +667,7 @@ $feature-color: #fff;
 /**************************/
 
 .value-proposition {
+
   .call-out {
     @include span-columns(10);
     @include shift(1);
@@ -775,26 +855,19 @@ $feature-color: #fff;
 .calculator-row {
   @include span-columns(12);
   background: #f3f3f3;
-  border-bottom: 1px solid #cdcdcd;
-  border-left: 1px solid #cdcdcd;
-  border-right: 1px solid #cdcdcd;
-  margin-bottom: 0;
+  // border-bottom: 1px solid #cdcdcd;
+  // border-left: 1px solid #cdcdcd;
+  // border-right: 1px solid #cdcdcd;
+  margin-bottom: 2px;
   padding: 1em;
 
-  &:nth-child(2) {
-    border-top: 1px solid #cdcdcd;
-  }
 }
 
+.calculator-label-heading,
 .calculator-label {
   @extend .h4;
   padding: 0.5em 0.5em .5em 0;
-}
-
-.after-input {
-  @extend .h4;
   display: inline-block;
-  padding: 0.5em 0.5em .5em 1em;
 }
 
 .total-saved {
@@ -813,17 +886,14 @@ $feature-color: #fff;
     padding: 1.5em 2em 2em 2em;
   }
 
-  .calculator-input-group {
-    @include span-columns(8 of 8);
-  }
-
-  .calculator-label {
+  .calculator-label-heading {
     // @include span-columns(5 of 8);
     display: inline-block;
   }
 
-  .after-input {
-    // @include span-columns(2 of 8);
+  .calculator-input-group {
+    display: inline-block;
+    float: right;
   }
 }
 
@@ -832,14 +902,18 @@ $feature-color: #fff;
     @include span-columns(8 of 8);
 
     .button {
-      @include span-columns(2 of 10, block-collapse);
+      width: 100%;
+      margin-bottom: 2px;
+
+      @include media($small-up) {
+        @include span-columns(2 of 10, block-collapse);
+      }
     }
   }
 }
 
 
 input.calculator-input {
-  // @include span-columns(1 of 8);
   width: em(50);
   display: inline-block;
   @extend .h4;
@@ -850,6 +924,7 @@ input.calculator-input {
   box-shadow: none;
   text-align: center;
   color: $myra-green;
+  float: right;
 }
 
 .calculator-helper {
@@ -858,13 +933,14 @@ input.calculator-input {
 }
 
 .results {
-  .after-input {
+  .calculator-label {
     float: right;
   }
+
   .calculator-helper {
     display: none;
     margin-top: 1em;
-    border: 2px solid $myra-blue2;
+    border-left: 2px solid $myra-green;
     padding: 1em;
     background: #fff;
 
@@ -897,10 +973,28 @@ input.calculator-input {
 
 .noUi-base {
   background: $myra-green;
+  border-radius: 0;
 }
 
 .noUi-origin {
   background: #fff;
+  border-radius: 0;
+}
+
+.noUi-horizontal {
+  .noUi-handle {
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: $base-accent-color;
+    border: 2px solid #1EB974;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
 }
 
 .noUi-handle,
@@ -910,6 +1004,7 @@ input.calculator-input {
 
 .noUi-target {
   box-shadow: none;
+  border-radius: 0;
 }
 
 /* Thermometer */
@@ -918,9 +1013,7 @@ input.calculator-input {
   position: relative;
   height: 70px;
   background: $light-gray;
-  border-radius: 5px;
   overflow: hidden;
-  box-shadow: inset 0 0 2px 2px rgba(0,0,0,.1);
 }
 
 .meter-inner {
@@ -965,14 +1058,19 @@ input.calculator-input {
 
 .principal-label,
 .interest-label {
-  display: inline-block;
+  display: block;
+
+  @include media($small-up) {
+    display: inline-block;
+  }
 }
 
 .interest-label {
-  @include transition(left, .2s);
-  position: absolute;
-  left: 20%;
-
+  @include media ($small-up) {
+    @include transition(left, .2s);
+    position: absolute;
+    left: 20%;
+  }
 }
 
 .meter-label-number {
@@ -986,106 +1084,6 @@ input.calculator-input {
     color: $myra-blue2;
   }
 }
-
-//
-// .calculator {
-//   @include clearfix();
-//   clear: both;
-//   background: $light-gray;
-//   border-radius: 5px;
-//   padding: em(20);
-//   border: 1px solid $base-border-color;
-//
-//   h4,
-//   h5 {
-//     padding-bottom: em(5);
-//     border-bottom: 1px solid #000;
-//   }
-//
-//   .toggle-buttons {
-//     @include span-columns(6);
-//   }
-//
-//   .graph,
-//   .summary {
-//     @include span-columns(6);
-//   }
-//
-//   .base {
-//     color: $myra-blue2;
-//   }
-//
-//   .reach {
-//     color: $myra-green;
-//   }
-// }
-//
-// .calculator-input-group {
-//   @include row();
-//   padding: $base-line-height 0 0 0;
-//
-//   &#calculator-3 {
-//     padding-bottom: $base-line-height * 2;
-//   }
-// }
-//
-// .calculator-label {
-//   @include span-columns(5);
-//   font-weight: normal;
-// }
-//
-// .calculator-input {
-//   @include span-columns(1);
-// }
-//
-// .calculator-slider {
-//   @include span-columns(6);
-//   @include omega();
-//   margin-top: em(8);
-// }
-//
-//
-// #calculator-results {
-//   @include clearfix;
-//   padding-top: 3em;
-// }
-//
-// .summary {
-//   .row {
-//     margin-bottom: $base-line-height;
-//   }
-// }
-//
-// .result {
-//   @include span-columns(3 of 6);
-//
-//   .big-number {
-//     font-size: $base-font-size * 3;
-//     line-height: 1;
-//     display: block;
-//   }
-// }
-//
-// .calculator-legend {
-//   @include span-columns(2 of 3);
-//   margin-left: 50px;
-// }
-//
-// .swatch {
-//   display: inline-block;
-//   width: .75em;
-//   height: .75em;
-//   border-radius: 1em;
-//   margin-right: .5em;
-//
-//   &.base {
-//     background-color: $myra-blue2;
-//   }
-//
-//   &.reach {
-//     background-color: $myra-green;
-//   }
-// }
 
 /**************************/
 /* Step by Step */
@@ -1228,7 +1226,7 @@ input.calculator-input {
     padding: em(20) 0;
     display: block;
     background: none;
-    border-bottom: 1px solid $myra-blue1;
+    border-bottom: 1px solid #d9d9d9;
 
     @include media($medium-up) {
       @include span-columns(10);
@@ -1237,6 +1235,7 @@ input.calculator-input {
       p {
         @include span-columns(8 of 10);
         @include shift(1);
+        font-size: $base-font-size * 1.2;
       }
     }
   }
@@ -1255,6 +1254,7 @@ input.calculator-input {
   @extend %inverse;
   position: relative;
   overflow: hidden;
+
   .images {
     @include span-columns(5);
     padding-top: em(30);
@@ -1262,26 +1262,34 @@ input.calculator-input {
     bottom: -5px;
     right: 0;
   }
-
 }
 
+
 .who-bullets {
-  @include span-columns(6);
+  @include span-columns(10);
   @include shift(1);
-  padding-top: em(20);
+  color: #fff;
+
+  @include media($large-up) {
+    @include span-columns(6);
+    @include shift(3);
+  }
 
   li {
-    @include span-columns(6 of 6);
+    @extend .h3;
     position: relative;
-    display: block;
-    padding: 0 0 em(20) 0;
+    padding-left: 20px;
+    font-weight: 400;
+    margin: 0;
+    color: #fff;
+    padding-bottom: 1em;
 
     &:before {
       content: "\f14a";
       display: inline-block;
       font: normal normal normal 14px/1 FontAwesome;
       position: absolute;
-      left: -20px;
+      left: 0px;
       top: 5px;
     }
 
@@ -1289,19 +1297,16 @@ input.calculator-input {
       @include omega();
     }
 
-  }
-}
-
-.who-simple {
-  ul {
-    @include span-columns(8);
-    @include shift(2);
-
-    li {
-      font-size: 1.25em;
+    &:first-child {
+      padding-left: 0;
+      &:before {
+        content: '';
+      }
     }
   }
 }
+
+/* For the slider */
 
 .who-people {
   padding: 0;
@@ -1316,21 +1321,7 @@ input.calculator-input {
     width: 100%;
 
     h2 {
-      color: #fff;
-    }
-  }
-
-  .who-bullets {
-    @include span-columns(10);
-    @include shift(1);
-    @extend .h3;
-    font-weight: 400;
-    color: #fff;
-    margin-top: 5em;
-
-    @include media($large-up) {
-      @include span-columns(6);
-      @include shift(3);
+      color: #333;
     }
   }
 
@@ -1390,11 +1381,6 @@ input.calculator-input {
     }
   }
 
-  .bxslider {
-    position: absolute;
-    left: 0;
-  }
-
   .slide {
     background-size: contain;
     background-position: 0 100%;
@@ -1408,8 +1394,9 @@ input.calculator-input {
   }
 
   .who-slide-1 {
-    background-image: url('../img/who_1_bg.jpg');
-    height: 550px;
+    // background-image: url('../img/who_1_bg.jpg');
+    background-color: $myra-blue2;
+    height: 500px;
   }
 
   .who-slide-2 {
@@ -1542,6 +1529,10 @@ input.calculator-input {
   }
 }
 
+.resource-link {
+  @include span-columns(12);
+  padding-top: 1em;
+}
 //
 // .materials-preview {
 //   display: none;
@@ -1557,12 +1548,12 @@ input.calculator-input {
 /**************************/
 
 .home {
-
   .block {
     @include span-columns(12);
     margin-top: $gutter;
     padding: em(30) em(30);
-    background: $light-gray;
+    background-color: #fff;
+    background-color: rgba(255,255,255,.9);
     border: 1px solid $base-border-color;
 
     a {
@@ -1586,7 +1577,6 @@ input.calculator-input {
   .page-content {
     @include media($large-up) {
       @include span-columns(8);
-      @include shift(2);
       float: none;
     }
   }

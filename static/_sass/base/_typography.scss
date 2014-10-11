@@ -137,7 +137,7 @@ cite {
 
 .display {
   @extend .h1;
-  font-weight: 400;
+  font-weight: 600;
   display: block;
   line-height: 1;
   margin-bottom: 0;
@@ -147,6 +147,7 @@ cite {
   @extend .call-out;
   display: block;
   margin: 0;
+  font-weight: 400;
   color: $myra-blue1;
 }
 

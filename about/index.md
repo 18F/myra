@@ -7,29 +7,27 @@ bodyclass: default
 
 # About myRA
 
-The U.S. Department of the Treasury is offering the myRA (“My Retirement Account”) program, a new retirement savings account for individuals looking for a simple, safe, and affordable way to start saving. Individuals will be able to open accounts with no start-up cost and contribute to them every payday. myRA balances will never go down and there will be no fees. Initially, myRA will be made available through employers and the investment held in the account will be backed by the U.S. Treasury.
+The U.S. Department of the Treasury is offering myRA (“My Retirement Account”), a new retirement savings account that offers a simple, risk-free, and affordable way to start saving.
+Savers can open a myRA account with no start-up cost and contribute every payday. Your myRA savings will never lose value and there will be no fees. The investments held in the account are backed by the U.S. Treasury.
+Initially, myRA will be made available via direct deposit through your employer. It’s an easy process that will not require any contribution from employers.
 
-## Who is myRA for?
-myRA is designed to help the millions of working Americans who either don't have access to an employer-sponsored retirement plan or lack sufficient retirement savings options. myRA will be Roth IRA accounts available to anyone who has an annual income of less than $129,000 a year for individuals and $191,000 for couples. These limits are subject to annual cost-of-living adjustments. Each individual, not the employer, will be responsible for complying with these income limits. myRA is designed for individuals who want an investment with a low opening amount.
+## The reasons myRA was developed
+There are millions of working Americans who either don’t have access to an employer-sponsored retirement plan or lack options to save for retirement. In some cases, they don’t have enough money saved to meet the minimum for opening an investment account.
 
-## Signing up for myRA
+myRA was developed to remove those barriers and provide a simple, safe path for people who want to get started saving with each paycheck. myRA is not intended to be a replacement for a 401(k) or other types of employer-sponsored retirement savings accounts.
 
-Initially, participating employers will make myRA information available to their employees. Once the accounts are available, individuals will be able to enroll in the program with no start-up cost. Individuals can then elect to have a portion of each paycheck ($50, $25, $7—any amount!) directly deposited into their myRAs automatically.
+## How myRA works
+
+The myRA investment earns interest at the same variable rate as the Government Securities Investment Fund in the Thrift Savings Plan – the same retirement savings plan offered to all federal employees. It’s a Roth IRA, so retirement earnings are tax-free.
 
 We will begin myRA  enrollment  in late 2014 with investments beginning in January 2015.
 
 ## How myRA works
 The myRA investment will earn interest at the same variable rate as the Government Securities Investment Fund in the Thrift Savings Plan for federal employees. Individuals may voluntarily roll over myRA to private-sector retirement accounts at any time. Once myRA reaches $15,000, or after 30 years, the balance will be transferred to a private-sector retirement account. Treasury will finalize transfer procedures when it launches the myRA program later this year.
 
-An individual who changes jobs can continue to add savings to an existing myRA account by setting up deposits through any employer that offers payroll direct deposit. A saver with multiple jobs will be able to use direct deposit from each paycheck to contribute to a single myRA.
+You can transfer myRA savings to private-sector retirement accounts at any time. Once a myRA reaches $15,000, or after 30 years, the balance will be rolled over to a private-sector retirement account to continue building savings for your future.
 
-## Benefits of myRA
-As with all Treasury securities, the security held in each myRA will be backed by the U.S. Treasury. myRA account balances will never go down. Additional features will include:
-- No cost to open an account
-- Individuals decide how much to contribute ($50, $25, $7—any amount!) every payday
-- Deposits are automatic every payday
-- No fees
-- Portable – not tied to a single employer
-- Roth IRA tax advantages
-- Contributions can be withdrawn tax free
-- Earnings can be withdrawn tax free after five years and if the saver is age 59½ or older
+When account holders change jobs, their myRA account moves with them, and they can set up payroll direct deposit through their new employer. A saver with multiple jobs can use direct deposit from each paycheck to contribute to a single myRA.
+
+## Contact us
+If you have questions about myRA, please contact the U.S. Treasury at (800) 553-2663.

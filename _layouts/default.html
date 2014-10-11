@@ -5,10 +5,12 @@
 
     {% include header.html %}
 
-    <main id="main" class="page-content" role="main" itemprop="mainContentofPage" itemscope itemtype="http://schema.org/WebPageElement">
+    <main id="main" role="main" itemprop="mainContentofPage" itemscope itemtype="http://schema.org/WebPageElement">
       <section>
         <div class="container">
-          {{ content }}
+          <div class="page-content">
+            {{ content }}
+          </div>
         </div>
       </section>
     </main>

@@ -7,10 +7,10 @@
   font-size: $base-font-size;
   font-weight: bold;
   line-height: 1;
-  padding: .75em 1em;
+  padding: 1em 1em;
   text-decoration: none;
   border: none;
-  
+
   &:hover {
     background-color: $hover-button-color;
     color: white;

@@ -83,6 +83,7 @@ $(document).ready(function(){
         if ( scrollPos > (sectionTop - 46)) {
           $('.current-section').removeClass('current-section');
           $(this).parent('li').addClass('current-section');
+          moveProgress();
         } else {
           $(this).parent('li').removeClass('current-section');
         }
@@ -94,6 +95,17 @@ $(document).ready(function(){
       var sectionId = $(this).attr('href');
       scrollDown(sectionId);
     });
+  }
+
+  // Function to slide the progress bar over
+  function moveProgress() {
+    // .progress is absolutely position.
+    // We want it's left equal the points of the .current-section
+    var currentSection, left, width;
+    left = $('.current-section').position().left;
+    width = $('.current-section').width();
+    $('.progress').css('left', left + 'px');
+    $('.progress').css('width', width + 'px');
   }
 
   // Function to scroll down on anchor links
@@ -115,11 +127,6 @@ $(document).ready(function(){
       scrollTop: sectionTop - offset
     });
   }
-
-  $('.scroll-down').click(function(){
-    var sectionId = $(this).attr('href');
-    scrollDown(sectionId);
-  });
 
   // Email signup
   $("#email-capture button").click(function(e){
@@ -147,9 +154,9 @@ $(document).ready(function(){
   });
 
   // Slideshow
-  $('.bxslider').bxSlider({
-    mode: 'horizontal',
-    adaptiveHeight: true,
-  });
+  // $('.bxslider').bxSlider({
+  //   mode: 'horizontal',
+  //   adaptiveHeight: true,
+  // });
 
 });
