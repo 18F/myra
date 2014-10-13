@@ -159,4 +159,14 @@ $(document).ready(function(){
   //   adaptiveHeight: true,
   // });
 
+  // Employer Resource page alert
+  // Mailchimp redirects to the url with the paremeter ?signup=true
+  // If that happens, we want to display an alert
+
+  var url = window.location.href.split('?');
+  if (url[1] === 'signup') {
+    $('.js-signup-alert').html('<p><strong>Email signup almost complete</strong></p><p>In order for you to receive updates on <span class="myra">myRA</span>, we need to confirm your email address.</p><p>To complete the subscription process, please click the link in the email we just sent you.</p>');
+    $('.js-signup-alert').fadeIn();
+  }
+
 });

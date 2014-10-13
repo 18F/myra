@@ -147,6 +147,7 @@
 
 footer {
   @extend %inverse;
+
   p {
     font-size: $base-font-size;
   }
@@ -1641,11 +1642,6 @@ input.calculator-input {
   padding: 2em;
   background: $light-gray;
   margin-bottom: 2em;
-
-  &:nth-child(even) {
-    background: darken($light-gray, 5%);
-  }
-
 }
 
 .downloads-list {
@@ -1654,6 +1650,11 @@ input.calculator-input {
   li {
     margin-bottom: 1em;
   }
+}
+
+.js-signup-alert {
+  @extend %flash-success;
+  display: none;
 }
 
 /**************************/

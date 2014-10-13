@@ -1,12 +1,10 @@
 @mixin flash($color) {
-  background: #fff;
-  border: 2px solid $color;
-  color: #333;
-  font-weight: bold;
+  background: rgba($color, .1);
+  border: 1px solid $color;
+  color: $color;
   margin-bottom: $base-line-height / 2;
   padding: $base-line-height / 2;
-  border-radius: 3px;
-  
+
   p {
     margin-bottom: 0;
   }
