@@ -757,6 +757,10 @@ $feature-color: #fff;
     width: 100%;
   }
 
+  .button {
+    @include span-columns(12);
+  }
+
   @include media($medium-up) {
     @include span-columns(6);
     @include shift(3);
@@ -1595,6 +1599,10 @@ input.calculator-input {
       font-size: $base-font-size * 1.333;
       font-weight: bold;
       text-align: center;
+    }
+
+    h2 {
+      margin-bottom: .875rem;
     }
 
     @include media($medium-up) {
