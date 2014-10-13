@@ -19,6 +19,8 @@
 
   &:focus {
     top: 0;
+    box-shadow: inset 0 0 0 1px $myra-orange;
+    outline: none;
   }
 }
 
@@ -213,7 +215,7 @@ footer {
     @include span-columns(12);
     @include shift(0);
 
-    @include media($medium-up) {
+    @include media($large-up) {
       @include span-columns(10 of 12);
       @include shift(1);
     }
@@ -421,11 +423,10 @@ footer {
   li {
     width: 100%;
     text-align: left;
+    border-right: 1px solid $base-border-color;
 
     &:first-child {
-      a {
-        border-left: 1px solid $base-border-color;
-      }
+      border-left: 1px solid $base-border-color;
     }
 
     a {
@@ -433,7 +434,6 @@ footer {
       font-size: $base-font-size * .875;
       color: $myra-green;
       display: block;
-      border-right: 1px solid $base-border-color;
       border-bottom: 1px solid $base-border-color;
     }
 
@@ -474,6 +474,7 @@ footer {
 
 .nav-label {
   padding: em(10) em(10);
+  display: inline-block;
 }
 
 .page-nav.fixed {
@@ -496,14 +497,12 @@ footer {
 
     .nav-label {
       display: inline-block;
+      text-align: center;
+      padding: em(10) em(10);
     }
 
     .icon-box {
       display: none;
-    }
-
-    .nav-label {
-      padding: em(10) em(10);
     }
   }
 
@@ -585,7 +584,7 @@ footer {
 /* Universal elements */
 /**************************/
 h2 {
-  .fa {
+  i {
     display: block;
     margin: .5em auto .5em;
   }
@@ -669,16 +668,14 @@ $feature-color: #fff;
 .value-proposition {
 
   .call-out {
-    @include span-columns(10);
-    @include shift(1);
+    @include span-columns(12);
   }
 
   .block {
-    @include span-columns(10);
-    @include shift(1);
+    @include span-columns(12);
 
     h3 {
-      text-align: center;
+      text-align: left;
     }
   }
 
@@ -686,8 +683,14 @@ $feature-color: #fff;
     @extend %default-ul;
   }
 
-
   @include media($medium-up) {
+    .block {
+      @include span-columns(8);
+      @include shift(2);
+    }
+  }
+
+  @include media($large-up) {
     .call-out {
       @include span-columns(8);
       @include shift(2);
@@ -717,7 +720,7 @@ $feature-color: #fff;
   background: #fff;
   background-attachment: fixed;
   text-align: center;
-  padding: 3em 0;
+  padding: 3em 1em;
 
   .container {
     padding: 2em 0;
@@ -855,9 +858,6 @@ $feature-color: #fff;
 .calculator-row {
   @include span-columns(12);
   background: #f3f3f3;
-  // border-bottom: 1px solid #cdcdcd;
-  // border-left: 1px solid #cdcdcd;
-  // border-right: 1px solid #cdcdcd;
   margin-bottom: 2px;
   padding: 1em;
 
@@ -1087,6 +1087,8 @@ input.calculator-input {
 
 /**************************/
 /* Step by Step */
+/* Hierarchy:
+/* #how > .tab-content > .step > .step-content
 /**************************/
 .section-intro {
   margin-bottom: $base-line-height;
@@ -1101,114 +1103,21 @@ input.calculator-input {
   }
 }
 
-.step-by-step {
-  .tabs {
-    @include span-columns(12);
-    background: #fff;;
-    li {
-      float: left;
-      width: 25%;
-      text-align: center;
-
-      &:last-child {
-        a:after {
-          content: '\f11e';
-        }
-      }
-    }
-    a {
-      @include transition(background .2s);
-      display: block;
-      padding: em(10);
-      border: darken($myra-green, 5);
-      color: $myra-blue1;
-      border-color: $base-border-color;
-      border-style: solid;
-      border-width: 0px 0px 1px 0px;
-      position: relative;
-
-      &[aria-selected="true"] {
-        background: $light-gray;
-        position: relative;
-        color: $dark-gray;
-        border-width: 1px 1px 0 1px;
-      }
-
-      &:after {
-        content: '\f061';
-        font: normal normal normal 14px/1 FontAwesome;
-        display: inline-block;
-        margin-left: em(10);
-      }
-    }
-  }
-
-  .tab-body {
-    @include span-columns(12);
-    background: $light-gray;
-    border-color: $base-border-color;
-    border-style: solid;
-    border-width: 0px 1px 1px 1px;
-    padding: em(40);
-  }
-
-  .step-content {
-    @include span-columns(8);
-  }
-
-  .step {
-    display: none;
-
-    &[aria-hidden="false"] {
-      display: block;
-    }
-  }
-
-  .numbered-heading {
-    display: none;
-  }
-}
-
 .stacked-steps {
   border-top: 1px solid $base-border-color;
   border-bottom: 1px solid $base-border-color;
   background: #f3f3f3;
 
-  .tabs {
+  .tab-nav {
     display: none;
   }
 
-  .numbered-heading {
-    display: block;
-    margin-bottom: $base-font-size * 2;
-    .numbered-heading-number {
-      @include span-columns(1 of 10);
-      text-align: right;
-    }
-    .numbered-heading-title {
-      @include span-columns(9 of 10);
-    }
-  }
-
-  .tab-body {
+  .tab-content {
     @include span-columns(12);
     background: none;
     border: none;
     padding: 0;
     color: $base-font-color;
-  }
-
-  .tab-content {
-    @include span-columns(8);
-    padding: em(10) 0;
-    article {
-      display: none;
-      padding: em(20);
-      background: #f9f9f9;
-      &.active {
-        display: block;
-      }
-    }
   }
 
   .step {
@@ -1218,33 +1127,129 @@ input.calculator-input {
     &:last-child div {
       border-bottom: none;
     }
+
+    p {
+      @include span-columns(11 of 12);
+      @include shift(1);
+    }
   }
 
   .step-content {
-    @include span-columns(10);
-    @include shift(1);
+    @include span-columns(12);
     padding: em(20) 0;
     display: block;
     background: none;
     border-bottom: 1px solid #d9d9d9;
 
-    @include media($medium-up) {
+    @include media($large-up) {
       @include span-columns(10);
       @include shift(1);
 
+      .numbered-heading-number {
+        @include span-columns(1 of 10);
+      }
+
+      .numbered-heading-title {
+        @include span-columns(9 of 10);
+      }
+
       p {
-        @include span-columns(8 of 10);
+        @include span-columns(9 of 10);
         @include shift(1);
         font-size: $base-font-size * 1.2;
       }
     }
   }
 
+  .numbered-heading {
+    display: block;
+    margin-bottom: $base-font-size * 2;
+  }
+
+  .numbered-heading-number {
+    @include span-columns(1 of 12);
+    text-align: right;
+  }
+
+  .numbered-heading-title {
+    @include span-columns(11 of 12);
+  }
+
+
   .step-image {
-    // @include span-columns(3);
     display: none !important;
   }
 }
+
+// For tab based steps:
+// .step-by-step {
+//   .tab-nav {
+//     @include span-columns(12);
+//     background: #fff;;
+//     li {
+//       float: left;
+//       width: 25%;
+//       text-align: center;
+//
+//       &:last-child {
+//         a:after {
+//           content: '\f11e';
+//         }
+//       }
+//     }
+//     a {
+//       @include transition(background .2s);
+//       display: block;
+//       padding: em(10);
+//       border: darken($myra-green, 5);
+//       color: $myra-blue1;
+//       border-color: $base-border-color;
+//       border-style: solid;
+//       border-width: 0px 0px 1px 0px;
+//       position: relative;
+//
+//       &[aria-selected="true"] {
+//         background: $light-gray;
+//         position: relative;
+//         color: $dark-gray;
+//         border-width: 1px 1px 0 1px;
+//       }
+//
+//       &:after {
+//         content: '\f061';
+//         font: normal normal normal 14px/1 FontAwesome;
+//         display: inline-block;
+//         margin-left: em(10);
+//       }
+//     }
+//   }
+//
+//   .tab-content {
+//     @include span-columns(12);
+//     background: $light-gray;
+//     border-color: $base-border-color;
+//     border-style: solid;
+//     border-width: 0px 1px 1px 1px;
+//     padding: em(40);
+//   }
+//
+//   .step-content {
+//     @include span-columns(8);
+//   }
+//
+//   .step {
+//     display: none;
+//
+//     &[aria-hidden="false"] {
+//       display: block;
+//     }
+//   }
+//
+//   .numbered-heading {
+//     display: none;
+//   }
+// }
+
 
 /**************************/
 /* Who & Benefits
@@ -1550,8 +1555,8 @@ input.calculator-input {
 .home {
   .block {
     @include span-columns(12);
-    margin-top: $gutter;
-    padding: em(30) em(30);
+    margin-top: 2px;
+    padding: 1.5em;
     background-color: #fff;
     background-color: rgba(255,255,255,.9);
     border: 1px solid $base-border-color;
@@ -1563,7 +1568,14 @@ input.calculator-input {
     }
 
     @include media($medium-up) {
-      @include span-columns(5 of 10);
+      @include calc(width, '50% - 1px');
+      float: left;
+      margin-right: 2px;
+      margin-left: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
