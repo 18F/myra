@@ -1,5 +1,5 @@
 *:focus {
-  box-shadow: inset 0 0 0 1px $myra-orange;
+  box-shadow: inset 0 0 0 1px $myra-blue2;
   outline: none;
 }
 /**************************/
@@ -19,7 +19,7 @@
 
   &:focus {
     top: 0;
-    box-shadow: inset 0 0 0 1px $myra-orange;
+    box-shadow: inset 0 0 0 1px $myra-blue2;
     outline: none;
   }
 }
@@ -233,12 +233,15 @@ footer {
   .lead-text {
     font-size: $base-font-size * 1.44;
     text-align: left;
+
+    @include media($tiny-down) {
+      font-size: $base-font-size * 1.2;
+    }
   }
 }
 
 .tagline-banner {
   width: 100%;
-  margin-bottom: 2px;
   background-color: $myra-blue1;
   background-color: rgba($myra-blue1,.9);
   color: #fff;
@@ -269,7 +272,6 @@ footer {
   background-color: rgba($myra-blue1,.9);
   box-shadow: 0px 1px 2px 0 rgba(0,0,0,.2);
   color: #fff;
-  margin-bottom: 2px;
 
   .sub-headline {
     color: #fff;
@@ -281,7 +283,7 @@ footer {
   }
 
   @include media($tiny-down) {
-    padding: 1em .5em 1em .5em;
+    padding: 1em;
   }
 
   @include media($medium-up) {
@@ -290,14 +292,23 @@ footer {
       @include shift(1);
     }
   }
+}
 
+@include media($tiny-up) {
+  .tagline-banner {
+    margin-bottom: 2px;
+  }
+
+  .headline {
+    margin-bottom: 2px;
+  }
 }
 
 .hero-signup {
   @include clearfix();
   background-color: #fff;
   background-color: rgba(#fff, .9);
-  padding: 2em;
+  padding: 1em 2em;
 
   h2 {
     padding-bottom: 0;
@@ -311,6 +322,7 @@ footer {
 
   @include media($tiny-down) {
     margin-top: 0;
+    padding: 1em;
   }
 
   @include media($medium-up) {
@@ -437,10 +449,10 @@ footer {
       border-bottom: 1px solid $base-border-color;
     }
 
-    &.current-section a,
     a:hover {
-      background: #fff;
-      color: $myra-green;
+      @include transition(all, .2s);
+      background-color: $myra-green;
+      color: #fff;
     }
   }
 
@@ -473,7 +485,7 @@ footer {
 }
 
 .nav-label {
-  padding: em(10) em(10);
+  padding: em(10) em(8);
   display: inline-block;
 }
 
@@ -498,7 +510,7 @@ footer {
     .nav-label {
       display: inline-block;
       text-align: center;
-      padding: em(10) em(10);
+      padding: em(10) em(8);
     }
 
     .icon-box {
@@ -1514,6 +1526,7 @@ input.calculator-input {
 
   .contact {
     text-align: center;
+    padding: 0 0 2em 0;
   }
 }
 
@@ -1565,10 +1578,17 @@ input.calculator-input {
 .home {
   .block {
     @include span-columns(12);
-    margin-top: 2px;
     padding: 1.5em;
     background-color: #fff;
     background-color: rgba(255,255,255,.9);
+
+    &:last-child {
+      margin-top: 2px;
+
+      @include media($tiny-down) {
+        margin-top: 0;
+      }
+    }
 
     a {
       font-size: $base-font-size * 1.333;
@@ -1583,6 +1603,7 @@ input.calculator-input {
       margin-left: 0;
 
       &:last-child {
+        margin-top: 0;
         margin-right: 0;
       }
     }
@@ -1628,7 +1649,11 @@ input.calculator-input {
 }
 
 .downloads-list {
-  @extend %default-ol;
+  padding: 1em 0;
+
+  li {
+    margin-bottom: 1em;
+  }
 }
 
 /**************************/
@@ -1636,6 +1661,15 @@ input.calculator-input {
 /**************************/
 .tooltip {
   border-bottom: 1px dotted $myra-green;
+}
+
+/**************************/
+/* Sitemap */
+/**************************/
+
+.sitemap,
+.sitemap ul {
+  @extend %default-ul;
 }
 
 /**************************/

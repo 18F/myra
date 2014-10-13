@@ -5,42 +5,45 @@
 }
 
 
-// Animations
+// Animations (only for desktop)
 
-.appear {
-  @include transition(all .5s ease-in);
-  &.fade-in {
-    opacity: 0;
+@include ($large-up) {
+  .appear {
+    @include transition(all .5s ease-in);
+    &.fade-in {
+      opacity: 0;
 
-    &.visible {
-      opacity: 1;
+
+      &.visible {
+        opacity: 1;
+      }
     }
-  }
 
-  &.slide-in-left {
-    position: relative;
-    left: -200%;
+    &.slide-in-left {
+      position: relative;
+      left: -200%;
 
-    &.visible {
-      left: 0;
+      &.visible {
+        left: 0;
+      }
     }
-  }
 
 
-  &.slide-in-right {
-    position: relative;
-    right: -200%;
+    &.slide-in-right {
+      position: relative;
+      right: -200%;
 
-    &.visible {
-      right: 0;
+      &.visible {
+        right: 0;
+      }
     }
-  }
 
-  &.slide-up {
-    @include transform(translateY(300px));
+    &.slide-up {
+      @include transform(translateY(300px));
 
-    &.visible {
-      @include transform(translateY(0));
+      &.visible {
+        @include transform(translateY(0));
+      }
     }
   }
 }

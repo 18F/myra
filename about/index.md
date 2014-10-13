@@ -5,7 +5,7 @@ title: About <span class="myra">myRA</span>
 bodyclass: default
 ---
 
-# About <span class="myra">myRA</span></span>
+# About <span class="myra">myRA</span>
 
 The U.S. Department of the Treasury is offering <span class="myra">myRA</span> (“My Retirement Account”), a new retirement savings account that offers a simple, risk-free, and affordable way to start saving.
 Savers can open a <span class="myra">myRA</span> account with no start-up cost and contribute every payday. Your <span class="myra">myRA</span> savings will never lose value and there will be no fees. The investments held in the account are backed by the U.S. Treasury.

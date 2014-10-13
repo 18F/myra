@@ -8,6 +8,7 @@ $large: em(990);
 $largest: em(1088);
 
 $tiny-down: new-breakpoint(max-width $tiny);
+$tiny-up: new-breakpoint(min-width $tiny);
 $small-up: new-breakpoint(min-width $small);
 $medium-up: new-breakpoint(min-width $medium);
 $large-up: new-breakpoint(min-width $large);
