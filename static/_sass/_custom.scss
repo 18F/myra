@@ -1271,9 +1271,13 @@ input.calculator-input {
 
 
 .who-bullets {
-  @include span-columns(10);
-  @include shift(1);
+  @include span-columns(12);
   color: #fff;
+
+  @include media($medium-up) {
+    @include span-columns(10);
+    @include shift(1);
+  }
 
   @include media($large-up) {
     @include span-columns(6);
@@ -1283,16 +1287,22 @@ input.calculator-input {
   li {
     @extend .h3;
     position: relative;
-    padding-left: 20px;
+    padding-left: 30px;
     font-weight: 400;
     margin: 0;
     color: #fff;
     padding-bottom: 1em;
 
     &:before {
-      content: "\f14a";
-      display: inline-block;
-      font: normal normal normal 14px/1 FontAwesome;
+      content: "\e080";
+      font-family: 'Simple-Line-Icons';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
       position: absolute;
       left: 0px;
       top: 5px;
@@ -1559,7 +1569,6 @@ input.calculator-input {
     padding: 1.5em;
     background-color: #fff;
     background-color: rgba(255,255,255,.9);
-    border: 1px solid $base-border-color;
 
     a {
       font-size: $base-font-size * 1.333;
