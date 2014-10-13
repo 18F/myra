@@ -309,7 +309,7 @@ footer {
   @include clearfix();
   background-color: #fff;
   background-color: rgba(#fff, .9);
-  padding: 1em 2em;
+  padding: 2em 2em;
 
   h2 {
     padding-bottom: 0;
@@ -317,7 +317,7 @@ footer {
   }
 
   .lead-text {
-    margin-top: 1em;
+    margin-top: .875rem;
     text-align: left;
   }
 
@@ -770,7 +770,7 @@ $feature-color: #fff;
       @include span-columns(6 of 6);
     }
 
-    input[type="submit"] {
+    .button {
       @include span-columns(6 of 6);
     }
   }

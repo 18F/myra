@@ -103,7 +103,7 @@ $(document).ready(function(){
     // We want it's left equal the points of the .current-section
     var currentSection, left, width;
     left = $('.current-section').position().left;
-    width = $('.current-section').width();
+    width = $('.current-section').width() + 2;
     $('.progress').css('left', left + 'px');
     $('.progress').css('width', width + 'px');
   }
