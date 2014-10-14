@@ -6,6 +6,12 @@
 /* Header */
 /**************************/
 
+.ie-warning {
+  background-color: #fff;
+  padding-top: 1em;
+  border-bottom: 2px solid $myra-orange;
+}
+
 .skip-nav {
   @include transition(top, .2s);
   position: absolute;
