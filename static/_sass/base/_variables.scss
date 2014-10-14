@@ -8,6 +8,7 @@ $header-font-family: $base-font-family;
 
 // Sizes
 $base-font-size: 1rem;
+$pixel-font-size: 16px; // Fallback for IE 8 and below
 $base-line-height: $base-font-size * 1.5;
 $unitless-line-height: 1.45;
 $header-line-height: $base-font-size * 1.25;
