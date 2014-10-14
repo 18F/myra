@@ -1,4 +1,4 @@
-$(document).ready(function(){
+jQuery(document).ready(function($){
 
   // Quick and Easy Javascript Detection
   $("html").removeClass( "no-js" );
