@@ -1595,12 +1595,6 @@ input.calculator-input {
       }
     }
 
-    a {
-      font-size: $base-font-size * 1.333;
-      font-weight: bold;
-      text-align: center;
-    }
-
     h2 {
       margin-bottom: .875rem;
     }
@@ -1619,6 +1613,15 @@ input.calculator-input {
   }
 }
 
+.block-link {
+  font-size: $base-font-size * 1.333;
+  font-weight: bold;
+
+  i {
+    float: right;
+    margin-top: 5px;
+  }
+}
 
 /**************************/
 /* Default */
