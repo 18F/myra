@@ -109,12 +109,12 @@ jQuery(document).ready(function($){
   }
 
   function moveInterestLabel(pWidth){
-    if (20 < pWidth && pWidth < 80 ) {
+    if (25 < pWidth && pWidth < 84 ) {
       $('.interest-label').css('left', pWidth + '%');
-    } else if ( pWidth > 80 ) {
-      $('.interest-label').css('left', '80%');
-    } else if ( pWidth < 20 ) {
-      $('.interest-label').css('left', '20%');
+    } else if ( pWidth > 84 ) {
+      $('.interest-label').css('left', '85%');
+    } else if ( pWidth < 25 ) {
+      $('.interest-label').css('left', '25%');
     }
   }
 

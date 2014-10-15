@@ -8,12 +8,28 @@ jQuery(document).ready(function($){
     $(this).html('<em>my</em>RA');
   });
 
+  // Fixing skip nav focus behavior in chrome
+  $('.skip-nav').click(function(){
+    $('#main').attr('tabindex','0');
+  });
+
+  $('#maindiv').blur(function(){
+    $(this).attr('tabindex',-1);
+  });
+
   // Tooltips
   $('.tooltip').tooltipster({
     theme: 'tooltipster-light',
     maxWidth: 300,
     position: 'bottom'
   });
+
+  // Tooltips on focus
+  $('.tooltip').focus(function(){
+        $(this).tooltipster('show');
+    }).blur(function(){
+        $(this).tooltipster('hide');
+    });
 
   // Page animation behavior
   var windowHeight, scrollPos;

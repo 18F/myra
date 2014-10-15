@@ -45,9 +45,14 @@ select[multiple=multiple] {
 
   &:focus {
     border-color: $form-border-color-focus;
-    border-width: 1px;
     box-shadow: $form-box-shadow-focus;
     outline: none;
+  }
+}
+
+#{$all-text-inputs} {
+  @include placeholder {
+    color: #757575;
   }
 }
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 noindex: true
-title: About <span class="myra">myRA</span>
+title: About myRA
 bodyclass: default
 ---
 
