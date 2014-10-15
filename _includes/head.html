@@ -2,21 +2,42 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% if page.title %}{{ site.title }} | {{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <meta name="description" content="{{ site.description }}">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <!-- Twitter and OpenGraph data
+    ================================================== -->
+    <meta name="twitter:site" content="@18F">
+    <meta name="twitter:creator" content="@18F">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta property="og:site_name" content="{{ site.title | xml_escape }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.baseurl }}" />
+    <meta property="og:title" content="{{ page.title | xml_escape }}" />
+    <meta property="og:description" content="{{ site.description | xml_escape }}" />
+    <meta property="og:image" content="{{ site.baseurl }}/static/img/fb.png" />
+
+    <!-- Favicons
+    ================================================== -->
     <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
 
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
+    <!-- CSS
+    ================================================== -->
     <link rel="stylesheet" href="{{ "/static/css/normalize.css" | prepend: site.baseurl }}">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/static/css/style.css" | prepend: site.baseurl }}">
-
-    <!-- Source Sans Pro -->
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ site.baseurl }}/static/css/simple-line-icons.css">
 
+    <!-- IE 8 and lower
+    ================================================== -->
     <!--[if lt IE 9]>
       <link rel="stylesheet" href="{{ "/static/css/ie.css" | prepend: site.baseurl }}">
       <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery-1.11.1.min.js"></script>
@@ -25,7 +46,6 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/static/css/simple-line-icons.css">
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/retina.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.bxslider.min.js"></script>
