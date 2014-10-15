@@ -21,7 +21,22 @@ jQuery(document).ready(function($){
   $('.tooltip').tooltipster({
     theme: 'tooltipster-light',
     maxWidth: 300,
-    position: 'bottom'
+    position: 'bottom',
+    trigger: 'hover',
+    functionReady: function(origin, tooltip){
+      // Function to re-add the text to the original links title attribute
+      // Necessary for accessibility
+      // Adding it in as a title, but then removing the title on hover so you don't have duplicate popups
+      var content = $(tooltip).text();
+      origin.each(function(){
+        $(this).attr('title', content);
+        $(this).hover(function(){
+          $(this).removeAttr('title');
+        }, function(){
+          $(this).attr('title', content);
+        })
+      })
+    }
   });
 
   // Tooltips on focus

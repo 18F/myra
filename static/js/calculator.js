@@ -91,10 +91,10 @@ jQuery(document).ready(function($){
       $('.results .calculator-helper:not(:first)').fadeOut();
       moveInterestLabel(pWidth);
       setLabels(goal, value1, value2);
+      $('.results .calculator-helper').hide();
     }
     // Once we hit 15k
     else {
-        // total = goal;
         principal = value1 * value2 * 12;
         interest = total - principal;
         $('.years-to-goal').html(value2);
@@ -109,10 +109,10 @@ jQuery(document).ready(function($){
   }
 
   function moveInterestLabel(pWidth){
-    if (25 < pWidth && pWidth < 84 ) {
+    if (25 < pWidth && pWidth < 83 ) {
       $('.interest-label').css('left', pWidth + '%');
-    } else if ( pWidth > 84 ) {
-      $('.interest-label').css('left', '85%');
+    } else if ( pWidth > 83 ) {
+      $('.interest-label').css('left', '84%');
     } else if ( pWidth < 25 ) {
       $('.interest-label').css('left', '25%');
     }
