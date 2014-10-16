@@ -20,7 +20,7 @@
     <meta property="og:site_name" content="{{ site.title | xml_escape }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.baseurl }}" />
-    <meta property="og:title" content="{{ page.title | prepend: site.title | xml_escape }}" />    
+    <meta property="og:title" content="{{ site.title }} | {{ page.title | xml_escape }}" />    
     <meta property="og:description" content="{{ site.description | xml_escape }}" />
     <meta property="og:image" content="{{ site.baseurl }}/static/img/fb.png" />
 
