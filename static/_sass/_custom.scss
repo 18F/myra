@@ -494,7 +494,7 @@ footer {
 }
 
 .nav-label {
-  padding: em(10) em(8);
+  padding: em(10) em(4);
   display: inline-block;
 }
 
@@ -515,11 +515,13 @@ footer {
 
   .current-section {
     @include span-columns(6, block-collapse);
-
+    a {
+      text-align: center;
+    }
     .nav-label {
       display: inline-block;
       text-align: center;
-      padding: em(10) em(8);
+      padding: em(10) em(4);
     }
 
     .icon-box {
@@ -542,6 +544,10 @@ footer {
       width: 50%;
       float: left;
 
+      a {
+        text-align: left;
+      }
+      
       .icon-box {
         display: inline-block;
       }
@@ -1085,6 +1091,7 @@ input.calculator-input {
 .interest-label {
   display: block;
   position: relative;
+  margin-left: 12px;
 
   &:before {
     content: '';
@@ -1102,18 +1109,18 @@ input.calculator-input {
 }
 
 .principal-label {
-  margin-left: 12px;
   &:before {
     background-color: $myra-blue1;
   }
 }
 
 .interest-label {
+
   &:before {
     background-color: $myra-blue2;
   }
 
-  @include media ($small-up) {
+  @include media ($medium-up) {
     @include transition(left, .2s);
     position: absolute;
     left: 20%;
