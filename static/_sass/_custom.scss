@@ -212,11 +212,6 @@ footer {
 
     .container {
       padding: 0;
-
-      @include media($large-up) {
-        @include span-columns(10 of 12);
-        @include shift(1);
-      }
     }
   }
 
@@ -333,17 +328,14 @@ footer {
     margin-top: 0;
     padding: 1em;
   }
-
-  @include media($medium-up) {
-    .inner-signup {
-      @include span-columns(8 of 10);
-      @include shift(1);
-    }
-  }
-
 }
 
-
+.inner-signup {
+  @include media($medium-up) {
+    @include span-columns(8 of 10);
+    @include shift(1);
+  }
+}
 
 .quote {
   @extend .h2;
@@ -421,6 +413,14 @@ footer {
     @extend .h3;
     font-weight: 400;
     color: #fff;
+  }
+}
+
+@include media($medium-up) {
+  .sub-hero {
+    p {
+      color: #000;
+    }
   }
 }
 
@@ -547,7 +547,7 @@ footer {
       a {
         text-align: left;
       }
-      
+
       .icon-box {
         display: inline-block;
       }
@@ -1551,7 +1551,6 @@ input.calculator-input {
       @include span-columns(4);
       padding: 2em;
     }
-
   }
 
   .step-by-step {
