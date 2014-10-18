@@ -36,7 +36,9 @@ select[multiple=multiple] {
   box-shadow: $form-box-shadow;
   font-family: $form-font-family;
   font-size: $form-font-size;
+  margin-bottom: 12px; // IE 8
   margin-bottom: $base-line-height / 2;
+  padding: 8px 8px; // IE 8
   padding: ($base-line-height / 3) ($base-line-height / 3);
 
   &:hover {

@@ -179,6 +179,7 @@ footer {
 
 .seal {
   @include span-columns(2 of 6);
+  height: auto;
 }
 
 .main-footer {
@@ -202,8 +203,7 @@ footer {
 
 .hero {
   padding: 3em 0;
-  background: url('../img/person-bg.jpg');
-  background-size: cover;
+  background: url('../img/hero-bg-1.jpg') no-repeat 50% 0;
   min-height: 500px;
 
   @include media($tiny-down) {
@@ -270,12 +270,12 @@ footer {
 
 .headline {
   @include clearfix();
+  // margin-top: 250px;
   padding: 3em 2em;
   position: relative;
-  background-color: $myra-blue1;
-  background-color: rgba($myra-blue1,.9);
-  box-shadow: 0px 1px 2px 0 rgba(0,0,0,.2);
   color: #fff;
+  background-color: $myra-blue1;
+  background-color: rgba($myra-blue1, .7);
 
   .sub-headline {
     color: #fff;
@@ -289,12 +289,16 @@ footer {
   @include media($tiny-down) {
     padding: 1em;
   }
+}
+
+.inner-headline {
+  .lead-text {
+    text-align: center;
+  }
 
   @include media($medium-up) {
-    .inner-headline {
-      @include span-columns(8 of 10);
-      @include shift(1);
-    }
+    @include span-columns(8 of 10);
+    @include shift(1);
   }
 }
 
@@ -321,7 +325,7 @@ footer {
 
   .lead-text {
     margin-top: .875rem;
-    text-align: left;
+    text-align: center;
   }
 
   @include media($tiny-down) {
@@ -751,9 +755,6 @@ $feature-color: #fff;
 
   .container {
     padding: 2em 0;
-    border-width: 1px 0 1px 0;
-    border-color: $myra-orange;
-    border-style: solid;
   }
 
   .cta-intro {
@@ -869,6 +870,7 @@ $feature-color: #fff;
     figcaption {
       border-top: 1px solid $light-gray;
       padding-top: .5em;
+      text-align: center;
 
       span,
       strong {
@@ -1620,7 +1622,7 @@ input.calculator-input {
     @include span-columns(12);
     padding: 1.5em;
     background-color: #fff;
-    background-color: rgba(255,255,255,.9);
+    background-color: rgba(255,255,255,.8);
 
     &:last-child {
       margin-top: 2px;
