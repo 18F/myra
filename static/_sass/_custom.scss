@@ -232,9 +232,9 @@ footer {
 }
 
 .hero-box {
-  // background-color: #fff;
-  // background-color: rgba($myra-blue1, .8);
-  border: 1px solid #fff;
+  background-color: #fff;
+  background-color: rgba($myra-blue1, .8);
+  // border: 1px solid #fff;
   color: #fff;
   padding: 3em;
 
@@ -316,7 +316,7 @@ footer {
 }
 
 .hero-signup {
-  display: none;
+  // display: none;
   @include clearfix();
   background-color: rgba(#fff, .8);
   padding: 1em 2em;
