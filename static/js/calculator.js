@@ -59,7 +59,7 @@ jQuery(document).ready(function($){
   //Set Interest Compound Periods
   // Set the APR in decimal form
   var ip = 12;
-  var apr = 0.02;
+  var apr = 0.025;
   var goal = 5000;
 
   // Get the savings goal
