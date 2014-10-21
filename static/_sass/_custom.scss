@@ -204,7 +204,7 @@ footer {
 .hero {
   padding: 3em 0;
   background: url('../img/hero-bg-1.jpg') no-repeat 50% 0;
-  min-height: 500px;
+  min-height: 700px;
 
   @include media($tiny-down) {
     padding: 0;
@@ -229,25 +229,27 @@ footer {
     text-align: center;
     margin-bottom: 1em;
   }
+}
 
+.hero-box {
+  // background-color: #fff;
+  // background-color: rgba($myra-blue1, .8);
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 3em;
+
+  .display,
+  .lead-text
   .sub-headline {
+    color: #fff;
     text-align: center;
-  }
-
-  .lead-text {
-    font-size: $base-font-size * 1.44;
-    text-align: left;
-
-    @include media($tiny-down) {
-      font-size: $base-font-size * 1.2;
-    }
   }
 }
 
 .tagline-banner {
+  @extend .hero-box;
+  display: none;
   width: 100%;
-  background-color: $myra-blue1;
-  background-color: rgba($myra-blue1,.9);
   color: #fff;
   text-align: center;
   padding: 1em;
@@ -270,24 +272,25 @@ footer {
 
 .headline {
   @include clearfix();
-  // margin-top: 250px;
-  padding: 3em 2em;
+  @extend .hero-box;
   position: relative;
-  color: #fff;
-  background-color: $myra-blue1;
-  background-color: rgba($myra-blue1, .7);
-
-  .sub-headline {
-    color: #fff;
-  }
+  margin-top: 150px;
 
   .display {
-    color: #fff;
     text-align: center;
   }
 
   @include media($tiny-down) {
     padding: 1em;
+  }
+
+  .lead-text {
+    font-size: $base-font-size * 1.44;
+    text-align: left;
+
+    @include media($tiny-down) {
+      font-size: $base-font-size * 1.2;
+    }
   }
 }
 
@@ -313,10 +316,10 @@ footer {
 }
 
 .hero-signup {
+  display: none;
   @include clearfix();
-  background-color: #fff;
-  background-color: rgba(#fff, .9);
-  padding: 2em 2em;
+  background-color: rgba(#fff, .8);
+  padding: 1em 2em;
 
   h2 {
     padding-bottom: 0;
@@ -751,7 +754,7 @@ $feature-color: #fff;
   background: #fff;
   background-attachment: fixed;
   text-align: center;
-  padding: 3em 1em;
+  padding: 1em 1em;
 
   .container {
     padding: 2em 0;
@@ -1535,8 +1538,9 @@ input.calculator-input {
 /**************************/
 
 .employer {
+
   .hero {
-    overflow: hidden;
+    background: url('../img/employer-bg.jpg') no-repeat 50% 0;
   }
 
   .benefits {

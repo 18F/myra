@@ -98,11 +98,11 @@ jQuery(document).ready(function($){
         var sectionId = $(this).attr('href');
         var sectionTop = $(sectionId).offset().top;
         if ( scrollPos > (sectionTop - 46)) {
-          $('.current-section').removeClass('current-section');
+          $('.current-section').removeClass('current-section').attr('aria-selected', 'true');
           $(this).parent('li').addClass('current-section');
           moveProgress();
         } else {
-          $(this).parent('li').removeClass('current-section');
+          $(this).parent('li').removeClass('current-section').attr('aria-selected', 'false');
         }
       });
     });
