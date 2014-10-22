@@ -219,7 +219,8 @@ footer {
 
   .container {
     height: auto;
-
+    overflow: hidden;
+    
     @include media($large-up) {
       height: 600px;
     }
@@ -927,6 +928,7 @@ $feature-color: #fff;
 
 .total-saved {
   @extend .h4;
+  display: inline-block;
 }
 
 @include media($large-up) {
