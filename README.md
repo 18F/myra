@@ -1,24 +1,20 @@
-U.S. Department of the Treasury myRA Program
-=======================================================
+# U.S. Department of the Treasury myRA Program
 
-##What
+## What
 
-Individual and employer landing pages for the U.S. Department of the Treasury’s new retirement savings program, myRA (“My Retirement Account”). 
+Individual and employer landing pages for the U.S. Department of the Treasury’s new retirement savings program, myRA (“My Retirement Account”).
 
 We plan to use this repository as a place to share our work and direction, but please do not consider anything you see here to be final or production-ready. This is still very much in beta.
 
-
-##Why
+## Why
 
 This effort is in support of Treasury's new myRA program, which is currently being developed to provide a simple, safe, and affordable way for individuals to start saving.
 
+## How it works
 
-##How it works
+The myRA landing pages are static HTML/CSS/JS pages. We maintain the pages in simple Markdown files, which are compiled into HTML by Jekyll. We also use Sass as a preprocessor for the CSS.
 
-The myRA landing pages are static HTML/CSS/JS pages. We maintain the pages in simple Markdown files, which are compiled into HTML by Jekyll. We also use Sass as a preprocessor for the CSS.  
-
-
-##Getting started
+## Getting started
 
 Ruby gems:
 
@@ -35,11 +31,35 @@ If you are not familiar with how to work with either Bourbon, Neat, or Bitters, 
 
 To keep our code updating continuously as we edit, we use `jekyll serve --baseurl '' --watch`.
 
-
-##Contributing
+## Contributing
 
 Content and feature suggestions are welcome via GitHub Issues. Code contributions are welcome via pull request, although of course we cannot guarantee your changes will be included.
 
+## Deploying the site
+
+To deploy the site to **production**, at `https://myra.treasury.gov`, you will need:
+
+* Access to the 18F Amazon Web Services account.
+* Permissions to upload to a particular S3 bucket, `myra-cloudfront`.
+* A command line client to perform the upload, such as `s3cmd` or the official `aws` tool. Instructions below show `s3cmd`.
+
+To deploy:
+
+* From the project root, build the site **using the production configuration**:
+
+```bash
+jekyll build --config _config.yml,_config-production.yml
+```
+
+* If it built without errors, upload the website to the S3 bucket. With `s3cmd`:
+
+```bash
+s3cmd --recursive put -P _site/* s3://myra-cloudfront/
+```
+
+You can see the results of your work immediately at `http://myra-cloudfront.s3-website-us-east-1.amazonaws.com`.
+
+The live site, `https://myra.treasury.gov`, **may take some time** to update, as Amazon distributes the new content to its distribution servers.
 
 ### Public domain
 

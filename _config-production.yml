@@ -1,0 +1,2 @@
+# override base URL in production
+baseurl: ""
