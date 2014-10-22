@@ -21,6 +21,7 @@ h1, h2, h3, h4, h5,
   font-weight: inherit;
   line-height: 1.2;
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
+  display: block;
 }
 
 h1,
@@ -55,34 +56,6 @@ h4,
   font-weight: 600;
   margin-top: 0;
 }
-
-// For phones
-@include media($tiny-down) {
-  h1,
-  .display {
-    font-size: $base-font-size * 1.602;
-  }
-
-  h2,
-  .call-out,
-  .sub-headline {
-    font-size: $base-font-size * 1.424;
-  }
-
-  h3 {
-    font-size: $base-font-size * 1.266;
-  }
-
-  h4 {
-    font-size: $base-font-size * 1.125;
-  }
-
-  p,
-  li {
-    font-size: $base-font-size;
-  }
-}
-
 
 p {
   margin: 0 0 ($base-line-height * .75);
@@ -145,8 +118,9 @@ cite {
 }
 
 .display {
-  @extend .h1;
-  font-weight: 600;
+  font-size: $pixel-font-size * 3.5;
+  font-size: $base-font-size * 3.5;
+  font-weight: 300;
   display: block;
   line-height: 1;
   margin-bottom: 0;
@@ -180,6 +154,36 @@ li {
 
 .light {
   font-weight: 300;
+}
+
+// For phones
+@include media($tiny-down) {
+  h1 {
+    font-size: $base-font-size * 1.602;
+  }
+
+  h2,
+  .call-out,
+  .sub-headline {
+    font-size: $base-font-size * 1.424;
+  }
+
+  h3 {
+    font-size: $base-font-size * 1.266;
+  }
+
+  h4 {
+    font-size: $base-font-size * 1.125;
+  }
+
+  p,
+  li {
+    font-size: $base-font-size;
+  }
+
+  .display {
+    font-size: $base-font-size * 2;
+  }
 }
 
 // Fontawesome
