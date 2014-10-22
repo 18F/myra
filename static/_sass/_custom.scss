@@ -128,7 +128,8 @@ a:focus > h2 {
   @include media($medium-up) {
     @include span-columns(9);
     border-top: none;
-
+    border-bottom: none;
+    
     li {
       @include span-columns(3 of 9, block-collapse);
     }
