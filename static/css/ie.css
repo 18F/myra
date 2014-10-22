@@ -5,3 +5,19 @@
 .site-title {
   background-image: url('../img/myra_logo.png');
 }
+
+.site-nav {
+  border-bottom: none;
+}
+
+.hero .inner-container {
+  top: 0;
+}
+
+.hero .block {
+  width: 357px;
+}
+
+.hero .block:last-child {
+  margin-left: 2px;
+}
