@@ -20,6 +20,8 @@ Ruby gems:
 
 * `gem install jekyll`
 
+This site is deployed using **Jekyll 2.4**.
+
 Sass libraries:
 
 * `gem install sass`
