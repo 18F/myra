@@ -124,6 +124,7 @@ jQuery(document).ready(function($){
   }
 
   function setLabels(value0, value1, value2) {
+    console.log('value0, value1, value2: ' + value0 + ' ' + value1 + ' ' + value2);
     $('.total-saved').html('$' + total.formatMoney(0,'.',','));
     $('.principal-saved').html('$' + principal.formatMoney(0,'.',','));
     $('.interest-earned').html('$' + interest.formatMoney(0,'.',','));
