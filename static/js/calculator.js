@@ -183,12 +183,12 @@ jQuery(document).ready(function($){
   }
 
 
-  $('#calculator-1').change(function(){
+  $('#calculator-1').bind('propertychange change', function(e){
     setValues();
     updateSlide1();
   });
 
-  $('#calculator-2').change(function(){
+  $('#calculator-2').bind('propertychange change', function(e){
     setValues();
     updateSlide2();
   });
