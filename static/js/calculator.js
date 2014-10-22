@@ -113,7 +113,7 @@ jQuery(document).ready(function($){
       if (25 < pWidth && pWidth < 78 ) {
         $('.interest-label').css('left', pWidth + '%');
       } else if ( pWidth > 78 ) {
-        $('.interest-label').css('left', '79%');
+        $('.interest-label').css('right', '0%').css('left','auto');
       } else if ( pWidth < 25 ) {
         $('.interest-label').css('left', '25%');
       }
@@ -183,13 +183,13 @@ jQuery(document).ready(function($){
   }
 
 
-  $('#input-1-slider').mouseup(function(e){
+  $('#input-1-slider').change(function(e){
     console.log('yolo');
     setValues();
     updateSlide1();
   });
 
-  $('#input-2-slider').mouseup(function(e){
+  $('#input-2-slider').change(function(e){
     console.log('yolo');
     setValues();
     updateSlide2();
