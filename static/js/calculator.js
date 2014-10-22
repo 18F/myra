@@ -110,10 +110,10 @@ jQuery(document).ready(function($){
 
   function moveInterestLabel(pWidth){
     if ($(window).width() > 600 ) {
-      if (25 < pWidth && pWidth < 79 ) {
+      if (25 < pWidth && pWidth < 78 ) {
         $('.interest-label').css('left', pWidth + '%');
-      } else if ( pWidth > 79 ) {
-        $('.interest-label').css('left', '80%');
+      } else if ( pWidth > 78 ) {
+        $('.interest-label').css('left', '79%');
       } else if ( pWidth < 25 ) {
         $('.interest-label').css('left', '25%');
       }

@@ -196,4 +196,18 @@ jQuery(document).ready(function($){
   $('.myra').each(function(){
     $(this).html('<em>my</em>RA');
   });
+
+  // Equal heights
+  function equalHeight(group) {
+   tallest = 0;
+   group.each(function() {
+      thisHeight = $(this).height();
+      if(thisHeight > tallest) {
+         tallest = thisHeight;
+      }
+   });
+   group.height(tallest);
+  }
+
+  equalHeight($('.match-height'));
 });

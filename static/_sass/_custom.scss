@@ -1652,8 +1652,10 @@ input.calculator-input {
   .hero {
     background-image: url('../img/hero-bg-1.jpg');
   }
+
   .block {
     @include span-columns(12);
+    position: relative;
     padding: 1.5em;
     background-color: #fff;
     background-color: rgba(255,255,255,.9);
@@ -1670,15 +1672,24 @@ input.calculator-input {
       margin-bottom: .875rem;
     }
 
+    p {
+      text-align: left;
+    }
+
     @include media($medium-up) {
       @include calc(width, '50% - 1px');
       float: left;
+      vertical-align: top;
       margin-right: 2px;
       margin-left: 0;
 
       &:last-child {
         margin-top: 0;
         margin-right: 0;
+      }
+
+      p {
+        margin-bottom: 4em;
       }
     }
   }
@@ -1687,7 +1698,11 @@ input.calculator-input {
 .block-link {
   font-size: $base-font-size * 1.333;
   font-weight: bold;
-  float: right;
+  text-align: right;
+  padding: 1.5em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 
   i {
     float: right;
