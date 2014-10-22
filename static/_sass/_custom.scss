@@ -129,7 +129,7 @@ a:focus > h2 {
     @include span-columns(9);
     border-top: none;
     border-bottom: none;
-    
+
     li {
       @include span-columns(3 of 9, block-collapse);
     }
@@ -1351,6 +1351,14 @@ input.calculator-input {
   @include span-columns(12);
   color: #fff;
 
+  li {
+    @extend .h3;
+    font-weight: 400;
+    margin: 0;
+    color: #fff;
+    padding-bottom: 1em;
+  }
+
   @include media($medium-up) {
     @include span-columns(10);
     @include shift(1);
@@ -1360,41 +1368,29 @@ input.calculator-input {
     @include span-columns(6);
     @include shift(3);
   }
+}
 
-  li {
-    @extend .h3;
-    position: relative;
-    padding-left: 30px;
-    font-weight: 400;
-    margin: 0;
-    color: #fff;
-    padding-bottom: 1em;
+.check-bullet {
+  position: relative;
+  padding-left: 30px;
 
-    &:before {
-      content: "\e080";
-      font-family: 'Simple-Line-Icons';
-      speak: none;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      position: absolute;
-      left: 0px;
-      top: 5px;
-    }
+  &:nth-child(even) {
+    @include omega();
+  }
 
-    &:nth-child(even) {
-      @include omega();
-    }
-
-    &:first-child {
-      padding-left: 0;
-      &:before {
-        content: '';
-      }
-    }
+  &:before {
+    content: "\e080";
+    font-family: 'Simple-Line-Icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    left: 0px;
+    top: 5px;
   }
 }
 

@@ -1,0 +1,164 @@
+.icon-user-female:before, .icon-user-follow:before, .icon-user-following:before, .icon-user-unfollow:before, .icon-trophy:before, .icon-screen-smartphone:before, .icon-screen-desktop:before, .icon-plane:before, .icon-notebook:before, .icon-moustache:before, .icon-mouse:before, .icon-magnet:before, .icon-energy:before, .icon-emoticon-smile:before, .icon-disc:before, .icon-cursor-move:before, .icon-crop:before, .icon-credit-card:before, .icon-chemistry:before, .icon-user:before, .icon-speedometer:before, .icon-social-youtube:before, .icon-social-twitter:before, .icon-social-tumblr:before, .icon-social-facebook:before, .icon-social-dropbox:before, .icon-social-dribbble:before, .icon-shield:before, .icon-screen-tablet:before, .icon-magic-wand:before, .icon-hourglass:before, .icon-graduation:before, .icon-ghost:before, .icon-game-controller:before, .icon-fire:before, .icon-eyeglasses:before, .icon-envelope-open:before, .icon-envelope-letter:before, .icon-bell:before, .icon-badge:before, .icon-anchor:before, .icon-wallet:before, .icon-vector:before, .icon-speech:before, .icon-puzzle:before, .icon-printer:before, .icon-present:before, .icon-playlist:before, .icon-pin:before, .icon-picture:before, .icon-map:before, .icon-layers:before, .icon-handbag:before, .icon-globe-alt:before, .icon-globe:before, .icon-frame:before, .icon-folder-alt:before, .icon-film:before, .icon-feed:before, .icon-earphones-alt:before, .icon-earphones:before, .icon-drop:before, .icon-drawer:before, .icon-docs:before, .icon-directions:before, .icon-direction:before, .icon-diamond:before, .icon-cup:before, .icon-compass:before, .icon-call-out:before, .icon-call-in:before, .icon-call-end:before, .icon-calculator:before, .icon-bubbles:before, .icon-briefcase:before, .icon-book-open:before, .icon-basket-loaded:before, .icon-basket:before, .icon-bag:before, .icon-action-undo:before, .icon-action-redo:before, .icon-wrench:before, .icon-umbrella:before, .icon-trash:before, .icon-tag:before, .icon-support:before, .icon-size-fullscreen:before, .icon-size-actual:before, .icon-shuffle:before, .icon-share-alt:before, .icon-share:before, .icon-rocket:before, .icon-question:before, .icon-pie-chart:before, .icon-pencil:before, .icon-note:before, .icon-music-tone-alt:before, .icon-music-tone:before, .icon-microphone:before, .icon-loop:before, .icon-logout:before, .icon-login:before, .icon-list:before, .icon-like:before, .icon-home:before, .icon-grid:before, .icon-graph:before, .icon-equalizer:before, .icon-dislike:before, .icon-cursor:before, .icon-control-start:before, .icon-control-rewind:before, .icon-control-play:before, .icon-control-pause:before, .icon-control-forward:before, .icon-control-end:before, .icon-calendar:before, .icon-bulb:before, .icon-bar-chart:before, .icon-arrow-up:before, .icon-arrow-right:before, .icon-arrow-left:before, .icon-arrow-down:before, .icon-ban:before, .icon-bubble:before, .icon-camcorder:before, .icon-camera:before, .icon-check:before, .icon-clock:before, .icon-close:before, .icon-cloud-download:before, .icon-cloud-upload:before, .icon-doc:before, .icon-envelope:before, .icon-eye:before, .icon-flag:before, .icon-folder:before, .icon-heart:before, .icon-info:before, .icon-key:before, .icon-link:before, .icon-lock:before, .icon-lock-open:before, .icon-magnifier:before, .icon-magnifier-add:before, .icon-magnifier-remove:before, .icon-paper-clip:before, .icon-paper-plane:before, .icon-plus:before, .icon-pointer:before, .icon-power:before, .icon-refresh:before, .icon-reload:before, .icon-settings:before, .icon-star:before, .icon-symbol-female:before, .icon-symbol-male:before, .icon-target:before, .icon-volume-1:before, .icon-volume-2:before, .icon-volume-off:before, .icon-users {
+  display: none;
+}
+
+.icon-user-female, .icon-user-follow, .icon-user-following, .icon-user-unfollow, .icon-trophy, .icon-screen-smartphone, .icon-screen-desktop, .icon-plane, .icon-notebook, .icon-moustache, .icon-mouse, .icon-magnet, .icon-energy, .icon-emoticon-smile, .icon-disc, .icon-cursor-move, .icon-crop, .icon-credit-card, .icon-chemistry, .icon-user, .icon-speedometer, .icon-social-youtube, .icon-social-twitter, .icon-social-tumblr, .icon-social-facebook, .icon-social-dropbox, .icon-social-dribbble, .icon-shield, .icon-screen-tablet, .icon-magic-wand, .icon-hourglass, .icon-graduation, .icon-ghost, .icon-game-controller, .icon-fire, .icon-eyeglasses, .icon-envelope-open, .icon-envelope-letter, .icon-bell, .icon-badge, .icon-anchor, .icon-wallet, .icon-vector, .icon-speech, .icon-puzzle, .icon-printer, .icon-present, .icon-playlist, .icon-pin, .icon-picture, .icon-map, .icon-layers, .icon-handbag, .icon-globe-alt, .icon-globe, .icon-frame, .icon-folder-alt, .icon-film, .icon-feed, .icon-earphones-alt, .icon-earphones, .icon-drop, .icon-drawer, .icon-docs, .icon-directions, .icon-direction, .icon-diamond, .icon-cup, .icon-compass, .icon-call-out, .icon-call-in, .icon-call-end, .icon-calculator, .icon-bubbles, .icon-briefcase, .icon-book-open, .icon-basket-loaded, .icon-basket, .icon-bag, .icon-action-undo, .icon-action-redo, .icon-wrench, .icon-umbrella, .icon-trash, .icon-tag, .icon-support, .icon-size-fullscreen, .icon-size-actual, .icon-shuffle, .icon-share-alt, .icon-share, .icon-rocket, .icon-question, .icon-pie-chart, .icon-pencil, .icon-note, .icon-music-tone-alt, .icon-music-tone, .icon-microphone, .icon-loop, .icon-logout, .icon-login, .icon-list, .icon-like, .icon-home, .icon-grid, .icon-graph, .icon-equalizer, .icon-dislike, .icon-cursor, .icon-control-start, .icon-control-rewind, .icon-control-play, .icon-control-pause, .icon-control-forward, .icon-control-end, .icon-calendar, .icon-bulb, .icon-bar-chart, .icon-arrow-up, .icon-arrow-right, .icon-arrow-left, .icon-arrow-down, .icon-ban, .icon-bubble, .icon-camcorder, .icon-camera, .icon-check, .icon-clock, .icon-close, .icon-cloud-download, .icon-cloud-upload, .icon-doc, .icon-envelope, .icon-eye, .icon-flag, .icon-folder, .icon-heart, .icon-info, .icon-key, .icon-link, .icon-lock, .icon-lock-open, .icon-magnifier, .icon-magnifier-add, .icon-magnifier-remove, .icon-paper-clip, .icon-paper-plane, .icon-plus, .icon-pointer, .icon-power, .icon-refresh, .icon-reload, .icon-settings, .icon-star, .icon-symbol-female, .icon-symbol-male, .icon-target, .icon-volume-1, .icon-volume-2, .icon-volume-off, .icon-users {
+  background-repeat: no-repeat;
+}
+/******************/
+/* Icon fallbacks */
+/******************/
+.icon-bar-chart {
+  background-image: url('../img/icons/i-chart-big.png');
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.page-nav .icon-bar-chart {
+  background-image: url('../img/icons/i-chart.png');
+  width: 16px;
+  height: 18px;
+  display: inline-block;
+}
+
+.page-nav a:hover .icon-bar-chart {
+  background-image: url('../img/icons/i-chart_over.png');
+}
+
+/* User */
+.icon-user {
+  background-image: url('../img/icons/i-user-big-white.png');
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.page-nav .icon-user {
+  background-image: url('../img/icons/i-user.png');
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+}
+
+.page-nav a:hover .icon-user {
+  background-image: url('../img/icons/i-user_over.png');
+}
+
+
+/* Heart */
+.icon-heart {
+  background-image: url('../img/icons/i-heart-big.png');
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.page-nav .icon-heart {
+  background-image: url('../img/icons/i-heart.png');
+  width: 16px;
+  height: 14px;
+  display: inline-block;
+}
+
+.page-nav a:hover .icon-heart {
+  background-image: url('../img/icons/i-heart_over.png');
+}
+
+
+/* Settings */
+.icon-settings {
+  background-image: url('../img/icons/i-settings-big.png');
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+#employer-how-heading .icon-settings {
+  background-image: url('../img/icons/i-settings-big-white.png');
+}
+
+.page-nav .icon-settings {
+  background-image: url('../img/icons/i-settings.png');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.page-nav a:hover .icon-settings {
+  background-image: url('../img/icons/i-settings_over.png');
+}
+
+
+/* Download */
+.icon-cloud-download {
+  background-image: url('../img/icons/i-download-big.png');
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.page-nav .icon-cloud-download {
+  background-image: url('../img/icons/i-download.png');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.page-nav a:hover .icon-cloud-download {
+  background-image: url('../img/icons/i-download_over.png');
+}
+
+
+/* Call-out */
+.icon-call-out {
+  background-image: url('../img/icons/i-call-out-big.png');
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.page-nav .icon-call-out {
+  background-image: url('../img/icons/i-call-out.png');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.page-nav a:hover .icon-call-out {
+  background-image: url('../img/icons/i-call-out_over.png');
+}
+
+
+/* Arrows */
+.block-link .icon-arrow-right {
+  background-image: url('../img/icons/i-right-green.png');
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.button .icon-arrow-right {
+  background-image: url('../img/icons/i-right.png');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+/* Info */
+.icon-info {
+  background-image: url('../img/icons/i-info.png');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+
+/* Checkbox */
+.check-bullet:before {
+  content: '' !important;
+  display: block;
+  width: 23px;
+  height: 23px;
+  background-image: url('../img/icons/i-check.png');
+}
