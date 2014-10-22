@@ -125,12 +125,12 @@ jQuery(document).ready(function($){
 
   function setLabels(value0, value1, value2) {
     console.log('value0, value1, value2: ' + value0 + ' ' + value1 + ' ' + value2);
-    $('.total-saved').html('$' + total.formatMoney(0,'.',','));
-    $('.principal-saved').html('$' + principal.formatMoney(0,'.',','));
-    $('.interest-earned').html('$' + interest.formatMoney(0,'.',','));
-    $('.savings-goal').html('$' + value0.formatMoney(0,'.',','));
-    $('.monthly-rate').html('$' + value1);
-    $('.daily-rate').html('$' + (value1/30).formatMoney(2,'.',','));
+    $('.total-saved').empty().html('$' + total.formatMoney(0,'.',','));
+    $('.principal-saved').empty().html('$' + principal.formatMoney(0,'.',','));
+    $('.interest-earned').empty().html('$' + interest.formatMoney(0,'.',','));
+    $('.savings-goal').empty().html('$' + value0.formatMoney(0,'.',','));
+    $('.monthly-rate').empty().html('$' + value1);
+    $('.daily-rate').empty().html('$' + (value1/30).formatMoney(2,'.',','));
   }
 
   function updateSlide2(){
