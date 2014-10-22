@@ -179,7 +179,7 @@ jQuery(document).ready(function($){
 
   var url = window.location.href.split('?');
   if (url[1] === 'signup') {
-    $('.js-signup-alert').html('<p><strong>Thank you</strong></p><p>You can download resources to share <span class="myra">myRA</span> with your employees below.</p><p>In order for you to receive updates on <span class="myra">myRA</span>, we need to confirm your email address.</p><p>To complete the subscription process, please click the link in the email we just sent you.</p>');
+    $('.js-signup-alert').html('<p><strong>Thank you</strong></p><p>You can download resources to share <span class="myra">myRA</span> with your employees below.</p><p>In order for you to receive updates on <span class="myra">myRA</span>, please click the link in the email we just sent you.</p>');
     $('.js-signup-alert').fadeIn();
   } else if (url[1] === 'thankyou') {
     $('.js-signup-alert').html('<p><strong>Subscription confirmed</strong></p><p>Thank you for signing up to receive updates on <span class="myra">myRA</span>.</p>');
