@@ -81,7 +81,7 @@ jQuery(document).ready(function($){
 
     // What happens as long as the total is under 15k
     if ( total < goal ) {
-      console.log('less than goal');
+      console.log('value1, value2, total: ' + value1 + ' ' + value2 + ' ' + total);
       principal = value1 * value2 * 12;
       interest = total - principal;
 
@@ -97,7 +97,7 @@ jQuery(document).ready(function($){
     }
     // Once we hit 15k
     else {
-        console.log('not less than goal');
+        console.log('value1, value2, total: ' + value1 + ' ' + value2 + ' ' + total);
         principal = value1 * value2 * 12;
         interest = total - principal;
         $('.years-to-goal').html(value2);
