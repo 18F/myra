@@ -5,7 +5,7 @@ $tiny: em(480);
 $small: em(600);
 $medium: em(768);
 $large: em(990);
-$largest: em(1088);
+$largest: em(1120);
 
 $tiny-down: new-breakpoint(max-width $tiny);
 $tiny-up: new-breakpoint(min-width $tiny);

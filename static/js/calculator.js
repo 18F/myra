@@ -100,7 +100,7 @@ jQuery(document).ready(function($){
         console.log('value1, value2, total: ' + value1 + ' ' + value2 + ' ' + total);
         principal = value1 * value2 * 12;
         interest = total - principal;
-        $('.years-to-goal').html(value2);
+        $('.years-to-goal').empty().html(value2);
         $('.results .calculator-helper').fadeIn();
         pWidth = (principal / goal) * 100;
         iWidth = 100 - pWidth;

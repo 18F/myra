@@ -1717,6 +1717,7 @@ input.calculator-input {
 
 .default {
   .page-content {
+
     @include media($large-up) {
       @include span-columns(8);
       float: none;
