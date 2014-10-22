@@ -186,7 +186,9 @@ jQuery(document).ready(function($){
     $('.js-signup-alert').fadeIn();
   }
 
-
+  var referrer = document.referrer;
+  console.log(referrer);
+  
   // Find and replace to italicize myRA
   $('.myra').each(function(){
     $(this).html('<em>my</em>RA');
