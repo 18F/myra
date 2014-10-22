@@ -183,17 +183,15 @@ jQuery(document).ready(function($){
   }
 
 
-  $('#input-1-slider').change(function(e){
+  $('#input-1-slider').mouseup(function(e){
     setValues();
     updateSlide1();
   });
 
-  $('#input-2-slider').change(function(e){
+  $('#input-2-slider').mouseup(function(e){
     setValues();
     updateSlide2();
   });
-
-
 
   setValues();
 });

@@ -129,6 +129,25 @@
   background-image: url('../img/icons/i-call-out_over.png');
 }
 
+/* Envelope */
+.icon-envelope {
+  background-image: url('../img/icons/i-envelope-big.png');
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.page-nav .icon-envelope {
+  background-image: url('../img/icons/i-envelope.png');
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.page-nav a:hover .icon-envelope {
+  background-image: url('../img/icons/i-envelope_over.png');
+}
+
 
 /* Arrows */
 .block-link .icon-arrow-right {
