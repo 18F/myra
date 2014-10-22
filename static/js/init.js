@@ -3,11 +3,6 @@ jQuery(document).ready(function($){
   // Quick and Easy Javascript Detection
   $("html").removeClass( "no-js" );
 
-  // Find and replace to italicize myRA
-  $('.myra').each(function(){
-    $(this).html('<em>my</em>RA');
-  });
-
   // Fixing skip nav focus behavior in chrome
   $('.skip-nav').click(function(){
     $('#main').attr('tabindex','0');
@@ -191,4 +186,9 @@ jQuery(document).ready(function($){
     $('.js-signup-alert').fadeIn();
   }
 
+
+  // Find and replace to italicize myRA
+  $('.myra').each(function(){
+    $(this).html('<em>my</em>RA');
+  });
 });
