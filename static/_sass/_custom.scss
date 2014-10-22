@@ -220,6 +220,17 @@ footer {
   .container {
     height: auto;
     overflow: hidden;
+    text-align: center;
+
+    // Vertical centering method from:
+    // http://css-tricks.com/centering-in-the-unknown/
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em; /* Adjusts for spacing */
+    }
 
     @include media($large-up) {
       height: 600px;
@@ -237,10 +248,9 @@ footer {
 
     @include media($large-up) {
       @include span-columns(8 of 12);
-      @include shift(2);
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
+      float: none;
+      display: inline-block;
+      vertical-align: middle;
     }
   }
 
