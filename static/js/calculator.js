@@ -184,11 +184,13 @@ jQuery(document).ready(function($){
 
 
   $('#input-1-slider').mouseup(function(e){
+    console.log('yolo');
     setValues();
     updateSlide1();
   });
 
   $('#input-2-slider').mouseup(function(e){
+    console.log('yolo');
     setValues();
     updateSlide2();
   });
