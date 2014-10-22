@@ -186,7 +186,7 @@ jQuery(document).ready(function($){
     $('.js-signup-alert').fadeIn();
   } else if (url[1] === 'thankyou') {
     if ( $('.js-individual-signup-form').length > 0 ) {
-      $('.js-individual-signup-form"]').replaceWith('<div class="js-signup-alert"></div>');
+      $('.js-individual-signup-form').replaceWith('<div class="js-signup-alert"></div>');
     }
     $('.js-signup-alert').html('<p><strong>Subscription confirmed</strong></p><p>Thank you for signing up to receive updates on <span class="myra">myRA</span>.</p>');
     $('.js-signup-alert').fadeIn();
