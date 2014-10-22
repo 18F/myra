@@ -88,7 +88,7 @@ jQuery(document).ready(function($){
       iWidth = (interest / goal) * 100;
       $('.meter-p').width(pWidth + '%');
       $('.meter-i').width(iWidth + '%');
-      $('.results .calculator-helper:not(:first)').fadeOut();
+      $('.results .calculator-helper').fadeOut();
       moveInterestLabel(pWidth);
       setLabels(goal, value1, value2);
       $('.results .calculator-helper').hide();
