@@ -91,6 +91,7 @@ a:focus > h2 {
   @include span-columns(12);
   text-align: center;
   border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
 
   li {
     @include span-columns(4, block-collapse);
@@ -203,46 +204,67 @@ footer {
 
 .hero {
   padding: 3em 0;
-  background: url('../img/hero-bg-1.jpg') no-repeat 50% 0;
-  min-height: 700px;
+  background: #225C8C;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+
+  @include media($medium-up) {
+    @include retina('../img/hero-bg-2.jpg', '../img/hero-bg-2@2x.jpg', 1400px);
+  }
 
   @include media($tiny-down) {
     padding: 0;
-    min-height: 0;
+  }
 
-    .container {
+  .container {
+    height: auto;
+
+    @include media($large-up) {
+      height: 600px;
+    }
+
+    @include media($tiny-down) {
       padding: 0;
     }
   }
+
 
   .inner-container {
     @include span-columns(12);
     @include shift(0);
 
     @include media($large-up) {
-      @include span-columns(10 of 12);
-      @include shift(1);
+      @include span-columns(8 of 12);
+      @include shift(2);
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 
-  .display {
+  .display,
+  .h1 {
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 1.25rem;
   }
 }
 
 .hero-box {
   background-color: #fff;
-  background-color: rgba($myra-blue1, .8);
+  background-color: rgba(#fff, .9);
   // border: 1px solid #fff;
-  color: #fff;
   padding: 3em;
 
+  .h1,
   .display,
-  .lead-text
+  .lead-text,
   .sub-headline {
-    color: #fff;
     text-align: center;
+    color: #000;
+  }
+
+  hr {
+    border-bottom: 1px solid #000;
   }
 }
 
@@ -273,20 +295,16 @@ footer {
 .headline {
   @include clearfix();
   @extend .hero-box;
-  position: relative;
-  margin-top: 150px;
 
   .display {
     text-align: center;
   }
 
   @include media($tiny-down) {
-    padding: 1em;
+    padding: 2em 1em;
   }
 
   .lead-text {
-    font-size: $base-font-size * 1.44;
-    text-align: left;
 
     @include media($tiny-down) {
       font-size: $base-font-size * 1.2;
@@ -300,8 +318,8 @@ footer {
   }
 
   @include media($medium-up) {
-    @include span-columns(8 of 10);
-    @include shift(1);
+    // @include span-columns(8 of 10);
+    // @include shift(1);
   }
 }
 
@@ -1540,7 +1558,7 @@ input.calculator-input {
 .employer {
 
   .hero {
-    background: url('../img/employer-bg.jpg') no-repeat 50% 0;
+    background: url('../img/hero-bg-4.jpg') no-repeat 50% 0;
   }
 
   .benefits {
@@ -1622,11 +1640,14 @@ input.calculator-input {
 /**************************/
 
 .home {
+  .hero {
+    background-image: url('../img/hero-bg-1.jpg');
+  }
   .block {
     @include span-columns(12);
     padding: 1.5em;
     background-color: #fff;
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255,255,255,.9);
 
     &:last-child {
       margin-top: 2px;
@@ -1657,10 +1678,12 @@ input.calculator-input {
 .block-link {
   font-size: $base-font-size * 1.333;
   font-weight: bold;
+  float: right;
 
   i {
     float: right;
     margin-top: 5px;
+    margin-left: 10px;
   }
 }
 
