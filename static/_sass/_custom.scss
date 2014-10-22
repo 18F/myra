@@ -220,7 +220,7 @@ footer {
   .container {
     height: auto;
     overflow: hidden;
-    
+
     @include media($large-up) {
       height: 600px;
     }
@@ -1729,6 +1729,8 @@ input.calculator-input {
 .js-signup-alert {
   @extend %flash-success;
   display: none;
+  clear: both;
+  text-align: center;
 }
 
 /**************************/
