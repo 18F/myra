@@ -1718,6 +1718,7 @@ input.calculator-input {
     }
 
     @include media($tiny-down) {
+      border-top: 1px solid $myra-blue1;
       background-color: #fff;
       // background-color: rgba(#fff, .9);
     }
@@ -1738,7 +1739,6 @@ input.calculator-input {
 
 .block-link {
   font-size: $base-font-size * 1.333;
-  font-weight: bold;
   text-align: right;
   padding: 1.5em;
   margin-top: 1em;
