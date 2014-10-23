@@ -1,3 +1,6 @@
+$.fn.scrollBottom = function() { 
+  return $(document).height() - this.scrollTop() - this.height(); 
+};
 jQuery(document).ready(function($){
 
   // Quick and Easy Javascript Detection
@@ -79,6 +82,7 @@ jQuery(document).ready(function($){
 
     $(document).scroll(function(){
       scrollPos = $(window).scrollTop();
+      
       if (scrollPos >= navTop) {
         navHeight = $('.page-nav').height();
         $('.page-nav').addClass('fixed');
@@ -102,6 +106,21 @@ jQuery(document).ready(function($){
           $(this).attr('aria-selected', 'false');
         }
       });
+      //fixes bug where the last section was never highlighted by highlighting it when
+      //you scroll to the bottom
+      if ($(window).scrollBottom() <= 0 && $('.page-nav a:last').attr('aria-selected') == 'false')
+      {
+        $('.page-nav a').each(function(){
+          $(this).parent('li').removeClass('current-section');
+          $(this).attr('aria-selected', 'false');
+        });
+        $('.page-nav a:last').each(function(){
+          $('.current-section').removeClass('current-section');
+          $(this).attr('aria-selected', 'true');
+          $(this).parent('li').addClass('current-section');
+          moveProgress();
+        });
+      }
     });
 
     // Scroll down to sections in page nav {
