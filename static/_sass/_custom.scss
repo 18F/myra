@@ -185,6 +185,7 @@ footer {
 .seal {
   @include span-columns(2 of 6);
   height: auto;
+  opacity: .7;
 }
 
 .main-footer {
