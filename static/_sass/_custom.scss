@@ -1707,6 +1707,10 @@ input.calculator-input {
     &:last-child {
       margin-top: 2px;
 
+      @include media($medium-up) {
+        margin: 0;
+      }
+
       @include media($tiny-down) {
         margin-top: 0;
       }
@@ -1723,11 +1727,6 @@ input.calculator-input {
       vertical-align: top;
       margin-right: 2px;
       margin-left: 0;
-
-      &:last-child {
-        margin-top: 0;
-        margin-right: 0;
-      }
 
       p {
         margin-bottom: 4em;
