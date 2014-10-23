@@ -207,24 +207,33 @@ footer {
 /* Hero */
 /**************************/
 
+.mobile-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  @include media($medium-up) {
+    display: none;
+  }
+}
+
 .hero {
-  padding: 3em 0;
+  padding: 0;
   background: #225C8C;
   background-position: 50% 0%;
   background-repeat: no-repeat;
 
   @include media($medium-up) {
     @include retina('../img/hero-bg-2.jpg', '../img/hero-bg-2@2x.jpg', 1400px);
+    padding: 3em 0;
   }
 
-  @include media($tiny-down) {
-    padding: 0;
-  }
 
   .container {
     height: auto;
     overflow: hidden;
     text-align: center;
+    padding: 0;
 
     // Vertical centering method from:
     // http://css-tricks.com/centering-in-the-unknown/
@@ -240,8 +249,8 @@ footer {
       height: 600px;
     }
 
-    @include media($tiny-down) {
-      padding: 0;
+    @include media($medium-up) {
+      padding: 0 em(20);
     }
   }
 
@@ -273,34 +282,34 @@ footer {
 
 .hero-box {
   padding: 3em;
-  background-color: #225C8C;
+  background-color: #fff;
 
   .h1,
   .display,
   .lead-text,
   .sub-headline {
     text-align: center;
-    color: #fff;
+    color: #000;
   }
 
   hr {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #225C8C;
+    margin: 1em auto;
   }
 
-  @include media($tiny-up) {
+  @include media($medium-up) {
     background-color: #fff;
-    background-color: rgba(#fff, .9);
-
-    .h1,
-    .display,
-    .lead-text,
-    .sub-headline {
-      text-align: center;
-      color: #000;
-    }
+    background-color: rgba(#fff, .8);
 
     hr {
-      border-bottom: 1px solid #000;
+      border-bottom: 1px solid #225C8C;
+      width: 80%;
+    }
+  }
+
+  @include media($tiny-down) {
+    .js-signup-alert {
+      background-color: #fff;
     }
   }
 
@@ -374,6 +383,7 @@ footer {
 .hero-signup {
   // display: none;
   @include clearfix();
+  background-color: #fff;
   background-color: rgba(#fff, .8);
   padding: 1em 2em;
 
@@ -757,8 +767,10 @@ $feature-color: #fff;
 
 .value-proposition {
 
-  .call-out {
+  p {
     @include span-columns(12);
+    text-align: center;
+    margin-bottom: 2em;
   }
 
   .block {
@@ -781,7 +793,7 @@ $feature-color: #fff;
   }
 
   @include media($large-up) {
-    .call-out {
+    p {
       @include span-columns(8);
       @include shift(2);
     }
@@ -1402,7 +1414,7 @@ input.calculator-input {
   color: #fff;
 
   li {
-    @extend .h3;
+    @extend .lead-text;
     font-weight: 400;
     margin: 0;
     color: #fff;
@@ -1582,7 +1594,6 @@ input.calculator-input {
 
 .benefit-block {
   @include span-columns(6);
-  padding: em(30);
   border-radius: 3px;
   background: $light-gray;
   margin-bottom: $base-line-height;
@@ -1614,13 +1625,15 @@ input.calculator-input {
 
   .benefit-block {
     @include span-columns(12);
-    padding: 0;
     background: none;
     border: none;
 
     @include media($medium-up) {
       @include span-columns(4);
-      padding: 2em;
+
+      h3 {
+        text-align: center;
+      }
     }
   }
 
