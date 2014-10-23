@@ -53,15 +53,19 @@ To deploy:
 jekyll build --config _config.yml,_config-production.yml
 ```
 
-* If it built without errors, upload the website to the S3 bucket. With `s3cmd`:
+* If it built without errors, upload the website to the S3 bucket. The below command uses `s3cmd` to upload all files in `_site`, make them public, and tells both browsers and CloudFront to cache files for an hour.
 
 ```bash
-s3cmd --recursive put -P _site/* s3://myra-cloudfront/
+s3cmd  put --recursive --add-header="Cache-Control:max-age=86400" -P _site/* s3://myra-cloudfront/
 ```
 
 You can see the results of your work immediately at `http://myra-cloudfront.s3-website-us-east-1.amazonaws.com`.
 
-The live site, `https://myra.treasury.gov`, **may take some time** to update, as Amazon distributes the new content to its distribution servers.
+The live site, `https://myra.treasury.gov`, **will take up to an hour** to update.
+
+Bear in mind that the delay time to update the live site depends on the **previous** deploy's specified cache time, not the one you just did. Assuming you always use the same cache time, it will always update within an hour.
+
+If you **need an immediate update**, you will have to "invalidate" the CloudFront distribution, using either the web console or a third party tool. (Neither the `aws` nor `s3cmd` tools properly support this yet.)
 
 ### Public domain
 
