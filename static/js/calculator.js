@@ -187,13 +187,13 @@ jQuery(document).ready(function($){
   }
 
 
-  $('#input-1-slider').change(function(e){
+  $('#calculator-1').change(function(e){
     // console.log('yolo');
     setValues();
     updateSlide1();
   });
 
-  $('#input-2-slider').change(function(e){
+  $('#calculator-2').change(function(e){
     // console.log('yolo');
     setValues();
     updateSlide2();
