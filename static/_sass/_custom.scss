@@ -42,15 +42,18 @@ a:focus > h2 {
 }
 
 .alpha {
-  @include span-columns(12);
-  // @include shift(2);
   display: block;
-  background: #f3f3f3;
+  background: #f1f1f1;
   color: #333;
-  border: 1px solid #d9d9d9;
   border-top: none;
   text-align: center;
-  padding: .5em 0;
+  padding: .5em;
+  font-size: 14px;
+  font-size: .875rem;
+
+  span {
+    // display: block;
+  }
 }
 
 .site-header {
@@ -246,11 +249,17 @@ footer {
     @include span-columns(12);
     @include shift(0);
 
-    @include media($large-up) {
-      @include span-columns(8 of 12);
+    @include media($medium-up) {
+      @include span-columns(10 of 12);
       float: none;
       display: inline-block;
       vertical-align: middle;
+    }
+
+    @include media($large-up) {
+      @include span-columns(8 of 12);
+      display: inline-block;
+      float: none;
     }
   }
 
@@ -262,22 +271,38 @@ footer {
 }
 
 .hero-box {
-  background-color: #fff;
-  background-color: rgba(#fff, .9);
-  // border: 1px solid #fff;
   padding: 3em;
+  background-color: #225C8C;
 
   .h1,
   .display,
   .lead-text,
   .sub-headline {
     text-align: center;
-    color: #000;
+    color: #fff;
   }
 
   hr {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #fff;
   }
+
+  @include media($tiny-up) {
+    background-color: #fff;
+    background-color: rgba(#fff, .9);
+
+    .h1,
+    .display,
+    .lead-text,
+    .sub-headline {
+      text-align: center;
+      color: #000;
+    }
+
+    hr {
+      border-bottom: 1px solid #000;
+    }
+  }
+
 }
 
 .tagline-banner {
@@ -1001,7 +1026,19 @@ input.calculator-input {
 
 .results {
   .calculator-label {
-    float: right;
+    display: inline-block;
+    &:nth-child(2) {
+      float: right;
+    }
+
+    @include media($tiny-down) {
+      padding: 0;
+      display: block;
+
+      &:nth-child(2) {
+        float: none;
+      }
+    }
   }
 
   .calculator-helper {
@@ -1654,11 +1691,18 @@ input.calculator-input {
   }
 
   .block {
+    @extend .hero-box;
     @include span-columns(12);
     position: relative;
     padding: 1.5em;
-    background-color: #fff;
-    background-color: rgba(255,255,255,.9);
+
+    h2 {
+      margin-bottom: .875rem;
+    }
+
+    p {
+      text-align: left;
+    }
 
     &:last-child {
       margin-top: 2px;
@@ -1668,12 +1712,9 @@ input.calculator-input {
       }
     }
 
-    h2 {
-      margin-bottom: .875rem;
-    }
-
-    p {
-      text-align: left;
+    @include media($tiny-down) {
+      background-color: #fff;
+      // background-color: rgba(#fff, .9);
     }
 
     @include media($medium-up) {
@@ -1700,15 +1741,20 @@ input.calculator-input {
   font-weight: bold;
   text-align: right;
   padding: 1.5em;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  margin-top: 1em;
 
   i {
     float: right;
     margin-top: 5px;
     margin-left: 10px;
   }
+
+  @include media($medium-up) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
 }
 
 /**************************/

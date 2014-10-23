@@ -181,7 +181,7 @@ jQuery(document).ready(function($){
   if (url[1] === 'signup') {
     $('.js-individual-signup-form').replaceWith('<div class="js-signup-alert"><p><strong>Thank you</strong></p>In order to receive updates on <span class="myra">myRA</span>, please click the link in the email we just sent you.</p></div>');
     $('.js-signup-alert').fadeIn();
-  } else if (url[1] === 'employer-signup') {
+  } else if (url[1] === 'employersignup') {
     $('.js-signup-alert').html('<p><strong>Thank you</strong></p><p>You can download resources to share <span class="myra">myRA</span> with your employees below.</p><p>In order to receive updates on <span class="myra">myRA</span>, please click the link in the email we just sent you.</p>');
     $('.js-signup-alert').fadeIn();
   } else if (url[1] === 'thankyou') {
