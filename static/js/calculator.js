@@ -100,6 +100,9 @@ jQuery(document).ready(function($){
         //console.log('value1, value2, total: ' + value1 + ' ' + value2 + ' ' + total);
         principal = value1 * value2 * 12;
         interest = total - principal;
+        principal = exactPrincipal(principal,interest,goal);
+        interest = goal - principal;
+        total = goal;
         $('.years-to-goal').empty().html(value2);
         $('.results .calculator-helper').fadeIn();
         pWidth = (principal / goal) * 100;
@@ -108,6 +111,7 @@ jQuery(document).ready(function($){
         $('.meter-i').width(iWidth + '%');
         setLabels(goal, value1, value2);
         moveInterestLabel(pWidth);
+
     }
   }
 
@@ -170,7 +174,12 @@ jQuery(document).ready(function($){
     }
     setValues();
   }
-
+  function exactPrincipal(principal,interest,goal)
+  {
+    //Decreases the principal to the goal amount
+    var difPer = goal/(principal+interest);
+    return principal*difPer;
+  }
   function compoundInterest(p,r,n,t,D){
     /*****************************
     p = principal, starting amount
