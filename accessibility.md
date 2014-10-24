@@ -1,7 +1,7 @@
 ---
 layout: default
 bodyclass: default
-title: Sitemap
+title: Accessibility
 ---
 
 #Accessibility
