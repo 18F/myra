@@ -16,16 +16,16 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@USTreasury">
     <meta name="twitter:title" content="{{ site.title }} | {{ page.title | xml_escape }}">
-    <meta name="twitter:image" content="{{ site.baseurl }}/static/img/fb.png">
+    <meta name="twitter:image" content="{{ site.url }}/static/img/fb.png">
     <meta name="twitter:url" content="{{ site.url }}">
     <meta name="twitter:description" content="{{ site.description | xml_escape }}" />
 
     <meta property="og:site_name" content="{{ site.title | xml_escape }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ site.url }}" />
     <meta property="og:title" content="{{ site.title }} | {{ page.title | xml_escape }}" />
+    <meta property="og:url" content="{{ site.url }}" />
     <meta property="og:description" content="{{ site.description | xml_escape }}" />
-    <meta property="og:image" content="{{ site.baseurl }}/static/img/fb.png" />
+    <meta property="og:image" content="{{ site.url }}/static/img/fb.png" />
 
     <!-- Favicons
     ================================================== -->
@@ -36,15 +36,15 @@
     ================================================== -->
     <link rel="stylesheet" href="{{ "/static/css/normalize.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/static/css/style.css" | prepend: site.baseurl }}">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ site.baseurl }}/static/css/simple-line-icons.css" type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/static/css/simple-line-icons.css" type="text/css">
 
     <!-- IE scripts and styles
     ================================================== -->
     <!--[if lt IE 10]>
       <link rel="stylesheet" href="{{ "/static/css/ie-icons.css" | prepend: site.baseurl }}">
     <![endif]-->
-    
+
     <!--[if lt IE 9]>
       <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery-1.11.1.min.js"></script>
       <script type="text/javascript" src="{{ site.baseurl }}/static/js/html5shiv.min.js"></script>
