@@ -246,7 +246,7 @@ footer {
     }
 
     @include media($large-up) {
-      height: 600px;
+      height: 550px;
     }
 
     @include media($medium-up) {
@@ -400,13 +400,6 @@ footer {
   @include media($tiny-down) {
     margin-top: 0;
     padding: 1em;
-  }
-}
-
-.inner-signup {
-  @include media($medium-up) {
-    @include span-columns(8 of 10);
-    @include shift(1);
   }
 }
 
@@ -836,6 +829,13 @@ $feature-color: #fff;
       @include shift(2);
     }
   }
+
+  .email-capture {
+    @include media($medium-up) {
+      @include span-columns(6);
+      @include shift(3);
+    }
+  }
 }
 
 .email-capture {
@@ -865,11 +865,8 @@ $feature-color: #fff;
     }
   }
 
-  @include media($large-up) {
-    @include span-columns(6);
-    @include shift(3);
-  }
 }
+
 
 /* myRA Story */
 
