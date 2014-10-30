@@ -848,8 +848,8 @@ $feature-color: #fff;
   }
 
   @include media($medium-up) {
-    @include span-columns(6);
-    @include shift(3);
+    @include span-columns(8);
+    @include shift(2);
     padding-top: 1em;
 
     label {
@@ -863,6 +863,11 @@ $feature-color: #fff;
     .button {
       @include span-columns(6 of 6);
     }
+  }
+
+  @include media($large-up) {
+    @include span-columns(6);
+    @include shift(3);
   }
 }
 
