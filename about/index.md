@@ -7,7 +7,7 @@ bodyclass: default
 
 # About <span class="myra">myRA</span>
 
-The U.S. Department of the Treasury is offering myRA (“my Retirement Account”), a new type of Roth IRA<sup><a href="#footnote-1">*</a></sup> – an individual retirement account that provides tax-free income in retirement to people who meet certain conditions. myRA is a simple, safe and affordable way to save for retirement. Savers can open a myRA account with no start-up cost and contribute every payday. myRA will never lose value and there will be no fees to maintain your account. The investment is backed by Treasury. Initially, myRA will be made available via direct deposit through participating employers.
+The <a href="https://www.treasury.gov/Pages/default.aspxU.S" target="blank">U.S. Department of the Treasury</a> is offering myRA (“my Retirement Account”), a new type of Roth IRA<sup><a href="#footnote-1">*</a></sup> – an individual retirement account that provides tax-free income in retirement to people who meet certain conditions. myRA is a simple, safe and affordable way to save for retirement. Savers can open a myRA account with no start-up cost and contribute every payday. myRA will never lose value and there will be no fees to maintain your account. The investment is backed by Treasury. Initially, myRA will be made available via direct deposit through participating employers.
 
 ## Why <span class="myra">myRA</span> was developed
 There are millions of working Americans who either don’t have access to an employer-sponsored retirement plan or lack options to save for retirement. In some cases, they don’t have enough money saved to meet a minimum for opening an investment account.
