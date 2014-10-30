@@ -41,7 +41,7 @@ a:focus > h2 {
   }
 }
 
-.alpha {
+.status {
   display: block;
   background: #f1f1f1;
   color: #333;
@@ -50,10 +50,15 @@ a:focus > h2 {
   padding: .5em;
   font-size: 14px;
   font-size: .875rem;
+}
 
-  span {
-    display: block;
-  }
+.beta {
+  float: right;
+  display: none;
+}
+
+.toggle-item {
+  // display: none;
 }
 
 .site-header {
@@ -324,13 +329,6 @@ footer {
   padding: 1em;
 }
 
-.coming-soon {
-  @extend h3;
-  display: block;
-  color: #fff;
-  margin-bottom: 0;
-  font-weight: 400;
-}
 
 .tagline {
   font-size: $base-font-size * 1.2;
