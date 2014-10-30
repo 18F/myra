@@ -184,13 +184,14 @@ footer {
 }
 
 .contact-info {
-  @include span-columns(4 of 6);
+  @include span-columns(6 of 6);
 }
 
 .seal {
   @include span-columns(2 of 6);
   height: auto;
   opacity: .7;
+  float: right;
 }
 
 .main-footer {
