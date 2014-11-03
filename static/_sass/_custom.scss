@@ -252,7 +252,7 @@ footer {
     }
 
     @include media($large-up) {
-      height: 550px;
+      height: 600px;
     }
 
     @include media($medium-up) {
@@ -1705,8 +1705,6 @@ input.calculator-input {
     background-image: url('../img/hero-bg-1.jpg');
 
     .container {
-      height: 600px;
-
     }
   }
 
