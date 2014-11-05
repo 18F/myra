@@ -21,11 +21,11 @@ jQuery(document).ready(function($){
     var target = $(this).data('toggle');
     target = $('#' + target);
     if ( target.hasClass('open') ) {
-      $('.beta').show();
-      target.removeClass('open');
+      $('.beta').show().attr('aria-hidden','false');
+      target.removeClass('open').attr('aria-expanded','false');
     } else {
-      $('.beta').hide();
-      target.addClass('open');
+      $('.beta').hide().attr('aria-hidden','true');
+      target.addClass('open').attr('aria-expanded','true');
     }
   });
 

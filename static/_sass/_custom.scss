@@ -46,43 +46,38 @@ a:focus > h2 {
   background: #f1f1f1;
   color: #333;
   border-top: none;
-  text-align: center;
-  padding: .5em;
-  font-size: 14px;
-  font-size: .875rem;
-}
+  text-align: left;
+  padding: .5em 0;
 
-.beta {
-  float: right;
-  display: none;
-}
-
-.toggle-item {
-  // display: none;
+  span {
+    font-size: 14px;
+    font-size: .875rem;
+  }
 }
 
 .site-header {
   background: #fff;
   text-align: center;
 
-  .container {
-    position: relative;
-
-    @include media($tiny-down) {
-      padding: 0;
-    }
-  }
-
   .logo {
-    display: block;
+    display: inline-block;
+    margin: 0 auto;
     padding: 1em 0;
+    width: 200px;
     height: 100px;
 
     @include media($medium-up) {
       @include span-columns(3);
     }
   }
+}
 
+.header-container {
+  position: relative;
+
+  @include media($tiny-down) {
+    padding: 0;
+  }
 }
 
 .site-title {

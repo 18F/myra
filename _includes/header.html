@@ -13,11 +13,11 @@
     <a class="skip-nav" tabindex="1" href="#main">Skip to main content</a>
     <div class="status">
       <div class="container">
-        <span class="beta">This site is in beta. <a class="toggle" data-toggle="beta-message">Learn more.</a></span>
-        <span id="beta-message" class="toggle-item">This site is in beta, which means we are constantly improving the site. We welcome your feedback. Please email your comments to <a href="mailto:myra@treasury.gov">myra@treasury.gov</a>.</span>
+        <span class="beta">This site is in beta. <button aria-role="button" class="toggle" data-toggle="beta-message">Learn more.</button></span>
+        <span id="beta-message" aria-expanded="false" class="toggle-item">This site is in beta, which means we are constantly improving the site. We welcome your feedback. Please email your comments to <a href="mailto:myra@treasury.gov">myra@treasury.gov</a>. <button class="toggle close" aria-role="button" aria-controls="beta-message" data-toggle="beta-message">Close <i class="icon-close"></i></button></span>
       </div>
     </div>
-    <div class="container">
+    <div class="header-container container">
 
       <a class="logo" href="{{ site.baseurl }}/" title="Home"><h1 class="site-title" itemprop="name">myRA: My Retirement Account</h1></a>
 

@@ -36,3 +36,25 @@ input[type="submit"],
     }
   }
 }
+
+.toggle {
+  cursor: pointer;
+  @include appearance(none);
+  background: none;
+  border: none;
+  display: inline-block;
+  color: $base-accent-color;
+  user-select: none;
+  white-space: nowrap;
+  padding: 0;
+
+  &:hover,
+  &:active {
+    outline: none;
+    color: $hover-link-color;
+  }
+  &.close {
+    text-align: left;
+    display: block;
+  }
+}
