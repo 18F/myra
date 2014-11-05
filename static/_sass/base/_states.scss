@@ -47,3 +47,26 @@
     }
   }
 }
+
+// Toggle visibility
+
+.toggle {
+  cursor: pointer;
+
+  &.close {
+    text-align: left;;
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+.toggle-item {
+  @include transition(opacity, .2s);
+  opacity: 0;
+  display: none;
+
+  &.open {
+    opacity: 1;
+    display: inline-block;
+  }
+}
