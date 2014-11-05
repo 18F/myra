@@ -999,7 +999,7 @@ $feature-color: #fff;
 }
 
 .calculator-row {
-  .toggle-buttons {
+  .button-group {
     @include span-columns(8 of 8);
 
     .button {
