@@ -1,5 +1,5 @@
-$.fn.scrollBottom = function() { 
-  return $(document).height() - this.scrollTop() - this.height(); 
+$.fn.scrollBottom = function() {
+  return $(document).height() - this.scrollTop() - this.height();
 };
 jQuery(document).ready(function($){
 
@@ -13,6 +13,20 @@ jQuery(document).ready(function($){
 
   $('#maindiv').blur(function(){
     $(this).attr('tabindex',-1);
+  });
+
+
+  // Toggles
+  $('.toggle').click(function(){
+    var target = $(this).data('toggle');
+    target = $('#' + target);
+    if ( target.hasClass('open') ) {
+      $('.beta').show();
+      target.removeClass('open');
+    } else {
+      $('.beta').hide();
+      target.addClass('open');
+    }
   });
 
   // Tooltips
@@ -82,7 +96,7 @@ jQuery(document).ready(function($){
 
     $(document).scroll(function(){
       scrollPos = $(window).scrollTop();
-      
+
       if (scrollPos >= navTop) {
         navHeight = $('.page-nav').height();
         $('.page-nav').addClass('fixed');
