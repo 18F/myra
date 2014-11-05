@@ -63,7 +63,7 @@ jQuery(document).ready(function($){
   var goal = 5000;
 
   // Get the savings goal
-  $('.toggle-buttons .button').click(function(){
+  $('.button-group .button').click(function(){
     $('.button[aria-pressed="true"]').attr('aria-pressed', 'false');
     $(this).attr('aria-pressed', 'true');
     goal = Number($(this).val().replace('$','').replace(',',''));
