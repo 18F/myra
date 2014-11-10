@@ -58,3 +58,14 @@ input[type="submit"],
     display: block;
   }
 }
+
+
+// Focus states
+input:focus,
+span:focus,
+button:focus,
+a:focus,
+a:focus > h2 {
+  box-shadow: inset 0 0 0 2px $myra-blue2;
+  outline: none;
+}
