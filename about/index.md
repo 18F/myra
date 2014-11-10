@@ -7,7 +7,7 @@ bodyclass: default
 
 # About <span class="myra">myRA</span>
 
-The <a href="https://www.treasury.gov/Pages/default.aspxU.S" target="blank">U.S. Department of the Treasury</a> is offering <span class="myra">myRA</span> (“My Retirement Account”) as a new type of Roth IRA<sup><a href="#footnote-1">*</a></sup>. It's an individual retirement account that provides tax-free income in retirement to people who meet certain conditions. <span class="myra">myRA</span> is a simple, safe and affordable way to save for retirement. Savers can open a <span class="myra">myRA</span> account with no start-up cost and contribute every payday. <span class="myra">myRA</span> will never lose value and there will be no fees to maintain your account. The investment is backed by Treasury. Initially, <span class="myra">myRA</span> will be made available via direct deposit through participating employers.
+The <a href="https://www.treasury.gov/Pages/default.aspxU.S" target="blank">U.S. Department of the Treasury</a> is offering <span class="myra">myRA</span> (“My Retirement Account”) as a new type of <a href="{{ site.baseurl }}/roth_ira/">Roth IRA</a>. It's an individual retirement account that provides tax-free income in retirement to people who meet certain conditions. <span class="myra">myRA</span> is a simple, safe and affordable way to save for retirement. Savers can open a <span class="myra">myRA</span> account with no start-up cost and contribute every payday. <span class="myra">myRA</span> will never lose value and there will be no fees to maintain your account. The investment is backed by Treasury. Initially, <span class="myra">myRA</span> will be made available via direct deposit through participating employers.
 
 ## Why was <span class="myra">myRA</span> developed?
 There are millions of working Americans who either don’t have access to an employer-sponsored retirement plan or lack options to save for retirement. In some cases, they don’t have enough money saved to meet a minimum for opening an investment account.
@@ -29,7 +29,3 @@ When account holders change jobs, their <span class="myra">myRA</span> account s
 
 ## Contact us
 If you have questions about <span class="myra">myRA</span>, please contact us at <a href="mailto:myra@treasury.gov">myra@treasury.gov</a>.
-
-<section class="footnotes">
-  <p id="footnote-1">*A Roth IRA is an individual retirement arrangement that allows you to withdraw the money you contribute to it at any time without paying penalties or taxes. However, you cannot withdraw without penalty any money your contributions earn in the account unless you are 59 ½ or older and the account has been open for at least five years. There are limits to how much you can contribute to a Roth IRA in a single year, and those limits vary by year. A Roth IRA can be a good way to start saving for retirement while allowing you the flexibility to access your contributions to it if you need to.</p>
-</section>
