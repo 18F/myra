@@ -2,7 +2,7 @@
   background-image: url($image);
   background-size: $width auto;
 
-  @media all and (-webkit-min-device-pixel-ratio: 2) {
+  @media (-webkit-min-device-pixel-ratio: 2) {
     background-image: url($image2x);
     background-size: $width auto;
   }

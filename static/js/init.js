@@ -22,9 +22,11 @@ jQuery(document).ready(function($){
     target = $('#' + target);
     if ( target.hasClass('open') ) {
       $('.beta').show().attr('aria-hidden','false');
+      target.slideUp('fast');
       target.removeClass('open').attr('aria-expanded','false');
     } else {
       $('.beta').hide().attr('aria-hidden','true');
+      target.slideDown('fast');
       target.addClass('open').attr('aria-expanded','true');
     }
   });

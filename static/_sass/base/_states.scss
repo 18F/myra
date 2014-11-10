@@ -51,12 +51,5 @@
 // Toggle visibility
 
 .toggle-item {
-  @include transition(opacity, .2s);
-  opacity: 0;
   display: none;
-
-  &.open {
-    opacity: 1;
-    display: block;
-  }
 }

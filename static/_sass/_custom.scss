@@ -264,7 +264,7 @@ footer {
     }
 
     @include media($large-up) {
-      height: 600px;
+      // height: auto;
     }
 
     @include media($medium-up) {
@@ -299,7 +299,7 @@ footer {
 }
 
 .hero-box {
-  padding: 3em;
+  padding: 3em 2em;
   background-color: #fff;
 
   .h1,
@@ -1623,7 +1623,9 @@ input.calculator-input {
 .employer {
 
   .hero {
-    background-image: url('../img/hero-bg-4.jpg');
+    @include media($medium-up) {
+      @include retina('../img/hero-bg-4.jpg', '../img/hero-bg-4@2x.jpg', 1400px);
+    }
   }
 
   .benefits {
@@ -1708,9 +1710,8 @@ input.calculator-input {
 
 .home {
   .hero {
-    background-image: url('../img/hero-bg-1.jpg');
-
-    .container {
+    @include media($medium-up) {
+      @include retina('../img/hero-bg-1.jpg', '../img/hero-bg-1@2x.jpg', 1400px);
     }
   }
 
