@@ -19,7 +19,7 @@ jQuery(document).ready(function($){
     step: 1,
     range: {
       'min': 0,
-      'max':100
+      'max':458
 
     },
     serialization: {
