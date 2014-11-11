@@ -98,7 +98,8 @@
   display: block;
 }
 
-.page-nav .icon-cloud-download {
+.page-nav .icon-cloud-download,
+.downloads-list .icon-cloud-download {
   background-image: url('../img/icons/i-download.png');
   width: 16px;
   height: 16px;
