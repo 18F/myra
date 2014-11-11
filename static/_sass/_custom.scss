@@ -44,9 +44,15 @@
   padding: .5em 0;
 
   p {
-    font-size: 14px;
-    font-size: .875rem;
+    font-size: 12px;
+    font-size: .75rem;
     margin-bottom: 0;
+
+    @include media($tiny-up) {
+      font-size: 14px;
+      font-size: .875rem;
+      margin-bottom: 0;
+    }
   }
 }
 
