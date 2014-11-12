@@ -43,7 +43,7 @@ To deploy the site to **production**, at `https://myra.treasury.gov`, you will n
 
 * Access to the 18F Amazon Web Services account.
 * Permissions to upload to a particular S3 bucket, `myra-cloudfront`.
-* A command line client to perform the upload, such as `s3cmd` or the official `aws` tool. Instructions below show `s3cmd`.
+* A command line client to perform the upload, such as `s3cmd` or the official `aws` tool. Instructions below show `s3cmd`. Install s3cmd on Mac with `brew install s3cmd`, and Ubuntu with `apt-get install s3cmd`.
 
 To deploy:
 
