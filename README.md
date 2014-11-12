@@ -53,7 +53,9 @@ To deploy:
 jekyll build --config _config.yml,_config-production.yml
 ```
 
-* If it built without errors, upload the website to the S3 bucket. The below command uses `s3cmd` to upload all files in `_site`, make them public, and tells both browsers and CloudFront to cache files for an hour.
+* **If the site built without errors**, upload the website to the S3 bucket. The below command uses `s3cmd` to upload all files in `_site`, make them public, and tells both browsers and CloudFront to cache files for an hour.
+
+From the project root:
 
 ```bash
 s3cmd  put --recursive --add-header="Cache-Control:max-age=86400" -P _site/* s3://myra-cloudfront/
