@@ -1,7 +1,7 @@
 # Site settings
 title: "myRA - My Retirement Account"
 email: myra@treasury.gov
-description: "myRA is a retirement savings account for individuals looking for a simple, safe and affordable way to start saving. Starting on January 1, 2015, individuals will be able to open accounts and begin contributing to them every payday. myRAs will be initially offered through employers, balances will never go down, and there will be no fees. myRAs will hold a new retirement savings bond that will be backed by the U.S. Treasury."
+description: "myRA is a retirement savings account for individuals looking for a simple, safe and affordable way to save for their retirement. There will be no fees to open and maintain a myRA and the account will never lose value. The investment will be backed by the United States Treasury. Soon, individuals will be able to open myRA accounts and begin contributing to them every payday. myRA will be initially offered through participating employers."
 baseurl: /myra
 url: "https://myra.treasury.gov"
 
