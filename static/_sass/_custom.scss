@@ -211,8 +211,15 @@ footer {
   .right {
     @include media($small-up) {
       @include span-columns(6);
+      text-align: right;
     }
   }
+}
+
+
+.footer-logos {
+  @include span-columns(6 of 6);
+  padding: 2em 0;
 }
 
 .contact-info {
@@ -220,10 +227,8 @@ footer {
 }
 
 .seal {
-  @include span-columns(2 of 6);
-  height: auto;
   opacity: .7;
-  float: right;
+  margin-left: 20px;
 }
 
 .main-footer {
