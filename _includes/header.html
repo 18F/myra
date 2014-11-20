@@ -9,30 +9,27 @@
   </div>
   <![endif]-->
 
-  <form action="https://signup.ibanking-services.com/olnas/OLNASServlet/StappsApp" method="POST"> 
-    <input type="hidden" name="id" value="221"> 
-    <input type="hidden" name="prodid" value="84586"> 
-    <input type="submit" name="Signup" value="Signup" > 
-  </form> 
-
-  <a href="https://manage.ibanking-services.com/cib/CEBMainServlet/Login?FIORG=221&FIFID=111925074">Manage</a>
-
   <header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
     <a class="skip-nav" tabindex="1" href="#main">Skip to main content</a>
-    <div class="status">
+    <div class="top-bar">
       <div class="container">
-        <p class="coming-soon">Coming soon from the U.S. Department of the Treasury</p>
-        <p class="beta">This site is in beta. <button class="toggle" data-toggle="beta-message">Learn more.</button></p>
-      </div>
-      <div id="beta-message" aria-role="complementary" aria-expanded="false" class="toggle-item">
-        <div class="container">
-          <p>This site is in beta, which means we are constantly improving the site. We welcome your feedback. Please email your comments to <a href="mailto:myra@treasury.gov">myra@treasury.gov</a>. <button class="toggle close" aria-controls="beta-message" data-toggle="beta-message">Close <i class="icon-close"></i></button></p>
-        </div>
+        <ul class="account-nav" role="menubar">
+          <li role="menuitem"><a class="manage-link" href="https://manage.ibanking-services.com/cib/CEBMainServlet/Login?FIORG=221&FIFID=111925074">Manage your account</a></li>
+          <li role="menuitem">
+            <form action="https://signup.ibanking-services.com/olnas/OLNASServlet/StappsApp" method="POST">
+              <input type="hidden" name="id" value="221">
+              <input type="hidden" name="prodid" value="84586">
+              <button class="button signup-button-small" type="submit" name="Signup">Sign up for <span class="myra">myRA</span> <i class="icon-arrow-right"></i></button>
+            </form>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="header-container container">
-
-      <a class="logo" href="{{ site.baseurl }}/" title="Home"><h1 class="site-title" itemprop="name">myRA: My Retirement Account</h1></a>
+      <div class="site-brand">
+        <a class="logo" href="{{ site.baseurl }}/" title="Home"><h1 class="site-title" itemprop="name">myRA: My Retirement Account</h1></a>
+        <a href="{{ site.baseurl }}/" title="Home"><h1 class="site-title" itemprop="name"><span class="myra">myRA</span> | my Retirement Account</h1></a>
+      </div>
 
       <nav class="site-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <ul role="menubar">
