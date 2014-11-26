@@ -1841,30 +1841,25 @@ input.calculator-input {
 }
 
 /**************************/
-/* December 15 Styles */
+/* Modals */
 /**************************/
 
-.live {
-  .hero-signup {
+.modal {
+  display: none;
+
+  .button-container {
     text-align: center;
-
-    .button {
-      @include span-columns(4 of 8);
-      @include shift(2);
-      text-align: center;
-    }
-
-    .signup {
-      @include clearfix();
-      padding-bottom: 1em;
-    }
-
-    .account-signin {
-      clear: both;
-      width: 100%;
-      padding-top: 1em;
-      margin-top: 1em;
-      border-top: 1px solid $myra-blue1;
-    }
+    border-top: 1px solid $myra-green;
+    padding-top: 1em;
+    margin-top: 1em;
   }
+
+  .button {
+    margin-bottom: .5em;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
 }

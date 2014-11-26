@@ -247,18 +247,13 @@ jQuery(document).ready(function($){
   equalHeight($('.match-height'));
 
   // Bumper message
-  $('.bumper-required').click(function(e){
-    e.preventDefault();
-    vex.defaultOptions.className = 'vex-default';
-    vex.dialog.open({
-      message: 'Enter your username and password:',
-      buttons: [
-        $.extend({}, vex.dialog.buttons.YES, {
-          text: 'Continue'
-        }), $.extend({}, vex.dialog.buttons.NO, {
-          text: 'Cancel'
-        })
-      ],
-    });
-  })
+  var manageModal = $('#manage-modal');
+  var signupModal = $('#signup-modal');
+  var featherlightOptions = {
+    otherClose: 'a.cancel',
+  }
+  $('.modal-signup').featherlight(signupModal, featherlightOptions);
+
+  $('.modal-manage').featherlight(manageModal, featherlightOptions);
+
 });
