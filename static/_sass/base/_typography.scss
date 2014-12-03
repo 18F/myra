@@ -159,7 +159,7 @@ li {
 // For phones
 @include media($tiny-down) {
   h1 {
-    font-size: $base-font-size * 1.602;
+    font-size: $base-font-size * 1.5;
   }
 
   h2,
@@ -178,6 +178,10 @@ li {
 
   p,
   li {
+    font-size: $base-font-size * .875;
+  }
+
+  .lead-text {
     font-size: $base-font-size;
   }
 
