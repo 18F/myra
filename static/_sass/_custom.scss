@@ -1821,6 +1821,7 @@ input.calculator-input {
 }
 
 .downloads-list {
+  @extend %default-ol;
   padding: 1em 0;
 
   li {
