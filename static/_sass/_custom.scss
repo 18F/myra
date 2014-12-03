@@ -27,8 +27,10 @@
 }
 
 .usa {
+  font-size: 14px; font-size: .75rem;
   width: 100%;
   border-bottom: 1px solid $light-gray;
+  background-color: #e6e6e6;
 
   p {
     color: $dark-gray;
@@ -36,7 +38,7 @@
 }
 
 .top-bar {
-  display: block;
+  display: none;
   background: #fff;
   padding: .5em 0;
   color: #333;
@@ -47,27 +49,9 @@
     padding: 0;
     margin-left: 1em;
   }
-}
 
-.beta {
-  @include media($small-up) {
-    text-align: right;
-  }
-}
-.coming-soon {
-  @include media($small-up) {
-    float: left;
-  }
-}
-
-#beta-message {
-  text-align: center;
-  padding: .5em 0;
-  margin-top: .5em;
-  border-top: 1px solid $base-border-color;
-
-  .toggle {
-    margin: 0 auto;
+  @include media($medium-up) {
+    display: block;
   }
 }
 
@@ -87,9 +71,10 @@
 
 .site-brand {
   margin: 0 auto;
-  padding: 0 1em 1em 1em;
-  @include media($medium-up) {
+  padding: em(10);
+  @include media($large-up) {
     @include span-columns(6);
+    padding: 0 0 .5them 0;
   }
 
   .logo {
@@ -157,27 +142,14 @@
     }
   }
 
-
-  @include media($medium-up) {
-    @include span-columns(9);
+  @include media($large-up) {
+    @include span-columns(6);
     border-top: none;
     border-bottom: none;
 
     li {
-      @include span-columns(3 of 9, block-collapse);
-    }
-
-    a {
-      padding: .5em em(10) .5em;
-      font-size: $base-font-size * 1.333;
-    }
-  }
-
-  @include media($large-up) {
-    @include span-columns(6);
-
-    li {
       @include span-columns(2 of 6, block-collapse);
+      font-size: $base-font-size * 1.333;
     }
   }
 
@@ -189,6 +161,7 @@
 
 footer {
   @extend %inverse;
+  background: $myra-darkblue;
 
   p {
     font-size: $base-font-size;
@@ -211,7 +184,7 @@ footer {
 
 .footer-logos {
   @include span-columns(6 of 6);
-  padding: 2em 0;
+  // padding: 2em 0;
 }
 
 .contact-info {
@@ -228,7 +201,6 @@ footer {
 }
 
 .sub-footer {
-  background: $myra-darkblue;
   color: #fff;
   padding: em(10);
 
@@ -990,7 +962,7 @@ $feature-color: #fff;
 
     @include media($small-up) {
       display: block;
-      
+
       .button {
         @include span-columns(2 of 10, block-collapse);
       }
@@ -1884,5 +1856,11 @@ input.calculator-input {
   color: #686868;
 }
 .featherlight-content {
-  max-width: 50%;
+  @include media($small-up) {
+    max-width: 80%;
+  }
+
+  @include media($large-up) {
+    max-width: 50%;
+  }
 }
