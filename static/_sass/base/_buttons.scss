@@ -75,8 +75,14 @@ input[type="submit"],
 input:focus,
 span:focus,
 button:focus,
-a:focus,
-a:focus > h2 {
+.button:focus {
   box-shadow: inset 0 0 0 2px $myra-blue2;
   outline: none;
+  text-decoration: none;
+}
+
+a:focus,
+a:active {
+  text-decoration: underline;
+  outline:none;
 }

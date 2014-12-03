@@ -134,11 +134,13 @@
     }
 
     &:hover,
-    &.current-page:hover {
+    &.current-page:hover,
+    &:focus,
+    &:active {
       background: $myra-green;
       color: #fff;
       border-bottom-color: $myra-green;
-
+      text-decoration: none;
     }
   }
 
@@ -477,7 +479,8 @@ footer {
       border-bottom: 1px solid $base-border-color;
     }
 
-    a:hover {
+    a:hover,
+    a:focus {
       @include transition(all, .2s);
       background-color: $myra-green;
       color: #fff;
@@ -1755,6 +1758,10 @@ input.calculator-input {
 /**************************/
 
 .default {
+  main {
+    border-top: 1px solid $light-gray;
+
+  }
   .page-content {
 
     @include media($large-up) {
@@ -1847,7 +1854,6 @@ input.calculator-input {
     margin-bottom: 2em;
   }
 
-
 }
 
 .modal-sub {
@@ -1863,4 +1869,15 @@ input.calculator-input {
   @include media($large-up) {
     max-width: 50%;
   }
+}
+
+/**************************/
+/* Signup Details */
+/**************************/
+
+.waiting-signup {
+  @include clearfix();
+  padding: 2em;
+  background: $light-gray;
+  text-align: center;
 }
