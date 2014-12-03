@@ -1,0 +1,26 @@
+<div id="signup-modal" class="modal">
+  <h2><i class="icon-compass"></i> You are about to leave myra.treasury.gov</h2>
+  <p class="lead-text">In order to sign up for <span class="myra">myRA</span> you must work for an employer that will allow you to set up direct deposit from your paycheck into your <span class="myra">myRA</span> account.</p>
+  <h3>Sound like you?</h3>
+  <div class="button-container">
+    <form action="https://signup.ibanking-services.com/olnas/OLNASServlet/StappsApp" method="POST">
+      <input type="hidden" name="id" value="221">
+      <input type="hidden" name="prodid" value="84586">
+      <button class="button signup-button" type="submit" name="Signup">Yes, sign me up! <i class="icon-arrow-right"></i></button>
+    </form>
+  </div>
+  <div class="modal-sub">
+    <span>Not you? Or not sure if it's you? <a href="{{ site.baseurl }}/individuals/signup-details">Click here to learn more. &raquo;</a></span>
+  </p>
+</div>
+
+<div id="manage-modal" class="modal">
+  <h2><i class="icon-compass"></i> You are about to leave myra.treasury.gov</h2>
+  <p class="lead-text">If you've already opened your <span class="myra">myRA</span> account and signed up for <span class="myra">myRA</span> Online, continue to manage your account.</p>
+  <div class="button-container">
+    <a class="button modal-site-exit" href="https://manage.ibanking-services.com/cib/CEBMainServlet/Login?FIORG=221&FIFID=111925074">Manage your account <i class="icon-arrow-right"></i></a>
+  </div>
+  <div class="modal-sub">
+    <span>If you haven't yet signed up for <span class="myra">myRA</span> Online, <a href="#">Click here to signup.</a></span>
+  </p>
+</div>

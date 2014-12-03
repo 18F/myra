@@ -37,21 +37,15 @@
 
 .top-bar {
   display: block;
-  background: #f1f1f1;
+  background: #fff;
+  padding: .5em 0;
   color: #333;
   border-top: none;
   text-align: left;
 
-  p {
-    font-size: 12px;
-    font-size: .75rem;
-    margin-bottom: 0;
-
-    @include media($tiny-up) {
-      font-size: 14px;
-      font-size: .875rem;
-      margin-bottom: 0;
-    }
+  li {
+    padding: 0;
+    margin-left: 1em;
   }
 }
 
@@ -93,7 +87,6 @@
 
 .site-brand {
   margin: 0 auto;
-  padding: 2em 0 0;
   width: 200px;
 
   @include media($medium-up) {
@@ -176,7 +169,7 @@
     }
 
     a {
-      padding: 2em em(10) .5em;
+      padding: .5em em(10) .5em;
       font-size: $base-font-size * 1.333;
     }
   }
@@ -1441,6 +1434,21 @@ input.calculator-input {
   }
 }
 
+.who-eligibility {
+  @include span-columns(12);
+  margin-top: 1em;
+
+
+  @include media($medium-up) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+
+  @include media($large-up) {
+    @include span-columns(6);
+    @include shift(3);
+  }
+}
 /* For the slider */
 
 .who-people {
@@ -1846,20 +1854,24 @@ input.calculator-input {
 
 .modal {
   display: none;
+  text-align: center;
 
   .button-container {
     text-align: center;
-    border-top: 1px solid $myra-green;
-    padding-top: 1em;
-    margin-top: 1em;
   }
 
   .button {
-    margin-bottom: .5em;
+    margin-bottom: 2em;
   }
 
-  p {
-    margin-bottom: 0;
-  }
 
+}
+
+.modal-sub {
+  padding: 2em 0 0 0;
+  border-top: $base-border-color 1px solid;
+  color: #686868;
+}
+.featherlight-content {
+  max-width: 50%;
 }

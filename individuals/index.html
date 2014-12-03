@@ -7,16 +7,13 @@ title: For Individuals
   <img alt="Photographs of individuals working various jobs." class="mobile-banner" src="{{ site.baseurl }}/static/img/mobile-bg.jpg">
   <div class="container">
     <div class="inner-container">
-      <div class="tagline-banner">
-        <span class="coming-soon">Coming Soon</span>
-      </div>
       <div class="headline">
         <div class="inner-headline">
           <span class="display">See yourself saving</span>
           <p class="lead-text">The United States Treasury has designed a new retirement savings option that makes it easy for you to participate, with no minimums, fees or risky investments.</p>
           <hr>
           <h4>Signing up for <span class="myra">myRA</span> is easy and only takes 10 minutes.</h4>
-          <a class="button signup-button modal-signup" data-featherlight="signup-modal">Sign up for <span class="myra">myRA</span> <i class="icon-arrow-right"></i></a>
+          <a class="button signup-button modal-signup">Sign up for <span class="myra">myRA</span> <i class="icon-arrow-right"></i></a>
           <div class="account-signin">
             <span>Already have a <span class="myra">myRA</span>?</span>
             <a class="manage-link modal-manage" href="#">Manage your account</a>
@@ -49,24 +46,4 @@ title: For Individuals
 
 {% include individual-signup.html %}
 
-
-<div id="signup-modal" class="modal">
-  <h2>You are about to leave myra.treasury.gov</h2>
-  <p>In order to sign up for <span class="myra">myRA</span>
-  <div class="button-container">
-    <form action="https://signup.ibanking-services.com/olnas/OLNASServlet/StappsApp" method="POST">
-      <input type="hidden" name="id" value="221">
-      <input type="hidden" name="prodid" value="84586">
-      <button class="button signup-button" type="submit" name="Signup">Continue <i class="icon-arrow-right"></i></button>
-      <p><a class="cancel" href="#">Cancel <i class="icon-close"></i></a></p>
-    </form>
-  </div>
-</div>
-
-<div id="manage-modal" class="modal">
-  <h2>You are about to leave myra.treasury.gov</h2>
-  <div class="button-container">
-    <a class="button modal-site-exit" href="https://manage.ibanking-services.com/cib/CEBMainServlet/Login?FIORG=221&FIFID=111925074">Continue <i class="icon-arrow-right"></i></a>
-    <p><a class="cancel" href="#">Cancel <i class="icon-close"></i></a></p>
-  </div>
-</div>
+{% include modals.html %}
