@@ -87,8 +87,7 @@
 
 .site-brand {
   margin: 0 auto;
-  width: 200px;
-
+  padding: 0 1em 1em 1em;
   @include media($medium-up) {
     @include span-columns(6);
   }
@@ -982,16 +981,28 @@ $feature-color: #fff;
 
 .calculator-row {
   .button-group {
-    @include span-columns(8 of 8);
+    display: none;
 
     .button {
       width: 100%;
       margin-bottom: 2px;
+    }
 
-      @include media($small-up) {
+    @include media($small-up) {
+      display: block;
+      
+      .button {
         @include span-columns(2 of 10, block-collapse);
       }
     }
+  }
+}
+
+.calculator-select {
+  width: 100%;
+
+  @include media($small-up) {
+    display: none;
   }
 }
 

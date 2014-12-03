@@ -63,13 +63,24 @@ jQuery(document).ready(function($){
   var goal = 5000;
 
   // Get the savings goal
-  $('.button-group .button').click(function(){
-    $('.button[aria-pressed="true"]').attr('aria-pressed', 'false');
-    $(this).attr('aria-pressed', 'true');
-    goal = Number($(this).val().replace('$','').replace(',',''));
+  function setGoal(goalValue){
+    goal = Number(goalValue.replace('$','').replace(',',''));
     updateSlide1();
     updateSlide2();
-  });
+  }
+
+  // Use the <select> if it's visible, otherwise use the buttons
+  if ( $('#calculator-0-select').is(':visible') ) {
+    $('#calculator-0-select').change(function(){
+      setGoal($(this).val());
+    })
+  } else {
+    $('.button-group .button').click(function(){
+      $('.button[aria-pressed="true"]').attr('aria-pressed', 'false');
+      $(this).attr('aria-pressed', 'true');
+      setGoal($(this).val());
+    });
+  }
 
   // Set the displayed values
   var value1, value2, principal, interest, total, pWidth, iWidth;
