@@ -860,6 +860,10 @@ $feature-color: #fff;
       background: #fff;
       border: 1px solid #f1f1f1;
       padding: 3em 2em;
+
+      @include media($large-up) {
+        padding: 3em 0;
+      }
     }
   }
 }
@@ -1323,7 +1327,7 @@ input.calculator-input {
   overflow: hidden;
   background: url('../img/who-bg.jpg');
   background-position: 50% 0;
-
+  padding: 0;
   .images {
     @include span-columns(5);
     padding-top: em(30);
@@ -1335,7 +1339,7 @@ input.calculator-input {
 
 .who-content {
   @include span-columns(12);
-  background: rgba($myra-blue1, .8);
+  background: rgba($myra-blue1, 1);
   padding: 2em;
   @include media($medium-up) {
     @include span-columns(10);
