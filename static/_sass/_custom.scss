@@ -176,17 +176,16 @@ footer {
   }
 
   .right {
+    text-align: left;
+    margin-top: 2em;
+    width: 100%;
+
     @include media($small-up) {
       @include span-columns(6);
       text-align: right;
+      margin-top: 0;
     }
   }
-}
-
-
-.footer-logos {
-  @include span-columns(6 of 6);
-  // padding: 2em 0;
 }
 
 .contact-info {
@@ -1581,11 +1580,15 @@ input.calculator-input {
 /**************************/
 
 .default {
-  main {
-    border-top: 1px solid $light-gray;
+
+  #main {
+    background: #f3f3f3;
 
   }
+
   .page-content {
+    padding: 2em;
+    background: #fff;
 
     @include media($large-up) {
       @include span-columns(8);
