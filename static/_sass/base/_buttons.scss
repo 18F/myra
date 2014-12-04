@@ -81,8 +81,11 @@ button:focus,
   text-decoration: none;
 }
 
-a:focus,
-a:active {
+a:focus {
   text-decoration: underline;
   outline:none;
+}
+
+a:active {
+  text-decoration: none;
 }

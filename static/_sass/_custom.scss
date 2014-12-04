@@ -234,7 +234,7 @@ footer {
 
   @include media($medium-up) {
     @include retina('../img/hero-bg-2.jpg', '../img/hero-bg-2@2x.jpg', 1400px);
-    padding: 3em 0;
+    padding: 3em 0 2em 0;
   }
 
 
@@ -418,33 +418,18 @@ footer {
 #main {
   background-color: #fff;
 }
-/**************************/
-/* v4 Sub-Hero */
-/**************************/
 
-.sub-hero {
-  background: $myra-blue2;
-  text-align: center;
+
+.scroll-down {
+  font-size: $h3 * $base-font-size;
+  display: inline-block;
+  padding: 1em 0 0 0;
   color: #fff;
-  padding: 3em 0;
 
-  p {
-    @include span-columns(6);
-    @include shift(3);
-    @extend .h3;
-    font-weight: 400;
+  &:hover {
     color: #fff;
   }
 }
-
-@include media($medium-up) {
-  .sub-hero {
-    p {
-      color: #000;
-    }
-  }
-}
-
 
 /**************************/
 /* Page nav */

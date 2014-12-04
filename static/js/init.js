@@ -140,7 +140,7 @@ jQuery(document).ready(function($){
     });
 
     // Scroll down to sections in page nav {
-    $('.page-nav a').click(function(){
+    $('.scroll-link').click(function(){
       var sectionId = $(this).attr('href');
       scrollDown(sectionId);
     });
