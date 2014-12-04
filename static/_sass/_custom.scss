@@ -1321,6 +1321,7 @@ input.calculator-input {
   @extend %inverse;
   position: relative;
   overflow: hidden;
+  background: url('../img/who-bg.jpg');
 
   .images {
     @include span-columns(5);
