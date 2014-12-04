@@ -870,47 +870,6 @@ $feature-color: #fff;
   clear: both;
 }
 
-.education {
-  @include clearfix();
-  border-bottom: 1px solid $light-gray;
-  padding-bottom: em(40);
-  margin-bottom: em(40);
-
-  @include media($large-up) {
-    @include span-columns(8);
-    @include shift(2);
-
-    h3 {
-      @include span-columns(8 of 8);
-    }
-
-    .intro {
-      @include span-columns(4 of 8);
-    }
-
-    .chart {
-      @include span-columns(4 of 8);
-      margin: 0;
-    }
-  }
-
-  .chart {
-
-    figcaption {
-      border-top: 1px solid $light-gray;
-      padding-top: .5em;
-      text-align: center;
-      font-size: 14px; font-size: .875rem;
-    }
-
-    img {
-      width: 170px;
-      margin: 0 auto 10px;
-      display: block;
-    }
-  }
-}
-
 .calculator-row {
   @include span-columns(12);
   background: #f3f3f3;
