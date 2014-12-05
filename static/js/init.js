@@ -248,11 +248,13 @@ jQuery(document).ready(function($){
 
   // Bumper message
   // $('.modal-trigger').featherlight();
-  $('.modal-trigger').click(function(){
+  $('.modal-trigger').click(function(e){
+    e.preventDefault();
     var modal = $(this).data('modal');
     $(modal).show();
     $('#overlay').fadeIn('fast');
-    $('.close').click(function(){
+    $('.close').click(function(e){
+      e.preventDefault();
       $(modal).hide();
       $('#overlay').hide();
     })
