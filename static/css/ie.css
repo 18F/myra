@@ -2,10 +2,6 @@
 // Special styles for IE 8 and lower
 /**********************************/
 
-.site-title {
-  background-image: url('../img/myra_logo.png');
-}
-
 .site-nav {
   border-bottom: none;
 }
