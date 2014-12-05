@@ -49,10 +49,11 @@
     padding: 0;
     margin-left: 1em;
   }
-
   @include media($medium-up) {
+    @include clearfix();
     display: block;
   }
+
 }
 
 .account-nav {
@@ -71,20 +72,23 @@
 
 .site-brand {
   margin: 0 auto;
-  padding: em(10);
+  text-align: center;
+  display: block;
+  padding: 0 0 1em 0;
+
+  @include media($medium-up) {
+  }
+
   @include media($large-up) {
     @include span-columns(6);
-    padding: 0 0 .5them 0;
+    text-align: left;
+    padding: .25em 0 0;
   }
 }
 
-.site-title,
-.site-subtitle {
+.site-title {
   margin-bottom: 0;
-  font-weight: 300;
-  text-align: left;
 }
-
 
 .header-container {
   position: relative;
