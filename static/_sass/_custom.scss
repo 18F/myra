@@ -1394,9 +1394,18 @@ input.calculator-input {
 
 .resource-list {
   @extend %default-ol;
+  margin-top: 1em;
+
+  li {
+    margin-bottom: 1em;
+  }
 
   a {
     font-weight: bold;
+  }
+
+  ul {
+    margin-top: 1em;
   }
 }
 
