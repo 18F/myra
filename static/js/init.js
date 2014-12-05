@@ -247,6 +247,8 @@ jQuery(document).ready(function($){
   equalHeight($('.match-height'));
 
   // Bumper message
-  $('.modal-trigger').featherlight();
-
+  // $('.modal-trigger').featherlight();
+  $('.modal-trigger').click(function(){
+    alert('yo');
+  })
 });
