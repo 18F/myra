@@ -1679,13 +1679,13 @@ input.calculator-input {
   display: none;
   position: fixed;
   top: 2.5%;
-  right: 2.5%;
+  left: 2.5%;
   text-align: center;
   z-index: 200;
   background: #fff;
   width: 95%;
   padding: 1em 1em 2em 1em;
-  
+
   .button-container {
     text-align: center;
   }
@@ -1697,20 +1697,20 @@ input.calculator-input {
   .close {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
     cursor: pointer;
   }
 
   @include media($small-up) {
     max-width: 80%;
-    right: 10%;
+    left: 10%;
     top: 20%;
 
   }
 
   @include media($large-up) {
-    max-width: 50%;
-    right: 25%;
+    width: 50%;
+    left: 25%;
   }
 }
 
