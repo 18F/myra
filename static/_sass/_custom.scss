@@ -1231,76 +1231,6 @@ input.calculator-input {
   }
 }
 
-// For tab based steps:
-// .step-by-step {
-//   .tab-nav {
-//     @include span-columns(12);
-//     background: #fff;;
-//     li {
-//       float: left;
-//       width: 25%;
-//       text-align: center;
-//
-//       &:last-child {
-//         a:after {
-//           content: '\f11e';
-//         }
-//       }
-//     }
-//     a {
-//       @include transition(background .2s);
-//       display: block;
-//       padding: em(10);
-//       border: darken($myra-green, 5);
-//       color: $myra-blue1;
-//       border-color: $base-border-color;
-//       border-style: solid;
-//       border-width: 0px 0px 1px 0px;
-//       position: relative;
-//
-//       &[aria-selected="true"] {
-//         background: $light-gray;
-//         position: relative;
-//         color: $dark-gray;
-//         border-width: 1px 1px 0 1px;
-//       }
-//
-//       &:after {
-//         content: '\f061';
-//         font: normal normal normal 14px/1 FontAwesome;
-//         display: inline-block;
-//         margin-left: em(10);
-//       }
-//     }
-//   }
-//
-//   .tab-content {
-//     @include span-columns(12);
-//     background: $light-gray;
-//     border-color: $base-border-color;
-//     border-style: solid;
-//     border-width: 0px 1px 1px 1px;
-//     padding: em(40);
-//   }
-//
-//   .step-content {
-//     @include span-columns(8);
-//   }
-//
-//   .step {
-//     display: none;
-//
-//     &[aria-hidden="false"] {
-//       display: block;
-//     }
-//   }
-//
-//   .numbered-heading {
-//     display: none;
-//   }
-// }
-
-
 /**************************/
 /* Who & Benefits
 /**************************/
@@ -1309,25 +1239,23 @@ input.calculator-input {
   @extend %inverse;
   position: relative;
   overflow: hidden;
-  background: url('../img/who-bg.jpg');
   background-position: 50% 0;
   padding: 0;
-  .images {
-    @include span-columns(5);
-    padding-top: em(30);
-    position: absolute;
-    bottom: -5px;
-    right: 0;
+
+  @include media($medium-up) {
+    background: url('../img/who-bg.jpg');
   }
 }
 
 .who-content {
   @include span-columns(12);
   background: rgba($myra-blue1, 1);
-  padding: 2em;
+  padding: 1em 0;
+
   @include media($medium-up) {
     @include span-columns(10);
     @include shift(1);
+    padding: 2em;
   }
 
   @include media($large-up) {
