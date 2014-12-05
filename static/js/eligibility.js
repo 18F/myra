@@ -4,9 +4,11 @@ jQuery(document).ready(function(){
     $('#' + value).fadeIn();
 
     if ( value === 'ineligible' ) {
-      $('#eligibility-part-2, #eligibility-part-3').hide();
+      $('#eligibility-part-2, #eligibility-part-3, #unsure, #eligibility-success').hide();
+    } else if ( value === 'unsure' ) {
+      $('#eligibility-part-2, #eligibility-part-3, #ineligible, #eligibility-success').hide();
     } else {
-      $('#ineligible').hide();
+      $('#ineligible, #unsure').hide();
     }
   });
 

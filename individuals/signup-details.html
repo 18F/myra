@@ -24,13 +24,18 @@ bodyclass: default
   </div>
   <div id="eligibility-part-3" class="eligibility-chunk">
     <h4>3. And will your employer be able to set up a portion of your paycheck to be deposited into a <span class="myra">myRA</span> account?</h4>
-    <p>If you're not sure if they can, just ask! If you're not sure what to ask for, just give them <a href="{{ site.baseurl }}/employers/resources/myRA_Employer_Direct_Deposit_Instructions.pdf" title="Download PDF">this letter</a>.</p>
     <input type="radio" name="3" value="eligibility-success">Yes<br>
-    <input type="radio" name="3" value="ineligible">No
+    <input type="radio" name="3" value="ineligible">No<br>
+    <input type="radio" name="3" value="unsure">I don't know
+  </div>
+  <div id="unsure" class="eligibility-chunk">
+    <h4>Not sure if your employer will work?</h4>
+    <p>If you're not sure if your employer can deposit a portion of your paycheck, just ask whoever handles payroll at your work. If you're not sure what to ask for, just give them <a href="{{ site.baseurl }}/employers/resources/myRA_Employer_Direct_Deposit_Instructions.pdf" title="Download PDF">this letter</a>.</p>
+    <p>And if you have any other questions, you can email us at <a href="mailto:myra@treasury.gov">myra@treasury.gov</a></p>
   </div>
   <div id="eligibility-success" class="eligibility-chunk">
     <h4>Great! You're all good to go</h4>
-    <a class="button signup-button modal-trigger" data-modal="#signup-modal" href="#">Sign up for <span class="myra">myRA</span> <i class="icon-arrow-right"></i></a>
+    <a class="button modal-trigger" data-modal="#signup-modal" href="#">Sign up for <span class="myra">myRA</span> <i class="icon-arrow-right"></i></a>
   </div>
   <div id="ineligible" class="eligibility-chunk">
     <h4>We're sorry, but you will need to wait for <span class="myra">myRA</span></h4>
