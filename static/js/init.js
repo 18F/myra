@@ -253,10 +253,10 @@ jQuery(document).ready(function($){
     var modal = $(this).data('modal');
     $(modal).show();
     $('#overlay').fadeIn('fast');
-    $('.close').click(function(e){
+    $('.close, #overlay').click(function(e){
       e.preventDefault();
       $(modal).hide();
-      $('#overlay').hide();
+      $('#overlay').fadeOut('fast');
     })
   })
 });
