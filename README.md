@@ -22,15 +22,6 @@ Ruby gems:
 
 This site is deployed using **Jekyll 2.4**.
 
-Sass libraries:
-
-* `gem install sass`
-* `gem install bourbon`
-* `gem install neat`
-* `gem install bitters`
-
-If you are not familiar with how to work with either Bourbon, Neat, or Bitters, visit their website at [bourbon.io](http://bourbon.io/).
-
 To keep our code updating continuously as we edit, we use `jekyll serve --baseurl '' --watch`.
 
 ## Contributing
