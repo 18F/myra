@@ -247,13 +247,6 @@ jQuery(document).ready(function($){
   equalHeight($('.match-height'));
 
   // Bumper message
-  var manageModal = $('#manage-modal');
-  var signupModal = $('#signup-modal');
-  var featherlightOptions = {
-    otherClose: 'a.cancel',
-  }
-  $('.modal-signup').featherlight(signupModal, featherlightOptions);
-
-  $('.modal-manage').featherlight(manageModal, featherlightOptions);
+  $('.modal-trigger').featherlight();
 
 });
