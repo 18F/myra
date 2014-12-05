@@ -7,8 +7,33 @@ bodyclass: default
 <h1>Signup Details</h1>
 <p class="lead-text">Currently, you can only fund your <span class="myra">myRA</span> account by direct deposit through an employer, especially through an employer that participates in the <span class="myra">myRA</span> program.  However, you can fund your <span class="myra">myRA</span> account through any employer as long as they offer direct deposit and they are able to set up a portion to be directed to your <span class="myra">myRA</span> account.  In the near future, the U.S. Treasury will be making other methods available for you to contribute to your <span class="myra">myRA</span> account.</p>
 
-
-<section role="region" aria-labelledby="eligibility-heading">
+<section role="region" aria-labelledby="eligibility-heading" id="eligibility-wizard">
   <h2 id="eligibility-heading">Not sure if you're eligible? Let us help.</h2>
-  [Stuff here helping people understand if they're eligible].
+  <div id="eligibility-part-1" class="eligibility-chunk">
+    <h4>1. What is your employment status?</h4>
+    <input type="radio" name="1" value="eligibility-part-2">I work for an employer<br>
+    <input type="radio" name="1" value="ineligible">I am self-employed<br>
+    <input type="radio" name="1" value="ineligible">I am unemployed
+  </div>
+  <div id="eligibility-part-2" class="eligibility-chunk">
+    <h4>2. Does your employer offer direct deposit?</h4>
+    <input type="radio" name="2" value="eligibility-part-3">Yes<br>
+    <input type="radio" name="2" value="ineligible">No
+  </div>
+  <div id="eligibility-part-3" class="eligibility-chunk">
+    <h4>3. And will your employer be able to set up a portion of your paycheck to be deposited into a <span class="myra">myRA</span> account?</h4>
+    <p>If you're not sure if they can, just ask! If you're not sure what to ask for, just give them <a href="{{ site.baseurl }}/employers/resources/myRA_Employer_Direct_Deposit_Instructions.pdf" title="Download PDF">this letter</a>.</p>
+    <input type="radio" name="3" value="eligibility-success">Yes<br>
+    <input type="radio" name="3" value="ineligible">No
+  </div>
+  <div id="eligibility-success" class="eligibility-chunk">
+    <h4>Great! You're all good to go</h4>
+    <a class="button signup-button modal-signup" href="#">Sign up for <span class="myra">myRA</span> <i class="icon-arrow-right"></i></a>
+  </div>
+  <div id="ineligible" class="eligibility-chunk">
+    <h4>We're sorry, but you will need to wait for <span class="myra">myRA</span></h4>
+    <p>Don't worry though. In the near future we will be rolling out <span class="myra">myRA</span> for more Americans, including those who are self-employed, unemployed, or who work for a non-supported employer.</p>
+    <p>So please check back here for updates.</p>
+  </div>
+
 </section>

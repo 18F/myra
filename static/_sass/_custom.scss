@@ -76,15 +76,6 @@
     @include span-columns(6);
     padding: 0 0 .5them 0;
   }
-
-  .logo {
-    display: none;
-    text-indent: -99999px;
-    background-image: url('../img/myra_logo.svg');
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-  }
 }
 
 .site-title,
@@ -1708,4 +1699,13 @@ input.calculator-input {
   padding: 2em;
   background: $light-gray;
   text-align: center;
+}
+
+#eligibility-part-1 {
+  display: block;
+}
+
+.eligibility-chunk {
+  display: none;
+  padding: 1em 0;
 }
