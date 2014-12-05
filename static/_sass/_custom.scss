@@ -1385,26 +1385,6 @@ input.calculator-input {
   }
 }
 
-
-.payroll-instructions {
-  @include row();
-  border-top: 1px solid #fff;
-  margin-top: em(20);
-  padding-top: em(20);
-}
-
-.payroll-logos {
-  padding: 2em 0;
-  li {
-    @include span-columns(3);
-    text-align: center;
-
-    img {
-      vertical-align: middle;
-    }
-  }
-}
-
 .lead-capture {
   @include media($medium-up) {
     @include span-columns(6);
@@ -1412,19 +1392,18 @@ input.calculator-input {
   }
 }
 
+.resource-list {
+  @extend %default-ol;
+
+  a {
+    font-weight: bold;
+  }
+}
+
 .resource-link {
   @include span-columns(12);
   padding-top: 1em;
 }
-//
-// .materials-preview {
-//   display: none;
-//
-//   @include media($medium-up) {
-//     display: block;
-//     @include span-columns(4);
-//   }
-// }
 
 /**************************/
 /* Home Page
