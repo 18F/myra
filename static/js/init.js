@@ -247,5 +247,14 @@ jQuery(document).ready(function($){
   equalHeight($('.match-height'));
 
   // Bumper message
-  $('.modal-trigger').featherlight();
+  // $('.modal-trigger').featherlight();
+  $('.modal-trigger').click(function(){
+    var modal = $(this).data('modal');
+    $(modal).show();
+    $('#overlay').fadeIn('fast');
+    $('.close').click(function(){
+      $(modal).hide();
+      $('#overlay').hide();
+    })
+  })
 });
