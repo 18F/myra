@@ -223,8 +223,7 @@ footer {
   background-repeat: no-repeat;
 
   @include media($medium-up) {
-    // @include retina('../img/hero-bg-2.jpg', '../img/hero-bg-2@2x.jpg', 1400px);
-    background: url('../img/hero-bg-2.jpg');
+    @include retina('../img/hero-bg-2.jpg', '../img/hero-bg-2@2x.jpg', 1400px);
     padding: 3em 0 2em 0;
   }
 
