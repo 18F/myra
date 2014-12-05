@@ -1696,8 +1696,9 @@ input.calculator-input {
 
   .close {
     position: absolute;
+    display: block;
     top: 10px;
-    left: 10px;
+    right: 10px;
     cursor: pointer;
   }
 
