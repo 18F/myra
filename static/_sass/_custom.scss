@@ -1696,19 +1696,28 @@ input.calculator-input {
   }
 }
 
+.resource-list {
+  @extend %default-ol;
+  margin-top: 1em;
+
+  li {
+    margin-bottom: 1em;
+  }
+
+  a {
+    font-weight: bold;
+  }
+
+  ul {
+    margin-top: 1em;
+  }
+}
+
 .resource-link {
   @include span-columns(12);
   padding-top: 1em;
 }
-//
-// .materials-preview {
-//   display: none;
-//
-//   @include media($medium-up) {
-//     display: block;
-//     @include span-columns(4);
-//   }
-// }
+
 
 /**************************/
 /* Home Page
