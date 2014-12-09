@@ -1,15 +1,16 @@
 jQuery(document).ready(function(){
   $(':radio').click(function(){
     var value = $(this).val();
+    if ( value === 'ineligible' ) {
+      $('.eligibility-result, .eligibility-input').hide();
+    } else if ( value === 'unsure' ) {
+      $('.eligibility-result').hide();
+    } else {
+      $('.eligibility-result').hide();
+    }
+
     $('#' + value).fadeIn();
 
-    if ( value === 'ineligible' ) {
-      $('#eligibility-part-2, #eligibility-part-3, #unsure, #eligibility-success').hide();
-    } else if ( value === 'unsure' ) {
-      $('#eligibility-part-2, #eligibility-part-3, #ineligible, #eligibility-success').hide();
-    } else {
-      $('#ineligible, #unsure').hide();
-    }
   });
 
 })

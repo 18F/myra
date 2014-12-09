@@ -1635,8 +1635,9 @@ input.calculator-input {
   }
 
   @include media($large-up) {
-    width: 50%;
-    left: 25%;
+    width: 600px;
+    left: 50%;
+    margin-left: -300px;
   }
 }
 

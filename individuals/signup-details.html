@@ -5,42 +5,50 @@ bodyclass: default
 ---
 
 <h1>Signup Details</h1>
-<p class="lead-text">Currently, you can only fund your <span class="myra">myRA</span> account by direct deposit through an employer, especially through an employer that participates in the <span class="myra">myRA</span> program.</p>
-<p class="lead-text">However, you can fund your <span class="myra">myRA</span> account through any employer as long as they offer direct deposit and they are able to set up a portion to be directed to your <span class="myra">myRA</span> account.</p>
-<p class="lead-text">In the near future, the U.S. Treasury will be making other methods available for you to contribute to your <span class="myra">myRA</span> account.</p>
+<p class="lead-text">Currently, you can fund your <span class="myra">myRA</span> account through any employer as long as they offer direct deposit, and they are able to direct a portion of your paycheck to your <span class="myra">myRA</span> account.</p>
+<p class="lead-text">In the near future, the United States Treasury will be making other methods available for you to contribute to your <span class="myra">myRA</span> account.</p>
+
 
 <section role="region" aria-labelledby="eligibility-heading" id="eligibility-wizard">
-  <h2 id="eligibility-heading">Not sure if you're eligible? Let us help.</h2>
+  <h2 id="eligibility-heading">Not sure if you can fund your <span class="myra">myRA</span> account? <br> Let us help.</h2>
   <div id="eligibility-part-1" class="eligibility-chunk">
-    <h4>1. What is your employment status?</h4>
+    <h4>1. Where do you work?</h4>
     <input type="radio" name="1" value="eligibility-part-2">I work for an employer<br>
     <input type="radio" name="1" value="ineligible">I am self-employed<br>
-    <input type="radio" name="1" value="ineligible">I am unemployed
+    <input type="radio" name="1" value="unemployed">I am unemployed
   </div>
-  <div id="eligibility-part-2" class="eligibility-chunk">
+  <div id="eligibility-part-2" class="eligibility-chunk eligibility-input">
     <h4>2. Does your employer offer direct deposit?</h4>
     <input type="radio" name="2" value="eligibility-part-3">Yes<br>
-    <input type="radio" name="2" value="ineligible">No
+    <input type="radio" name="2" value="ineligible">No<br>
+    <input type="radio" name="2" value="unsure">I don't konw
   </div>
-  <div id="eligibility-part-3" class="eligibility-chunk">
+  <div id="eligibility-part-3" class="eligibility-chunk eligibility-input">
     <h4>3. And will your employer be able to set up a portion of your paycheck to be deposited into a <span class="myra">myRA</span> account?</h4>
     <input type="radio" name="3" value="eligibility-success">Yes<br>
     <input type="radio" name="3" value="ineligible">No<br>
     <input type="radio" name="3" value="unsure">I don't know
   </div>
-  <div id="unsure" class="eligibility-chunk">
+  <div id="unsure" class="eligibility-chunk eligibility-result">
     <h4>Not sure if your employer will work?</h4>
-    <p>If you're not sure if your employer can deposit a portion of your paycheck, just ask whoever handles payroll at your work. If you're not sure what to ask for, just give them <a href="{{ site.baseurl }}/resources/myRA_Employer_Direct_Deposit_Instructions.pdf" title="Download PDF">this letter</a>.</p>
+    <p>If you’re not sure if your employer supports myRA, just ask your employer. If you are not sure what to ask, give your employer this <a href="{{ site.baseurl }}/resources/myRA_Employer_Direct_Deposit_Instructions.pdf" title="Download PDF">this letter</a>.</p>
     <p>And if you have any other questions, you can email us at <a href="mailto:myra@treasury.gov">myra@treasury.gov</a></p>
   </div>
-  <div id="eligibility-success" class="eligibility-chunk">
+  <div id="eligibility-success" class="eligibility-chunk eligibility-result">
     <h4>Great! You're all good to go</h4>
     <a class="button modal-trigger" data-modal="#signup-modal" href="#">Sign up for <span class="myra">myRA</span> <i class="icon-arrow-right"></i></a>
   </div>
-  <div id="ineligible" class="eligibility-chunk">
-    <h4>We're sorry, but you will need to wait for <span class="myra">myRA</span></h4>
-    <p>Don't worry though. In the near future we will be rolling out <span class="myra">myRA</span> for more Americans, including those who are self-employed, unemployed, or who work for a non-supported employer.</p>
-    <p>So please check back here for updates.</p>
+  <div id="ineligible" class="eligibility-chunk eligibility-result">
+    <h4>Thank you for your interest in <span class="myra">myRA</span></h4>
+    <p>Currently, <span class="myra">myRA</span> accounts are designed for you to fund from your paycheck through your employer’s direct deposit.</p>
+    <p>However, we are working hard on making other contribution methods available to you.</p>
+    <p>Please check back for updates.</p>
+  </div>
+  <div id="unemployed" class="eligibility-chunk eligibility-result">
+    <h4>Thank you for your interest in <span class="myra">myRA</span></h4>
+    <p>It is possible that you may not qualify to contribute to a <span class="myra">myRA</span> at this time.</p>
+    <p><span class="myra">myRA</span> is a Roth IRA, and like other IRAs, requires that you (or your spouse, if married filing jointly) have taxable compensation to be eligible to contribute. Under the IRS compensation rules, your unemployment status may not qualify you to contribute to <span class="myra">myRA</span>. For specific information on your eligibility to contribute to an IRA, you may need to speak to a financial advisor.</p>
+    <p><a href="{{ site.baseurl }}/roth-ira">To learn about key features of a Roth IRA, click here</a>.</p>
   </div>
 
 </section>
