@@ -6,16 +6,21 @@ title: Sitemap
 
 <h1>Sitemap</h1>
 <ul class="sitemap">
-  <li><a href="{{ sitemap.baseurl }}">Home</a>
+  <li><a href="{{ site.baseurl }}">Home</a>
     <ul>
-      <li><a href="{{ sitemap.baseurl }}/individuals">For Individuals</a></li>
-      <li><a href="{{ sitemap.baseurl }}/employers">For Employers</a>
+      <li><a href="{{ site.baseurl }}/individuals">For Individuals</a>
         <ul>
-          <li><a href="{{ sitemap.baseurl }}/employers/resources">Resources for Employers</a></li>
+          <li><a href="{{ site.baseurl }}/individuals/resources">Resources for Individuals</a></li>
+          <li><a href="{{ site.baseurl }}/individuals/signup-details">Sign-up Details</a></li>
         </ul>
       </li>
-      <li><a href="{{ sitemap.baseurl }}/about">About <span class="myra">myRA</span></a></li>
-      <li><a href="{{ sitemap.baseurl }}/roth-ira">Key Roth IRA Features</a></li>
+      <li><a href="{{ site.baseurl }}/employers">For Employers</a>
+        <ul>
+          <li><a href="{{ site.baseurl }}/employers/resources">Resources for Employers</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ site.baseurl }}/about">About <span class="myra">myRA</span></a></li>
+      <li><a href="{{ site.baseurl }}/roth-ira">Key Roth IRA Features</a></li>
     </ul>
   </li>
 </ul>

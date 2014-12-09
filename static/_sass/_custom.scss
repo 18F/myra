@@ -399,8 +399,11 @@ footer {
 }
 
 .signup-button {
-  width: 50%;
   margin: .5em 0;
+  
+  @include media($medium-up) {
+    width: 50%;
+  }
 }
 
 .signup-button-small {
@@ -1603,7 +1606,7 @@ input.calculator-input {
 .modal {
   display: none;
   position: fixed;
-  top: 2.5%;
+  top: 10%;
   left: 2.5%;
   text-align: center;
   z-index: 200;
