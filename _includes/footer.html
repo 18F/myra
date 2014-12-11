@@ -26,46 +26,44 @@
         </ul>
       </div>
     </div>
-
-    <!-- jQuery 2.1.1 if not IE 9 or lower
-    ================================================== -->
-    <!--[if !IE]> -->
-    <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery-2.1.1.min.js"></script>
-    <!--<![endif]-->
-
-    <script type="text/javascript" src="{{ site.baseurl }}/static/js/retina.min.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.nouislider.min.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.tooltipster.min.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/static/js/init.js"></script>
-
-    {% if page.title == 'For Individuals' %}
-    <script type="text/javascript" src="{{ site.baseurl }}/static/js/calculator.js"></script>
-    {% endif %}
-
-    {% if page.title == 'Signup Details' %}
-    <script type="text/javascript" src="{{ site.baseurl }}/static/js/eligibility.js"></script>
-    {% endif %}
-
-    <script>
-    // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    //
-    // ga('create', 'UA-48605964-14', 'auto');
-    // ga('send', 'pageview');
-    // $(document).ready(function(){
-    //   $('form:first').submit(function(){
-    //     ga('send','event','Email Collection','Submit','First Form');
-    //   });
-    //   $('form:nth-child(2)').submit(function(){
-    //     ga('send','event','Email Collection','Submit','Second Form');
-    //   });
-    })
-
-    </script>
   </footer>
-
   {% include modals.html %}
 
+  <!-- jQuery 2.1.1 if not IE 9 or lower
+  ================================================== -->
+  <!--[if !IE]> -->
+  <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery-2.1.1.min.js"></script>
+  <!--<![endif]-->
+
+  <script type="text/javascript" src="{{ site.baseurl }}/static/js/retina.min.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.nouislider.min.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/static/js/jquery.tooltipster.min.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/static/js/init.js"></script>
+
+  {% if page.title == 'For Individuals' %}
+  <script type="text/javascript" src="{{ site.baseurl }}/static/js/calculator.js"></script>
+  {% endif %}
+
+  {% if page.title == 'Signup Details' %}
+  <script type="text/javascript" src="{{ site.baseurl }}/static/js/eligibility.js"></script>
+  {% endif %}
+
+  <script>
+  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  //
+  // ga('create', 'UA-48605964-14', 'auto');
+  // ga('send', 'pageview');
+  // $(document).ready(function(){
+  //   $('form:first').submit(function(){
+  //     ga('send','event','Email Collection','Submit','First Form');
+  //   });
+  //   $('form:nth-child(2)').submit(function(){
+  //     ga('send','event','Email Collection','Submit','Second Form');
+  //   });
+})
+
+</script>
 </body>

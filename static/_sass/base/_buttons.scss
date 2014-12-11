@@ -89,6 +89,7 @@ a:active {
   text-decoration: none;
 }
 
-div:focus {
+div:focus,
+dialog:focus {
   outline: none;
 }
