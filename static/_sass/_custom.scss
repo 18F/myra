@@ -403,7 +403,7 @@ footer {
   .signup-button-small {
     background-color: #77B097;
     cursor: default;
-    pointer-events: none;
+    // pointer-events: none;
 
     &:hover {
       background-color: #77B097;
@@ -1186,6 +1186,12 @@ input.calculator-input {
     @include span-columns(12);
     margin-bottom: $base-line-height;
 
+    &:first-child {
+      .step-content {
+        padding-top: 0;
+      }
+    }
+
     &:last-child div {
       border-bottom: none;
     }
@@ -1312,21 +1318,9 @@ input.calculator-input {
   }
 }
 
-// .who-eligibility {
-//   @include span-columns(12);
-//   margin-top: 1em;
-//
-//
-//   @include media($medium-up) {
-//     @include span-columns(10);
-//     @include shift(1);
-//   }
-//
-//   @include media($large-up) {
-//     @include span-columns(6);
-//     @include shift(3);
-//   }
-// }
+.who-eligibility {
+  margin-bottom: .5em;
+}
 
 
 .benefits {
@@ -1575,6 +1569,12 @@ input.calculator-input {
   border-bottom: 1px dotted $myra-green;
   color: $myra-green;
   display: inline-block;
+
+  &:focus {
+    box-shadow: none;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+  }
 }
 
 /**************************/
@@ -1622,7 +1622,7 @@ input.calculator-input {
   background: #fff;
   width: 95%;
   padding: 1em 1em 2em 1em;
-  
+
   .button-container {
     text-align: center;
   }

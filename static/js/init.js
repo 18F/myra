@@ -6,6 +6,9 @@ jQuery(document).ready(function($){
   // Quick and Easy Javascript Detection
   $("html").removeClass( "no-js" );
 
+  // Remove no-js titles from signup buttons
+  $('.signup-button, .signup-button-small').attr('title', 'Sign up for myRA');
+
   // Fixing skip nav focus behavior in chrome
   $('.skip-nav').click(function(){
     $('#main').attr('tabindex','0');
@@ -177,8 +180,7 @@ jQuery(document).ready(function($){
     });
 
     // Set the focus on the element's header
-    var nextTab = $(id).find('input')[0];
-    console.log(nextTab);
+    var nextTab = $(id).first('input, a, button');
     $(nextTab).attr('tabindex', '0');
     $(nextTab).focus();
   }
@@ -213,9 +215,8 @@ jQuery(document).ready(function($){
     modalId = trigger.data('modal');
     modal = document.getElementById(modalId);
     $modal = $('#' + modalId);
-    $modal.show().attr('open');
     $('#overlay').fadeIn('fast');
-
+    $modal.show();
     // Set focus on the modal
     $modal.attr('tabindex', '-1');
     $modal.focus();

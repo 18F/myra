@@ -22,7 +22,8 @@ a:active {
   text-decoration: none;
 }
 
-div:focus {
+div:focus,
+section:focus {
   outline: none;
 }
 
