@@ -240,6 +240,7 @@ jQuery(document).ready(function($){
     $('#overlay').fadeOut('fast');
     modalOpen = false;
     $modal.attr('open', null);
+    trigger.attr('tabindex','0');
     trigger.focus();
   }
 
