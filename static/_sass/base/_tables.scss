@@ -20,3 +20,13 @@ td {
 tr, td, th {
   vertical-align: middle;
 }
+
+.table-container {
+  width: 100%;
+  overflow-x: scroll;
+
+  @include media($tiny-down) {
+    font-size: .75em;
+  }
+
+}
