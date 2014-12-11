@@ -6,6 +6,12 @@ jQuery(document).ready(function($){
   // Quick and Easy Javascript Detection
   $("html").removeClass( "no-js" );
 
+  // Detect old IE just in case {
+  var oldIE;
+  if ($('html').is('.ie6, .ie7, .ie8')) {
+    oldIE = true;
+  }
+
   // Remove no-js titles from signup buttons
   $('.modal-trigger').attr('title', null);
   $('.modal-trigger').attr('disabled', null);
@@ -244,20 +250,22 @@ jQuery(document).ready(function($){
     trigger.focus();
   }
 
-  document.addEventListener("focus", function(event) {
+  if (!oldIE) {
+    document.addEventListener("focus", function(event) {
 
-    if (modalOpen && !modal.contains(event.target)) {
-      event.stopPropagation();
-      modal.focus();
-    }
+      if (modalOpen && !modal.contains(event.target)) {
+        event.stopPropagation();
+        modal.focus();
+      }
 
-  }, true);
+    }, true);
 
-  document.addEventListener("keydown", function(event) {
-    if (modalOpen && event.keyCode == 27) {
-      closeModal();
-    }
-  }, true);
+    document.addEventListener("keydown", function(event) {
+      if (modalOpen && event.keyCode == 27) {
+        closeModal();
+      }
+    }, true);
+  }
 
   // Employer Resource page alert
   // Mailchimp redirects to the url with the paremeter ?signup=true
