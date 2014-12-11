@@ -398,12 +398,21 @@ footer {
   padding: 1em 0 0 0;
 }
 
+.no-js {
+  .signup-button,
+  .signup-button-small {
+    background-color: #77B097;
+    cursor: default;
+    pointer-events: none;
+
+    &:hover {
+      background-color: #77B097;
+    }
+  }
+}
+
 .signup-button {
   margin: .5em 0;
-  
-  @include media($medium-up) {
-    width: 50%;
-  }
 }
 
 .signup-button-small {
@@ -1613,7 +1622,7 @@ input.calculator-input {
   background: #fff;
   width: 95%;
   padding: 1em 1em 2em 1em;
-
+  
   .button-container {
     text-align: center;
   }
@@ -1628,6 +1637,11 @@ input.calculator-input {
     top: 10px;
     right: 10px;
     cursor: pointer;
+
+    &:focus {
+      text-decoration: none;
+      border-bottom: 1px solid $myra-green;
+    }
   }
 
   @include media($small-up) {
@@ -1660,6 +1674,12 @@ input.calculator-input {
   padding: 2em;
   background: $light-gray;
   text-align: center;
+}
+
+.no-js {
+  #eligibility-wizard {
+    display: none;
+  }
 }
 
 #eligibility-part-1 {

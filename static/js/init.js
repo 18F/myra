@@ -12,7 +12,7 @@ jQuery(document).ready(function($){
   });
 
   $('#maindiv').blur(function(){
-    $(this).attr('tabindex',-1);
+    $(this).attr('tabindex','-1');
   });
 
 
@@ -175,56 +175,12 @@ jQuery(document).ready(function($){
     $('html, body').animate({
       scrollTop: sectionTop - offset
     });
-  }
 
-  // Email signup
-  $("#email-capture button").click(function(e){
-    e.preventDefault();
-    $('#email-capture').append('<div class="flash-success"><p>Congratulations on thinking about your future.</p><p>We will email you when myRA is open for business.</p></div>');
-  });
-
-  // Tabs
-  $('.tab').click(function(e){
-    e.preventDefault();
-    var parent, tabId;
-    // Get the parent so that it only affects tabs in this section
-    parent = $(this).parents('section');
-    tabId = $(this).attr('href');
-    parent.find('[aria-selected="true"]').attr('aria-selected','false');
-    parent.find('[aria-hidden="false"]').attr('aria-hidden','true');
-    $(this).attr('aria-selected', 'true');
-    $(tabId).attr('aria-hidden','false');
-  });
-
-  $('.features .tab').click(function(){
-    $('.tab-content-container').animate({
-      marginTop: 0,
-    });
-  });
-
-  // Slideshow
-  // $('.bxslider').bxSlider({
-  //   mode: 'horizontal',
-  //   adaptiveHeight: true,
-  // });
-
-  // Employer Resource page alert
-  // Mailchimp redirects to the url with the paremeter ?signup=true
-  // If that happens, we want to display an alert
-
-  var url = window.location.href.split('?');
-  if (url[1] === 'signup') {
-    $('.js-individual-signup-form').replaceWith('<div class="js-signup-alert"><p><strong>Thank you</strong></p>In order to receive updates on <span class="myra">myRA</span>, please click the link in the email we just sent you.</p></div>');
-    $('.js-signup-alert').fadeIn();
-  } else if (url[1] === 'employersignup') {
-    $('.js-signup-alert').html('<p><strong>Thank you</strong></p><p>You can download resources to share <span class="myra">myRA</span> with your employees below.</p><p>In order to receive updates on <span class="myra">myRA</span>, please click the link in the email we just sent you.</p>');
-    $('.js-signup-alert').fadeIn();
-  } else if (url[1] === 'thankyou') {
-    if ( $('.js-individual-signup-form').length > 0 ) {
-      $('.js-individual-signup-form').replaceWith('<div class="js-signup-alert"></div>');
-    }
-    $('.js-signup-alert').html('<p><strong>Subscription confirmed</strong></p><p>Thank you for signing up to receive updates on <span class="myra">myRA</span>.</p>');
-    $('.js-signup-alert').fadeIn();
+    // Set the focus on the element's header
+    var nextTab = $(id).find('input')[0];
+    console.log(nextTab);
+    $(nextTab).attr('tabindex', '0');
+    $(nextTab).focus();
   }
 
   // Find and replace to italicize myRA
@@ -246,17 +202,79 @@ jQuery(document).ready(function($){
 
   equalHeight($('.match-height'));
 
-  // Bumper message
-  // $('.modal-trigger').featherlight();
+  // Modals
+  // Accessibilty code borrowed from http://www.nczonline.net/blog/2013/02/12/making-an-accessible-dialog-box/
+
+  var trigger, modal, modalOpen, modalId, $modal;
+
   $('.modal-trigger').click(function(e){
     e.preventDefault();
-    var modal = $(this).data('modal');
-    $(modal).show();
+    trigger = $(this);
+    modalId = trigger.data('modal');
+    modal = document.getElementById(modalId);
+    $modal = $('#' + modalId);
+    $modal.show();
     $('#overlay').fadeIn('fast');
-    $('.close, #overlay').click(function(e){
-      e.preventDefault();
-      $(modal).hide();
-      $('#overlay').fadeOut('fast');
-    })
+
+    // Set focus on the modal
+    $modal.attr('tabindex', '-1');
+    $modal.focus();
+    $modal.attr('open');
+    modalOpen = true;
+  });
+
+  $('.close, #overlay').click(function(e){
+    closeModal();
   })
+
+  // Enabling "enter" key to close the dialogue
+  $('.close').keypress(function(e){
+    if (e.which == 13) {
+      closeModal();
+    };
+  })
+
+  function closeModal(){
+    $('#' + modalId).hide();
+    $('#overlay').fadeOut('fast');
+    modalOpen = false;
+    $modal.attr('open', null);
+    trigger.focus();
+  }
+
+  document.addEventListener("focus", function(event) {
+
+    if (modalOpen && !modal.contains(event.target)) {
+      event.stopPropagation();
+      modal.focus();
+    }
+
+  }, true);
+
+  document.addEventListener("keydown", function(event) {
+    if (modalOpen && event.keyCode == 27) {
+      closeModal();
+    }
+  }, true);
+
+  // Employer Resource page alert
+  // Mailchimp redirects to the url with the paremeter ?signup=true
+  // If that happens, we want to display an alert
+
+  var url = window.location.href.split('?');
+  if (url[1] === 'signup') {
+    $('.js-individual-signup-form').replaceWith('<div class="js-signup-alert"><p><strong>Thank you</strong></p>In order to receive updates on <span class="myra">myRA</span>, please click the link in the email we just sent you.</p></div>');
+    $('.js-signup-alert').fadeIn();
+  } else if (url[1] === 'employersignup') {
+    $('.js-signup-alert').html('<p><strong>Thank you</strong></p><p>You can download resources to share <span class="myra">myRA</span> with your employees below.</p><p>In order to receive updates on <span class="myra">myRA</span>, please click the link in the email we just sent you.</p>');
+    $('.js-signup-alert').fadeIn();
+  } else if (url[1] === 'thankyou') {
+    if ( $('.js-individual-signup-form').length > 0 ) {
+      $('.js-individual-signup-form').replaceWith('<div class="js-signup-alert"></div>');
+    }
+    $('.js-signup-alert').html('<p><strong>Subscription confirmed</strong></p><p>Thank you for signing up to receive updates on <span class="myra">myRA</span>.</p>');
+    $('.js-signup-alert').fadeIn();
+  }
+
+
 });

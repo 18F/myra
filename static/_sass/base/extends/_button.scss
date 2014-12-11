@@ -11,9 +11,11 @@
   text-decoration: none;
   border: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $hover-button-color;
     color: white;
+    text-decoration: none;
   }
-  
+
 }
