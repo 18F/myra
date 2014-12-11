@@ -213,13 +213,12 @@ jQuery(document).ready(function($){
     modalId = trigger.data('modal');
     modal = document.getElementById(modalId);
     $modal = $('#' + modalId);
-    $modal.show();
+    $modal.show().attr('open');
     $('#overlay').fadeIn('fast');
 
     // Set focus on the modal
     $modal.attr('tabindex', '-1');
     $modal.focus();
-    $modal.attr('open');
     modalOpen = true;
   });
 
