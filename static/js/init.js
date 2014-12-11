@@ -11,7 +11,7 @@ jQuery(document).ready(function($){
     $('#main').attr('tabindex','0');
   });
 
-  $('#maindiv').blur(function(){
+  $('#main').blur(function(){
     $(this).attr('tabindex','-1');
   });
 
