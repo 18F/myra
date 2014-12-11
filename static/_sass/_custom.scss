@@ -398,17 +398,27 @@ footer {
   padding: 1em 0 0 0;
 }
 
-.no-js {
-  .signup-button,
-  .signup-button-small {
-    background-color: #77B097;
-    cursor: default;
-    // pointer-events: none;
+.modal-trigger {
+  cursor: pointer;
 
-    &:hover {
-      background-color: #77B097;
-    }
+  &[disabled] {
+    cursor: default;
   }
+}
+
+.signup-button[disabled],
+.signup-button-small[disabled] {
+  background-color: #77B097;
+  color: #fff;
+  cursor: default;
+
+  &:hover[disabled] {
+    background-color: #77B097;
+  }
+}
+
+a[disabled] {
+  color: #999;
 }
 
 .signup-button {
@@ -1353,6 +1363,11 @@ input.calculator-input {
   .hero {
     @include media($medium-up) {
       @include retina('../img/hero-bg-4.jpg', '../img/hero-bg-4@2x.jpg', 1400px);
+      background-position: 20% 0;
+    }
+
+    @include media($large-up) {
+      background-position: 0 0;
     }
   }
 

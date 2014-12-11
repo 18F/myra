@@ -7,7 +7,8 @@ jQuery(document).ready(function($){
   $("html").removeClass( "no-js" );
 
   // Remove no-js titles from signup buttons
-  $('.signup-button, .signup-button-small').attr('title', 'Sign up for myRA');
+  $('.modal-trigger').attr('title', null);
+  $('.modal-trigger').attr('disabled', null);
 
   // Fixing skip nav focus behavior in chrome
   $('.skip-nav').click(function(){
