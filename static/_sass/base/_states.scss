@@ -22,8 +22,9 @@ a:active {
   text-decoration: none;
 }
 
-div:focus
-outline: none;
+div:focus {
+  outline: none;
+}
 
 // Animations (only for desktop)
 
