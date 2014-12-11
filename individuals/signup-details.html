@@ -11,24 +11,24 @@ bodyclass: default
 
 <section role="region" aria-labelledby="eligibility-heading" id="eligibility-wizard">
   <h2 id="eligibility-heading">Not sure if you can fund your <span class="myra">myRA</span> account? <br> Let us help.</h2>
-  <div id="eligibility-part-1" class="eligibility-chunk">
-    <h4>1. Where do you work?</h4>
-    <label><input type="radio" name="1" value="eligibility-part-2">I work for an employer</label>
-    <label><input type="radio" name="1" value="ineligible">I am self-employed</label>
-    <label><input type="radio" name="1" value="unemployed">I am unemployed</label>
-  </div>
-  <div id="eligibility-part-2" class="eligibility-chunk eligibility-input" aria-hidden="true">
-    <h4>2. Does your employer offer direct deposit?</h4>
-    <label><input type="radio" name="2" value="eligibility-part-3">Yes</label>
-    <label><input type="radio" name="2" value="ineligible">No</label>
-    <label><input type="radio" name="2" value="unsure">I don't konw</label>
-  </div>
-  <div id="eligibility-part-3" class="eligibility-chunk eligibility-input" aria-hidden="true">
-    <h4>3. And will your employer be able to set up a portion of your paycheck to be deposited into a <span class="myra">myRA</span> account?</h4>
-    <label><input type="radio" name="3" value="eligibility-success">Yes</label>
-    <label><input type="radio" name="3" value="ineligible">No</label>
-    <label><input type="radio" name="3" value="unsure">I don't know</label>
-  </div>
+  <fieldset id="eligibility-part-1" class="eligibility-chunk">
+    <legend><h4>1. Where do you work?</h4></legend>
+    <label for="1A"><input id="1A" type="radio" name="1" value="eligibility-part-2">I work for an employer</label>
+    <label for="1B"><input id="1B" type="radio" name="1" value="ineligible">I am self-employed</label>
+    <label for="1C"><input id="1C" type="radio" name="1" value="unemployed">I am unemployed</label>
+  </fieldset>
+  <fieldset id="eligibility-part-2" class="eligibility-chunk eligibility-input" aria-hidden="true">
+    <legend><h4>2. Does your employer offer direct deposit?</h4></legend>
+    <label for="2A"><input id="2A" type="radio" name="2" value="eligibility-part-3">Yes</label>
+    <label for="2B"><input id="2B" type="radio" name="2" value="ineligible">No</label>
+    <label for="2C"><input id="2C" type="radio" name="2" value="unsure">I don't konw</label>
+  </fieldset>
+  <fieldset id="eligibility-part-3" class="eligibility-chunk eligibility-input" aria-hidden="true">
+    <legend><h4>3. And will your employer be able to set up a portion of your paycheck to be deposited into a <span class="myra">myRA</span> account?</h4></legend>
+    <label for="3A"><input id="3A" type="radio" name="3" value="eligibility-success">Yes</label>
+    <label for="3B"><input id="3B" type="radio" name="3" value="ineligible">No</label>
+    <label for="3C"><input id="3C" type="radio" name="3" value="unsure">I don't know</label>
+  </fieldset>
   <div id="unsure" class="eligibility-chunk eligibility-result" aria-hidden="true">
     <h4>Not sure if your employer will work?</h4>
     <p>If you’re not sure if your employer supports myRA, just ask your employer. If you are not sure what to ask, give your employer this letter: <a href="{{ site.baseurl }}/resources/myRA_Employer-Letter.pdf" title="Download PDF">Download Employer Letter</a>.</p>
