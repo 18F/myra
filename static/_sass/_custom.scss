@@ -89,7 +89,7 @@
 .site-title {
   margin: .5em 0 0 0;
   font-weight: 400;
-  
+
   @include media($medium-up) {
     margin: 0;
   }
@@ -1572,14 +1572,6 @@ input.calculator-input {
   }
 }
 
-
-.downloads-list {
-  padding: 1em 0;
-
-  li {
-    margin-bottom: 1em;
-  }
-}
 
 .js-signup-alert {
   @extend %flash-success;
