@@ -24,6 +24,11 @@ This site is deployed using **Jekyll 2.4**.
 
 To keep our code updating continuously as we edit, we use `jekyll serve --baseurl '' --watch`.
 
+## The Branches
+- **master** This is the branch that lives online at https://myra.treasury.gov
+- **gh-pages** This is the branch to use for demoing new features on https://18f.github.io/myra
+- **email-capture** The old branch that contains the email capture form, before buttons were added to signup and manage accounts.
+
 ## Contributing
 
 Content and feature suggestions are welcome via GitHub Issues. Code contributions are welcome via pull request, although of course we cannot guarantee your changes will be included.
