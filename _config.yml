@@ -8,6 +8,6 @@ url: "https://myra.treasury.gov"
 # Build settings
 markdown: kramdown
 permalink: pretty
-exclude: ['LICENSE.md', README.md]
+exclude: ['LICENSE.md', 'README.md', '/misc-assets']
 sass:
   sass_dir: static/_sass
