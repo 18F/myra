@@ -490,6 +490,10 @@ a[disabled] {
     padding: 0;
     position: relative;
   }
+}
+
+.tablist {
+  text-align: center;
 
   li {
     width: 100%;
@@ -530,9 +534,26 @@ a[disabled] {
   @include media($large-up) {
     li {
       @include span-columns(3, block-collapse);
+
       a {
         border-bottom: none;
       }
+    }
+  }
+}
+
+.tablist--centered {
+  @include media($small-up) {
+    li {
+      width: 33.33%;
+      float: left;
+    }
+  }
+
+  @include media($large-up) {
+    li {
+      display: inline-block;
+      float: none;
     }
   }
 }
@@ -604,6 +625,15 @@ a[disabled] {
       }
     }
 
+    .tablist--centered {
+      li,
+      li:last-child,
+      .current-section {
+        width: 33.333%;
+        float: left;
+      }
+    }
+    
     .current-section a {
       border-bottom: 1px solid $myra-green;
     }
@@ -1198,11 +1228,13 @@ input.calculator-input {
   }
 }
 
-.stacked-steps {
+.step-by-step {
   border-top: 1px solid $base-border-color;
   border-bottom: 1px solid $base-border-color;
   background: #f3f3f3;
+}
 
+.stacked-steps {
   .tab-nav {
     display: none;
   }
@@ -1413,8 +1445,6 @@ input.calculator-input {
   }
 
   .step-by-step {
-    @extend %inverse;
-
       .step {
         display: block;
         @include media($medium-up) {
@@ -1425,7 +1455,6 @@ input.calculator-input {
 
   .contact {
     text-align: center;
-    padding: 0 0 2em 0;
   }
 }
 
