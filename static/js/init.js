@@ -61,12 +61,8 @@ jQuery(document).ready(function($){
   windowHeight = $(window).height();
   scrollPos = $(window).scrollTop();
   // We'll just add the appear classes in here so it doesn't mess up non-js browsers
-  $('.individuals .benefit-block:nth-child(even)').addClass('appear slide-in-left fade-in');
-  $('.individuals .benefit-block:nth-child(odd)').addClass('appear slide-in-right fade-in');
-  $('.employer .benefit-block').addClass('appear fade-in');
-  $('.payroll-logos li').addClass('appear fade-in');
-  $('.stacked-steps .step').addClass('appear fade-in');
-  $('.face').addClass('appear fade-in');
+  $('#benefits .object--third').addClass('appear fade-in');
+  $('.numbered-step').addClass('appear fade-in');
 
   // This handles all of the transitions
   // We'll get the position of anything with the appear class

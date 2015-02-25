@@ -139,3 +139,41 @@ section {
     background: url('../img/who-bg.jpg');
   }
 }
+
+.object--third {
+  @include span-columns(12);
+  
+  h3 {
+    text-align: left;
+  }
+
+  @include media($medium-up) {
+    @include span-columns(4);
+
+    h3 {
+      text-align: center;
+    }
+  } 
+}
+
+.column {
+  @include span-columns(12);
+
+  @include media($medium-up) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+
+  @include media($large-up) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+}
+
+.column--padded {
+  padding: 1em 0;
+
+  @include media($medium-up) {
+    padding: 2em;
+  }
+}
