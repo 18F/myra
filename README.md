@@ -54,7 +54,7 @@ jekyll build --config _config.yml,_config-production.yml
 From the project root:
 
 ```bash
-s3cmd  put --recursive --add-header="Cache-Control:max-age=86400" -P _site/* s3://myra-cloudfront/
+s3cmd  put --recursive --add-header="Cache-Control:max-age=3600" -P _site/* s3://myra-cloudfront/
 ```
 
 You can see the results of your work immediately at `http://myra-cloudfront.s3-website-us-east-1.amazonaws.com`.
