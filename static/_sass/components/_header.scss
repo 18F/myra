@@ -56,15 +56,6 @@
 
 }
 
-.account-nav {
-  @extend .horizontal-list;
-  float: right;
-  li {
-    font-size: 14px;
-    font-size: .875rem;
-  }
-}
-
 .site-header {
   background: #fff;
   text-align: center;
@@ -74,85 +65,130 @@
   margin: 0 auto;
   text-align: center;
   display: block;
-  padding: 0 0 1em 0;
-
-  @include media($medium-up) {
-  }
 
   @include media($large-up) {
-    @include span-columns(6);
+    float: left;
     text-align: left;
-    padding: .25em 0 0;
   }
 }
 
 .site-title {
-  margin: .5em 0 0 0;
+  padding: .25em;
   font-weight: 400;
+  margin: 0;
 
-  @include media($medium-up) {
-    margin: 0;
+  &:hover {
+    text-decoration: none;
+    background: $light-gray;
   }
+}
+
+.site-tagline {
+  font-size: 18px;
 }
 
 .header-container {
   position: relative;
+  overflow: visible;
 
   @include media($tiny-down) {
     padding: 0;
   }
 }
 
-
-
 .site-nav {
-  @include span-columns(12);
+  width: 100%;
+  float: right;
   text-align: center;
   border-top: 1px solid #c1c1c1;
   border-bottom: 1px solid #c1c1c1;
 
-  li {
-    @include span-columns(4, block-collapse);
-    float: left;
+  @include media($large-up) {
+    text-align: rigth;
+    border-top: none;
+    border-bottom: none;
   }
+}
 
-  a {
-    @include transition(all .2s);
+.nav-menu__item {
+  // @include span-columns(4, block-collapse);
+  display: inline-block;
+  position: relative;
+  text-align: left;
+
+  & > a {
+    @include transition(background-color .1s);
     color: #000;
     display: block;
-    padding: em(10);
-    border-bottom: 4px solid;
-    border-bottom-color: transparent;
+    padding: em(15) em(10);
 
     @include media($tiny-down) {
       font-size: .875em;
     }
 
     &.current-page {
-      color: $myra-green;
-      border-bottom-color: $myra-green;
-    }
-
-    &:hover,
-    &.current-page:hover,
-    &:focus,
-    &:active {
-      background: $myra-green;
-      color: #fff;
-      border-bottom-color: $myra-green;
-      text-decoration: none;
+      &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        background: $myra-blue2;
+        width: 100%;
+        display: block;
+        content: "";
+      }
     }
   }
 
-  @include media($large-up) {
-    @include span-columns(6);
-    border-top: none;
-    border-bottom: none;
+  &:hover > .nav-menu__submenu {
+    display: block;
+  }
 
-    li {
-      @include span-columns(2 of 6, block-collapse);
-      font-size: $base-font-size * 1.333;
+  &:hover > a,
+  &:focus,
+  &:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: $myra-blue1;
+  }
+
+  .button {
+    color: #fff;
+    padding: em(10);
+    
+    &:hover {
+      background: $hover-link-color;
     }
   }
 
+@include media($large-up) {
+    font-size: $base-font-size * 1.2;
+  }
+}
+
+.nav-menu__submenu {
+  position: absolute;
+  display: none;
+  background: $myra-blue1;
+  text-align: left;
+  font-size: 14px;
+  padding: 0;
+  min-width: 100%;
+  box-shadow: 0 1px 1px 1px rgba(0,0,0,.1);
+}
+
+.nav-menu__subitem {
+
+  a {
+    @include transition(background-color, .1s);
+    white-space: nowrap;
+    display: block;
+    padding: 10px 10px;
+    color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: $myra-blue1;
+    }
+  }
 }
