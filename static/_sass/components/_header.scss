@@ -104,7 +104,8 @@
   border-bottom: 1px solid #c1c1c1;
 
   @include media($large-up) {
-    text-align: rigth;
+    width: auto;
+    text-align: right;
     border-top: none;
     border-bottom: none;
   }
