@@ -1,0 +1,70 @@
+/**********************/
+/* Footer
+/**********************/
+
+footer {
+  background: $myra-darkblue;
+
+  p {
+    font-size: $base-font-size;
+  }
+
+  .left {
+    @include media($small-up) {
+      @include span-columns(6);
+    }
+  }
+
+  .right {
+    text-align: left;
+    margin-top: 2em;
+    width: 100%;
+
+    @include media($small-up) {
+      @include span-columns(6);
+      text-align: right;
+      margin-top: 0;
+    }
+  }
+}
+
+.contact-info {
+  @include span-columns(6 of 6);
+}
+
+
+
+.footer-logos {
+  img {
+    width: 50%;
+    float: left;
+
+    @include media($small-up) {
+      width: auto;
+      float: right;
+    }
+  }
+
+  .seal {
+    opacity: .7;
+    margin-left: 20px;
+    width: 30%;
+    @include media($small-up) {
+      width: auto;
+    }
+  }
+}
+
+.main-footer {
+  padding: em(30) 0;
+}
+
+.sub-footer {
+  color: #fff;
+  padding: em(10);
+
+  span,
+  li {
+    font-size: $base-font-size * .75;
+  }
+}
