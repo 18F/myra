@@ -121,7 +121,7 @@
     @include transition(background-color .1s);
     color: #000;
     display: block;
-    padding: em(15) em(10);
+    padding: em(12) em(10);
 
     @include media($tiny-down) {
       font-size: .875em;
