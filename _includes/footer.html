@@ -64,6 +64,12 @@
       $('form:nth-child(2)').submit(function(){
         ga('send','event','Email Collection','Submit','Second Form');
       });
+      $('#employerresource').on('click', function() {
+        ga('send', 'event', 'Resource', 'click', 'Employer Resource');
+      });
+      $('#individualresource').on('click', function() {
+        ga('send', 'event', 'Resource', 'click', 'Individual Resource');
+      });
     })
     </script>
   </footer>
