@@ -58,18 +58,9 @@
     ga('create', 'UA-48605964-14', 'auto');
     ga('send', 'pageview');
 
-
     $(document).ready(function(){
-      $('form:first').submit(function(){
-        ga('send','event','Email Collection','Submit','First Form');
-      });
-      $('form:nth-child(2)').submit(function(){
-        ga('send','event','Email Collection','Submit','Second Form');
-      });
-
-      // Record sign ups
-      $('#signup-button').submit(function(){
-        ga('send','event','Sign up','Submit','Sign up');
+      $('#sign-up').submit(function(){
+        ga('send','event','Sign up','Submit');
       });
     });
     </script>
