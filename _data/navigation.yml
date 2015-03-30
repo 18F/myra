@@ -1,0 +1,29 @@
+- title: Individuals
+  url: /individuals
+  subnav: 
+    - title: myRA for Individuals
+      url: /individuals
+
+    - title: Resources for Individuals
+      url: /individuals/resources
+
+    - title: Payroll Direct Deposit
+      url: /individuals/payroll-direct-deposit-information
+
+- title: Employers
+  url: /employers
+  subnav: 
+    - title: myRA for Employers
+      url: /employers 
+
+    - title: Resources for Employers
+      url: /employers/resources
+
+- title: Learn More
+  url: /about
+  subnav: 
+    - title: About myRA
+      url: /about
+
+    - title: About Roth IRAs
+      url: /about/roth-ira
