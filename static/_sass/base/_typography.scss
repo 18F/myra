@@ -12,10 +12,10 @@ $h1: 2.074;
 $h2: 1.728;
 $h3: 1.44;
 $h4: 1.2;
-$h5: 1.2;
+
 
 h1, h2, h3, h4, h5,
-.h1, .h2, .h3, .h4, .h5 {
+.h1, .h2, .h3, .h4 {
   font-family: $header-font-family;
   margin: 0 0 0.5em;
   font-weight: inherit;
@@ -54,13 +54,6 @@ h4,
 .h4 {
   font-size: $base-font-size *  $h4;
   font-weight: 600;
-  margin-top: 0;
-}
-
-h5,
-.h5 {
-  font-size: $base-font-size *  $h5;
-  font-weight: 400;
   margin-top: 0;
 }
 
@@ -133,6 +126,15 @@ cite {
   margin-bottom: 0;
 }
 
+.sub-headline {
+  @extend .call-out;
+  display: block;
+  margin: 0;
+  font-weight: 400;
+  color: inherit;
+}
+
+
 p,
 li {
   font-size: $base-font-size;
@@ -165,7 +167,8 @@ li {
   }
 
   h2,
-  .call-out {
+  .call-out,
+  .sub-headline {
     font-size: $base-font-size * 1.424;
   }
 
@@ -189,22 +192,4 @@ li {
   .display {
     font-size: $base-font-size * 2;
   }
-}
-
-// For icons in H2s
-h2 {
-  i {
-    display: block;
-    margin: .5em auto .5em;
-  }
-}
-
-// Utility classes
-
-.u-center {
-  text-align: center;
-}
-
-.u-no-margin {
-  margin-bottom: 0;
 }
