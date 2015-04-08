@@ -1,0 +1,57 @@
+---
+layout: splash
+bodyclass: individuals alt-3
+title: For Individuals
+---
+<div class="hero">
+  <img alt="Photographs of individuals working various jobs." class="mobile-banner" src="{{ site.baseurl }}/static/img/mobile-bg.jpg">
+  <div class="container">
+    <div class="inner-container">
+      <div class="headline">
+        <div class="inner-headline">
+          <span class="display">See yourself saving</span>
+          <p class="lead-text">The United States Treasury has designed a new retirement savings option that makes it easy for you to participate, with no minimums, fees or risky investments.</p>
+          <hr>
+          <h4>Signing up for <span class="myra">myRA</span> is easy and only takes 10 minutes.</h4>
+          <noscript>
+            <div class="no-js-warning">
+              <div class="flash-alert">
+                <strong>The account creation process requires JavaScript</strong>
+                <p>Please enable JavaScript in your browser in order to open a <span class="myra">myRA</span> account.</p>
+                <p>Or you can call 1-855-406-6972 to set up your account over the phone.</p>
+              </div>
+            </div>
+          </noscript>
+          <a disabled class="button signup-button modal-trigger" data-modal="signup-modal" title="The account creation process requires JavaScript. Please enable JavaScript to continue.">Sign up for <span class="myra">myRA</span> <i class="icon-arrow-right"></i></a>
+          <div class="account-signin">
+            <span>Already have a <span class="myra">myRA</span>?</span>
+            <a disabled class="manage-link modal-trigger" data-modal="manage-modal" href="#">Visit <span class="myra">myRA</span> Online</a>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-link scroll-down" href="#calculator">Learn more <br><i class="icon-arrow-down"></i></a>
+    </div>
+  </div>
+</div>
+
+<nav class="page-nav" role="navigation">
+  <div class="container">
+    <ul role="tablist" class="tablist">
+      <li><a href="#benefits" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-heart"></i></span> <span class="nav-label">Why <span class="myra">myRA</span>?</span></a></li>
+      <li><a href="#calculator" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-bar-chart"></i></span> <span class="nav-label">How much should I save?</span></a></li>
+      <li><a href="#who" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-user"></i></span> <span class="nav-label">Is <span class="myra">myRA</span> right for me?</span></a></li>
+      <li><a href="#how" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-settings"></i></span> <span class="nav-label">How does it work?</span></a></li>
+    </ul>
+    <div class="progress"></div>
+  </div>
+</nav>
+
+{% include individual-value-proposition.html %}
+
+{% include calculator-2.html %}
+
+{% include who-basic.html %}
+
+{% include individual-steps.html %}
+
+{% include individual-signup.html %}

@@ -571,6 +571,7 @@ a[disabled] {
 }
 
 .page-nav.fixed {
+  display: block;
   z-index: 500;
   position: fixed;
   top: 0;
@@ -1750,4 +1751,94 @@ input.calculator-input {
 .eligibility-chunk {
   display: none;
   padding: 1em 0;
+}
+
+/**************************/
+/* Experiment Variations */
+/**************************/
+
+.hero {
+  .icon-box {
+    width: 100%;
+    padding: 0;
+    display: none;
+  }
+
+  .nav-label {
+    padding: 0;
+  }
+
+  .tablist {
+    @include clearfix();
+    text-align: center;
+
+    li {
+      float: none;
+      width: auto;
+      display: inline-block;;
+      padding: 0 1em;
+      margin: 0;
+      text-align: center;
+      border-right: 1px solid $myra-green;
+      border-left: none;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+        border-right: 0;
+      }
+    }
+
+    a {
+      font-weight: bold;
+    }
+
+    li:hover {
+      a {
+        background: none;
+        color: $myra-green;
+      }
+    }
+  }
+}
+
+.arrow {
+  padding: 15px 20px 20px 20px;
+  padding: 1.5rem 2rem 2rem 2rem;
+  position: relative;
+  margin-bottom: 40px;
+  &:after {
+    @include triangle(40px, rgba(255,255,255,.8), down);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -20px;
+    content: "";
+  }
+}
+.headline.dense,
+.hero-box.dense {
+  padding: 20px; 
+  padding: 2rem;
+
+  .lead-text {
+    margin-bottom: 0;
+  }
+}
+
+.alt-2 {
+  .page-nav {
+    display: none;
+  }
+
+  .page-nav.fixed {
+    display: block;
+  }
+
+  .hero {
+    padding: 4em 0;
+  }
 }

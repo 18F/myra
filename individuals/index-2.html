@@ -1,0 +1,49 @@
+---
+layout: splash
+bodyclass: individuals alt-2
+title: For Individuals
+---
+<div class="hero">
+  <img alt="Photographs of individuals working various jobs." class="mobile-banner" src="{{ site.baseurl }}/static/img/mobile-bg.jpg">
+  <div class="container">
+    <div class="inner-container">
+      <div class="headline dense">
+        <div class="inner-headline">
+          <span class="display">See yourself saving</span>
+          <p class="lead-text">The United States Treasury has designed a new retirement savings option that makes it easy for you to participate, with no minimums, fees or risky investments.</p>          
+        </div>
+      </div>
+      <div class="hero-box arrow">
+        <h2>New to <span class="myra">myRA</span>? Learn more</h2>
+        <ul class="tablist">
+          <li><a href="#calculator" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-bar-chart"></i></span> <span class="nav-label">How much can I save?</span></a></li>
+          <li><a href="#who" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-user"></i></span> <span class="nav-label">Is <span class="myra">myRA</span> right for me?</span></a></li>
+          <li><a href="#benefits" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-heart"></i></span> <span class="nav-label">Why <span class="myra">myRA</span>?</span></a></li>
+          <li><a href="#how" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-settings"></i></span> <span class="nav-label">How does it work?</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="page-nav" role="navigation">
+  <div class="container">
+    <ul role="tablist" class="tablist">
+      <li><a href="#calculator" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-bar-chart"></i></span> <span class="nav-label">How much should I save?</span></a></li>
+      <li><a href="#who" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-user"></i></span> <span class="nav-label">Is <span class="myra">myRA</span> right for me?</span></a></li>
+      <li><a href="#benefits" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-heart"></i></span> <span class="nav-label">Why <span class="myra">myRA</span>?</span></a></li>
+      <li><a href="#how" role="tab" class="scroll-link"><span class="icon-box"><i class="icon-settings"></i></span> <span class="nav-label">How does it work?</span></a></li>
+    </ul>
+    <div class="progress"></div>
+  </div>
+</nav>
+
+{% include calculator.html %}
+
+{% include who-basic.html %}
+
+{% include individual-value-proposition.html %}
+
+{% include individual-steps.html %}
+
+{% include individual-signup.html %}

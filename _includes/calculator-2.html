@@ -1,0 +1,97 @@
+<section id="calculator" role="region" aria-labelledby="calculator-heading">
+  <div class="container">
+    <div class="section-intro">
+      <h2 id="calculator-heading"><i class="icon-bar-chart"></i> Start Saving for Retirement Now</h2>
+      <p>Saving for retirement might seem complicated, but <span class="myra">myRA</span> makes it easy. You set your savings goal and decide how much you want to save.</p>
+      <p><span class="myra">myRA</span> is a new way to kick start your savings by helping you set aside a few dollars per month. The more you can save the better. And the sooner you start saving, the more time there will be for your savings to grow, giving you more money in retirement.</p>
+    </div>
+    <noscript>
+      <div class="no-js-warning">
+        <div class="calculator-intro">
+          <h3>See how you can reach your savings goals</h3>
+          <div class="flash-alert">
+            <p>Please enable JavaScript in your browser in order to use the <span class="myra">myRA</span> retirement savings calculator.</p>
+          </div>
+        </div>
+      </div>
+    </noscript>
+    <div class="calculator">
+      <div class="calculator-intro">
+        <h3>See how you can reach your savings goals</h3>
+        <p>Play around with the calculator below to see how contributing a little more each month can have a big impact.</p>
+      </div>
+      <div class="calculator-row results">
+        <span class="calculator-label">Savings: <span class="total-saved">$15,000</span></span>
+        <span class="calculator-label" tabindex="0">Goal: <span class="savings-goal"></span></span>
+        <div class="meter">
+          <div class="tic-marks">
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+            <span class="tic"></span>
+          </div>
+          <div class="meter-p meter-inner"></div>
+          <div class="meter-i meter-inner"></div>
+        </div>
+        <div class="meter-label-container">
+          <div class="principal-label">
+            <span class="meter-label">Principal:</span> <span class="meter-label-number principal-saved">$10,000</span>
+          </div>
+          <div class="interest-label">
+            <span class="meter-label">Interest:</span> <span class="meter-label-number interest-earned">$4,200</span>
+          </div>
+        </div>
+        <div class="calculator-helper">
+          <h3>Good job!</h3>
+          <p>You can reach your goal of <span class="savings-goal"></span> in your <span class="myra">myRA</span> in under <span class="years-to-goal"></span> years.</p>
+          <p>And with <span class="interest-earned"></span> in interest, that's money you get just for saving!</p>
+          <p><strong>Feeling ambitious?</strong> Increase your monthly contribution to reach your goal faster.</p>
+        </div>
+      </div>
+      <div class="calculator-row">
+        <div class="calculator-input-group" id="calculator-0">
+          <h4 id="label-0" class="calculator-label-heading">First, set a savings goal. You can save up to $15,000 in your <span class="myra">myRA</span>.</h4>
+          <div class="button-group" aria-labelledby="label-0">
+            <input type="button" class="button" value="$500" aria-labelledby="label-0" ><input type="button" class="button" value="$1,000" aria-labelledby="label-0" ><input aria-pressed="true" type="button" class="button" value="$5,000" aria-labelledby="label-0" ><input type="button" class="button" value="$10,000" aria-labelledby="label-0" ><input type="button" class="button" value="$15,000" aria-labelledby="label-0">
+          </div>
+          <select aria-labelledby="label-0" id="calculator-0-select" class="calculator-select">
+            <option value="$500">$500</option>
+            <option value="$1,000">$1,000</option>
+            <option value="$5,000" selected="selected">$5,000</option>
+            <option value="$10,000">$10,000</option>
+            <option value="$15,000">$15,000</option>
+          </select>
+        </div>
+      </div>
+      <div class="calculator-row" id="calculator-1">
+        <h4 class="calculator-label-heading" id="label-1">How much can you save each month?</h4>
+        <div class="calculator-input-group">
+          <label class="calculator-label" for="input-1">Monthly savings:</label>
+          <input class="calculator-input" id="input-1" type="text" aria-labelledby="label-1">
+        </div>
+        <div class="calculator-helper">
+          <p>That's just <span class="daily-rate">$1.66</span> a day.</p>
+        </div>
+        <div class="calculator-slider" id="input-1-slider"></div>
+      </div>
+      <div class="calculator-row" id="calculator-2">
+        <h4 class="calculator-label-heading" id="label-2">Let's see how your <span class="myra">myRA</span> savings add up over time.</h4>
+        <div class="calculator-input-group">
+          <label class="calculator-label" for="input-2">Years:</label>
+          <input class="calculator-input" id="input-2" type="text" aria-labelledby="label-2">
+        </div>
+        <div class="calculator-slider" id="input-2-slider"></div>
+      </div>
+      <div class="calculator-row">
+        <div class="calculator-disclaimer">
+          <p>This calculator is for demonstration purposes only and does not indicate actual performance. It is based on an assumed average 2.5% interest rate, compounded monthly</p>
+        </div>
+      </div>
+    </div> <!-- .calculator -->
+  </div>
+</section>
