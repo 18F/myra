@@ -96,8 +96,15 @@ jQuery(document).ready(function($){
   // Then when the scroll position goes beyond we set it to fixed position
   // And add padding to the top of body to keep everything smooth
   var navTop, navHeight, sections;
+
+
   if ( $('.page-nav').length > 0 ) {
-    navTop = $('.page-nav').offset().top;
+    // This is different for the experimental option 1, so we're gonna check that first
+      if ( testNumber === 2 ) {
+        navTop = $('#calculator').offset().top;
+      } else {
+        navTop = $('.page-nav').offset().top;
+      }
 
     // Build an array of all of the section ids
     sections = [];
@@ -116,7 +123,7 @@ jQuery(document).ready(function($){
       } else {
         $('.page-nav').removeClass('fixed');
         $('body').css('padding-top', 0);
-      }
+      }        
 
       // See if the section associated with each link is visible
       $('.page-nav a').each(function(){

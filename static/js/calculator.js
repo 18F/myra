@@ -13,9 +13,20 @@ var n = this,
  };
 
 jQuery(document).ready(function($){
+  var input1start,
+      input2start;
+
+  if ( testNumber === 4 ) {
+    input1start = 0;
+    input2start = 0;
+  } else {
+    input1start = 20;
+    input2start = 6;
+  }
+
   // First slider
   $('#input-1-slider').noUiSlider({
-    start: 20,
+    start: input1start,
     step: 1,
     range: {
       'min': 0,
@@ -38,7 +49,7 @@ jQuery(document).ready(function($){
 
   // Second slider
   $('#input-2-slider').noUiSlider({
-    start: 6,
+    start: input2start,
     step: 1,
     range: {
       'min': 0,
