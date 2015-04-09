@@ -13,6 +13,10 @@ var n = this,
  };
 
 jQuery(document).ready(function($){
+  if ( typeof testNumber === 'undefined' ) {
+    var testNumber = 0;
+  }
+  
   var input1start,
       input2start;
 
