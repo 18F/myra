@@ -13,13 +13,8 @@ var n = this,
  };
 
 jQuery(document).ready(function($){
-  if ( typeof testNumber === 'undefined' ) {
-    var testNumber = 0;
-  }
-  
   var input1start,
       input2start;
-
   if ( testNumber === 4 ) {
     input1start = 0;
     input2start = 0;

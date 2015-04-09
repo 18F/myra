@@ -3,13 +3,6 @@ $.fn.scrollBottom = function() {
 };
 jQuery(document).ready(function($){
 
-  // If we're not on a test page, set testNumber to 0
-  var testNumber;
-
-  if ( typeof testNumber === 'undefined' ) {
-    var testNumber = 0;
-  }
-
   // Quick and Easy Javascript Detection
   $("html").removeClass( "no-js" );
 
