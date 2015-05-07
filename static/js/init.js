@@ -61,13 +61,8 @@ jQuery(document).ready(function($){
   windowHeight = $(window).height();
   scrollPos = $(window).scrollTop();
   // We'll just add the appear classes in here so it doesn't mess up non-js browsers
-  $('.headline, .hero-signup').addClass('appear fade-in');
-  $('.individuals .benefit-block:nth-child(even)').addClass('appear slide-in-left fade-in');
-  $('.individuals .benefit-block:nth-child(odd)').addClass('appear slide-in-right fade-in');
-  $('.employer .benefit-block').addClass('appear fade-in');
-  $('.payroll-logos li').addClass('appear fade-in');
-  $('.stacked-steps .step').addClass('appear fade-in');
-  $('.face').addClass('appear fade-in');
+  $('#benefits .object--third').addClass('appear fade-in');
+  $('.numbered-step').addClass('appear fade-in');
 
   // This handles all of the transitions
   // We'll get the position of anything with the appear class
@@ -266,25 +261,5 @@ jQuery(document).ready(function($){
       }
     }, true);
   }
-
-  // Employer Resource page alert
-  // Mailchimp redirects to the url with the paremeter ?signup=true
-  // If that happens, we want to display an alert
-
-  var url = window.location.href.split('?');
-  if (url[1] === 'signup') {
-    $('.js-individual-signup-form').replaceWith('<div class="js-signup-alert"><p><strong>Thank you</strong></p>In order to receive updates on <span class="myra">myRA</span>, please click the link in the email we just sent you.</p></div>');
-    $('.js-signup-alert').fadeIn();
-  } else if (url[1] === 'employersignup') {
-    $('.js-signup-alert').html('<p><strong>Thank you</strong></p><p>You can download resources to share <span class="myra">myRA</span> with your employees below.</p><p>In order to receive updates on <span class="myra">myRA</span>, please click the link in the email we just sent you.</p>');
-    $('.js-signup-alert').fadeIn();
-  } else if (url[1] === 'thankyou') {
-    if ( $('.js-individual-signup-form').length > 0 ) {
-      $('.js-individual-signup-form').replaceWith('<div class="js-signup-alert"></div>');
-    }
-    $('.js-signup-alert').html('<p><strong>Subscription confirmed</strong></p><p>Thank you for signing up to receive updates on <span class="myra">myRA</span>.</p>');
-    $('.js-signup-alert').fadeIn();
-  }
-
 
 });
