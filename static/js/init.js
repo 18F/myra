@@ -90,9 +90,16 @@ jQuery(document).ready(function($){
   // First we get the offset and height of the page nav
   // Then when the scroll position goes beyond we set it to fixed position
   // And add padding to the top of body to keep everything smooth
-  var navTop, navHeight, sections;
+  var navTop, 
+      navHeight, 
+      sections,
+      firstSection,
+      firstSectionTop;
+
   if ( $('.page-nav').length > 0 ) {
     navTop = $('.page-nav').offset().top;
+    firstSection = $('.page-nav').find('li:first-child a').attr('href');
+    firstSectionTop = $(firstSection).offset().top;
 
     // Build an array of all of the section ids
     sections = [];
@@ -104,7 +111,7 @@ jQuery(document).ready(function($){
     $(document).scroll(function(){
       scrollPos = $(window).scrollTop();
 
-      if (scrollPos >= navTop) {
+      if (scrollPos >= firstSectionTop) {
         navHeight = $('.page-nav').height();
         $('.page-nav').addClass('fixed');
         $('body').css('padding-top', navHeight);
