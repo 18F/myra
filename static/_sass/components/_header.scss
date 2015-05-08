@@ -201,3 +201,26 @@
     }
   }
 }
+
+.utility-nav {
+  text-align: right;
+  display: none;
+
+  li {
+    display: inline-block;
+    padding: 5px 5px 0 5px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  @include media($small-up) {
+    display: block;
+    float: right;
+  }
+
+  @include media($large-up) {
+    float: none;
+  }
+}
