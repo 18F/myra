@@ -20,7 +20,7 @@
 
   @include media($medium-up) {
     @include retina('../img/hero-bg-2.jpg', '../img/hero-bg-2@2x.jpg', 1400px);
-    padding: 3em 0 2em 0;
+    padding: 2em 0;
   }
 
   .container {
@@ -63,7 +63,6 @@
 
 .hero-box {
   @include clearfix();
-  padding: 3em 2em;
   background-color: #fff;
 
   .display,
@@ -89,22 +88,21 @@
 }
 
 .headline {
-  @extend .hero-box;
+  padding: 2em;
+  margin: 5px 0;
 
   @include media($tiny-down) {
     padding: 2em 1em;
   }
 
   .lead-text {
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     @include media($tiny-down) {
       font-size: $base-font-size * 1.2;
     }
-  }
-}
-
-@include media($tiny-up) {
-  .headline {
-    margin-bottom: 2px;
   }
 }
 
@@ -153,7 +151,6 @@
     @include media($tiny-down) {
       border-top: 1px solid $myra-blue1;
       background-color: #fff;
-      // background-color: rgba(#fff, .9);
     }
 
     @include media($medium-up) {
@@ -186,4 +183,32 @@
     bottom: 0;
     right: 0;
   }
+}
+
+.hero__nav {
+
+  .tablist li {
+    text-align: center;
+    border-right: 2px solid $myra-blue1;
+    background: #fff;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      margin-right: none;
+      border-right: none;
+    }
+
+    @include media($large-up) {
+      display: inline-block;
+      width: 25%;
+
+      &:last-child {
+        width: 25%;
+      }
+    }
+  }
+
 }

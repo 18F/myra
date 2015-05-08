@@ -3,12 +3,13 @@
 /**************************/
 
 .page-nav {
+  display: none;
   background: #fff;
   text-align: center;
   width: 100%;
   border-bottom: 1px solid $base-border-color;
   border-top: 1px solid $base-border-color;
-
+  
   .container {
     padding: 0;
     position: relative;
@@ -94,6 +95,7 @@
 }
 
 .page-nav.fixed {
+  display: block;
   z-index: 500;
   position: fixed;
   top: 0;
