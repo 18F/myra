@@ -176,9 +176,9 @@ jQuery(document).ready(function($){
     var sectionTop = $(id).offset().top;
 
     // Offset the top nav if it is there
-    var offset;
+    var offset = 0;
     if ( $('.page-nav').length > 0 ) {
-      offset = $('.page-nav').height();
+      offset = 10;
     } else {
       offset = 0;
     }
