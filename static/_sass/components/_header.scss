@@ -65,7 +65,12 @@
   margin: 0 auto;
   text-align: center;
   display: block;
-
+  
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+  
   @include media($large-up) {
     float: left;
     text-align: left;
@@ -79,7 +84,8 @@
 
   &:hover {
     text-decoration: none;
-    background: $light-gray;
+    background: $myra-blue1;
+    color: #fff;
   }
 }
 
@@ -141,12 +147,13 @@
     }
   }
 
-  &:hover > .nav-menu__submenu {
+  &:hover > .nav-menu__submenu,
+  &:focus > .nav-menu__submenu {
     display: block;
   }
 
   &:hover > a,
-  &:focus,
+  &:focus > a,
   &:active {
     color: #fff;
     text-decoration: none;

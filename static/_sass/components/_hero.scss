@@ -64,7 +64,6 @@
 .hero-box {
   @include clearfix();
   background-color: #fff;
-  margin: 5px 0;
 
   .display,
   .lead-text {
@@ -90,6 +89,7 @@
 
 .headline {
   padding: 2em;
+  margin: 5px 0;
 
   @include media($tiny-down) {
     padding: 2em 1em;
@@ -151,7 +151,6 @@
     @include media($tiny-down) {
       border-top: 1px solid $myra-blue1;
       background-color: #fff;
-      // background-color: rgba(#fff, .9);
     }
 
     @include media($medium-up) {

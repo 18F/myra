@@ -20,12 +20,12 @@
       <nav class="site-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <ul class="nav-menu" role="menubar">
         {% for node in site.data.navigation %}
-          <li role="menuitem" class="nav-menu__item">
+          <li role="menuitem" class="nav-menu__item" tabindex="0">
             <a class="{% if page.parent == node.title %}current-page{% endif %}" aria-label="{% if page.parent == node.title %}Current Section{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
             {% if node.subnav %}
-              <ul class="nav-menu__submenu">
+              <ul class="nav-menu__submenu" tabindex="0">
               {% for subnode in node.subnav %}
-                <li role="menuitem" class="nav-menu__subitem"><a href="{{ site.baseurl }}{{ subnode.url }}">{{ subnode.title }}</a></li>
+                <li role="menuitem" class="nav-menu__subitem" tabindex="0"><a href="{{ site.baseurl }}{{ subnode.url }}" tabindex="0">{{ subnode.title }}</a></li>
               {% endfor %}
               </ul>
             {% endif %}
@@ -36,11 +36,5 @@
           </li>
         </ul>
       </nav>
-
     </div>
-
   </header>
-
-<!-- <li role="menuitem"><a aria-label="{% if page.title == 'For Individuals' %}Current Page (For Individuals){% endif %}" class="page-link {% if page.title == 'For Individuals' %}current-page {% endif %}" href="{{ site.baseurl }}/individuals/">For Individuals</a>
-<li role="menuitem"><a aria-label="{% if page.title == 'For Employers' %}Current Page (For Employers){% endif %}" class="page-link {% if page.title == 'For Employers' %}current-page {% endif %}" href="{{ site.baseurl }}/employers">For Employers</a></li>
-<li role="menuitem"><a aria-label="{% if page.title == 'About myRA' %}Current Page (About myRA){% endif %}" class="page-link {% if page.title == 'About myRA' %}current-page {% endif %}" href="{{ site.baseurl }}/about">About <span class="myra">myRA</span></a></li> -->

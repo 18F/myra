@@ -19,13 +19,11 @@
     - title: Resources for Employers
       url: /employers/resources
 
-- title: Learn More
+- title: About
   url: /about
   subnav: 
-    - title: About myRA for Individuals
+    - title: About myRA
       url: /about
 
-    - title: About myRA for Employers
-      url: /about/employers
     - title: About Roth IRAs
       url: /about/roth-ira
