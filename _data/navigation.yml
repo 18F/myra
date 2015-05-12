@@ -1,7 +1,7 @@
 - title: Individuals
   url: /individuals
   subnav: 
-    - title: myRA for Individuals
+    - title: <span class="myra">myRA</span> for Individuals
       url: /individuals
 
     - title: Resources for Individuals
@@ -13,7 +13,7 @@
 - title: Employers
   url: /employers
   subnav: 
-    - title: myRA for Employers
+    - title: <span class="myra">myRA</span> for Employers
       url: /employers 
 
     - title: Resources for Employers
@@ -22,7 +22,7 @@
 - title: About
   url: /about
   subnav: 
-    - title: About myRA
+    - title: About <span class="myra">myRA</span>
       url: /about
 
     - title: About Roth IRAs
