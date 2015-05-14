@@ -118,7 +118,6 @@
 }
 
 .nav-menu__item {
-  // @include span-columns(4, block-collapse);
   display: inline-block;
   position: relative;
   text-align: left;
@@ -147,14 +146,10 @@
     }
   }
 
-  &:hover > .nav-menu__submenu,
-  &:focus > .nav-menu__submenu {
-    display: block;
-  }
-
   &:hover > a,
   &:focus > a,
-  &:active {
+  &:active,
+  &.sub-menu-open a {
     color: #fff;
     text-decoration: none;
     background-color: $myra-blue1;
@@ -176,7 +171,6 @@
 
 .nav-menu__submenu {
   position: absolute;
-  display: none;
   background: $myra-blue1;
   text-align: left;
   font-size: 14px;
@@ -195,7 +189,8 @@
     padding: 10px 10px;
     color: #fff;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #fff;
       color: $myra-blue1;
     }

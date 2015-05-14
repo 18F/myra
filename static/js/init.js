@@ -269,4 +269,43 @@ jQuery(document).ready(function($){
     }, true);
   }
 
+  // Tab navigation for dropdowns
+  $('.nav-menu__submenu').addClass('hidden').attr('aria-hidden','true');
+
+  $('.nav-menu__item').focus(function(){
+    showSubmenu($(this));
+  });
+
+  $('.nav-menu__item').hover(function(){
+    showSubmenu($(this));
+  }, function(){
+    hideSubmenu($(this));
+  })
+
+  $('.nav-menu__subitem').focus(function(){
+    var parent = $(this).parent('.nav-menu__item');
+    showSubmenu($(parent));
+  });
+
+  $('.nav-menu__subitem:last-child a').focusout(function(){
+    var parent = $(this).parent('.nav-menu__item');
+    hideSubmenus();
+  });
+
+  function showSubmenu(parent) {
+    $(parent).addClass('sub-menu-open');
+    $(parent).children('.nav-menu__submenu').removeClass('hidden').attr('aria-hidden','false');
+  }
+
+  function hideSubmenu(parent) {
+    $(parent).removeClass('sub-menu-open');
+    $(parent).children('.nav-menu__submenu').addClass('hidden').attr('aria-hidden','true');
+  }
+
+  function hideSubmenus($parent) {
+    console.log('hide all')
+    $('.nav-menu__submenu').addClass('hidden');
+    $('.sub-menu-open').removeClass('sub-menu-open');
+    $(parent).children('.nav-menu__submenu').addClass('hidden').attr('aria-hidden','true');
+  } 
 });
