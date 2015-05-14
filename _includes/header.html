@@ -25,9 +25,9 @@
         <ul class="nav-menu" role="menubar">
         {% for node in site.data.navigation %}
           <li role="menuitem" class="nav-menu__item" tabindex="0">
-            <a class="{% if page.parent == node.title %}current-page{% endif %}" aria-label="{% if page.parent == node.title %}Current Section{% endif %}" href="{{ site.baseurl }}{{ node.url }}" {% if node.subnav %} aria-haspopup="true" {% endif %}>{{ node.title }}</a>
+            <a class="nav-menu__item__link {% if page.parent == node.title %}current-page{% endif %}" aria-label="{% if page.parent == node.title %}Current Section{% endif %}" href="{{ site.baseurl }}{{ node.url }}" {% if node.subnav %} aria-haspopup="true" {% endif %} tabindex="-1">{{ node.title }}</a>
             {% if node.subnav %}
-              <ul class="nav-menu__submenu" tabindex="0" aria-label="submenu">
+              <ul class="nav-menu__submenu" aria-label="submenu">
               {% for subnode in node.subnav %}
                 <li role="menuitem" class="nav-menu__subitem"><a href="{{ site.baseurl }}{{ subnode.url }}" tabindex="0">{{ subnode.title }}</a></li>
               {% endfor %}
