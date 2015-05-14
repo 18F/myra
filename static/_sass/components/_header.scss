@@ -180,6 +180,18 @@
   z-index: 999;
 }
 
+.no-js {
+  .nav-menu__submenu {
+    display: none;
+  }
+
+  .nav-menu__item:hover {
+    .nav-menu__submenu {
+      display: block;
+    }
+  }
+}
+
 .nav-menu__subitem {
 
   a {
