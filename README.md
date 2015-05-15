@@ -26,8 +26,32 @@ To keep our code updating continuously as we edit, we use `jekyll serve --baseur
 
 ## The Branches
 - **master** This is the branch that lives online at https://myra.treasury.gov
+- **staging** This is the branch to work on rigth before deploying to master
 - **gh-pages** This is the branch to use for demoing new features on https://18f.github.io/myra
-- **email-capture** The old branch that contains the email capture form, before buttons were added to signup and manage accounts.
+
+## File Structure
+```
+_data/
+|-- navigation.yml    Data file that controls the site-wide header menu
+
+_includes/            Partials to be included on various pages
+
+_layouts/             Two templates for all pages
+|-- splash.html       Template to use for home, /individuals and /employers
+|-- default.html      Template for all other pages
+
+_site/                The directory that Jekyll compiles everything into
+
+_about/               Pages for the About section
+
+_employers/           Pages for the Employers section
+
+_individuals/         Pages for the Individuals section
+
+_resources/           All resource files for both individuals and employers
+
+_static/              Sass, JS, images and compiled css
+```
 
 ## Contributing
 

@@ -15,25 +15,30 @@
       An official website of the United States Government  <img src="{{ site.baseurl }}/static/img/us_flag_small.png" alt="US flag signifying that this is a United States Federal Government website">
     </div>
     <div class="header-container container">
-      <nav class="top-bar">
-        <ul class="account-nav" role="menubar">
-          <li role="menuitem"><a disabled class="manage-link modal-trigger" data-modal="manage-modal" tabindex="0"><span class="myra">myRA</span> Online</a></li>
-          <li role="menuitem">
-            <a disabled class="button signup-button-small modal-trigger" data-modal="signup-modal" tabindex="0" title="The account creation process requires JavaScript. Please enable JavaScript to continue.">Sign up for <span class="myra">myRA</span> <i class="icon-arrow-right"></i></a>
+      <a class="site-brand" tabindex="0" href="{{ site.baseurl }}/" title="Home"><h1 class="site-title" itemprop="name"><span class="myra">myRA</span> <span class="site-tagline"><span class="italic">my</span> Retirement Account</span></h1></a>
+      <nav class="utility-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <ul class="utility-menu">
+          <li role="menuitem"><a disabled class="manage-link modal-trigger" data-modal="manage-modal"><span class="myra">myRA</span> Online</a></li>
+        </ul>
+      </nav>
+      <nav class="site-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <ul class="nav-menu" role="menubar">
+        {% for node in site.data.navigation %}
+          <li role="menuitem" class="nav-menu__item" tabindex="-1">
+            <a class="nav-menu__item__link {% if page.parent == node.title %}current-page{% endif %}" aria-label="{% if page.parent == node.title %}Current Section{% endif %}" href="{{ site.baseurl }}{{ node.url }}" {% if node.subnav %} aria-haspopup="true" {% endif %} tabindex="0">{{ node.title }}</a>
+            {% if node.subnav %}
+              <ul class="nav-menu__submenu" aria-label="submenu">
+              {% for subnode in node.subnav %}
+                <li role="menuitem" class="nav-menu__subitem"><a href="{{ site.baseurl }}{{ subnode.url }}" tabindex="0">{{ subnode.title }}</a></li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+          <li role="menuitem" class="nav-menu__item--button">
+            <a disabled class="button modal-trigger" data-modal="signup-modal" tabindex="0" title="The account creation process requires JavaScript. Please enable JavaScript to continue.">Sign up <i class="icon-arrow-right"></i></a>
           </li>
         </ul>
       </nav>
-
-      <a class="site-brand" href="{{ site.baseurl }}/" title="Home"><h1 class="site-title" itemprop="name"><span class="myra">myRA</span> | <span class="italic">my</span> Retirement Account</h1></a>
-
-      <nav class="site-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <ul role="menubar">
-          <li role="menuitem"><a aria-label="{% if page.title == 'For Individuals' %}Current Page (For Individuals){% endif %}" class="page-link {% if page.title == 'For Individuals' %}current-page {% endif %}" href="{{ site.baseurl }}/individuals/">For Individuals</a></li>
-          <li role="menuitem"><a aria-label="{% if page.title == 'For Employers' %}Current Page (For Employers){% endif %}" class="page-link {% if page.title == 'For Employers' %}current-page {% endif %}" href="{{ site.baseurl }}/employers">For Employers</a></li>
-          <li role="menuitem"><a aria-label="{% if page.title == 'About myRA' %}Current Page (About myRA){% endif %}" class="page-link {% if page.title == 'About myRA' %}current-page {% endif %}" href="{{ site.baseurl }}/about">About <span class="myra">myRA</span></a></li>
-        </ul>
-      </nav>
-
     </div>
-
   </header>

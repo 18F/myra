@@ -4,6 +4,10 @@ body {
   // min-width: 960px;
 }
 
+#main {
+  background-color: #fff;
+}
+
 .container {
   @include outer-container();
   overflow-x: hidden;
@@ -40,30 +44,139 @@ section {
   }
 }
 
-%inverse {
-  background: $myra-blue1;
+.gray {
+  background: #f9f9f9;
+}
 
-  p,
-  span,
-  li,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    color: #fff;
+.section-intro {
+  margin-bottom: $base-line-height;
+
+  p {
+    @extend .lead-text;
   }
 
-  a {
-    color: #fff;
-    text-decoration: underline;
+  @include media($large-up) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+}
 
-    &:hover {
-      color: #f1f1f1;
+// Default layout page styles
+
+.default {
+
+  #main {
+    background: #f3f3f3;
+
+    @include media($tiny-down) {
+      section,
+      .container {
+        padding: 0;
+      }
+    }
+  }
+
+  .page-content {
+    padding: 1em;
+    background: #fff;
+
+    @include media($tiny-up) {
+      padding: 2em;
+    }
+
+    @include media($large-up) {
+      @include span-columns(8);
+      @include shift(2);
+    }
+
+    h2 {
+      text-align: left;
+      margin-bottom: 0;
     }
   }
 }
 
-.gray {
-  background: #f9f9f9;
+// Section themes
+.section--dark {
+  background: $myra-blue1;
+
+    p,
+    span,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: #fff;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+
+      &:hover {
+        color: #f1f1f1;
+      }
+    }
+}
+
+.section--white {
+  border-bottom: 1px solid $base-border-color;
+}
+
+.section--gray {
+  border-top: 1px solid $base-border-color;
+  border-bottom: 1px solid $base-border-color;
+  background: #f3f3f3;
+  a {
+    color: $myra-darkgreen;
+  }
+}
+
+.section--photos {
+  background-position: 50% 0;
+  padding: 0;
+
+  @include media($medium-up) {
+    background: url('../img/who-bg.jpg');
+  }
+}
+
+.object--third {
+  @include span-columns(12);
+  
+  h3 {
+    text-align: left;
+  }
+
+  @include media($medium-up) {
+    @include span-columns(4);
+
+    h3 {
+      text-align: center;
+    }
+  } 
+}
+
+.column {
+  @include span-columns(12);
+
+  @include media($medium-up) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+
+  @include media($large-up) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+}
+
+.column--padded {
+  padding: 1em 0;
+
+  @include media($medium-up) {
+    padding: 2em;
+  }
 }

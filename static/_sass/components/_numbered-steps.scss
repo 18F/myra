@@ -1,0 +1,62 @@
+/**************************/
+/* Numbered steps */
+/**************************/
+
+.numbered-step {
+  @include span-columns(12);
+  margin-bottom: $base-line-height;
+  padding: em(20) 0;
+  display: block;
+  background: none;
+  border-bottom: 1px solid #d9d9d9;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  p {
+    @include span-columns(11 of 12);
+    @include shift(1);
+  }
+
+}
+
+.numbered-step__heading {
+  display: block;
+  margin-bottom: $base-font-size * 2;
+}
+
+.numbered-step__number {
+  @include span-columns(1 of 12);
+  text-align: right;
+}
+
+.numbered-step__title {
+  @include span-columns(11 of 12);
+}
+
+@include media($large-up) {
+  .numbered-step {
+    @include span-columns(10);
+    @include shift(1);
+
+    p {
+      @include span-columns(9 of 10);
+      @include shift(1);
+      font-size: $base-font-size * 1.2;
+    }
+  }
+
+  .numbered-step__number {
+    @include span-columns(1 of 10);
+  }
+
+  .numbered-step__title {
+    @include span-columns(9 of 10);
+  }
+
+}

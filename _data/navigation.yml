@@ -1,0 +1,29 @@
+- title: Individuals
+  url: /individuals
+  subnav: 
+    - title: <span class="myra">myRA</span> for Individuals
+      url: /individuals
+
+    - title: Resources for Individuals
+      url: /individuals/resources
+
+    - title: Payroll Direct Deposit
+      url: /individuals/payroll-direct-deposit-information
+
+- title: Employers
+  url: /employers
+  subnav: 
+    - title: <span class="myra">myRA</span> for Employers
+      url: /employers 
+
+    - title: Resources for Employers
+      url: /employers/resources
+
+- title: About
+  url: /about
+  subnav: 
+    - title: About <span class="myra">myRA</span>
+      url: /about
+
+    - title: About Roth IRAs
+      url: /about/roth-ira
