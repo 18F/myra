@@ -74,6 +74,7 @@
   @include media($large-up) {
     float: left;
     text-align: left;
+    margin-top: 22px;
   }
 }
 
@@ -149,7 +150,7 @@
   &:hover > a,
   &:focus > a,
   &:active,
-  &.sub-menu-open a {
+  &.sub-menu-open > a {
     color: #fff;
     text-decoration: none;
     background-color: $myra-blue1;
@@ -159,7 +160,8 @@
     color: #fff;
     padding: em(10);
     
-    &:hover {
+    &:hover,
+    &:focus {
       background: $hover-link-color;
     }
   }

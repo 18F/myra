@@ -270,11 +270,9 @@ jQuery(document).ready(function($){
   }
 
   // Tab navigation for dropdowns
-  $('.nav-menu__submenu').addClass('hidden').attr('aria-hidden','true');
+  var mostRecentItem;
 
-  $('.nav-menu__item').focus(function(){
-    showSubmenu($(this));
-  });
+  $('.nav-menu__submenu').addClass('hidden').attr('aria-hidden','true');
 
   $('.nav-menu__item').hover(function(){
     showSubmenu($(this));
@@ -282,14 +280,26 @@ jQuery(document).ready(function($){
     hideSubmenu($(this));
   })
 
-  $('.nav-menu__subitem').focus(function(){
-    var parent = $(this).parent('.nav-menu__item');
-    showSubmenu($(parent));
+  $('.nav-menu__item > a').focus(function(){
+    console.log(this);
+    mostRecentItem = this.parentNode;
+    hideSubmenus();
+    showSubmenu($(this).parent());
   });
 
-  $('.nav-menu__subitem:last-child a').focusout(function(){
-    var parent = $(this).parent('.nav-menu__item');
-    hideSubmenus();
+  $('.nav-menu__submenu a').focus(function(){
+    $(this).parent('.nav-menu__item').addClass('sub-menu-open');
+    var nextItem = $(this).parents('.nav-menu__item').get(0);
+    if ( nextItem != mostRecentItem && mostRecentItem ) {
+      hideSubmenu(mostRecentItem);
+    }
+    mostRecentItem = nextItem;
+  })
+
+  $('[tabindex]').focus(function(){
+    if ( !$(this).parents('.nav-menu__item').get(0) ) {
+      hideSubmenus();
+    }
   });
 
   function showSubmenu(parent) {
