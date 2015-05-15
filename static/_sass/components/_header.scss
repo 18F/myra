@@ -65,10 +65,16 @@
   margin: 0 auto;
   text-align: center;
   display: block;
-
+  
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+  
   @include media($large-up) {
     float: left;
     text-align: left;
+    margin-top: 22px;
   }
 }
 
@@ -79,7 +85,8 @@
 
   &:hover {
     text-decoration: none;
-    background: $light-gray;
+    background: $myra-blue1;
+    color: #fff;
   }
 }
 
@@ -111,12 +118,11 @@
   }
 }
 
-.nav-menu__item {
-  // @include span-columns(4, block-collapse);
+.nav-menu__item,
+.nav-menu__item--button {
   display: inline-block;
   position: relative;
   text-align: left;
-
   & > a {
     @include transition(background-color .1s);
     color: #000;
@@ -141,12 +147,8 @@
     }
   }
 
-  &:hover > .nav-menu__submenu {
-    display: block;
-  }
-
   &:hover > a,
-  &:focus,
+  &:focus > a,
   &:active {
     color: #fff;
     text-decoration: none;
@@ -157,25 +159,44 @@
     color: #fff;
     padding: em(10);
     
-    &:hover {
+    &:hover,
+    &:focus {
       background: $hover-link-color;
     }
   }
 
-@include media($large-up) {
+  @include media($large-up) {
     font-size: $base-font-size * 1.2;
   }
 }
 
+.nav-menu__item.sub-menu-open > a {
+  color: #fff;
+  text-decoration: none;
+  background-color: $myra-blue1;
+}
+
 .nav-menu__submenu {
   position: absolute;
-  display: none;
   background: $myra-blue1;
   text-align: left;
   font-size: 14px;
   padding: 0;
   min-width: 100%;
   box-shadow: 0 1px 1px 1px rgba(0,0,0,.1);
+  z-index: 999;
+}
+
+.no-js {
+  .nav-menu__submenu {
+    display: none;
+  }
+
+  .nav-menu__item:hover {
+    .nav-menu__submenu {
+      display: block;
+    }
+  }
 }
 
 .nav-menu__subitem {
@@ -187,9 +208,33 @@
     padding: 10px 10px;
     color: #fff;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #fff;
       color: $myra-blue1;
     }
+  }
+}
+
+.utility-nav {
+  text-align: right;
+  display: none;
+
+  li {
+    display: inline-block;
+    padding: 5px 5px 0 5px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  @include media($small-up) {
+    display: block;
+    float: right;
+  }
+
+  @include media($large-up) {
+    float: none;
   }
 }
