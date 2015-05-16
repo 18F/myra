@@ -101,16 +101,10 @@ jQuery(document).ready(function($){
     firstSection = $('.page-nav').find('li:first-child a').attr('href');
     firstSectionTop = $(firstSection).offset().top;
 
-    // Build an array of all of the section ids
-    sections = [];
-    $('.page-nav a').each(function(){
-      var id = $(this).attr('href');
-      sections.push(id);
-    });
-
     $(document).scroll(function(){
       scrollPos = $(window).scrollTop();
 
+      // Show it if we're past the top of the first section
       if (scrollPos >= firstSectionTop) {
         navHeight = $('.page-nav').height();
         $('.page-nav').addClass('fixed');
@@ -124,7 +118,7 @@ jQuery(document).ready(function($){
       $('.page-nav a').each(function(){
         var sectionId = $(this).attr('href');
         var sectionTop = $(sectionId).offset().top;
-        if ( scrollPos > (sectionTop - 46)) {
+        if ( scrollPos > (sectionTop - 60)) {
           $('.current-section').removeClass('current-section');
           $(this).attr('aria-selected', 'true');
           $(this).parent('li').addClass('current-section');
@@ -146,7 +140,6 @@ jQuery(document).ready(function($){
           $('.current-section').removeClass('current-section');
           $(this).attr('aria-selected', 'true');
           $(this).parent('li').addClass('current-section');
-          moveProgress();
         });
       }
     });
