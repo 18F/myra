@@ -212,3 +212,24 @@
   }
 
 }
+
+.employer {
+  .hero__nav {
+    .tablist li {
+      width: 100%;
+      border-right: none;
+    }
+  }
+  @include media($medium-up) {
+    .hero__nav {
+      .tablist li {
+        width: 33.3333%;
+        border-right: 2px solid $myra-blue1;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
