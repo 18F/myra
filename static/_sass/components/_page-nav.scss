@@ -95,7 +95,7 @@
 }
 
 .page-nav.fixed {
-  display: block;
+  display: none; // Hiding it on smaller browsers
   z-index: 500;
   position: fixed;
   top: 0;
@@ -108,6 +108,10 @@
   .icon-box {
     width: 100%;
     padding: em(10) em(10);
+  }
+
+  .nav-label {
+    display: none;
   }
 
   .current-section {
@@ -124,10 +128,6 @@
     .icon-box {
       display: none;
     }
-  }
-
-  .nav-label {
-    display: none;
   }
 
   .progress {
@@ -178,6 +178,8 @@
   }
 
   @include media($large-up) {
+    display: block;
+
     li,
     li:last-child,
     .current-section {
