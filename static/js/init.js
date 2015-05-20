@@ -274,7 +274,6 @@ jQuery(document).ready(function($){
   })
 
   $('.nav-menu__item > a').focus(function(){
-    console.log(this);
     mostRecentItem = this.parentNode;
     hideSubmenus();
     showSubmenu($(this).parent());
@@ -289,7 +288,7 @@ jQuery(document).ready(function($){
     mostRecentItem = nextItem;
   })
 
-  $('[tabindex]').focus(function(){
+  $('*').focus(function(){
     if ( !$(this).parents('.nav-menu__item').get(0) ) {
       hideSubmenus();
     }
@@ -306,7 +305,6 @@ jQuery(document).ready(function($){
   }
 
   function hideSubmenus($parent) {
-    console.log('hide all')
     $('.nav-menu__submenu').addClass('hidden');
     $('.sub-menu-open').removeClass('sub-menu-open');
     $(parent).children('.nav-menu__submenu').addClass('hidden').attr('aria-hidden','true');

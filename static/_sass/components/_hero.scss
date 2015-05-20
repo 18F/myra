@@ -189,28 +189,25 @@
 
   .tablist li {
     text-align: center;
-    border-right: 2px solid $myra-blue1;
     background: #fff;
-
-    &:first-child {
-      border-left: none;
-    }
-
-    &:last-child {
-      margin-right: none;
-      border-right: none;
-    }
 
     @include media($large-up) {
       display: inline-block;
       width: 25%;
+      border-right: 2px solid $myra-blue1;
+      background: #fff;
+
+      &:first-child {
+        border-left: none;
+      }
 
       &:last-child {
         width: 25%;
+        margin-right: none;
+        border-right: none;
       }
     }
   }
-
 }
 
 .employer {
