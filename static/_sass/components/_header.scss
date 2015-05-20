@@ -71,10 +71,13 @@
     text-decoration: none;
   }
   
-  @include media($large-up) {
+  @include media($small-up) {
     float: left;
     text-align: left;
-    margin-top: 22px;
+  }
+
+  @include media($medium-up) {
+    margin-top: 35px;
   }
 }
 
@@ -110,16 +113,16 @@
   border-top: 1px solid #c1c1c1;
   border-bottom: 1px solid #c1c1c1;
 
-  @include media($large-up) {
+  @include media($medium-up) {
     width: auto;
     text-align: right;
     border-top: none;
     border-bottom: none;
+    clear: right;
   }
 }
 
-.nav-menu__item,
-.nav-menu__item--button {
+.nav-menu__item {
   display: inline-block;
   position: relative;
   text-align: left;
@@ -127,7 +130,7 @@
     @include transition(background-color .1s);
     color: #000;
     display: block;
-    padding: em(12) em(10);
+    padding: em(10) em(10);
 
     @include media($tiny-down) {
       font-size: .875em;
@@ -217,24 +220,34 @@
 }
 
 .utility-nav {
-  text-align: right;
-  display: none;
+  text-align: center;
+  padding: 0 20px;
+  border-top: 1px solid #c1c1c1;
 
   li {
     display: inline-block;
-    padding: 5px 5px 0 5px;
+    padding: 5px;
 
     &:last-child {
       padding-right: 0;
     }
   }
 
+  .button {
+    padding: 8px 10px;
+  }
+
   @include media($small-up) {
     display: block;
     float: right;
+    text-align: right;
+    border-top: none;
+    padding: 5px 0 5px 0;
   }
 
   @include media($large-up) {
-    float: none;
+    float: right;
+    clear: right;
+    padding: 0;
   }
 }
