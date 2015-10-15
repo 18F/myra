@@ -2,7 +2,7 @@
 
 ## Move to closed-source
 
-On, 10/15/2015, the Treasury [Bureau of the Fiscal Service](https://www.fiscal.treasury.gov/) confirmed to 18F they were closing the source for the myRA program. This repo only reflects the system as it existed before it was delivered to Treasury and they took over all hosting duties. It does not reflect what is currently on https://myra.gov/.
+On 10/15/2015, the Treasury [Bureau of the Fiscal Service](https://www.fiscal.treasury.gov/) confirmed to 18F they were closing the source for the myRA program. This repo only reflects the system as it existed before it was delivered to Treasury and they took over all hosting duties. It does not reflect what is currently on https://myra.gov/.
 
 ## What
 
